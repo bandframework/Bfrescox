@@ -1,0 +1,7 @@
+**/__pycache__
+
+bfrescox_pypkg/build
+bfrescox_pypkg/src/bfrescox.egg-info
+
+bfrescox_pypkg/.coverage_bfrescox
+bfrescox_pypkg/coverage.xml

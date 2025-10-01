@@ -1,0 +1,5 @@
+# Automatic management of package's version via tags using setuptools-scm
+
+[build-system]
+requires = ["setuptools", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
