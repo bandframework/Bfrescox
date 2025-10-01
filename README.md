@@ -1,5 +1,7 @@
 # Bfrescox
 
+[![Check standard conformance](https://github.com/bandframework/Bfrescox/actions/workflows/check_standards.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/check_standards.yml)
+
 __PROVIDE FRESCOX INFORMATION AND LINKS__
 
 __TBD__
