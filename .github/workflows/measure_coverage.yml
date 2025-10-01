@@ -1,7 +1,10 @@
 name: Measure overall code coverage by line
 env:
-  CLONE_PATH:       ${{ github.workspace }}
-  BFRESCOX_PATH:    ${{ github.workspace }}/bfrescox_pypkg
+  CLONE_PATH:        ${{ github.workspace }}
+  BFRESCOX_PATH:     ${{ github.workspace }}/bfrescox_pypkg
+  BFRESCOX_COV_FILE: bfrescox_coverage
+  BFRESCOX_COV_HTML: bfrescox_html
+  BFRESCOX_COV_XML:  bfrescox_coverage.xml
 on:
   push:
     branches: [main]
@@ -10,10 +13,6 @@ on:
 
 jobs:
   coverage_bfrescox:
-    env:
-      COVERAGE_FILE: ${{ github.workspace }}/bfrescox_coverage
-      COVERAGE_XML:  ${{ github.workspace }}/bfrescox_coverage.xml
-      COVERAGE_HTML: ${{ github.workspace }}/bfrescox_htmlcov
     strategy:
       matrix:
         python-version: ["3.13"]
@@ -34,7 +33,10 @@ jobs:
     - name: Generate full coverage results
       run: |
         pushd $BFRESCOX_PATH
-        tox -r -e coverage,report
+        COVERAGE_FILE=$BFRESCOX_COV_FILE COVERAGE_HTML=$BFRESCOX_COV_HTML COVERAGE_XML=$BFRESCOX_COV_XML tox -r -e coverage,report
+        mv $BFRESCOX_COV_FILE $CLONE_PATH
+        mv $BFRESCOX_COV_HTML $CLONE_PATH
+        mv $BFRESCOX_COV_XML  $CLONE_PATH
         popd
 
     ##-- Publish full coverage report as artifact
@@ -43,9 +45,30 @@ jobs:
       with:
         name: bfrescox-code-coverage
         path: |
-            ${{ env.COVERAGE_FILE }}
-            ${{ env.COVERAGE_HTML }}
-            ${{ env.COVERAGE_XML }}
+            ${{ env.BFRESCOX_COV_FILE }}
+            ${{ env.BFRESCOX_COV_HTML }}
+            ${{ env.BFRESCOX_COV_XML }}
 
-    ##-- Publish full coverage report to CodeCov
-    # TODO: Write this once an official repo is setup.
+  ##-- Publish full coverage report to CodeCov
+  publish:
+    needs: [coverage_bfrescox]
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Access Bfrescox coverage reports
+        uses: actions/download-artifact@v4
+        with:
+          name: bfrescox-code-coverage
+          path: ${{ env.CLONE_PATH }}
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: |
+            ${{ env.CLONE_PATH }}/${{ env.BFRESCOX_COV_XML }},
+          fail_ci_if_error: true
