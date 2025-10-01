@@ -11,7 +11,7 @@ Details on citing the current version of the BAND Framework can be found in the 
 
 **Contact:** The Bfrescox development team, whose contact details are provided in the project's [README](README.md).
 
-**Icon:** https://github.com/bandframework/Bfrescox/docs/logo.png
+**Icon:** https://github.com/bandframework/Bfrescox/blob/main/docs/logo.png
 
 **Description:**  Bfrescox and Bfrescoxpro are Python packages that provide a Python interface for the [Frescox](https://github.com/LLNL/Frescox) coupled-channels simulation software
 
