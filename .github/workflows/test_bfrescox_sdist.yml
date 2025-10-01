@@ -19,6 +19,7 @@ jobs:
         # Python versions should be maintained consistent with those in setup.py
         os:             [ubuntu-22.04]
         python-version: ["3.9"]
+        # TODO: Change to full matrix once we have actual tests.
         #os: [ubuntu-22.04, ubuntu-24.04,
         #     macos-13, macos-14, macos-15]
         #python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
