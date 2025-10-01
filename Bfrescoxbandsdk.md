@@ -13,7 +13,7 @@ Details on citing the current version of the BAND Framework can be found in the 
 
 **Icon:** https://github.com/bandframework/Bfrescox/blob/main/docs/logo.png
 
-**Description:**  Bfrescox and Bfrescoxpro are Python packages that provide a Python interface for the [Frescox](https://github.com/LLNL/Frescox) coupled-channels simulation software
+**Description:**  Bfrescox and Bfrescoxpro are Python packages that provide a Python interface for the [Frescox](https://github.com/LLNL/Frescox) coupled-channels simulation software.
 
 ### Mandatory Policies
 
@@ -33,11 +33,11 @@ Details on citing the current version of the BAND Framework can be found in the 
 
 | # | Policy                 |Support| Notes                   |
 |---|------------------------|-------|-------------------------|
-|**R1.**| Have a public repository. |Full| __PENDING__ |
+|**R1.**| Have a public repository. |Full| https://github.com/bandframework/Bfrescox |
 |**R2.**| Free all system resources acquired as soon as they are no longer needed. |Full| __PENDING__ |
 |**R3.**| Provide a mechanism to export ordered list of library dependencies. |Partial| __PENDING__ |
 |**R4.**| Document versions of packages that it works with or depends upon, preferably in machine-readable form. |None| None. |
-|**R5.**| Have SUPPORT, LICENSE, and CHANGELOG files in top directory. |Partial| __PENDING LICENSE__.  Support information is included in the main README. |
+|**R5.**| Have SUPPORT, LICENSE, and CHANGELOG files in top directory. |Partial| License provided as indicated in M4.  Support information is included in the main README. |
 |**R6.**| Have sufficient documentation to support use and further development. |Full| __PENDING__ |
 |**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |None| __WHAT TO DO HERE?__ |
 |**R8.**| Do not assume a full MPI communicator; allow for user-provided MPI communicator. |None| __PENDING__ |
