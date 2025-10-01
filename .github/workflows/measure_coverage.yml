@@ -1,0 +1,51 @@
+name: Measure overall code coverage by line
+env:
+  CLONE_PATH:       ${{ github.workspace }}
+  BFRESCOX_PATH:    ${{ github.workspace }}/bfrescox_pypkg
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  coverage_bfrescox:
+    env:
+      COVERAGE_FILE: ${{ github.workspace }}/bfrescox_coverage
+      COVERAGE_XML:  ${{ github.workspace }}/bfrescox_coverage.xml
+      COVERAGE_HTML: ${{ github.workspace }}/bfrescox_htmlcov
+    strategy:
+      matrix:
+        python-version: ["3.13"]
+    runs-on: ubuntu-latest
+    steps:
+    ##-- General Setup Steps
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Setup python with tox
+      run: $CLONE_PATH/.github/workflows/install_tox.sh
+
+    ##-- Run test with coverage
+    - name: Generate full coverage results
+      run: |
+        pushd $BFRESCOX_PATH
+        tox -r -e coverage,report
+        popd
+
+    ##-- Publish full coverage report as artifact
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v4
+      with:
+        name: bfrescox-code-coverage
+        path: |
+            ${{ env.COVERAGE_FILE }}
+            ${{ env.COVERAGE_HTML }}
+            ${{ env.COVERAGE_XML }}
+
+    ##-- Publish full coverage report to CodeCov
+    # TODO: Write this once an official repo is setup.
