@@ -13,7 +13,7 @@ Details on citing the current version of the BAND Framework can be found in the 
 
 **Icon:** \<url of icon you would like to display\> \
 
-**Description:**  \<a short description of the code\> \
+**Description:**  Bfrescox and Bfrescoxpro are Python packages that provide a Python interface for the [Frescox](https://github.com/LLNL/Frescox) coupled-channels simulation software
 
 ### Mandatory Policies
 
