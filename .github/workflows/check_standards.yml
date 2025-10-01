@@ -2,11 +2,11 @@ name: Check standard conformance
 env:
   CLONE_PATH:    ${{ github.workspace }}
   BFRESCOX_PATH: ${{ github.workspace }}/bfrescox_pypkg
-
-push:
-  branches: [main]
-pull_request:
-  branches: [main]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   check_bfrescox:
