@@ -1,5 +1,6 @@
 **/__pycache__
 
+bfrescox_pypkg/dist
 bfrescox_pypkg/build
 bfrescox_pypkg/src/bfrescox.egg-info
 

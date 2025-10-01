@@ -1,0 +1,33 @@
+name: Check standard conformance
+env:
+  CLONE_PATH:    ${{ github.workspace }}
+  BFRESCOX_PATH: ${{ github.workspace }}/bfrescox_pypkg
+
+push:
+  branches: [main]
+pull_request:
+  branches: [main]
+
+jobs:
+  check_bfrescox:
+    strategy:
+      matrix:
+        os:             [ubuntu-latest]
+        python-version: ["3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Setup Python with tox
+      run: $CLONE_PATH/.github/workflows/install_tox.sh
+
+    - name: Check style
+      run: |
+        pushd $BFRESCOX_PATH
+        tox -r -e check
+        popd
