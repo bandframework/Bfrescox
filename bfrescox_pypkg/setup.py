@@ -39,9 +39,9 @@ def readme_md():
 setup(
     name='bfrescox',
     author="Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal",
-    author_email="TBD",
-    maintainer="TBD",
-    maintainer_email="TBD",
+    author_email="beyerk@frib.msu.edu",
+    maintainer="Kyle Beyer",
+    maintainer_email="beyerk@frib.msu.edu",
     description="Run Frescox through Python",
     long_description=readme_md(),
     long_description_content_type="text/markdown",
