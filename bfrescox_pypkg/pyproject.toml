@@ -1,6 +1,13 @@
-# Automatic management of package's version via tags using setuptools-scm
+# Building distributions requires executing abnormal tasks that presently
+# require the use of setup.py.  To maintain a good decoupling between this file
+# and setup.py, the specification of the package, its structure, and how to
+# build installations are all mananged by setup.py.  The contents of this file
+# are restricted to specifying the build environment for the package and other
+# aspects of using the package (e.g., managing the version automatically and
+# automating the creation of prebuilt wheels).
 
 [build-system]
+# Automatic management of package's version via tags using setuptools-scm.
 # Minimum versions suggested by setuptools-scm v9.2.0 docs.
 requires = ["setuptools>=80", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"

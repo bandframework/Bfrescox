@@ -3,8 +3,11 @@
 #   dependencies/versions are also made in a consistent way in tox.ini and
 #   GitHub actions.
 #
-# The package's version is set automatically by setuptools-scm (see
-# pyproject.toml).  No need to handle version manually here.
+# Since the package's version is set automatically by setuptools-scm, there is
+# no need to handle version manually here.
+#
+# Refer to documentation in pyproject.toml for more information regarding this
+# file and how to maintain it.
 
 from pathlib import Path
 from setuptools import setup
@@ -24,7 +27,7 @@ PACKAGE_DATA = {
 
 PROJECT_URLS = {
     "Source": "https://github.com/bandframework/Bfrescox",
-    "Documentation": "TBD on RTD",
+    "Documentation": "http://Bfrescox.readthedocs.io",
     "Tracker": "https://github.com/bandframework/Bfrescox/issues"
 }
 
