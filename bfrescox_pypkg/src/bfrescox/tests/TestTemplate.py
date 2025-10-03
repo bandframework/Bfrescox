@@ -20,4 +20,4 @@ class TestConfiguration(unittest.TestCase):
         pass
 
     def testDoNothing(self):
-        self.assertTrue(True)
+        self.assertTrue(False)
