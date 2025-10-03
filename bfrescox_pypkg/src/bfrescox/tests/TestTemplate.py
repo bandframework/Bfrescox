@@ -11,6 +11,7 @@ import bfrescox
 
 _PKG_ROOT = Path(inspect.getfile(bfrescox)).resolve().parent
 
+
 class TestConfiguration(unittest.TestCase):
     def setUp(self):
         pass
