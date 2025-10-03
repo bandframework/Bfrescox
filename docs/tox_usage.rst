@@ -104,6 +104,11 @@ the package's |tox| configuration file
   * Users are responsible for installing ``make`` and a compatible LaTeX
     installation for immediate use by |tox|.
 
+* ``tox -e book`` (|bfrescox| only)
+
+    * Generate from scratch in ``book/_build`` the |bfrescox| examples
+      Jupyter book
+
 Additionally, you can run any combination of the above such as ``tox -r -e
 report,coverage``.
 
