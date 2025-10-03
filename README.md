@@ -5,6 +5,7 @@
 [![codecov](https://codecov.io/gh/bandframework/Bfrescox/graph/badge.svg?token=U3X4WBQJ67)](https://codecov.io/gh/bandframework/Bfrescox)
 
 [![Build documentation](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml)
+[![Build & publish Jupyter book](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml)
 [https://jupyterbook.org/badge.svg](https://bandframework.github.io/Bfrescox)
 
 
