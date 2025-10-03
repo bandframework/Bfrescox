@@ -1,5 +1,9 @@
 # Bfrescox
 
+[![Check standard conformance](https://github.com/bandframework/Bfrescox/actions/workflows/check_standards.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/check_standards.yml)
+[![Test manual bfrescox installation](https://github.com/bandframework/Bfrescox/actions/workflows/test_bfrescox_sdist.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/test_bfrescox_sdist.yml)
+[![codecov](https://codecov.io/gh/bandframework/Bfrescox/graph/badge.svg?token=U3X4WBQJ67)](https://codecov.io/gh/bandframework/Bfrescox)
+
 __PROVIDE FRESCOX INFORMATION AND LINKS__
 
 __TBD__

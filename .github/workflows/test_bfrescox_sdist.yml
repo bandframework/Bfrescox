@@ -1,0 +1,51 @@
+name: Test manual bfrescox installation
+env:
+  BFRESCOX_PATH: ${{ github.workspace }}/bfrescox_pypkg
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  #####----- FULL TESTING WITHOUT COVERAGE
+  # Prefer full end-to-end test using package installed on demand from source
+  # distribution rather than testing in local clone alone or with a tox task.
+  #
+  # This also verifies a procedure provided in the documentation.
+  test_installation:
+    strategy:
+      matrix:
+        # Python versions should be maintained consistent with those in setup.py
+        os:             [ubuntu-22.04]
+        python-version: ["3.9"]
+        # TODO: Change to full matrix once we have actual tests.
+        #os: [ubuntu-22.04, ubuntu-24.04,
+        #     macos-13, macos-14, macos-15]
+        #python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Build, install, & test bfrescox
+      run: |
+        echo ""
+        python -m pip install --upgrade pip
+        python -m pip install build
+        # Build source distribution & install
+        pushd $BFRESCOX_PATH
+        python -m build --sdist
+        python -m pip install -v dist/bfrescox-*.tar.gz
+        popd
+        # Log info
+        echo ""
+        which python
+        python -m pip list
+        # Run tests through package
+        echo ""
+        python -c "import bfrescox ; exit(not bfrescox.test())"
