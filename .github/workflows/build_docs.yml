@@ -1,0 +1,59 @@
+name: Build documentation
+env:
+  CLONE_PATH:    ${{ github.workspace }}
+  BFRESCOX_PATH: ${{ github.workspace }}/bfrescox_pypkg
+  HTML_DOCS:     ${{ github.workspace }}/docs/build_html
+  PDF_DOCS:      ${{ github.workspace }}/docs/build_pdf
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_sphinx:
+    strategy:
+      matrix:
+        # We would like to use 3.12, but this presently fails with the error:
+        # Could not import extension sphinxcontrib.bibtex (exception: No module
+        # named 'pkg_resources')
+        os:             [ubuntu-latest]
+        python-version: ["3.11"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    ##-- General Setup Steps
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    # TODO: In the past, this has taken a very long time sometimes.  Could
+    # setting this up from TexLive docker be faster and more reliably faster?
+    # Is there a light version?
+    #docker:
+    #  - image: texlive/texlive:latest
+    - name: Install LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra latexmk
+
+    - name: Setup python with tox
+      run: $CLONE_PATH/.github/workflows/install_tox.sh
+
+    - name: Build sphinx docs
+      run: |
+        # All sphinx docs are based out of just the bfrescox package
+        pushd $BFRESCOX_PATH
+        tox -r -e pdf,html
+        popd
+
+    ##-- Make documents available as artifacts
+    - name: Archive Bfrescox docs
+      uses: actions/upload-artifact@v4
+      with:
+        name: Bfrescox-sphinx-docs
+        path: |
+          ${{ env.HTML_DOCS }}
+          ${{ env.PDF_DOCS }}
