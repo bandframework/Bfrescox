@@ -9,9 +9,6 @@ on:
   # run on pushes to main that aren't release events.
   push:
     branches: main 
-  # TODO: Remove after this gets published to GH page during PR review
-  pull_request:
-    branches: main
 
 jobs:
   build:
