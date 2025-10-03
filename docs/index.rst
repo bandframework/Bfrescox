@@ -32,7 +32,7 @@ space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
    :maxdepth: 1
    :caption: User Guide:
 
-   get_started
+   ge_started
    api
    advanced_users
    bibliography
