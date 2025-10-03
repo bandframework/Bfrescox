@@ -1,0 +1,98 @@
+################################################################################
+# Book settings
+title  : Bfrescox
+author : Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal
+logo   : logo.png
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+    - "./references.bib"
+
+################################################################################
+# Execution settings
+execute:
+  execute_notebooks : force
+  timeout           : -1
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: Bfrescox.tex
+
+################################################################################
+# Parse and render settings
+#
+# All changes to Myst substitutions should be be made in the sphinx_macros.json
+# Sphinx configuration file as well.
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - amsmath
+    - substitution
+  myst_substitutions:
+    ie:          "*i.e.,*"
+    eg:          "*e.g.,*"
+    via:         "*via*"
+    band:        "BAND"
+    fresco:      "Fresco"
+    frescox:     "Frescox"
+    sfrescox:    "SFrescox"
+    bfrescox:    "Bfrescox"
+    bfrescoxpro: "Bfrescoxpro"
+
+################################################################################
+# HTML-specific settings
+html:
+  use_repository_button : true
+  use_edit_page_button  : true
+  use_issues_button     : true
+
+################################################################################
+# LaTeX-specific settings
+latex:
+  latex_documents:
+    targetname : Bfrescox.tex
+
+################################################################################
+# Launch button settings
+repository:
+  url          : https://github.com/bandframework/Bfrescox
+  path_to_book : book
+  branch       : main
+  # TODO: Use main branch just before merging current branch into main
+  #branch       : main
+  branch       : 5Jupyterbook
+
+launch_buttons:
+  notebook_interface : "classic"
+  binderhub_url      : "https://mybinder.org"
+
+################################################################################
+# Advanced and power-user settings
+#
+# Match LaTeX macros used here to those used in the Sphinx/RTD configuration
+# files
+# * latex_macros_base.json
+# * latex_macros_notation.json
+sphinx:
+  config:
+    nb_execution_show_tb   : True
+    bibtex_reference_style : author_year
+    bibtex_default_style   : 'alpha'
+    mathjax3_config:
+      tex:
+        macros:
+          "N":          "\\mathbb{N}"   # Natural numbers
+          "Z":          "\\mathbb{Z}"   # Integers
+          "R":          "\\mathbb{R}"   # Real numbers
+          "C":          "\\mathbb{C}"   # Complex numbers
+          "half":       "\\frac{1}{2}"
+          "vec":       ["{\\mathbf{#1}}", 1]
+          "xvec":       "\\vec{x}"
+          "thetavec":   "\\boldsymbol{\\theta}"
+          "abs":       ["\\left\\lvert#1\\right\\rvert", 1]
+          "norm":      ["\\left\\lVert#1\\right\\rVert", 1]
+          "np":         "n"  # Number of parameters / parameter space's dimension
+          "invar":      "\\xvec"     # Independent variables
+          "PS":         "\\Theta"    # Parameter space
+          "psp":        "\\boldsymbol{\\theta}"   # parameter-space point
