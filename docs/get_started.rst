@@ -11,7 +11,10 @@ Environment`.
 
 Installation from local clone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After setting up your target ``python`` environment as desired, execute
+.. _`Bfrescox clone`: https://github.com/bandframework/Bfrescox
+
+After installing a local `Bfrescox clone`_ and setting up your target Python
+environment as desired, execute
 
 .. code-block:: console
 
