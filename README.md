@@ -23,7 +23,7 @@ Please email all questions to the Bfrescox development team.
 
 ## Documentation
 
-The [user and developer guides](https://bfrescox.readthedocs.io/en/latest/index.html) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
+The [user and developer guides](https://bfrescox.readthedocs.io) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
 
 ## Citation
 
