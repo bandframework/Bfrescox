@@ -66,7 +66,7 @@ the package's |tox| configuration file
     the coverage file
   * The test runs the package code in the local clone rather than code
     installed into Python so that coverage results accessed through web
-    services such as Coveralls are clean and straightforward
+    services such as CodeCov are clean and straightforward
   * If the environment variable ``COVERAGE_FILE`` is set, then this is the
     coverage file that will be written to.  If it is not specified, then the
     coverage results are written to ``.coverage_bfrescox`` for |bfrescox| or
