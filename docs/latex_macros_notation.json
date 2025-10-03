@@ -1,0 +1,8 @@
+{
+    "newcommand": {
+        "np":    "n",
+        "invar": "\\xvec",
+        "PS":    "\\Theta",
+        "psp":   "\\thetavec"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "ie":          "*i.e.,*",
+    "eg":          "*e.g.,*",
+    "via":         "*via*",
+    "pip":         "``pip``",
+    "tox":         "``tox``",
+    "band":        "BAND",
+    "fresco":      "Fresco",
+    "frescox":     "Frescox",
+    "sfrescox":    "Sfrescox",
+    "bfrescox":    "Bfrescox",
+    "bfrescoxpro": "Bfrescoxpro"
+}
