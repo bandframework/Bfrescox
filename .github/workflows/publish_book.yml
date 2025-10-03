@@ -1,6 +1,7 @@
 name: Build & publish Jupyter book
 env:
   CLONE_PATH:      ${{ github.workspace }}
+  BFRESCOX_PATH:   ${{ github.workspace }}/bfrescox_pypkg
   BOOK_HTML_BUILD: ${{ github.workspace }}/book/_build/html
 on:
   # TODO: Should this publish for every commit on main or only on release events
@@ -35,7 +36,7 @@ jobs:
       run: $CLONE_PATH/.github/workflows/install_tox.sh
     - name: Build Jupyter book
       run: |
-        pushd $CLONE_PATH
+        pushd $BFRESCOX_PATH
         tox -r -e book
         popd
     - name: Archive examples Jupyter book 
