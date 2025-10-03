@@ -1,4 +1,4 @@
-name: Measure overall code coverage by line
+name: Measure code coverage by line
 env:
   CLONE_PATH:        ${{ github.workspace }}
   BFRESCOX_PATH:     ${{ github.workspace }}/bfrescox_pypkg
@@ -26,7 +26,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Setup python with tox
+    - name: Setup Python with tox
       run: $CLONE_PATH/.github/workflows/install_tox.sh
 
     ##-- Run test with coverage
@@ -59,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Access Bfrescox coverage reports
+      - name: Access bfrescox coverage reports
         uses: actions/download-artifact@v4
         with:
           name: bfrescox-code-coverage

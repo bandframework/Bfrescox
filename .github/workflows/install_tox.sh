@@ -7,8 +7,4 @@ which python
 which pip
 which tox
 echo
-python --version
-pip --version
-tox --version
-echo
 pip list
