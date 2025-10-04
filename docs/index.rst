@@ -33,6 +33,7 @@ space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
    :caption: User Guide:
 
    get_started
+   examples
    api
    advanced_users
    bibliography
