@@ -17,7 +17,7 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: Bfrescox.tex
+    targetname : Bfrescox.tex
 
 ################################################################################
 # Parse and render settings
@@ -36,7 +36,7 @@ parse:
     band:        "BAND"
     fresco:      "Fresco"
     frescox:     "Frescox"
-    sfrescox:    "SFrescox"
+    sfrescox:    "Sfrescox"
     bfrescox:    "Bfrescox"
     bfrescoxpro: "Bfrescoxpro"
 
@@ -95,4 +95,4 @@ sphinx:
           "np":         "n"  # Number of parameters / parameter space's dimension
           "invar":      "\\xvec"     # Independent variables
           "PS":         "\\Theta"    # Parameter space
-          "psp":        "\\boldsymbol{\\theta}"   # parameter-space point
+          "psp":        "\\thetavec" # parameter-space point

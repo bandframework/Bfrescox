@@ -11,6 +11,10 @@ on:
     branches: main 
 
 jobs:
+  # Since notebooks contain regular and sanity checks, this action not only
+  # confirms that the book is building correctly, but also
+  # * that notebooks are generating correct content and therefore
+  # * that our "Jupyter book test suite" passed.
   build:
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
@@ -30,7 +34,7 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version}}
+        python-version: ${{ matrix.python-version }}
     - name: Setup Python with tox
       shell: bash
       run: $CLONE_PATH/.github/workflows/install_tox.sh
