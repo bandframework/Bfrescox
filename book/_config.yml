@@ -60,9 +60,6 @@ repository:
   url          : https://github.com/bandframework/Bfrescox
   path_to_book : book
   branch       : main
-  # TODO: Use main branch just before merging current branch into main
-  #branch       : main
-  branch       : 5Jupyterbook
 
 launch_buttons:
   notebook_interface : "classic"
