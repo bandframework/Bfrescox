@@ -3,6 +3,9 @@
 docs/build_pdf
 docs/build_html
 
+book/_build/
+book/notebooks/.ipynb_checkpoints
+
 bfrescox_pypkg/dist
 bfrescox_pypkg/build
 bfrescox_pypkg/src/bfrescox.egg-info

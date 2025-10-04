@@ -5,6 +5,9 @@
 [![codecov](https://codecov.io/gh/bandframework/Bfrescox/graph/badge.svg?token=U3X4WBQJ67)](https://codecov.io/gh/bandframework/Bfrescox)
 
 [![Build documentation](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml)
+[![Build & publish Jupyter book](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml)
+[![Jupyter book](https://jupyterbook.org/badge.svg)](https://bandframework.github.io/Bfrescox)
+
 
 __PROVIDE FRESCOX INFORMATION AND LINKS__
 
@@ -20,9 +23,7 @@ Please email all questions to the Bfrescox development team.
 
 ## Documentation
 
-The user and developer guides are available on ReadTheDocs.  __ADD LINK__.
-
-Examples are available as a Jupyter book.  __ADD LINK__.
+The [user and developer guides](https://bfrescox.readthedocs.io) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
 
 ## Citation
 
