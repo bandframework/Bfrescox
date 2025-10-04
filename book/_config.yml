@@ -1,8 +1,9 @@
 ################################################################################
 # Book settings
-title  : Bfrescox
-author : Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal
-logo   : logo.png
+title     : Bfrescox
+author    : Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal
+copyright : "2025"
+logo      : logo.png
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
