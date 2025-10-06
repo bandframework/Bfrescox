@@ -1,0 +1,4 @@
+supports_mpi    @found_mpi@
+supports_openmp @found_openmp@
+supports_lapack @found_lapack@
+supports_corex  @use_corex@

@@ -1,0 +1,8 @@
+option('use_mpi', type: 'feature', value: 'disabled',
+       description: 'Build with MPI if enabled or if auto and MPI is found')
+option('use_openmp', type: 'feature', value: 'disabled',
+       description: 'Build with OpenMP if enabled or if auto and supported by compiler')
+option('use_lapack', type: 'feature', value: 'disabled',
+       description: 'Build with BLAS/LAPACK if enabled or if auto and libraries found')
+option('use_corex', type: 'boolean', value: false,
+       description: 'Build with core-excitations (XCDCC) support if true')

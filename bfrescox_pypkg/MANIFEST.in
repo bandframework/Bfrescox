@@ -1,3 +1,10 @@
 include LICENSE
 exclude .flake8 .coveragerc
 exclude tox.ini
+include meson/LICENSE
+include meson/meson.build
+include meson/subprojects/frescox.wrap
+include meson/subprojects/packagefiles/frescox/meson.build
+include meson/subprojects/packagefiles/frescox/meson.options
+include meson/subprojects/packagefiles/frescox/build_info.template
+include meson/subprojects/packagefiles/frescox/source/meson.build
