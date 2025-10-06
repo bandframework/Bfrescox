@@ -17,15 +17,20 @@ jobs:
     strategy:
       matrix:
         # Python versions should be maintained consistent with those in setup.py
-        os:             [ubuntu-22.04]
-        python-version: ["3.9"]
-        # TODO: Change to full matrix once we have actual tests.
-        #os: [ubuntu-22.04, ubuntu-24.04,
-        #     macos-13, macos-14, macos-15]
-        #python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install compiler suite
+      run: |
+        # Several gFortran installed in brew by default, but no simple gfortran
+        # found in PATH.
+        if [ "${{ runner.os }}" = "macOS" ]; then
+           HOMEBREW_BIN_PATH=$(brew --prefix gcc)/bin
+           echo "$HOMEBREW_BIN_PATH" >> $GITHUB_PATH
+        fi
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5

@@ -1,0 +1,5 @@
+[wrap-git]
+url = https://github.com/LLNL/Frescox
+revision = f4cc513bb06486e1cd1e021be1af7da972d2c0a3
+depth = 1
+patch_directory = frescox

@@ -6,9 +6,13 @@ docs/build_html
 book/_build/
 book/notebooks/.ipynb_checkpoints
 
+bfrescox_pypkg/meson/subprojects/.wraplock
+bfrescox_pypkg/meson/subprojects/frescox
 bfrescox_pypkg/dist
 bfrescox_pypkg/build
 bfrescox_pypkg/src/bfrescox.egg-info
+bfrescox_pypkg/src/bfrescox/bin
+bfrescox_pypkg/src/bfrescox/build
 
 bfrescox_pypkg/.coverage_bfrescox
 bfrescox_pypkg/coverage.xml

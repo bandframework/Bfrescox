@@ -7,6 +7,16 @@ to access results.
 
 from importlib.metadata import version
 
+from ._run_frescox_simulation import (
+    FRESCOX_EXE,
+    FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
+    FRESCOX_LAPACK_SUPPORT,
+    FRESCOX_COREX_SUPPORT
+)
+
+from .information import information
+from .print_information import print_information
+
 # ----- Python unittest-based test framework
 # Used for automatic test discovery
 from .load_tests import load_tests
