@@ -6,6 +6,7 @@ build:
     python: "3.11"
   apt_packages:
     - gfortran
+    - ninja-build
 
 sphinx:
     configuration: docs/conf.py
