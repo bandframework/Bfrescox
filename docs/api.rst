@@ -6,3 +6,4 @@ Programmatic Interface
 Infrastructure
 --------------
 .. autofunction:: bfrescox.test
+.. autofunction:: bfrescox.information

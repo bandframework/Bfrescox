@@ -1,0 +1,1 @@
+../../../common/load_build_information.py
