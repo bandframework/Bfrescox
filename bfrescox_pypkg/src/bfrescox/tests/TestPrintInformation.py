@@ -2,16 +2,19 @@
 Automatic unittest of print_information() function
 """
 
+import io
 import unittest
+
+from contextlib import redirect_stdout
 
 import bfrescox
 
 
 class TestPrintInformation(unittest.TestCase):
     def testPrintInformation(self):
-        # We can only ensure that this isn't raising exceptions
-        #
-        # TODO: Is there a way to suppress this output?  If we can get it as a
-        # string and confirm that contents aren't empty, that would be even
-        # better.
-        bfrescox.print_information()
+        # Capture stdout so that message doesn't clutter test output and we can
+        # test message content
+        with redirect_stdout(io.StringIO()) as buffer:
+            bfrescox.print_information()
+
+        self.assertNotEqual("", buffer.getvalue())
