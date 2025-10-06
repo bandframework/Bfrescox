@@ -6,7 +6,7 @@
 project('frescox', 'fortran',
         meson_version: '>=1.6.0',
         version: 'n/a',
-        license: 'Check Fresox repository',
+        license: 'Check Frescox repository',
         license_files: 'LICENSE',
         default_options: [
           'buildtype=debug',

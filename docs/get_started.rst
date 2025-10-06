@@ -3,7 +3,7 @@ Getting Started
 
 The |bfrescox| package is capable of building, installing, and using a |frescox|
 executable on macOS- and Linux-based systems.  Our test suite presently checks
-builds with both macOS and Ubuntu.  We exepect that it would work with other
+builds with both macOS and Ubuntu.  We expect that it would work with other
 similar Linux operating systems.
 
 General Installations
