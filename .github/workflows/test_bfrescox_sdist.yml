@@ -25,6 +25,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install compiler suite
+      run: |
+        # Several gFortran installed in brew by default, but no simple gfortran
+        # found in PATH.
+        if [ "${{ runner.os }}" = "macOS" ]; then
+           HOMEBREW_BIN_PATH=$(brew --prefix gcc)/bin
+           echo "$HOMEBREW_BIN_PATH" >> $GITHUB_PATH
+        fi
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
