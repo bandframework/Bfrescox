@@ -47,6 +47,10 @@ src_base = files('globx7.f',
 # Since meson is locating the MPI implementation and identifies the name of the
 # MPI wrapper to use, we don't need to use all the different MPI-based variants
 # in Frescox.
+#
+# Difference between standard file and *-g.f version is just compiler name,
+# which is not important for our purposes, especially since Python package
+# should always be building release versions under normal circumstances.
 src_f14gfortran         = files('f14gfortran.f')
 src_f14gfortran_omp     = files('f14gfortran-openmp.f')
 src_f14gfortran_mpi     = files('f14gfortran-mpif90.f')

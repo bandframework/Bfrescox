@@ -1,9 +1,12 @@
 # ----- SPECIFY PROJECT
-# Build minimal, bare-bones executables by default
+# Build minimal, bare-bones executable by default.
+#
+# Users should refer to Frescox documentation for information on its version
+# history and licensing.
 project('frescox', 'fortran',
         meson_version: '>=1.6.0',
-        version: 'TBD',
-        license: 'TBD',
+        version: 'n/a',
+        license: 'Check Fresox repository',
         license_files: 'LICENSE',
         default_options: [
           'buildtype=debug',
