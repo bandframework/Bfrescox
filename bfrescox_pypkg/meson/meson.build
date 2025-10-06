@@ -12,6 +12,8 @@
 # Frescox license if distributing PyPI prebuilt binary wheels that contain
 # Frescox binaries would be considered as distributing Frescox.  If so, then we
 # would have to determine if the conditions of that license can be met.
+#
+# Version is communicated through the package's version information.
 
 project('bfrescox',    'fortran',
         meson_version: '>=1.6.0',
