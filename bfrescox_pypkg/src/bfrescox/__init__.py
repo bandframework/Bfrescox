@@ -15,6 +15,7 @@ from ._run_frescox_simulation import (
 )
 
 from .information import information
+from .print_information import print_information
 
 # ----- Python unittest-based test framework
 # Used for automatic test discovery
