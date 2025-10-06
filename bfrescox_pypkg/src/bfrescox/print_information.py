@@ -17,11 +17,11 @@ def print_information():
     If ``otool`` is installed in macOS systems or ``ldd`` in unix-based systems,
     then |frescox| external dependences are listed.
     """
-    os_name = platform.system()
-
     built_with = information()
     if built_with:
         frescox_exe = built_with[FRESCOX_EXE]
+
+        os_name = platform.system()
 
         print("Frescox executable")
         print("-" * 80)

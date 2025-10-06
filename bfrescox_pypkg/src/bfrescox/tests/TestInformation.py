@@ -12,7 +12,6 @@ import bfrescox
 class TestInformation(unittest.TestCase):
     def testInformation(self):
         info = bfrescox.information()
-
         self.assertTrue(isinstance(info, dict))
 
         expected = {

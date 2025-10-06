@@ -16,5 +16,4 @@ class TestPrintInformation(unittest.TestCase):
         # test message content
         with redirect_stdout(io.StringIO()) as buffer:
             bfrescox.print_information()
-
         self.assertNotEqual("", buffer.getvalue())
