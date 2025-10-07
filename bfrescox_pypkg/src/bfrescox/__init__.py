@@ -16,6 +16,9 @@ from ._run_frescox_simulation import (
 
 from .information import information
 from .print_information import print_information
+from .run_simulation import run_simulation
+
+from .Configuration import Configuration
 
 # ----- Python unittest-based test framework
 # Used for automatic test discovery
