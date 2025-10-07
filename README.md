@@ -25,7 +25,11 @@ Please email all questions to the Bfrescox development team.
 
 The [user and developer guides](https://bfrescox.readthedocs.io) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
 
+Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for all information regarding the use of Frescox.
+
 ## Citation
+
+Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for any information on citing the use of their software.
 
 Please use the following to cite the use of either Bfrescox or Bfrescoxpro.
 
