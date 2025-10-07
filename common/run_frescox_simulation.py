@@ -79,7 +79,7 @@ def run_frescox_simulation(frescox, config, mpi_setup,
         msg = "Configuration information not given as a Configuration object"
         raise TypeError(msg)
 
-    n_mpi_procs = np.nan
+    n_mpi_procs = None
     if (not use_mpi) and (mpi_setup is not None):
         msg = "MPI specification provided for non-MPI Frescox installation"
         raise ValueError(msg)
