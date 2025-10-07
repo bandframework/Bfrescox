@@ -54,6 +54,7 @@ def print_information():
                     )
                     stdout = reply.stdout.decode()
                     assert stdout != ""
+                    print(frescox_exe)
                     print(stdout)
                     assert reply.returncode == 0
                     assert reply.stderr.decode() == ""
