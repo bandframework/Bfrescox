@@ -22,12 +22,12 @@ Details on citing the current version of the BAND Framework can be found in the 
 |----|-----------------------|-------|-------------------------|
 | 1. | Support BAND community GNU Autoconf, CMake, or other build options. |Full| The Meson build system is integrated into the `setup.py` files of the two packages for automatic building of the underlying Frescox binaries |
 | 2. | Have a README file in the top directory that states a specific set of testing procedures for a user to verify the software was installed and run correctly. |Full| README points users to [RTD documentation](https://bfrescox.readthedocs.io) that contains installation and test procedures |
-| 3. | Provide a documented, reliable way to contact the development team. |Full| __PENDING__ |
+| 3. | Provide a documented, reliable way to contact the development team. |Full| Provided in main README file |
 | 4. | Come with an open-source license. |Full| [BSD-2-Clause](https://github.com/bandframework/Bfrescox/blob/main/LICENSE) |
 | 5. | Provide a runtime API to return the current version number of the software. |Full| Accessible via the standard `__version__` package variable. |
 | 6. | Provide a BAND team-accessible repository. |Full| https://github.com/bandframework/Bfrescox |
 | 7. | Must allow installing, building, and linking against an outside copy of all imported software that is externally developed and maintained. |Full| The installation of each package automatically downloads the source code of the current compatible version of the Frescox software from its official GitHub repository and builds a dedicated binary.  All other external dependencies are publicly available Python packages that should be obtained automatically as part of the package's installation process.  However, users have the possibility of installing each dependence as desired before installing a Bfrescox package so long as it satisfies the package's version requirements. |
-| 8. | Have no hardwired print or IO statements that cannot be turned off. |Full| __PENDING__ |
+| 8. | Have no hardwired print or IO statements that cannot be turned off. |Full| The only printing to `stdout` is by the aptly named `print_information` function, which users can choose not to call if they need to avoid the use of `stdout`. |
 
 ### Recommended Policies
 
@@ -39,7 +39,7 @@ Details on citing the current version of the BAND Framework can be found in the 
 |**R4.**| Document versions of packages that it works with or depends upon, preferably in machine-readable form. |None| None. |
 |**R5.**| Have SUPPORT, LICENSE, and CHANGELOG files in top directory. |Partial| License provided as indicated in M4.  Support information is included in the main README. |
 |**R6.**| Have sufficient documentation to support use and further development. |Full| Both user and developer guides are available publicly via ReadTheDocs.  Examples are available publicly as a Jupyter book hosted on the Bfrescox GitHub page. |
-|**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |None| The use of Fortran points (if any) is decided by the Frescox code, which is outside our control. |
+|**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |Partial| The use of Fortran pointers (if any) is decided by the Frescox code, which is outside our control. However, test actions run successfully on 64-bit test systems. |
 |**R8.**| Do not assume a full MPI communicator; allow for user-provided MPI communicator. |None|  MPI communicator use is decided by the Frescox code, which is outside our control. |
 |**R9.**| Use a limited and well-defined name space (e.g., symbol, macro, library, include). |Full| All functions, classes, and package-wide variables are contained within the package'    s namespace. |
 |**R10.**| Give best effort at portability to key architectures. |Full| As demonstrated by our test action, we support Linux-based setups as well as macOS setups (Motorola and ARM64 processors) across a wide set of Python versions. |
