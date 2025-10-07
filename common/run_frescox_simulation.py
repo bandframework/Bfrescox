@@ -59,22 +59,32 @@ def run_frescox_simulation(frescox, config, mpi_setup,
         raise TypeError(f"Invalid frescox specification ({frescox})")
 
     frescox_exe = Path(frescox[FRESCOX_EXE]).resolve()
+    use_mpi = frescox[FRESCOX_MPI_SUPPORT]
+    use_omp = frescox[FRESCOX_OPENMP_SUPPORT]
     if not frescox_exe.is_file():
         msg = "Frescox executable does not exist or is not a file ({})"
         raise TypeError(msg.format(frescox_exe))
+    elif not isinstance(use_mpi, bool):
+        raise TypeError("MPI support specification is not a boolean")
+    elif not isinstance(use_omp, bool):
+        raise TypeError("OpenMP support specification is not a boolean")
+    elif use_omp and ("OMP_NUM_THREADS" not in os.environ):
+        msg = (
+            "OMP_NUM_THREADS environment variable is not set "
+            "for use with OpenMP-enabled Frescox installation"
+        )
+        raise RuntimeError(msg)
 
     if not isinstance(config, Configuration):
         msg = "Configuration information not given as a Configuration object"
         raise TypeError(msg)
 
-    use_mpi = frescox[FRESCOX_MPI_SUPPORT]
-    if not isinstance(use_mpi, bool):
-        raise TypeError("MPI support specification is not a boolean")
-    elif (not use_mpi) and (mpi_setup is not None):
+    n_mpi_procs = np.nan
+    if (not use_mpi) and (mpi_setup is not None):
         msg = "MPI specification provided for non-MPI Frescox installation"
         raise ValueError(msg)
     elif use_mpi:
-        if (not isinstance(mpi_setup, dict)):
+        if not isinstance(mpi_setup, dict):
             raise TypeError("MPI setup information is not a dictionary")
         elif MPI_N_PROCESSES not in mpi_setup:
             raise ValueError(f"{MPI_N_PROCESSES} not provided in MPI setup")
@@ -86,17 +96,7 @@ def run_frescox_simulation(frescox, config, mpi_setup,
             msg = "Number of MPI processes ({}) must be positive integer"
             raise ValueError(msg.format(n_mpi_procs))
 
-    use_omp = frescox[FRESCOX_OPENMP_SUPPORT]
-    if not isinstance(use_omp, bool):
-        raise TypeError("OpenMP support specification is not a boolean")
-    elif use_omp and ("OMP_NUM_THREADS" not in os.environ):
-        msg = (
-            "OMP_NUM_THREADS environment variable is not set "
-            "for use with OpenMP-enabled Frescox installation"
-        )
-        raise RuntimeError(msg)
-
-    if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
+    if not isinstance(filename, (str, Path)):
         raise TypeError(f"Invalid output filename ({filename})")
 
     if not isinstance(overwrite, bool):
@@ -106,7 +106,6 @@ def run_frescox_simulation(frescox, config, mpi_setup,
     fname_out = Path(filename).resolve()
     if fname_out.exists():
         if overwrite:
-            assert fname_out.is_file()
             os.remove(fname_out)
         else:
             raise RuntimeError(f"Output file ({fname_out}) already exists")
@@ -117,7 +116,7 @@ def run_frescox_simulation(frescox, config, mpi_setup,
     # ----- RUN SIMULATION
     if use_mpi:
         cmd = ["mpirun",
-               "-np", str(mpi_setup[MPI_N_PROCESSES]),
+               "-np", str(n_mpi_procs),
                str(frescox_exe),
                str(fname_in)]
 
