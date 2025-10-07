@@ -8,6 +8,7 @@ book/notebooks/.ipynb_checkpoints
 
 bfrescox_pypkg/meson/subprojects/.wraplock
 bfrescox_pypkg/meson/subprojects/frescox
+bfrescox_pypkg/.tox
 bfrescox_pypkg/dist
 bfrescox_pypkg/build
 bfrescox_pypkg/src/bfrescox.egg-info

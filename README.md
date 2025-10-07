@@ -15,17 +15,21 @@ __TBD__
 
 ## Support
 
-__STATE SOMETHING ABOUT HOW TO COMMUNICATE VIA ISSUES?__
+To report potential problems with Bfrescox, please check if the problem has already been reported and recorded as an [Issue](https://github.com/bandframework/Bfrescox/issues).  If not or to request changes or new features, please open a new issue.  For all other communication needs, please email the Bfrescox development team.
 
-Please email all questions to the Bfrescox development team.
-
-* __TBD__
+* beyerk@frib.msu.edu
+* catacora@frib.msu.edu
+* joneal@anl.gov
 
 ## Documentation
 
 The [user and developer guides](https://bfrescox.readthedocs.io) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
 
+Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for all information regarding the use of Frescox.
+
 ## Citation
+
+Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for any information on citing the use of their software.
 
 Please use the following to cite the use of either Bfrescox or Bfrescoxpro.
 
