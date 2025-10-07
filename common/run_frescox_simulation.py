@@ -48,7 +48,7 @@ def run_frescox_simulation(frescox, config, mpi_setup,
     :param mpi_setup: ``dict`` that provides MPI setup values if given |frescox|
         installation built with MPI; ``None``, otherwise.
     :param filename: Filename including path of file to write outputs to
-    :param overwrite: If True, then an error is raised if either the input or
+    :param overwrite: If False, then an error is raised if either the input or
         output files exist
     """
     # ----- HARCODED VALUES

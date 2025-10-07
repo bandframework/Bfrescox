@@ -24,7 +24,7 @@ def run_simulation(configuration, filename, overwrite=False, external=None):
     :param configuration: :py:class:`Configuration` object that specifies the
         simulation to run
     :param filename: Filename including path of file to write outputs to
-    :param overwrite: If True, then an error is raised if either of the
+    :param overwrite: If False, then an error is raised if either of the
         simulation input or output files exist
     :param external: (|bfrescox| only) **EXPERT USERS ONLY**
     """
