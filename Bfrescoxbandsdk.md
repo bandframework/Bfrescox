@@ -39,10 +39,10 @@ Details on citing the current version of the BAND Framework can be found in the 
 |**R4.**| Document versions of packages that it works with or depends upon, preferably in machine-readable form. |None| None. |
 |**R5.**| Have SUPPORT, LICENSE, and CHANGELOG files in top directory. |Partial| License provided as indicated in M4.  Support information is included in the main README. |
 |**R6.**| Have sufficient documentation to support use and further development. |Full| Both user and developer guides are available publicly via ReadTheDocs.  Examples are available publicly as a Jupyter book hosted on the Bfrescox GitHub page. |
-|**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |None| __WHAT TO DO HERE?__ |
+|**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |None| The use of Fortran points (if any) is decided by the Frescox code, which is outside our control. |
 |**R8.**| Do not assume a full MPI communicator; allow for user-provided MPI communicator. |None|  MPI communicator use is decided by the Frescox code, which is outside our control. |
 |**R9.**| Use a limited and well-defined name space (e.g., symbol, macro, library, include). |Full| All functions, classes, and package-wide variables are contained within the package'    s namespace. |
-|**R10.**| Give best effort at portability to key architectures. |Full| __PENDING__ |
+|**R10.**| Give best effort at portability to key architectures. |Full| As demonstrated by our test action, we support Linux-based setups as well as macOS setups (Motorola and ARM64 processors) across a wide set of Python versions. |
 |**R11.**| Install headers and libraries under `<prefix>/include` and `<prefix>/lib`, respectively. |N/a| None. |
 |**R12.**| All BAND compatibility changes should be sustainable. |Full| None. |
 |**R13.**| Respect system resources and settings made by other previously called packages. |Full| None. |
