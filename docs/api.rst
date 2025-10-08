@@ -1,3 +1,5 @@
+.. _api_start:
+
 Programmatic Interface
 ======================
 
