@@ -17,12 +17,10 @@ jobs:
     strategy:
       matrix:
         # Python versions should be maintained consistent with those in setup.py
-        os:             [ubuntu-24.04]
+        os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
+        #os:             [ubuntu-24.04]
         mpi_impl:       ["openmpi"]
         python-version: ["3.13"]
-        # TODO: Use full matrix once this is fully built up
-        #os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
-        #mpi_impl:       ["openmpi", "mpich"]
         #python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     runs-on: ${{ matrix.os }}
     steps:
