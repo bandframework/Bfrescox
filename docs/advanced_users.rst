@@ -66,6 +66,9 @@ Meson, they might need to preinstall ninja.
 
 Installation
 ^^^^^^^^^^^^
+.. _Issue 15: https://github.com/bandframework/Bfrescox/issues/15
+.. _Issue 16: https://github.com/bandframework/Bfrescox/issues/16
+
 While we intend for this package to eventually be distributed by PyPI for direct
 installation |via| |pip|, during this alpha development phase, users must
 install the package directly from a local clone of the |bfrescox| repository.
@@ -102,11 +105,12 @@ not use MPI despite the fact that MPI is installed, use
 **UNOFFICIAL & UNTESTED CUSTOMIZATIONS**
 
 If a user would like to build |frescox| using a local installation of
-BLAS/Lapack, then they can set ``BFRESCOX_USE_LAPACK=enabled`` at installation.
+BLAS/LAPACK (`Issue 15`_), then they can set ``BFRESCOX_USE_LAPACK=enabled`` at
+installation.
 
 Users can also build |frescox| with extra functionality by setting
 
-* ``BFRESCOX_USE_COREX=true``.
+* ``BFRESCOX_USE_COREX=true`` (`Issue 16`_).
 
 at installation.
 
