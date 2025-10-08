@@ -13,15 +13,16 @@ jobs:
   # distribution rather than testing in local clone alone or with a tox task.
   #
   # This also verifies a procedure provided in the documentation.
+  #
+  # TODO: Add in test with MPICH eventually when either Meson is fixed or a
+  # proper workaround should be tested.
   test_openmpi_installation:
     strategy:
       matrix:
         # Python versions should be maintained consistent with those in setup.py
         os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
-        #os:             [ubuntu-24.04]
-        mpi_impl:       ["openmpi"]
-        python-version: ["3.13"]
-        #python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        mpi_impl: ["openmpi"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
@@ -41,8 +42,6 @@ jobs:
            sudo apt-get update
            if   [ "${{ matrix.mpi_impl }}" = "openmpi" ]; then
               sudo apt-get -y install openmpi-bin libopenmpi-dev
-           elif [ "${{ matrix.mpi_impl }}" = "mpich" ]; then
-              sudo apt-get -y install mpich libmpich-dev
            else
               echo "Cannot install ${{ matrix.mpi_impl }} for Linux"
               exit 1
@@ -51,8 +50,6 @@ jobs:
            brew update
            if   [ "${{ matrix.mpi_impl }}" = "openmpi" ]; then
               brew install open-mpi
-           elif [ "${{ matrix.mpi_impl }}" = "mpich" ]; then
-              brew install mpich
            else
               echo "Cannot install ${{ matrix.mpi_impl }} for macOS"
               exit 1
