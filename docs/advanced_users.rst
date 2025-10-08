@@ -35,7 +35,7 @@ Requirements
 ^^^^^^^^^^^^
 .. _Meson: https://mesonbuild.com
 .. _ninja: https://ninja-build.org
-.. _Issue 1: https://github.com/bandframework/BFrescox-Internal/issues/1
+.. _Issue 17: https://github.com/bandframework/Bfrescox/issues/17
 
 Before installing |bfrescoxpro|, users must provide a Fortran compiler that
 supports all requirements for building |frescox|.  If OpenMP parallelization is
@@ -60,9 +60,15 @@ Meson, they might need to preinstall ninja.
 
 .. note::
 
-    Initial testing on some systems has revealed that the Meson build system can
-    fail to find properly installed MPICH installations.  This is presently
-    under investigation (See `Issue 1`_).
+    Testing on some systems has revealed that the |bfrescoxpro| build system can
+    fail to correctly use properly installed non-Open MPI installations (|eg|
+    MPICH).  This is presently under investigation (See `Issue 17`_) and a
+    potential workaround is to insist that MPI be used in the build
+
+    .. code:: console
+
+        $ cd /path/to/Bfrescox/brescoxpro_pypkg
+        $ BFRESCOX_USE_MPI=enabled python -m pip install .
 
 Installation
 ^^^^^^^^^^^^
