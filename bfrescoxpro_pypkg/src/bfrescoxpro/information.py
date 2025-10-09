@@ -2,6 +2,7 @@ from pathlib import Path
 
 from ._load_build_information import load_build_information
 
+
 def information():
     """
     All code that would like to use the |frescox| executable built for this

@@ -12,7 +12,7 @@ import bfrescoxpro
 class TestInformation(unittest.TestCase):
     def testInformation(self):
         info = bfrescoxpro.information()
-        self.assertTrue(isinstance(info, dict))
+        self.assertFalse(isinstance(info, dict))
 
         expected = {
             bfrescoxpro.FRESCOX_EXE,
