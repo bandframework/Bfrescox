@@ -132,6 +132,8 @@ package, the installation can be tested by executing
     >>> import bfrescoxpro
     >>> bfrescoxpro.__version__
     <version>
+    >>> bfrescoxpro.print_information()
+        ...
     >>> bfrescoxpro.test()
         ...
 

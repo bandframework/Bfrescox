@@ -8,7 +8,8 @@
 
 [build-system]
 # Automatic management of package's version via tags using setuptools-scm.
-# Minimum versions suggested by setuptools-scm v9.2.0 docs.
+# * Minimum setuptools* versions suggested by setuptools-scm v9.2.0 docs
+# * Minimum meson version required for using improved MPI discovery
 requires = ["setuptools>=80",
             "meson>=1.6.0",
             "setuptools-scm>=8"]

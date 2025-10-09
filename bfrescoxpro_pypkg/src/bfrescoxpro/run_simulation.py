@@ -16,8 +16,8 @@ def run_simulation(configuration, filename, overwrite=False, mpi_setup=None):
     :param configuration: :py:class:`Configuration` object that specifies the
         simulation to run
     :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either the input or
-        output files exist
+    :param overwrite: If False, then an error is raised if either of the
+        simulation input or output files exist
     :param mpi_setup: `dict` that provides MPI setup values if executable built
         with MPI; `None`, otherwise.
     """
