@@ -11,9 +11,19 @@ bfrescox_pypkg/meson/subprojects/frescox
 bfrescox_pypkg/.tox
 bfrescox_pypkg/dist
 bfrescox_pypkg/build
+bfrescox_pypkg/.coverage_bfrescox
+bfrescox_pypkg/coverage.xml
 bfrescox_pypkg/src/bfrescox.egg-info
 bfrescox_pypkg/src/bfrescox/bin
 bfrescox_pypkg/src/bfrescox/build
 
-bfrescox_pypkg/.coverage_bfrescox
-bfrescox_pypkg/coverage.xml
+bfrescoxpro_pypkg/meson/subprojects/.wraplock
+bfrescoxpro_pypkg/meson/subprojects/frescox
+bfrescoxpro_pypkg/.tox
+bfrescoxpro_pypkg/dist
+bfrescoxpro_pypkg/build
+bfrescoxpro_pypkg/.coverage_bfrescoxpro
+bfrescoxpro_pypkg/coverage.xml
+bfrescoxpro_pypkg/src/bfrescoxpro.egg-info
+bfrescoxpro_pypkg/src/bfrescoxpro/bin
+bfrescoxpro_pypkg/src/bfrescoxpro/build

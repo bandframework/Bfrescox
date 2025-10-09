@@ -1,0 +1,141 @@
+name: Test manual bfrescoxpro installation
+env:
+  BFRESCOXPRO_PATH: ${{ github.workspace }}/bfrescoxpro_pypkg
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  #####----- FULL TESTING WITHOUT COVERAGE
+  # Prefer full end-to-end test using package installed on demand from source
+  # distribution rather than testing in local clone alone or with a tox task.
+  test_openmpi_installation:
+    strategy:
+      matrix:
+        # Python versions should be maintained consistent with those in setup.py
+        os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
+        mpi_impl: ["openmpi"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install compiler suite
+      run: |
+        # Several gfortran installed in brew by default, but no simple gfortran
+        # found in PATH.
+        if [ "${{ runner.os }}" = "macOS" ]; then
+           HOMEBREW_BIN_PATH=$(brew --prefix gcc)/bin
+           echo "$HOMEBREW_BIN_PATH" >> $GITHUB_PATH
+        fi
+
+    - name: Install ${{ matrix.mpi_impl }}
+      run: |
+        if   [ "${{ runner.os }}" = "Linux" ]; then
+           sudo apt-get update
+           if   [ "${{ matrix.mpi_impl }}" = "openmpi" ]; then
+              sudo apt-get -y install openmpi-bin libopenmpi-dev
+           else
+              echo "Cannot install ${{ matrix.mpi_impl }} for Linux"
+              exit 1
+           fi
+        elif [ "${{ runner.os }}" = "macOS" ]; then
+           brew update
+           if   [ "${{ matrix.mpi_impl }}" = "openmpi" ]; then
+              brew install open-mpi
+           else
+              echo "Cannot install ${{ matrix.mpi_impl }} for macOS"
+              exit 1
+           fi
+        fi
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Build, install, & test bfrescoxpro
+      run: |
+        echo ""
+        python -m pip install --upgrade pip
+        python -m pip install build
+        # Build source distribution & install
+        pushd $BFRESCOXPRO_PATH
+        python -m build --sdist
+        python -m pip install -v dist/bfrescoxpro-*.tar.gz
+        popd
+        # Log info
+        echo ""
+        which python
+        python -m pip list
+        # Run tests through package
+        echo ""
+        python -c "import bfrescoxpro ; exit(not bfrescoxpro.test())"
+
+  # We presently need to build with MPICH using a workaround (Issue #17).  Once
+  # this is resolved, this job should be merged into the job above.
+  #
+  # Neither Apple nor homebrew support macOS 13 anymore.  It appears that with
+  # that version, homebrew is compiling MPICH from scratch, which is taking a
+  # very long time.  Skipping macOS 13.
+  test_mpich_installation:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, macos-14, macos-15]
+        mpi_impl: ["mpich"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install compiler suite
+      run: |
+        if [ "${{ runner.os }}" = "macOS" ]; then
+           HOMEBREW_BIN_PATH=$(brew --prefix gcc)/bin
+           echo "$HOMEBREW_BIN_PATH" >> $GITHUB_PATH
+        fi
+
+    - name: Install ${{ matrix.mpi_impl }}
+      run: |
+        if   [ "${{ runner.os }}" = "Linux" ]; then
+           sudo apt-get update
+           if [ "${{ matrix.mpi_impl }}" = "mpich" ]; then
+              sudo apt-get -y install mpich libmpich-dev
+           else
+              echo "Cannot install ${{ matrix.mpi_impl }} for Linux"
+              exit 1
+           fi
+        elif [ "${{ runner.os }}" = "macOS" ]; then
+           brew update
+           if [ "${{ matrix.mpi_impl }}" = "mpich" ]; then
+              brew install mpich
+           else
+              echo "Cannot install ${{ matrix.mpi_impl }} for macOS"
+              exit 1
+           fi
+        fi
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Build, install, & test bfrescoxpro
+      run: |
+        echo ""
+        python -m pip install --upgrade pip
+        python -m pip install build
+        # Build source distribution & install
+        pushd $BFRESCOXPRO_PATH
+        python -m build --sdist
+        BFRESCOX_USE_MPI=enabled python -m pip install -v dist/bfrescoxpro-*.tar.gz
+        popd
+        # Log info
+        echo ""
+        which python
+        python -m pip list
+        # Run tests through package
+        echo ""
+        python -c "import bfrescoxpro ; exit(not bfrescoxpro.test())"

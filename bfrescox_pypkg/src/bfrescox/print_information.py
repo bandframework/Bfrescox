@@ -35,6 +35,7 @@ def print_information():
                     )
                     stdout = reply.stdout.decode()
                     assert stdout != ""
+                    # This prints the binary's name
                     print(stdout)
                     assert reply.returncode == 0
                     assert reply.stderr.decode() == ""
@@ -45,6 +46,7 @@ def print_information():
             else:
                 print(frescox_exe)
         elif os_name.lower() == "linux":
+            print(frescox_exe)
             if shutil.which("ldd", mode=(os.F_OK | os.X_OK)):
                 try:
                     reply = sbp.run(
@@ -54,16 +56,12 @@ def print_information():
                     )
                     stdout = reply.stdout.decode()
                     assert stdout != ""
-                    print(frescox_exe)
                     print(stdout)
                     assert reply.returncode == 0
                     assert reply.stderr.decode() == ""
                 except Exception:
-                    print(frescox_exe)
                     msg = "Unable to get external dependence info with ldd"
                     warnings.warn(msg)
-            else:
-                print(frescox_exe)
         else:
             print(frescox_exe)
     else:

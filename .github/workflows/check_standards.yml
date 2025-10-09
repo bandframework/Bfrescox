@@ -1,7 +1,8 @@
 name: Check standard conformance
 env:
-  CLONE_PATH:    ${{ github.workspace }}
-  BFRESCOX_PATH: ${{ github.workspace }}/bfrescox_pypkg
+  CLONE_PATH:       ${{ github.workspace }}
+  BFRESCOX_PATH:    ${{ github.workspace }}/bfrescox_pypkg
+  BFRESCOXPRO_PATH: ${{ github.workspace }}/bfrescoxpro_pypkg
 on:
   push:
     branches: [main]
@@ -29,5 +30,8 @@ jobs:
     - name: Check style
       run: |
         pushd $BFRESCOX_PATH
+        tox -r -e check
+        popd
+        pushd $BFRESCOXPRO_PATH
         tox -r -e check
         popd

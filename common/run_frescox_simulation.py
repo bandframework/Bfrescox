@@ -20,8 +20,7 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(frescox, config, mpi_setup,
-                           filename, overwrite=False):
+def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
     """
     Run a |frescox| simulation using the given |frescox| installation,
     simulation configuration, and MPI setup.  Results are written to disk using

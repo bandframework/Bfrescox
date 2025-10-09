@@ -34,6 +34,7 @@ parse:
     ie:          "*i.e.,*"
     eg:          "*e.g.,*"
     via:         "*via*"
+    etc:         "*etc.*"
     band:        "BAND"
     fresco:      "Fresco"
     frescox:     "Frescox"
