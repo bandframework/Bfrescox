@@ -38,9 +38,15 @@ Requirements
 .. _Issue 17: https://github.com/bandframework/Bfrescox/issues/17
 
 Before installing |bfrescoxpro|, users must provide a Fortran compiler that
-supports all requirements for building |frescox|.  If OpenMP parallelization is
-desired, ensure that the compiler supports OpenMP compilation.  Please consult
-the |frescox| documentation for more information on its build requirements.
+supports all requirements for building |frescox|.  At present, installations
+require either the use of the
+
+* GCC compiler suite (``gfortran``) or
+* an Intel compiler suite (``ifort`` or ``ifx``).
+
+If OpenMP parallelization is desired, ensure that the compiler supports OpenMP
+compilation.  Please consult the |frescox| documentation for more information on
+its build requirements.
 
 .. todo::
 
