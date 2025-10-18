@@ -52,7 +52,7 @@ for flag, default in FRESCOX_FLAG_DEFAULTS:
 
 # Package metadata
 PYTHON_REQUIRES = ">=3.9"
-CODE_REQUIRES = []
+CODE_REQUIRES = ["numpy>=1.21", "pandas>=1.3"]
 TEST_REQUIRES = []
 INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
 
