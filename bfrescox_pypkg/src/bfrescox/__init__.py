@@ -19,6 +19,9 @@ from .print_information import print_information
 from .run_simulation import run_simulation
 
 from .Configuration import Configuration
+from .Result import Result
+from .generate_inelastic_template import generate_inelastic_template
+from .generate_elastic_template import generate_elastic_template
 
 # ----- Python unittest-based test framework
 # Used for automatic test discovery
