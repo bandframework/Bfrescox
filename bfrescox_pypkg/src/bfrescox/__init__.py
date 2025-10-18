@@ -19,7 +19,14 @@ from .print_information import print_information
 from .run_simulation import run_simulation
 
 from .Configuration import Configuration
-from .Result import Result
+from .Result import (
+    read_fort16,
+    read_results_lines,
+    parallelization_setup,
+    performance_results,
+    cross_sections_mbsr,
+    cross_sections_R2R,
+)
 from .generate_inelastic_template import generate_inelastic_template
 from .generate_elastic_template import generate_elastic_template
 
