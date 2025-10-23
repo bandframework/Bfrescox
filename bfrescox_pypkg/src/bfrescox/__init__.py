@@ -19,9 +19,9 @@ from .generate_elastic_template import generate_elastic_template
 from .generate_inelastic_template import generate_inelastic_template
 from .information import information
 from .load_tests import load_tests
-from .parallelization_setup import parallelization_setup
 from .parse_differential_xs import absolute_mb_per_sr, ratio_to_rutherford
-from .performance_results import performance_results
+from .parse_parallelization_setup import parse_parallelization_setup
+from .parse_performance_results import parse_performance_results
 from .print_information import print_information
 from .run_simulation import run_simulation
 

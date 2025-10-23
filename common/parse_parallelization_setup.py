@@ -3,7 +3,7 @@ from pathlib import Path
 from _parsing import _read_results_lines
 
 
-def parallelization_setup(filename: Path):
+def parse_parallelization_setup(filename: Path):
     """
     Parse FrescoX parallelization setup from output file.
     Parameters:
