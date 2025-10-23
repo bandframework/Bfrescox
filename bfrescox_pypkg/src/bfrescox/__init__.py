@@ -18,9 +18,6 @@ from .Configuration import Configuration
 from .generate_elastic_template import generate_elastic_template
 from .generate_inelastic_template import generate_inelastic_template
 from .information import information
-
-# ----- Python unittest-based test framework
-# Used for automatic test discovery
 from .load_tests import load_tests
 from .parallelization_setup import parallelization_setup
 from .parse_differential_xs import absolute_mb_per_sr, ratio_to_rutherford
