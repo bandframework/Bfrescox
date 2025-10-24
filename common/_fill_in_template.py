@@ -47,7 +47,9 @@ def fill_in_template_file(
 
     Then the `parameters` dict should have the keys `V`, `r`, `a`, `W`, `rw`, and `aw`.
 
-    Placeholders may be repeated in multiple places in the template file.
+    Placeholders may be repeated in multiple places in the template file. For example,
+    `@V@` may appear multiple times; all instances will be replaced with the value of
+    `parameters['V']`.
 
     Parameters:
         template_path (Path): Path to the template NML file.
