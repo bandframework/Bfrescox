@@ -10,7 +10,7 @@ from ._run_frescox_simulation import (
 )
 
 
-def run_simulation(configuration, filename, overwrite=False, external=None):
+def run_simulation(configuration, filename, overwrite=False, external=None, cwd=None):
     """
     Run a |frescox| simulation based on the given simulation configuration
     object.  Results are written to a file with the given output filename.  The
@@ -57,4 +57,4 @@ def run_simulation(configuration, filename, overwrite=False, external=None):
     # by this internal function.  This includes the case of incorrectly
     # providing an MPI-based external installation.
     run_frescox_simulation(frescox, configuration, NO_MPI_PLEASE,
-                           filename, overwrite)
+                           filename, overwrite, cwd=cwd)
