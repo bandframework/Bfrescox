@@ -1,9 +1,7 @@
 import os
-
 import subprocess as sbp
-
-from pathlib import Path
 from numbers import Integral
+from pathlib import Path
 
 from .Configuration import Configuration
 
@@ -20,7 +18,7 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
+def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
     """
     Run a |frescox| simulation using the given |frescox| installation,
     simulation configuration, and MPI setup.  Results are written to disk using
@@ -49,9 +47,12 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
     :param filename: Filename including path of file to write outputs to
     :param overwrite: If False, then an error is raised if either the input or
         output files exist
+    :params cwd: Current working directory to run the simulation in.  If None,
+        the current working directory of the calling process is used.
     """
     # ----- HARCODED VALUES
-    FRESCOX_INPUT_NAME = "frescox.in"
+    cwd = Path(cwd).resolve() if cwd is not None else "/."
+    FRESCOX_INPUT_NAME = cwd / "frescox.in"
 
     # ----- ERROR CHECK ARGUMENTS
     if not isinstance(frescox, dict):
@@ -114,17 +115,17 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
 
     # ----- RUN SIMULATION
     if use_mpi:
-        cmd = ["mpirun",
-               "-np", str(n_mpi_procs),
-               str(frescox_exe),
-               str(fname_in)]
+        cmd = ["mpirun", "-np", str(n_mpi_procs), str(frescox_exe), str(fname_in)]
 
         try:
             with open(fname_out, "w") as fptr_stdout:
-                results = sbp.run(cmd,
-                                  stdout=fptr_stdout,
-                                  stderr=sbp.STDOUT,
-                                  check=True)
+                results = sbp.run(
+                    cmd,
+                    stdout=fptr_stdout,
+                    stderr=sbp.STDOUT,
+                    check=True,
+                    cwd=cwd,
+                )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
@@ -138,11 +139,14 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
         try:
             with open(fname_out, "w") as fptr_stdout:
                 with open(fname_in, "r") as fptr_stdin:
-                    results = sbp.run(cmd,
-                                      stdin=fptr_stdin,
-                                      stdout=fptr_stdout,
-                                      stderr=sbp.STDOUT,
-                                      check=True)
+                    results = sbp.run(
+                        cmd,
+                        stdin=fptr_stdin,
+                        stdout=fptr_stdout,
+                        stderr=sbp.STDOUT,
+                        check=True,
+                        cwd=cwd,
+                    )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
