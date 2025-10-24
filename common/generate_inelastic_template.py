@@ -14,12 +14,12 @@ from ._utils import _is_fraction_integer_or_half_integer
 inelastic_input_template = r"""
 HEADER
 NAMELIST
-&FRESCO hcm=0.05 rmatch=20.0
-        jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
+&FRESCO hcm=STEP_SIZE rmatch=RMATCH
+    jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
 	thmin=0.00 thmax=180.00 thinc=1.00
-        iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
+    iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
 	!wdisk=2 waves=3
-        elab(1)=E_LAB treneg=1 /
+    elab(1)=E_LAB treneg=1 /
 
  &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
             namet='target'   masst=MASS_T zt=CHARGE_T qval=0.0 nex=NUM_STATES  /
@@ -27,7 +27,7 @@ NAMELIST
  &STATES copyp=1 		 cpot=1 jt=I_EXCITED bandt=1 et=E_EXCITED /
  &partition /
 
- &POT kp=1 ap=0.000 at=MASS_T rc=COULOMB_R  /
+ &POT kp=1 ap=MASS_P at=MASS_T rc=COULOMB_R  /
  &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
  &POT kp=1 type=11          pX=DELTA_LAMBDA_X /
  &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /
@@ -104,6 +104,8 @@ def generate_inelastic_template(
     Pi_states: List[bool],
     E_states: List[float],
     multipoles_t: np.ndarray,
+    R_match: float = 60.0,
+    step_size: float = 0.1,
 ):
     """
     Generate an inelastic scattering input template for Fresco.
@@ -127,6 +129,8 @@ def generate_inelastic_template(
     E_states (List[float]): List of excitation energies of the target states in MeV.
     multipoles_t (np.ndarray): Array of multipole transition orders (e.g., [2, 3]
         for quadrupole and octupole).
+    R_match (float): Matching radius in fm. Default is 60.0.
+    step_size (float): Step size for the radial mesh in fm. Default is 0
 
     Returns:
 
@@ -164,8 +168,10 @@ def generate_inelastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "J_TOT_MIN": str(J_tot_min),
-        "J_TOT_MAX": str(J_tot_max),
+        "STEP_SIZE": str(step_size),
+        "RMATCH": str(R_match),
+        "J_TOT_MIN": str(float(J_tot_min)),
+        "J_TOT_MAX": str(float(J_tot_max)),
         "E_LAB": str(E_lab),
         "CLOSED_COUPLINGS": str(int(num_states)),
         "MASS_P": str(mass_p),
@@ -173,8 +179,8 @@ def generate_inelastic_template(
         "NUM_STATES": str(num_states),
         "MASS_T": str(mass_t),
         "CHARGE_T": str(charge_t),
-        "S_PROJECTILE": str(spin_p),
-        "I_GROUND": str(I_states[0]),
+        "S_PROJECTILE": str(float(spin_p)),
+        "I_GROUND": str(float(I_states[0])),
         "GS_PAR": str(Pi_states[0]),
         "E_GROUND": str(E_states[0]),
         "COULOMB_R": str(R_Coulomb),
