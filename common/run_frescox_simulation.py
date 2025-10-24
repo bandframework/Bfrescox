@@ -1,9 +1,7 @@
 import os
-
 import subprocess as sbp
-
-from pathlib import Path
 from numbers import Integral
+from pathlib import Path
 
 from .Configuration import Configuration
 
@@ -51,7 +49,8 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
         output files exist
     """
     # ----- HARCODED VALUES
-    FRESCOX_INPUT_NAME = "frescox.in"
+    cwd = Path(cwd).resolve() if cwd is not None else "/."
+    FRESCOX_INPUT_NAME = cwd / "frescox.in"
 
     # ----- ERROR CHECK ARGUMENTS
     if not isinstance(frescox, dict):
@@ -114,19 +113,17 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
 
     # ----- RUN SIMULATION
     if use_mpi:
-        cmd = ["mpirun",
-               "-np", str(n_mpi_procs),
-               str(frescox_exe),
-               str(fname_in)]
+        cmd = ["mpirun", "-np", str(n_mpi_procs), str(frescox_exe), str(fname_in)]
 
         try:
             with open(fname_out, "w") as fptr_stdout:
-                results = sbp.run(cmd,
-                                  stdout=fptr_stdout,
-                                  stderr=sbp.STDOUT,
-                                  check=True,
-                                  cwd=cwd,
-                                  )
+                results = sbp.run(
+                    cmd,
+                    stdout=fptr_stdout,
+                    stderr=sbp.STDOUT,
+                    check=True,
+                    cwd=cwd,
+                )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
@@ -140,12 +137,14 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
         try:
             with open(fname_out, "w") as fptr_stdout:
                 with open(fname_in, "r") as fptr_stdin:
-                    results = sbp.run(cmd,
-                                      stdin=fptr_stdin,
-                                      stdout=fptr_stdout,
-                                      stderr=sbp.STDOUT,
-                                      check=True,
-                                      cwd=cwd,)
+                    results = sbp.run(
+                        cmd,
+                        stdin=fptr_stdin,
+                        stdout=fptr_stdout,
+                        stderr=sbp.STDOUT,
+                        check=True,
+                        cwd=cwd,
+                    )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
