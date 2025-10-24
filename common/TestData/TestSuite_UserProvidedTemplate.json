@@ -1,0 +1,26 @@
+{
+    "48Ca": {
+        "Template": "48Ca_Ozge.template",
+        "Tests": {
+            "Ozge": {
+                "TemplateParameters": {
+                    "hnl":  0.1,
+                    "rnl": 5.0,
+                    "V":  49.284900,
+                    "r":   0.907039,
+                    "a":   0.679841,
+                    "Ws":  3.394386,
+                    "rs":  1.094115,
+                    "as":  0.2763
+                },
+                "NML": "48Ca_OzgePointA.nml",
+                "Results": {
+                    "differential_xs_absolute_mb_per_sr": {
+                        "Baseline": "48Ca_OzgePointA_differential_xs_baseline.csv",
+                        "RelDiffThreshold": 1.0e-7
+                    }
+                }
+            }
+        }
+    }
+}
