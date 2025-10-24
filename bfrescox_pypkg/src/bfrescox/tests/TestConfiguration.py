@@ -41,13 +41,11 @@ class TestConfiguration(unittest.TestCase):
         os.mkdir(self.__dir)
 
     def testFromMethod(self):
-
         for template, specification in self.__suite.items():
             template_fname = DATA_PATH.joinpath(specification["Template"])
             output_fname = self.__dir.joinpath("from_template.nml")
 
             for test_name, test_info in specification["Tests"].items():
-
                 # Reestablish empty directory for each test
                 self._clean_tmp_dir()
 
@@ -59,7 +57,10 @@ class TestConfiguration(unittest.TestCase):
                 cfgs_all = [
                     bfrescox.Configuration.from_NML(fname_nml),
                     bfrescox.Configuration.from_template(
-                        template_fname, output_fname, template_parameters, overwrite=False
+                        template_fname,
+                        output_fname,
+                        template_parameters,
+                        overwrite=False,
                     ),
                 ]
                 for cfg in cfgs_all:
