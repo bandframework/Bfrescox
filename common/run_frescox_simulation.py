@@ -47,6 +47,8 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
     :param filename: Filename including path of file to write outputs to
     :param overwrite: If False, then an error is raised if either the input or
         output files exist
+    :params cwd: Current working directory to run the simulation in.  If None,
+        the current working directory of the calling process is used.
     """
     # ----- HARCODED VALUES
     cwd = Path(cwd).resolve() if cwd is not None else "/."

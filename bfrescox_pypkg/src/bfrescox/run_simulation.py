@@ -27,6 +27,8 @@ def run_simulation(configuration, filename, overwrite=False, external=None, cwd=
     :param overwrite: If False, then an error is raised if either of the
         simulation input or output files exist
     :param external: (|bfrescox| only) **EXPERT USERS ONLY**
+    :params cwd: Current working directory to run the simulation in.  If None,
+        the current working directory of the calling process is used.
     """
     # Assume for now that external installations will not be using MPI
     NO_MPI_PLEASE = None
