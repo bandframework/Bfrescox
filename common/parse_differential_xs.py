@@ -35,8 +35,8 @@ def absolute_mb_per_sr(filename: Path):
             index.append(float(result[0]))
             ratio.append(float(result[4]))
 
-    df = pd.DataFrame(data=ratio, index=index, columns=["sigma_omega_ratio"])
-    df.index.name = "degree"
+    df = pd.DataFrame(data=ratio, index=index, columns=["differential_xs_absolute_mb_per_sr"])
+    df.index.name = "angle_degrees"
 
     return df
 
@@ -74,7 +74,7 @@ def ratio_to_rutherford(filename: Path):
             assert result[2].strip() == "="
             Rutherford.append(float(result[3]))
 
-    df = pd.DataFrame(data=Rutherford, index=index, columns=["Rutherford"])
-    df.index.name = "degree"
+    df = pd.DataFrame(data=ratio, index=index, columns=["differential_xs_ratio_to_rutherford"])
+    df.index.name = "angle_degrees"
 
     return df
