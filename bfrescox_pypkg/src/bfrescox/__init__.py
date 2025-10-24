@@ -19,7 +19,7 @@ from .generate_elastic_template import generate_elastic_template
 from .generate_inelastic_template import generate_inelastic_template
 from .information import information
 from .load_tests import load_tests
-from .parse_differential_xs import absolute_mb_per_sr, ratio_to_rutherford
+from . import parse_differential_xs
 from .parse_parallelization_setup import parse_parallelization_setup
 from .parse_performance_results import parse_performance_results
 from .print_information import print_information
