@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from _parsing import _read_results_lines
+from ._parsing import _read_results_lines
 
 
 def parse_performance_results(filename: Path):

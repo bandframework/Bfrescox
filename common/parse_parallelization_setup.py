@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from _parsing import _read_results_lines
+from ._parsing import _read_results_lines
 
 
 def parse_parallelization_setup(filename: Path):

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from _parsing import _read_results_lines
+from ._parsing import _read_results_lines
 
 
 def absolute_mb_per_sr(filename: Path):
