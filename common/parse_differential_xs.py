@@ -35,7 +35,9 @@ def absolute_mb_per_sr(filename: Path):
             index.append(float(result[0]))
             ratio.append(float(result[4]))
 
-    df = pd.DataFrame(data=ratio, index=index, columns=["differential_xs_absolute_mb_per_sr"])
+    df = pd.DataFrame(
+        data=ratio, index=index, columns=["differential_xs_absolute_mb_per_sr"]
+    )
     df.index.name = "angle_degrees"
 
     return df
@@ -54,7 +56,7 @@ def ratio_to_rutherford(filename: Path):
     lines = _read_results_lines(filename)
 
     index = []
-    Rutherford = []
+    ratio = []
     for i, line in enumerate(lines):
         if "/R" in line:
             assert "X-S" in lines[i - 1]
@@ -72,9 +74,11 @@ def ratio_to_rutherford(filename: Path):
             assert result[0].strip() == "+"
             assert result[1].strip() == "/R"
             assert result[2].strip() == "="
-            Rutherford.append(float(result[3]))
+            ratio.append(float(result[3]))
 
-    df = pd.DataFrame(data=ratio, index=index, columns=["differential_xs_ratio_to_rutherford"])
+    df = pd.DataFrame(
+        data=ratio, index=index, columns=["differential_xs_ratio_to_rutherford"]
+    )
     df.index.name = "angle_degrees"
 
     return df

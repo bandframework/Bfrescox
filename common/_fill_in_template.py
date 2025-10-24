@@ -1,3 +1,7 @@
+"""
+Module to fill in template NML files with specified parameters.
+"""
+
 import re
 from pathlib import Path
 

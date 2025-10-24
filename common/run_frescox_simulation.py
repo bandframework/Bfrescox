@@ -20,7 +20,7 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
+def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
     """
     Run a |frescox| simulation using the given |frescox| installation,
     simulation configuration, and MPI setup.  Results are written to disk using
@@ -124,7 +124,9 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
                 results = sbp.run(cmd,
                                   stdout=fptr_stdout,
                                   stderr=sbp.STDOUT,
-                                  check=True)
+                                  check=True,
+                                  cwd=cwd,
+                                  )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
@@ -142,7 +144,8 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite):
                                       stdin=fptr_stdin,
                                       stdout=fptr_stdout,
                                       stderr=sbp.STDOUT,
-                                      check=True)
+                                      check=True,
+                                      cwd=cwd,)
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
