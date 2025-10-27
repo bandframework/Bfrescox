@@ -15,15 +15,15 @@ inelastic_input_template = r"""HEADER
 NAMELIST
 &FRESCO hcm=STEP_SIZE rmatch=RMATCH
     jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
-	thmin=0.00 thmax=180.00 thinc=1.00
+  thmin=0.00 thmax=180.00 thinc=1.00
     iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
-	!wdisk=2 waves=3
+  !wdisk=2 waves=3
     elab(1)=E_LAB treneg=1 /
 
  &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
             namet='target'   masst=MASS_T zt=CHARGE_T qval=0.0 nex=NUM_STATES  /
  &STATES jp=S_PROJECTILE bandp=1 ep=0.0000 cpot=1 jt=I_GROUND bandt=GS_PAR et=E_GROUND /
- &STATES copyp=1 		 cpot=1 jt=I_EXCITED bandt=1 et=E_EXCITED /
+ &STATES copyp=1      cpot=1 jt=I_EXCITED bandt=1 et=E_EXCITED /
  &partition /
 
  &POT kp=1 ap=MASS_P at=MASS_T rc=COULOMB_R  /

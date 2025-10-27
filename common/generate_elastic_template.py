@@ -11,9 +11,9 @@ elastic_input_template = r"""HEADER
 NAMELIST
 &FRESCO hcm=STEP_SIZE rmatch=RMATCH
     jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
-	thmin=0.00 thmax=180.00 thinc=1.00
+  thmin=0.00 thmax=180.00 thinc=1.00
     iter=0 ips=0.0 iblock=0 chans=1 smats=2  xstabl=1
-	wdisk=2
+  wdisk=2
     elab(1)=E_LAB treneg=1 /
 
  &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
