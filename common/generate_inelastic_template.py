@@ -11,8 +11,7 @@ import numpy as np
 
 from ._utils import _is_fraction_integer_or_half_integer
 
-inelastic_input_template = r"""
-HEADER
+inelastic_input_template = r"""HEADER
 NAMELIST
 &FRESCO hcm=STEP_SIZE rmatch=RMATCH
     jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
