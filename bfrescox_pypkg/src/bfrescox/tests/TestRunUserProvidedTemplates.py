@@ -95,26 +95,20 @@ class TestElasticProblems(unittest.TestCase):
                     deg = expected[:, 0]
                     self.assertEqual(set(deg), set(results_df.index))
                     result_data = results_df.loc[deg, quantity].values
-                    print(np.max(np.fabs(result_data - expected[:, 1])))
-                    print(np.max(np.fabs(1 - result_data / expected[:, 1])))
                     if (abs_diff_tolr == 0.0) and (rel_diff_tolr == 0.0):
                         self.assertTrue(all(result_data == expected[:, 1]))
                     else:
                         if abs_diff_tolr > 0.0:
-                            self.assertTrue(
-                                np.allclose(
-                                    result_data,
-                                    expected[:, 1],
-                                    rtol=0.0,
-                                    atol=abs_diff_tolr,
-                                )
+                            np.testing.assert_allclose(
+                                result_data,
+                                expected[:, 1],
+                                rtol=0.0,
+                                atol=abs_diff_tolr,
                             )
                         if rel_diff_tolr > 0.0:
-                            self.assertTrue(
-                                np.allclose(
-                                    result_data,
-                                    expected[:, 1],
-                                    rtol=rel_diff_tolr,
-                                    atol=0.0,
-                                )
+                            np.testing.assert_allclose(
+                                result_data,
+                                expected[:, 1],
+                                rtol=rel_diff_tolr,
+                                atol=0.0,
                             )
