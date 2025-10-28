@@ -16,8 +16,7 @@ NAMELIST
 &FRESCO hcm=STEP_SIZE rmatch=RMATCH
     jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
   thmin=0.00 thmax=180.00 thinc=1.00
-    iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
-  !wdisk=2 waves=3
+    iter=ITER ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
     elab(1)=E_LAB treneg=1 /
 
  &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
@@ -44,7 +43,8 @@ def _expand_type11_pX(text: str, L_list) -> str:
     For each line like:
       &POT kp=1 type=11          pX=DELTA_LAMBDA_X /
     replace with:
-      &POT kp=1 type=11 p0=DELTA_LAMBDA_0 p2=DELTA_LAMBDA_2 ... /
+      &POT kp=1 type=11 p0=@delta_0@ p2=@delta_2@ ... /
+        (for 0, 2, ... in L_list)
     """
     if not L_list:
         return text
@@ -105,6 +105,7 @@ def generate_inelastic_template(
     multipoles_t: np.ndarray,
     R_match: float = 60.0,
     step_size: float = 0.1,
+    max_iterations: int = 0,
 ):
     """
     Generate an inelastic scattering input template for Fresco.
@@ -129,10 +130,8 @@ def generate_inelastic_template(
     multipoles_t (np.ndarray): Array of multipole transition orders (e.g., [2, 3]
         for quadrupole and octupole).
     R_match (float): Matching radius in fm. Default is 60.0.
-    step_size (float): Step size for the radial mesh in fm. Default is 0
-
-    Returns:
-
+    step_size (float): Step size for the radial mesh in fm. Default is 0.1.
+    max_iterations (int): Maximum number of iterations for convergence. Default is 0.
     """
     if J_tot_min > J_tot_max:
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
@@ -167,6 +166,7 @@ def generate_inelastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
+        "ITER": str(max_iterations),
         "STEP_SIZE": str(step_size),
         "RMATCH": str(R_match),
         "J_TOT_MIN": str(float(J_tot_min)),
