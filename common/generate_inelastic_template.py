@@ -17,6 +17,7 @@ NAMELIST
     jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
   thmin=0.00 thmax=180.00 thinc=1.00
     iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
+  wdisk=2
     elab(1)=E_LAB treneg=1 /
 
  &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
@@ -72,7 +73,7 @@ def _setup_inelastic_system_template(
     # Generate the dynamic &STATES section
 
     dynamic_section = "".join(
-        f"&STATES copyp=1         cpot=1 jt={float(jt)} bandt={(-1) ** float(parity + 1)} et={et} /\n"
+        f"&STATES copyp=1         cpot=1 jt={float(jt)} bandt={int((-1) ** int(parity + 1))} et={et} /\n"
         for et, jt, parity in zip(
             values_et[1:], values_jt[1:], bandt_vals[1:]
         )  # Skip the first value (0.0)
