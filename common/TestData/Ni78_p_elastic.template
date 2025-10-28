@@ -2,9 +2,9 @@ p+Ni78 Coulomb + Nuclear
 NAMELIST
 &FRESCO hcm=0.1 rmatch=60.0
     jtmin=0.0 jtmax=60.0 absend= 0.01
-	thmin=0.00 thmax=180.00 thinc=1.00
+  thmin=0.00 thmax=180.00 thinc=1.00
     iter=0 ips=0.0 iblock=0 chans=1 smats=2  xstabl=1
-	wdisk=2
+  wdisk=2
     elab(1)=50.0 treneg=1 /
 
  &PARTITION namep='projectile' massp=1 zp=1
