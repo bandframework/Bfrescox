@@ -38,7 +38,14 @@ INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
 PACKAGE_DATA = {
     "bfrescox":
         [f"bin/{exe}" for exe in EXE_NAMES] +
-        ["build/build_info.csv"]
+        ["build/build_info.csv"] +
+        ["tests/TestData/README.md"] +
+        ["tests/TestData/12C_4He_inelastic*"] +
+        ["tests/TestData/48Ca_Ozge*"] +
+        ["tests/TestData/Ni78_p_elastic*"] +
+        ["tests/TestData/TestSuite_Elastic.json"] +
+        ["tests/TestData/TestSuite_Inelastic.json"] +
+        ["tests/TestData/TestSuite_UserProvidedTemplate.json"]
 }
 
 PROJECT_URLS = {
