@@ -25,10 +25,10 @@ a Fortran compiler.  At present, installations require either the use of the
 * GCC compiler suite (``gfortran``) or
 * an Intel compiler suite (``ifort`` or ``ifx``).
 
-The package's build system uses `Meson`_ to automatically detect external
-dependencies, such as the compiler, and to build the binary.  Meson in turn uses
-`ninja`_ as a backend.  While users should not need to preinstall Meson, they
-might need to preinstall ninja.
+The package's build system uses `Meson`_ and its backend `ninja`_ to
+automatically detect external dependencies, such as the compiler, and to build
+the binary.  However, both of these dependencies are automatically installed
+temporarily on behalf of users during package installation.
 
 Installation from local clone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
