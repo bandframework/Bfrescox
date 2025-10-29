@@ -7,6 +7,7 @@ the internal binary as well as to access results.
 
 from importlib.metadata import version
 
+from . import parse_differential_xs
 from ._run_frescox_simulation import (
     FRESCOX_COREX_SUPPORT,
     FRESCOX_EXE,
@@ -19,7 +20,7 @@ from .generate_elastic_template import generate_elastic_template
 from .generate_inelastic_template import generate_inelastic_template
 from .information import information
 from .load_tests import load_tests
-from . import parse_differential_xs
+from .parse_fort16 import parse_fort16
 from .parse_parallelization_setup import parse_parallelization_setup
 from .parse_performance_results import parse_performance_results
 from .print_information import print_information
