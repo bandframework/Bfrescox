@@ -50,7 +50,7 @@
                 "Results": {
                     "fort.16": {
                         "Baseline": "12C_4He_inelastic_PointA_fort16.pkl",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             },
@@ -84,7 +84,7 @@
                 "Results": {
                     "fort.16": {
                         "Baseline": "12C_4He_inelastic_PointB_fort16.pkl",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             }

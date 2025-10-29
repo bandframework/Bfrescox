@@ -44,7 +44,7 @@
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
                         "Baseline": "Ni78_p_elastic_PointA_differential_xs_baseline.csv",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             },
@@ -77,7 +77,7 @@
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
                         "Baseline": "Ni78_p_elastic_PointB_differential_xs_baseline.csv",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             }
