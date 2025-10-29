@@ -10,8 +10,8 @@ import unittest
 from pathlib import Path
 
 import bfrescoxpro
-from bfrescoxpro import parse_differential_xs
 import numpy as np
+from bfrescoxpro import parse_differential_xs
 
 INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
 TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
@@ -28,6 +28,7 @@ class TestElasticProblems(unittest.TestCase):
         os.mkdir(self.__dir)
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
+        self.__info = bfrescoxpro.information()
         self.maxDiff = None
 
     def tearDown(self):
@@ -69,6 +70,17 @@ class TestElasticProblems(unittest.TestCase):
 
                 template_parameters = test_info["TemplateParameters"]
 
+                mpi_setup = None
+                if (
+                    self.__info["supports_mpi"]
+                    and self.__info["supports_openmp"]
+                ):
+                    # Configure parallelization scheme
+                    pro_setup = test_info["ProSetup"]
+                    n_threads = pro_setup["nOmpThreads"]
+                    os.environ["OMP_NUM_THREADS"] = str(n_threads)
+
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
                 cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
                     output_fname,
@@ -77,7 +89,10 @@ class TestElasticProblems(unittest.TestCase):
                 )
                 self.assertFalse(self.__fname_out.is_file())
                 bfrescoxpro.run_simulation(
-                    cfg, self.__fname_out, cwd=self.__testdir
+                    cfg,
+                    self.__fname_out,
+                    mpi_setup=mpi_setup,
+                    cwd=self.__testdir,
                 )
                 self.assertTrue(self.__fname_out.is_file())
 

@@ -36,6 +36,10 @@
                     "rws": 1.2,
                     "aws": 0.5
                 },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
                 "NML": "Ni78_p_elastic_PointA.nml",
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
@@ -64,6 +68,10 @@
                     "Ws": 0,
                     "rws": 1.2,
                     "aws": 0.5
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {

@@ -42,6 +42,10 @@
                     "aws": 0.5,
                     "delta_2": 1.3
                 },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
                 "NML": "12C_4He_inelastic_PointA.nml",
                 "Results": {
                     "fort.16": {
@@ -71,6 +75,10 @@
                     "rws": 1.2,
                     "aws": 0.5,
                     "delta_2": 1.3
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
                 },
                 "NML": "12C_4He_inelastic_PointB.nml",
                 "Results": {
