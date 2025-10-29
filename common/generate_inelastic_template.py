@@ -36,7 +36,7 @@ NAMELIST
  &pot /
  &overlap /
  &coupling /
-"""
+ """
 
 
 def _expand_type11_pX(text: str, L_list) -> str:
@@ -103,7 +103,7 @@ def generate_inelastic_template(
     I_states: List[Fraction],
     Pi_states: List[bool],
     E_states: List[float],
-    multipoles_t: np.ndarray,
+    multipoles: np.ndarray,
     R_match: float = 60.0,
     step_size: float = 0.1,
 ):
@@ -127,7 +127,7 @@ def generate_inelastic_template(
     Pi_states (List[bool]): List of parities for the target states (True for
         positive, False for negative).
     E_states (List[float]): List of excitation energies of the target states in MeV.
-    multipoles_t (np.ndarray): Array of multipole transition orders (e.g., [2, 3]
+    multipoles (np.ndarray): Array of multipole transition orders (e.g., [2, 3]
         for quadrupole and octupole).
     R_match (float): Matching radius in fm. Default is 60.0.
     step_size (float): Step size for the radial mesh in fm. Default is 0.1.
@@ -159,8 +159,8 @@ def generate_inelastic_template(
     )
 
     # expand type=11 multipole stub(s)
-    if multipoles_t is not None:
-        modified_template = _expand_type11_pX(modified_template, multipoles_t)
+    if multipoles is not None:
+        modified_template = _expand_type11_pX(modified_template, multipoles)
 
     # Define placeholder replacements
     replacements = {
