@@ -1,16 +1,19 @@
 import copy
 import warnings
 
-from .information import information
 from ._run_frescox_simulation import (
-    run_frescox_simulation,
-    FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
+    FRESCOX_COREX_SUPPORT,
     FRESCOX_LAPACK_SUPPORT,
-    FRESCOX_COREX_SUPPORT
+    FRESCOX_MPI_SUPPORT,
+    FRESCOX_OPENMP_SUPPORT,
+    run_frescox_simulation,
 )
+from .information import information
 
 
-def run_simulation(configuration, filename, overwrite=False, external=None, cwd=None):
+def run_simulation(
+    configuration, filename, overwrite=False, external=None, cwd=None
+):
     """
     Run a |frescox| simulation based on the given simulation configuration
     object.  Results are written to a file with the given output filename.  The
@@ -35,9 +38,8 @@ def run_simulation(configuration, filename, overwrite=False, external=None, cwd=
 
     frescox = information()
     if (not frescox) and (external is None):
-        msg = (
-            "Invalid Frescox installation and no external installation provided"
-        )
+        msg = "Invalid Frescox installation and no external "
+        "installation provided"
         raise ValueError(msg)
 
     if external is not None:
@@ -58,5 +60,6 @@ def run_simulation(configuration, filename, overwrite=False, external=None, cwd=
     # This function assumes that all error checking of arguments will be handled
     # by this internal function.  This includes the case of incorrectly
     # providing an MPI-based external installation.
-    run_frescox_simulation(frescox, configuration, NO_MPI_PLEASE,
-                           filename, overwrite, cwd=cwd)
+    run_frescox_simulation(
+        frescox, configuration, NO_MPI_PLEASE, filename, overwrite, cwd=cwd
+    )

@@ -7,29 +7,15 @@ from pathlib import Path
 
 from ._utils import _is_fraction_integer_or_half_integer
 
-elastic_input_template = r"""HEADER
-NAMELIST
-&FRESCO hcm=STEP_SIZE rmatch=RMATCH
-    jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
-  thmin=0.00 thmax=180.00 thinc=1.00
-    iter=0 ips=0.0 iblock=0 chans=1 smats=2  xstabl=1
-  wdisk=2
-    elab(1)=E_LAB treneg=1 /
 
- &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
-            namet='target'   masst=MASS_T zt=CHARGE_T qval=-0.000 nex=1  /
- &STATES jp=S_PROJECTILE bandp=1 ep=0.0000 cpot=1 jt=I_GROUND bandt=1 et=E_GROUND /
- &partition /
+def load_template(file_path: Path) -> str:
+    with open(file_path, "r") as file:
+        return file.read()
 
- &POT kp=1 ap=MASS_P at=MASS_T rc=COULOMB_R  /
- &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
- &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /
- &POT kp=1 type=3  p1=@Vso@ p2=@rso@ p3=@aso@ p4=@Wso@ p5=@rwso@ p6=@awso@ /
 
- &pot /
- &overlap /
- &coupling /
-"""
+template_file_path = Path(__file__).parent / "templates/elastic.template"
+with open(template_file_path, "r") as file:
+    elastic_input_template = file.read()
 
 
 def generate_elastic_template(
@@ -61,8 +47,10 @@ def generate_elastic_template(
     charge_p (float): Charge of the projectile nucleus.
     spin_p (Fraction): Spin of the projectile nucleus (integer or half-integer).
     E_lab (float): Laboratory energy of the projectile in MeV.
-    J_tot_min (Fraction): Minimum total angular momentum (integer or half-integer).
-    J_tot_max (Fraction): Maximum total angular momentum (integer or half-integer).
+    J_tot_min (Fraction): Minimum total angular momentum (integer or
+        half-integer).
+    J_tot_max (Fraction): Maximum total angular momentum (integer or
+        half-integer).
     R_Coulomb (float): Coulomb radius in fm.
     reaction_name (str): Name of the reaction for file naming.
     BE_t (float): Binding energy of the target in MeV. Default is 0.0.

@@ -18,37 +18,33 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
+def run_frescox_simulation(
+    frescox, config, mpi_setup, filename, overwrite, cwd=None
+):
     """
     Run a |frescox| simulation using the given |frescox| installation,
-    simulation configuration, and MPI setup.  Results are written to disk using
-    the given output filename.  The |frescox| Fortran namelist configuration
-    file generated from the configuration object for the simulation is written
-    alongside the results file.
+    simulation configuration, and MPI setup.  Results are written to
+    disk using the given output filename.  The |frescox| Fortran
+    namelist configuration file generated from the configuration object
+    for the simulation is written alongside the results file.
 
-    While this function will likely reside in the private interface of Python
-    packages, we assume that some users might call it directly.  Therefore, this
-    function performs its own error checking of arguments.  A nice side effect
-    of this is that the wrapper functions in the packages likely don't need to
-    perform any error checking.
+    While this function will likely reside in the private interface of
+    Python packages, we assume that some users might call it directly.
+    Therefore, this function performs its own error checking of
+    arguments.  A nice side effect of this is that the wrapper functions
+    in the packages likely don't need to perform any error checking.
 
-    .. todo::
-        * Allow for the case that a user is required to use a system's own
-          program for starting MPI programs (e.g., jsrun).
-        * System level tests will check the general functionality of this code.
-          However, we need to write a set of tests that confirm correct
-          detection and management of bad inputs.
-
-    :param frescox: ``dict`` that fully characterizes a |frescox| installation
-    :param config: |bfrescox| :py:class:`Configuration` object that specifies
-        the simulation to execute
-    :param mpi_setup: ``dict`` that provides MPI setup values if given |frescox|
-        installation built with MPI; ``None``, otherwise.
+    :param frescox: ``dict`` that fully characterizes a |frescox|
+        installation
+    :param config: |bfrescox| :py:class:`Configuration` object that
+        specifies the simulation to execute
+    :param mpi_setup: ``dict`` that provides MPI setup values if given
+        |frescox| installation built with MPI; ``None``, otherwise.
     :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either the input or
-        output files exist
-    :params cwd: Current working directory to run the simulation in.  If None,
-        the current working directory of the calling process is used.
+    :param overwrite: If False, then an error is raised if either the
+        input or output files exist
+    :params cwd: Current working directory to run the simulation in.  If
+        None, the current working directory of the calling process is used.
     """
     # ----- HARCODED VALUES
     cwd = Path(cwd).resolve() if cwd is not None else "/."
@@ -115,7 +111,13 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
 
     # ----- RUN SIMULATION
     if use_mpi:
-        cmd = ["mpirun", "-np", str(n_mpi_procs), str(frescox_exe), str(fname_in)]
+        cmd = [
+            "mpirun",
+            "-np",
+            str(n_mpi_procs),
+            str(frescox_exe),
+            str(fname_in),
+        ]
 
         try:
             with open(fname_out, "w") as fptr_stdout:

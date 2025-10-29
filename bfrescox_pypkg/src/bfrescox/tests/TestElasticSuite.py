@@ -42,7 +42,9 @@ class TestElasticProblems(unittest.TestCase):
 
     def testAllProblems(self):
         for template, specification in self.__suite.items():
-            expected_template_fname = DATA_PATH.joinpath(specification["Template"])
+            expected_template_fname = DATA_PATH.joinpath(
+                specification["Template"]
+            )
             template_fname = self.__dir.joinpath(f"{template}.template")
             output_fname = self.__testdir.joinpath(f"{template}.nml")
 
@@ -73,18 +75,30 @@ class TestElasticProblems(unittest.TestCase):
                     overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
-                bfrescox.run_simulation(cfg, self.__fname_out, cwd=self.__testdir)
+                bfrescox.run_simulation(
+                    cfg, self.__fname_out, cwd=self.__testdir
+                )
                 self.assertTrue(self.__fname_out.is_file())
 
                 # Check all results against official baselines
                 for quantity, quantity_info in test_info["Results"].items():
-                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
-                        results_df = bfrescox.parse_differential_xs.absolute_mb_per_sr(
-                            self.__fname_out
+                    if (
+                        quantity.lower()
+                        == "differential_xs_absolute_mb_per_sr"
+                    ):
+                        results_df = (
+                            bfrescox.parse_differential_xs.absolute_mb_per_sr(
+                                self.__fname_out
+                            )
                         )
-                    elif quantity.lower() == "differential_xs_ratio_to_rutherford":
-                        results_df = bfrescox.parse_differential_xs.ratio_to_rutherford(
-                            self.__fname_out
+                    elif (
+                        quantity.lower()
+                        == "differential_xs_ratio_to_rutherford"
+                    ):
+                        results_df = (
+                            bfrescox.parse_differential_xs.ratio_to_rutherford(
+                                self.__fname_out
+                            )
                         )
                     else:
                         msg = f"Unknown physical quantity {quantity}"

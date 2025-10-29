@@ -3,9 +3,10 @@ import csv
 # TODO: This assumes in a package
 from ._run_frescox_simulation import (
     FRESCOX_EXE,
-    FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
+    FRESCOX_MPI_SUPPORT,
+    FRESCOX_OPENMP_SUPPORT,
     FRESCOX_LAPACK_SUPPORT,
-    FRESCOX_COREX_SUPPORT
+    FRESCOX_COREX_SUPPORT,
 )
 
 
@@ -31,9 +32,10 @@ def load_build_information(src_path):
     BUILD_INFO = src_path.joinpath("build", "build_info.csv")
 
     EXPECTED_KEYS = {
-        FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
+        FRESCOX_MPI_SUPPORT,
+        FRESCOX_OPENMP_SUPPORT,
         FRESCOX_LAPACK_SUPPORT,
-        FRESCOX_COREX_SUPPORT
+        FRESCOX_COREX_SUPPORT,
     }
 
     if (not BUILD_INFO.exists()) or (not EXE_PATH.exists()):
@@ -51,7 +53,7 @@ def load_build_information(src_path):
             assert key not in built_with
             assert isinstance(value, str)
             assert value.lower() in ["true", "false"]
-            built_with[key] = (value.lower() == "true")
+            built_with[key] = value.lower() == "true"
 
     assert set(built_with) == EXPECTED_KEYS
     built_with[FRESCOX_EXE] = EXE_PATH

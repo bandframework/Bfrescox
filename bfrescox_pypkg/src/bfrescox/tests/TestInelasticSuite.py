@@ -63,7 +63,9 @@ class TestInelasticProblems(unittest.TestCase):
 
     def testAllProblems(self):
         for template, specification in self.__suite.items():
-            expected_template_fname = DATA_PATH.joinpath(specification["Template"])
+            expected_template_fname = DATA_PATH.joinpath(
+                specification["Template"]
+            )
             template_fname = self.__dir.joinpath(f"{template}.template")
             output_fname = self.__testdir.joinpath(f"{template}.nml")
 
@@ -94,7 +96,9 @@ class TestInelasticProblems(unittest.TestCase):
                     overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
-                bfrescox.run_simulation(cfg, self.__fname_out, cwd=self.__testdir)
+                bfrescox.run_simulation(
+                    cfg, self.__fname_out, cwd=self.__testdir
+                )
                 self.assertTrue(self.__fname_out.is_file())
 
                 # Check all results against official baelines
@@ -113,7 +117,9 @@ class TestInelasticProblems(unittest.TestCase):
                         rel_diff_tolr = quantity_info["RelDiffThreshold"]
 
                     if quantity.lower() == "fort.16":
-                        results = bfrescox.parse_fort16(self.__testdir / "fort.16")
+                        results = bfrescox.parse_fort16(
+                            self.__testdir / "fort.16"
+                        )
                         assert expected.keys() == results.keys()
                         for key in expected.keys():
                             compare_arrays(

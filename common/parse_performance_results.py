@@ -19,7 +19,8 @@ def parse_performance_results(filename: Path):
 
     Returns:
     pd.DataFrame
-        DataFrame with index as rank and columns 'walltime_sec' and 'cpu_time_sec'.
+        DataFrame with index as rank and columns 'walltime_sec' and
+        'cpu_time_sec'.
 
     Raises:
     RuntimeError

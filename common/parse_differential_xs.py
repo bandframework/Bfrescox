@@ -11,13 +11,15 @@ from ._parsing import _read_results_lines
 
 def absolute_mb_per_sr(filename: Path):
     """
-    Parse the absolute cross section (mb/sr) from a FrescoX results file.
+    Parse the absolute cross section (mb/sr) from a FrescoX results
+    file.
 
     Parameters:
     filename : Path
         Path to the FrescoX results file.
     Returns:
-        pd.DataFrame: DataFrame with degree as index and absolute cross section as column.
+        pd.DataFrame: DataFrame with degree as index and absolute cross
+        section as column.
     """
     lines = _read_results_lines(filename)
 
@@ -45,13 +47,15 @@ def absolute_mb_per_sr(filename: Path):
 
 def ratio_to_rutherford(filename: Path):
     """
-    Parse the ratio to Rutherford cross section from a FrescoX results file.
+    Parse the ratio to Rutherford cross section from a FrescoX results
+    file.
 
     Parameters:
     filename : Path
         Path to the FrescoX results file.
     Returns:
-        pd.DataFrame: DataFrame with degree as index and Rutherford ratio as column.
+        pd.DataFrame: DataFrame with degree as index and Rutherford
+        ratio as column.
     """
     lines = _read_results_lines(filename)
 
@@ -77,7 +81,9 @@ def ratio_to_rutherford(filename: Path):
             ratio.append(float(result[3]))
 
     df = pd.DataFrame(
-        data=ratio, index=index, columns=["differential_xs_ratio_to_rutherford"]
+        data=ratio,
+        index=index,
+        columns=["differential_xs_ratio_to_rutherford"],
     )
     df.index.name = "angle_degrees"
 

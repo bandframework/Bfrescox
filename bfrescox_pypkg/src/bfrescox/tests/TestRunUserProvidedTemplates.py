@@ -50,7 +50,10 @@ class TestElasticProblems(unittest.TestCase):
                 template_parameters = test_info["TemplateParameters"]
 
                 cfg = bfrescox.Configuration.from_template(
-                    template_fname, output_fname, template_parameters, overwrite=False
+                    template_fname,
+                    output_fname,
+                    template_parameters,
+                    overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
                 bfrescox.run_simulation(cfg, self.__fname_out, cwd=self.__dir)
@@ -59,13 +62,23 @@ class TestElasticProblems(unittest.TestCase):
                 # Check all results against official baselines
                 # TODO this should be factored out for use in other test suites
                 for quantity, quantity_info in test_info["Results"].items():
-                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
-                        results_df = bfrescox.parse_differential_xs.absolute_mb_per_sr(
-                            self.__fname_out
+                    if (
+                        quantity.lower()
+                        == "differential_xs_absolute_mb_per_sr"
+                    ):
+                        results_df = (
+                            bfrescox.parse_differential_xs.absolute_mb_per_sr(
+                                self.__fname_out
+                            )
                         )
-                    elif quantity.lower() == "differential_xs_ratio_to_rutherford":
-                        results_df = bfrescox.parse_differential_xs.ratio_to_rutherford(
-                            self.__fname_out
+                    elif (
+                        quantity.lower()
+                        == "differential_xs_ratio_to_rutherford"
+                    ):
+                        results_df = (
+                            bfrescox.parse_differential_xs.ratio_to_rutherford(
+                                self.__fname_out
+                            )
                         )
                     else:
                         msg = f"Unknown physical quantity {quantity}"

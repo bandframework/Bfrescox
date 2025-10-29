@@ -16,9 +16,7 @@ import shutil
 import subprocess as sbp
 
 from pathlib import Path
-from setuptools import (
-    setup, Command
-)
+from setuptools import setup, Command
 from setuptools.command.build import build as _build
 
 # ----- HARDCODED VALUES
@@ -36,28 +34,27 @@ TEST_REQUIRES = ["f90nml>=1.3"]
 INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
 
 PACKAGE_DATA = {
-    "bfrescox":
-        [f"bin/{exe}" for exe in EXE_NAMES] +
-        ["build/build_info.csv"] +
-        ["tests/TestData/README.md"] +
-        ["tests/TestData/12C_4He_inelastic*"] +
-        ["tests/TestData/48Ca_Ozge*"] +
-        ["tests/TestData/Ni78_p_elastic*"] +
-        ["tests/TestData/TestSuite_Elastic.json"] +
-        ["tests/TestData/TestSuite_Inelastic.json"] +
-        ["tests/TestData/TestSuite_UserProvidedTemplate.json"]
+    "bfrescox": [f"bin/{exe}" for exe in EXE_NAMES]
+    + ["build/build_info.csv"]
+    + ["tests/TestData/README.md"]
+    + ["tests/TestData/12C_4He_inelastic*"]
+    + ["tests/TestData/48Ca_Ozge*"]
+    + ["tests/TestData/Ni78_p_elastic*"]
+    + ["tests/TestData/TestSuite_Elastic.json"]
+    + ["tests/TestData/TestSuite_Inelastic.json"]
+    + ["tests/TestData/TestSuite_UserProvidedTemplate.json"]
 }
 
 PROJECT_URLS = {
     "Source": "https://github.com/bandframework/Bfrescox",
     "Documentation": "http://Bfrescox.readthedocs.io",
-    "Tracker": "https://github.com/bandframework/Bfrescox/issues"
+    "Tracker": "https://github.com/bandframework/Bfrescox/issues",
 }
 
 
 # ----- CUSTOM COMMAND TO BUILD FRESCOX BINARIES
 class build(_build):
-    sub_commands = ([("build_frescox", None)])
+    sub_commands = [("build_frescox", None)]
 
 
 class build_frescox(Command):
@@ -82,10 +79,17 @@ class build_frescox(Command):
         #   SETUP_CMD
         # * Remove "--quiet" from INSTALL_CMD
         # * Use python -m pip install -v ...
-        SETUP_CMD = ["meson", "setup", "--wipe", "--clearcache",
-                     "--buildtype=release", "builddir",
-                     f"-Dprefix={PY_SRC_PATH}",
-                     "--warnlevel", "0"]
+        SETUP_CMD = [
+            "meson",
+            "setup",
+            "--wipe",
+            "--clearcache",
+            "--buildtype=release",
+            "builddir",
+            f"-Dprefix={PY_SRC_PATH}",
+            "--warnlevel",
+            "0",
+        ]
         # Since this is Fortran code from older standards and I suspect that it
         # uses implict variables, I don't want to assume that the Meson build
         # system's tools for determining interfile dependencies can figure out
@@ -99,9 +103,9 @@ class build_frescox(Command):
         os.chdir(MESON_BUILD_PATH)
         for cmd in [SETUP_CMD, COMPILE_CMD, INSTALL_CMD]:
             try:
-                sbp.run(cmd,
-                        stdin=sbp.DEVNULL, capture_output=False,
-                        check=True)
+                sbp.run(
+                    cmd, stdin=sbp.DEVNULL, capture_output=False, check=True
+                )
             except sbp.CalledProcessError as err:
                 print()
                 msg = "[meson build] Unable to run command (Return code {})"
@@ -111,10 +115,7 @@ class build_frescox(Command):
         os.chdir(cwd)
 
 
-cmdclass = {
-    'build': build,
-    'build_frescox': build_frescox
-}
+cmdclass = {"build": build, "build_frescox": build_frescox}
 
 
 # ----- SPECIFY THE PACKAGE
@@ -125,7 +126,7 @@ def readme_md():
 
 
 setup(
-    name='bfrescox',
+    name="bfrescox",
     author="Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal",
     author_email="beyerk@frib.msu.edu",
     maintainer="Kyle Beyer",
@@ -154,6 +155,6 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering",
-        "Topic :: Scientific/Engineering :: Physics"
-    ]
+        "Topic :: Scientific/Engineering :: Physics",
+    ],
 )

@@ -22,5 +22,5 @@ def load_tests(loader, *_):
     return loader.discover(
         start_dir=str(start_dir),
         top_level_dir=str(here_dir),
-        pattern="Test*.py"
+        pattern="Test*.py",
     )
