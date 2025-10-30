@@ -52,16 +52,14 @@ class TestElasticProblems(unittest.TestCase):
                 template_parameters = test_info["TemplateParameters"]
 
                 mpi_setup = None
-                if (
-                    self.__info["supports_mpi"]
-                    and self.__info["supports_openmp"]
-                ):
-                    # Configure parallelization scheme
+                if self.__info["supports_mpi"]:
+                    pro_setup = test_info["ProSetup"]
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
+
+                if self.__info["supports_openmp"]:
                     pro_setup = test_info["ProSetup"]
                     n_threads = pro_setup["nOmpThreads"]
                     os.environ["OMP_NUM_THREADS"] = str(n_threads)
-
-                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
 
                 cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
@@ -78,10 +76,7 @@ class TestElasticProblems(unittest.TestCase):
                 # Check all results against official baselines
                 # TODO this should be factored out for use in other test suites
                 for quantity, quantity_info in test_info["Results"].items():
-                    if (
-                        quantity.lower()
-                        == "differential_xs_absolute_mb_per_sr"
-                    ):
+                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
                         results_df = parse_differential_xs.absolute_mb_per_sr(
                             self.__fname_out
                         )

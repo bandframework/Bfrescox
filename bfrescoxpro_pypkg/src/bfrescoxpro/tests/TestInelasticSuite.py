@@ -90,16 +90,14 @@ class TestInelasticProblems(unittest.TestCase):
 
                 template_parameters = test_info["TemplateParameters"]
                 mpi_setup = None
-                if (
-                    self.__info["supports_mpi"]
-                    and self.__info["supports_openmp"]
-                ):
-                    # Configure parallelization scheme
+                if self.__info["supports_mpi"]:
+                    pro_setup = test_info["ProSetup"]
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
+
+                if self.__info["supports_openmp"]:
                     pro_setup = test_info["ProSetup"]
                     n_threads = pro_setup["nOmpThreads"]
                     os.environ["OMP_NUM_THREADS"] = str(n_threads)
-
-                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
 
                 cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
