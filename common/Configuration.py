@@ -6,13 +6,22 @@ from ._fill_in_template import fill_in_template_file
 
 
 class Configuration(object):
+    """
+    Class representing a Frescox input configuration.
+    """
+
     @classmethod
-    def from_NML(cls, filename):
+    def from_NML(cls, filename: Path):
         """
-        :return: Configuration object constructed from contents of given
+        Parameters:
+            filename (str or Path): Path to Frescox Fortran namelist input
+            file
+
+        Returns:
+            Configuration object constructed from contents of given
             |frescox| Fortran namelist input file
         """
-        return cls(None, filename)
+        return cls(filename)
 
     @classmethod
     def from_template(
@@ -36,7 +45,8 @@ class Configuration(object):
         Then the `parameters` dict should have the keys `V`, `r`, `a`,
         `W`, `rw`, and `aw`.
 
-        Placeholders may be repeated in multiple places in the template file.
+        Placeholders may be repeated in multiple places in the template
+        file.
 
         Parameters:
             template_path (Path): Path to the template NML file.
@@ -63,27 +73,34 @@ class Configuration(object):
             parameters,
             overwrite=overwrite,
         )
-        return cls(None, output_path)
+        return cls(output_path)
 
     @classmethod
-    def from_json(cls, filename):
+    def from_json(cls, filename: Path):
         """
-        :return: Configuration object constructed from contents of given
+        Parameters:
+            filename (str or Path): Path to Frescox |bfrescox| format JSON
+            file
+
+        Returns:
+            Configuration object constructed from contents of given
             |bfrescox| format JSON file
         """
-        raise NotImplementedError("Is this a good idea?!")
+        raise NotImplementedError("from_json not implemented yet")
 
-    def __init__(self, configuration, filename):
+    def __init__(self, filename: Path):
         """
-        :param configuration:
-        :param filename:
+        Parameters:
+            filename (str or Path): Path to Frescox Fortran namelist input
+            file
+
+        Raises:
+            TypeError: If filename is not a str or Path
+            ValueError: If filename does not exist or is not a file
         """
         super().__init__()
 
         # ----- ERROR CHECK ARGUMENTS
-        if configuration is not None:
-            raise NotImplementedError("Should this be a dict?")
-
         if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
             raise TypeError("Given filename is not a str or Path")
         fname = Path(filename).resolve()
@@ -95,8 +112,19 @@ class Configuration(object):
         # No loading or checking to be done if Frescox NML file
         self.__nml = fname
 
-    def write_to_nml(self, filename, overwrite=False):
-        """ """
+    def write_to_nml(self, filename: Path, overwrite: bool = False):
+        """
+        Write configuration to Frescox Fortran namelist input file.
+        Parameters:
+            filename (str or Path): Path to write Frescox Fortran
+                namelist input file
+            overwrite (bool): Whether to overwrite filename if it
+                already exists.
+        Raises:
+            TypeError: If filename is not a str or Path
+            RuntimeError: If filename already exists and overwrite is
+                False
+        """
         # ----- ERROR CHECK ARGUMENTS
         if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
             raise TypeError("Given filename is not a str or Path")

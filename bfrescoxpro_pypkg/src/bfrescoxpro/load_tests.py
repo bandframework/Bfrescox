@@ -1,7 +1,8 @@
 from pathlib import Path
+from unittest import TestLoader, TestSuite
 
 
-def load_tests(loader, *_):
+def load_tests(loader: TestLoader, *_) -> TestSuite:
     """
     This function implements the ``load_tests`` protocol of the Python
     ``unittest`` package so that clients using the package don't need to
@@ -12,9 +13,11 @@ def load_tests(loader, *_):
 
                        python -m unittest bfrescoxpro
 
-    :param loader: ``unittest.TestLoader`` instance doing the loading
-    :return: ``unittest`` test suite that contains all tests to be run
-    to check correctness of all code in the overall package
+    Parameters:
+        loader (TestLoader): ``unittest.TestLoader`` instance doing the
+            loading
+    Returns:
+        TestSuite: suite of all discovered tests
     """
     here_dir = Path(__file__).resolve().parent
     start_dir = here_dir.joinpath("tests")

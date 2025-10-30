@@ -8,10 +8,12 @@ import pandas as pd
 
 from ._parsing import _read_results_lines
 
-# TODO prototype code, needs review
+
 def parse_performance_results(filename: Path):
     """
     Parse FrescoX performance results into a DataFrame.
+
+    ..todo prototype code
 
     Parameters:
     filename : Path

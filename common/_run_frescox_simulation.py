@@ -2,6 +2,7 @@ import os
 import subprocess as sbp
 from numbers import Integral
 from pathlib import Path
+from typing import Optional
 
 from .Configuration import Configuration
 
@@ -18,7 +19,14 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def _run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
+def _run_frescox_simulation(
+    frescox: dict,
+    config: Configuration,
+    mpi_setup: Optional[dict],
+    filename: Path,
+    overwrite: bool,
+    cwd: Optional[Path] = None,
+):
     """
     Run a |frescox| simulation using the given |frescox| installation,
     simulation configuration, and MPI setup.  Results are written to
@@ -32,17 +40,33 @@ def _run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd
     arguments.  A nice side effect of this is that the wrapper functions
     in the packages likely don't need to perform any error checking.
 
-    :param frescox: ``dict`` that fully characterizes a |frescox|
-        installation
-    :param config: |bfrescox| :py:class:`Configuration` object that
-        specifies the simulation to execute
-    :param mpi_setup: ``dict`` that provides MPI setup values if given
-        |frescox| installation built with MPI; ``None``, otherwise.
-    :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either the
-        input or output files exist
-    :params cwd: Current working directory to run the simulation in.  If
-        None, the current working directory of the calling process is used.
+    Parameters:
+    frescox : dict
+        Dictionary that fully characterizes a |frescox| installation
+    config : Configuration
+        |bfrescox| :py:class:`Configuration` object that specifies the
+        simulation to execute
+    mpi_setup : dict or None
+        Dictionary that provides MPI setup values if given |frescox|
+        installation built with MPI; ``None``, otherwise.
+    filename : str or Path
+        Filename including path of file to write outputs to
+    overwrite : bool
+        If False, then an error is raised if either the input or output
+        files exist
+    cwd : str or Path or None
+        Current working directory to run the simulation in.  If None,
+        the current working directory of the calling process is used.
+
+    Raises:
+    TypeError
+        If any of the arguments are of incorrect type
+    ValueError
+        If any of the argument values are invalid
+    RuntimeError
+        If output file already exists and overwrite is False, or if
+        OpenMP is to be used but OMP_NUM_THREADS environment variable
+        is not set, or if the |frescox| executable fails during execution
     """
     # ----- ERROR CHECK ARGUMENTS
     if not isinstance(frescox, dict):
