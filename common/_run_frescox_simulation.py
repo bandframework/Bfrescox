@@ -18,7 +18,7 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(
+def _run_frescox_simulation(
     frescox, config, mpi_setup, filename, overwrite, cwd=None
 ):
     """

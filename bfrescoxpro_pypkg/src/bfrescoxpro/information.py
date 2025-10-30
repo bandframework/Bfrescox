@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from ._load_build_information import load_build_information
+from ._load_build_information import _load_build_information
 
 
 def information():
@@ -14,7 +14,7 @@ def information():
     :return: ``dict`` that contains information regarding the |frescox|
         executable used by the package.
     """
-    frescox = load_build_information(Path(__file__).resolve().parent)
+    frescox = _load_build_information(Path(__file__).resolve().parent)
     if not frescox:
         raise RuntimeError("No valid Frescox installation found")
 

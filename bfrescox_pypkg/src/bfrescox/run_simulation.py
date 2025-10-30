@@ -6,7 +6,7 @@ from ._run_frescox_simulation import (
     FRESCOX_LAPACK_SUPPORT,
     FRESCOX_MPI_SUPPORT,
     FRESCOX_OPENMP_SUPPORT,
-    run_frescox_simulation,
+    _run_frescox_simulation,
 )
 from .information import information
 
@@ -60,6 +60,6 @@ def run_simulation(
     # This function assumes that all error checking of arguments will be handled
     # by this internal function.  This includes the case of incorrectly
     # providing an MPI-based external installation.
-    run_frescox_simulation(
+    _run_frescox_simulation(
         frescox, configuration, NO_MPI_PLEASE, filename, overwrite, cwd=cwd
     )

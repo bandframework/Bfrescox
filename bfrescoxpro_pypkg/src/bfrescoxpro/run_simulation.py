@@ -1,4 +1,4 @@
-from ._run_frescox_simulation import run_frescox_simulation
+from ._run_frescox_simulation import _run_frescox_simulation
 from .information import information
 
 
@@ -25,7 +25,7 @@ def run_simulation(
     """
     # This function assumes that all error checking of arguments
     # will be handled by this internal function.
-    run_frescox_simulation(
+    _run_frescox_simulation(
         information(),
         configuration,
         mpi_setup,

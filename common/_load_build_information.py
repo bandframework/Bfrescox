@@ -1,6 +1,5 @@
 import csv
 
-# TODO: This assumes in a package
 from ._run_frescox_simulation import (
     FRESCOX_EXE,
     FRESCOX_MPI_SUPPORT,
@@ -10,7 +9,7 @@ from ._run_frescox_simulation import (
 )
 
 
-def load_build_information(src_path):
+def _load_build_information(src_path):
     """
     This function is written under the assumption that it is integrated in and
     being called through a package.  It, therefore, can **not** be called as a
