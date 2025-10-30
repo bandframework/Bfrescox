@@ -18,9 +18,7 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def _run_frescox_simulation(
-    frescox, config, mpi_setup, filename, overwrite, cwd=None
-):
+def _run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
     """
     Run a |frescox| simulation using the given |frescox| installation,
     simulation configuration, and MPI setup.  Results are written to
@@ -46,10 +44,6 @@ def _run_frescox_simulation(
     :params cwd: Current working directory to run the simulation in.  If
         None, the current working directory of the calling process is used.
     """
-    # ----- HARCODED VALUES
-    cwd = Path(cwd).resolve() if cwd is not None else "/."
-    FRESCOX_INPUT_NAME = cwd / "frescox.in"
-
     # ----- ERROR CHECK ARGUMENTS
     if not isinstance(frescox, dict):
         raise TypeError(f"Invalid frescox specification ({frescox})")
@@ -106,7 +100,11 @@ def _run_frescox_simulation(
         else:
             raise RuntimeError(f"Output file ({fname_out}) already exists")
 
-    fname_in = fname_out.parent.joinpath(FRESCOX_INPUT_NAME)
+    if cwd is None:
+        cwd = Path.cwd()
+    elif not isinstance(cwd, (str, Path)):
+        raise TypeError(f"Invalid working directory ({cwd})")
+    fname_in = Path(cwd).resolve().joinpath("frescox.in")
     config.write_to_nml(fname_in, overwrite)
 
     # ----- RUN SIMULATION

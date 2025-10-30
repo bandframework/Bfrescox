@@ -22,6 +22,8 @@ def run_simulation(
         simulation input or output files exist
     :param mpi_setup: `dict` that provides MPI setup values if
         executable built with MPI; `None`, otherwise.
+    :param cwd: Working directory to run the simulation in; if `None`,
+        then the current working directory is used
     """
     # This function assumes that all error checking of arguments
     # will be handled by this internal function.
