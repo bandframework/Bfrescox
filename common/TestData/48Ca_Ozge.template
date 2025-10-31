@@ -1,4 +1,4 @@
-12C scattering
+48Ca scattering
 NAMELIST
  &FRESCO hcm=0.01 rmatch=40 rintp=0.20 hnl=@hnl@ rnl=@rnl@ centre=-0.25
 	 jtmin=0.0  jtmax=35 absend=-1.0
