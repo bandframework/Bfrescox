@@ -4,7 +4,6 @@ Automatic unittest of print_information() function
 
 import io
 import unittest
-
 from contextlib import redirect_stdout
 
 import bfrescox
