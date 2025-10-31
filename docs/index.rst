@@ -1,23 +1,28 @@
 |bfrescox| Python package
 =========================
 
-This content is a placeholder for real content.  Citations such as
-:cite:t:`Golub13` might be needed for this project.
+|bfrescox| is a Python package wrapping |frescox|:cite:t:`thompson1988coupled`,
+a Fortran library for coupled-reaction-channels calculations in nuclear physics.
+The intention of this package is to provide a user-friendly experience to
+perform parametric reaction calculations and uncertainty quantification studies
+with |frescox|.
 
-Let's use some macros such as |bfrescox| and |bfrescoxpro| (|ie| the packages
-that we are working with), which is developed as part of |band| |via|
-collaboration.
+|frescox| is available `on github <https://github.com/llnl/frescox>`_, and also
+has a `dedicated website <https://www.fresco.org.uk/index.htm>`_. The |bfrescox|
+build system automatically downloads and compiles |frescox| as part of its
+installation process, and provides an interface to build input configurations
+for |frescox|, run calculations, and parse output results.
 
-This software could be used to provide different parameterized models of the
-general form :math:`f(\invar; \psp)`, where :math:`\invar` represents the
-independent, or input, variables; :math:`\psp`, a point in the model's parameter
-space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
-\R^{\np}`.
+|bfrescoxpro| is a sister package to |bfrescox| that provides a similar
+interface, with more options available for setting up the |frescox|
+installation, including support for MPI and OpenMP builds.
+
+These packages are being developed as part of |band| |via| collaboration.
 
 .. note::
 
-    Add information here about licensing and that users are solely responsible
-    for use of software in their research?
+    |bfrescox| and |bfrescoxpro| are offered under the BSD-2-Clause license. By
+    using these packages, you agree to the terms of this license.
 
 .. note::
 
@@ -33,7 +38,9 @@ space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
    :caption: User Guide:
 
    get_started
+   templates
    examples
+   contributing_templates
    api
    advanced_users
    bibliography
