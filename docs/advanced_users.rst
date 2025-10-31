@@ -107,12 +107,15 @@ Users can also override customization by setting the ``BFRESCOX_USE_MPI`` and
 * ``enabled`` - build requires the associated feature and its dependencies
 * ``auto`` - include associated feature if it and its dependencies are found
 
-For instance, to build a |frescox| binary that must use OpenMP but that should
-not use MPI despite the fact that MPI is installed, use
+For instance, to build a |frescox| binary that
+must use OpenMP but that should not use MPI despite the fact that MPI is
+installed, use
 
 .. code:: console
 
     $ BFRESCOX_USE_MPI=disabled BFRESCOX_USE_OMP=enabled python -m pip install .
+
+By default, ``auto`` is enabled. 
 
 **UNOFFICIAL & UNTESTED CUSTOMIZATIONS**
 
