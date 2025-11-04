@@ -14,12 +14,11 @@ def test(verbosity: int = 1):
 
                             bfrescoxpro.test()
 
-    Parameters:
-        verbosity: int
-            verbosity level to pass to the ``unittest`` ``TestRunner``
+    Args:
+        verbosity (int):  verbosity level to pass to the ``unittest``
+            ``TestRunner``
     Returns:
-        bool
-            True if all tests in package passed; False, otherwise.
+        bool: True if all tests in package passed; False, otherwise.
     """
     loader = unittest.TestLoader()
     suite = load_tests(loader, None, None)

@@ -13,8 +13,8 @@ def load_tests(loader: TestLoader, *_) -> TestSuite:
 
                          python -m unittest bfrescox
 
-    Parameters:
-        loader: ``unittest.TestLoader`` instance doing the loading
+    Args:
+        loader (unittest.TestLoader): instance doing the loading
 
     Returns:
         TestSuite: The loaded test suite

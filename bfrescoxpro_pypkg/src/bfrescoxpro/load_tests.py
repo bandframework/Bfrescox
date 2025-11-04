@@ -13,7 +13,7 @@ def load_tests(loader: TestLoader, *_) -> TestSuite:
 
                        python -m unittest bfrescoxpro
 
-    Parameters:
+    Args:
         loader (TestLoader): ``unittest.TestLoader`` instance doing the
             loading
     Returns:

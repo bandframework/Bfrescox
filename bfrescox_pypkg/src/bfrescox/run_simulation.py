@@ -1,5 +1,6 @@
 import copy
 import warnings
+from os import PathLike
 from pathlib import Path
 from typing import Optional
 
@@ -16,10 +17,10 @@ from .information import information
 
 def run_simulation(
     configuration: Configuration,
-    filename: Path,
+    filename: str | PathLike[str],
     overwrite: bool = False,
     external: Optional[dict] = None,
-    cwd: Optional[Path] = None,
+    cwd: Optional[str | PathLike[str]] = None,
 ):
     """
     Run a |frescox| simulation based on the given simulation
@@ -28,24 +29,17 @@ def run_simulation(
     generated from the configuration object for the simulation is
     written alongside the results file.
 
-    .. todo::
-        * Load and return a result object once that class exists.
-
-    Parameters:
-        configuration (Configuration):
-            :py:class:`Configuration` object that specifies the
-            simulation to run.
-        filename (Path):
-            Filename including the path of the file to write outputs to.
-        overwrite (bool):
-            If False, then an error is raised if either of the
-            simulation input or output files exist.
-        external (bool, optional):
-            (|bfrescox| only) **EXPERT USERS ONLY**
-        cwd (Path, optional):
-            Current working directory to run the simulation in. If None,
-            the current working directory of the calling process is
-            used. Defaults to None.
+    Args:
+        configuration (Configuration): :py:class:`Configuration` object
+            that specifies the simulation to run.
+        filename (str | PathLike[str]): Filename including path of file
+            to write outputs to
+        overwrite (bool): If False, then an error is raised if either of
+            the simulation input or output files exist
+        external (bool, optional): (|bfrescox| only) **EXPERT USERS
+            ONLY**
+        cwd (str | PathLike[str]): directory to run the simulation in.
+            If None, the current working directory is used.
 
     Raises:
         ValueError: If no valid internal or external |frescox|
@@ -56,8 +50,9 @@ def run_simulation(
 
     frescox = information()
     if (not frescox) and (external is None):
-        msg = "Invalid Frescox installation and no external "
-        "installation provided"
+        msg = (
+            "Invalid Frescox installation and no external installation provided"
+        )
         raise ValueError(msg)
 
     if external is not None:
@@ -75,9 +70,17 @@ def run_simulation(
         assert not frescox[FRESCOX_LAPACK_SUPPORT]
         assert not frescox[FRESCOX_COREX_SUPPORT]
 
+    if cwd is None:
+        cwd = Path.cwd()
+
     # This function assumes that all error checking of arguments will be handled
     # by this internal function.  This includes the case of incorrectly
     # providing an MPI-based external installation.
     _run_frescox_simulation(
-        frescox, configuration, NO_MPI_PLEASE, filename, overwrite, cwd=cwd
+        frescox,
+        configuration,
+        filename,
+        overwrite,
+        NO_MPI_PLEASE,
+        cwd,
     )

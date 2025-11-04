@@ -14,7 +14,7 @@ def test(verbosity: int = 1) -> bool:
 
                               bfrescox.test()
 
-    Parameters:
+    Args:
         verbosity (int): verbosity level to pass to the
             ``unittest`` ``TestRunner``
     Returns:
