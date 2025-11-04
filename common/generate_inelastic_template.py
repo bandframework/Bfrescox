@@ -72,8 +72,10 @@ def _setup_inelastic_system_template(
     # Generate the dynamic &STATES section
 
     dynamic_section = "".join(
-        f"&STATES copyp=1         cpot=1 "
-        f"jt={float(jt)} bandt={int((-1) ** int(parity + 1))} et={et} /\n"
+        f"&STATES copyp=1 cpot=1 "
+        f"jt={float(jt):.1f} "
+        f"bandt={int((-1) ** int(parity + 1)):d}"
+        f"et={et:.9f} /\n"
         for et, jt, parity in zip(
             values_et[1:], values_jt[1:], bandt_vals[1:]
         )  # Skip the first value (0.0)
@@ -172,7 +174,10 @@ def generate_inelastic_template(
 
     template = inelastic_input_template[:]
     modified_template = _setup_inelastic_system_template(
-        template, E_states, I_states, Pi_states
+        template,
+        np.asarray(E_states),
+        np.asarray(I_states),
+        np.asarray(Pi_states),
     )
 
     # expand type=11 multipole stub(s)
@@ -182,22 +187,22 @@ def generate_inelastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "STEP_SIZE": str(step_size),
-        "RMATCH": str(R_match),
-        "J_TOT_MIN": str(float(J_tot_min)),
-        "J_TOT_MAX": str(float(J_tot_max)),
-        "E_LAB": str(E_lab),
-        "CLOSED_COUPLINGS": str(int(num_states)),
-        "MASS_P": str(mass_p),
-        "CHARGE_P": str(charge_p),
-        "NUM_STATES": str(num_states),
-        "MASS_T": str(mass_t),
-        "CHARGE_T": str(charge_t),
-        "S_PROJECTILE": str(float(spin_p)),
-        "I_GROUND": str(float(I_states[0])),
-        "GS_PAR": str(Pi_states[0]),
-        "E_GROUND": str(E_states[0]),
-        "COULOMB_R": str(R_Coulomb),
+        "STEP_SIZE": f"{step_size:.9f}",
+        "RMATCH": f"{R_match:.9f}",
+        "J_TOT_MIN": f"{float(J_tot_min):.1f}",
+        "J_TOT_MAX": f"{float(J_tot_max):.1f}",
+        "E_LAB": f"{E_lab:.9f}",
+        "CLOSED_COUPLINGS": f"{int(num_states):d}",
+        "MASS_P": f"{mass_p:.9f}",
+        "CHARGE_P": f"{charge_p:.9f}",
+        "NUM_STATES": f"{int(num_states):d}",
+        "MASS_T": f"{mass_t:.9f}",
+        "CHARGE_T": f"{charge_t:.9f}",
+        "S_PROJECTILE": f"{float(spin_p):.1f}",
+        "I_GROUND": f"{float(I_states[0]):.1f}",
+        "GS_PAR": f"{int((-1) ** int(Pi_states[0] + 1))}",
+        "E_GROUND": f"{E_states[0]:.9f}",
+        "COULOMB_R": f"{R_Coulomb:.9f}",
     }
 
     # Replace placeholders directly in the modified template

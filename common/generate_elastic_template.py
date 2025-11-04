@@ -73,22 +73,26 @@ def generate_elastic_template(
     if not _is_fraction_integer_or_half_integer(J_tot_max):
         raise ValueError("J_tot_max must be an integer or half-integer.")
 
+    if not isinstance(output_path, (str, PathLike)):
+        raise TypeError("output_path must be a string or PathLike object.")
+    output_path = Path(output_path).resolve()
+
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "STEP_SIZE": str(step_size),
-        "RMATCH": str(R_match),
-        "J_TOT_MIN": str(float(J_tot_min)),
-        "J_TOT_MAX": str(float(J_tot_max)),
-        "E_LAB": str(E_lab),
-        "MASS_P": str(mass_p),
-        "CHARGE_P": str(charge_p),
-        "MASS_T": str(mass_t),
-        "CHARGE_T": str(charge_t),
-        "S_PROJECTILE": str(float(spin_p)),
-        "I_GROUND": str(float(spin_t)),
-        "E_GROUND": str(BE_t),
-        "COULOMB_R": str(R_Coulomb),
+        "STEP_SIZE": f"{step_size:.9f}",
+        "RMATCH": f"{R_match:.9f}",
+        "J_TOT_MIN": f"{float(J_tot_min):.1f}",
+        "J_TOT_MAX": f"{float(J_tot_max):.1f}",
+        "E_LAB": f"{E_lab:.9f}",
+        "MASS_P": f"{mass_p:.9f}",
+        "CHARGE_P": f"{charge_p:.9f}",
+        "MASS_T": f"{mass_t:.9f}",
+        "CHARGE_T": f"{charge_t:.9f}",
+        "S_PROJECTILE": f"{float(spin_p):.1f}",
+        "I_GROUND": f"{float(spin_t):.1f}",
+        "E_GROUND": f"{E_0:.9f}",
+        "COULOMB_R": f"{R_Coulomb:.9f}",
     }
 
     modified_template = elastic_input_template[:]
