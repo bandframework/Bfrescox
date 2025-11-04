@@ -1,4 +1,5 @@
 import csv
+from os import PathLike
 from pathlib import Path
 
 from ._run_frescox_simulation import (
@@ -10,20 +11,27 @@ from ._run_frescox_simulation import (
 )
 
 
-def _load_build_information(src_path: Path) -> dict:
+def _load_build_information(src_path: str | PathLike[str]) -> dict:
     """
     Load all information related to the internal |frescox| installation.
 
-    Parameters:
-        src_path : ``pathlib.Path``
-            Path to folder that contains the ``bin`` and ``build``
-            installation folders.
+    Args:
+        src_path (str | PathLike[str]): Path to folder that contains the
+            ``bin`` and ``build`` installation folders.
     Returns:
-        dict
-            ``dict`` that contains information regarding the |frescox|
-            executable used by the package.  An empty ``dict`` indicates
-            that no valid internal |frescox| installation was found.
+        dict : contains information regarding the |frescox| executable
+            used by the package.  An empty ``dict`` indicates that no
+            valid internal |frescox| installation was found.
     """
+
+    if not isinstance(src_path, (str, PathLike)):
+        raise TypeError(
+            f"Expected 'src_path' to be of type 'str' or 'PathLike[str]', "
+            f"got '{type(src_path)}'"
+        )
+
+    src_path = Path(src_path).resolve()
+
     EXE_PATH = src_path.joinpath("bin", "frescox")
     BUILD_INFO = src_path.joinpath("build", "build_info.csv")
 

@@ -1,26 +1,31 @@
 """
-Parse differential cross section results from FrescoX output files.
+Parse differential cross section results from |frescox| stdout
 """
 
-from pathlib import Path
+from os import PathLike
 
 import pandas as pd
 
 from ._parsing import _read_results_lines
 
 
-def absolute_mb_per_sr(filename: Path):
+def absolute_mb_per_sr(filename: str | PathLike[str]) -> pd.DataFrame:
     """
-    Parse the absolute cross section (mb/sr) from a FrescoX results
+    Parse the absolute cross section (mb/sr) from a |frescox| results
     file.
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX results file.
+    Args:
+        filename  (str | PathLike[str]): Path to the |frescox| results file.
+
     Returns:
         pd.DataFrame: DataFrame with degree as index and absolute cross
         section as column.
+
+    Raises:
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
+
     lines = _read_results_lines(filename)
 
     index = []
@@ -45,17 +50,21 @@ def absolute_mb_per_sr(filename: Path):
     return df
 
 
-def ratio_to_rutherford(filename: Path):
+def ratio_to_rutherford(filename: str | PathLike[str]) -> pd.DataFrame:
     """
-    Parse the ratio to Rutherford cross section from a FrescoX results
+    Parse the ratio to Rutherford cross section from a |frescox| results
     file.
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX results file.
+    Args:
+        filename  (str | PathLike[str]): Path to the |frescox| results file.
+
     Returns:
         pd.DataFrame: DataFrame with degree as index and Rutherford
         ratio as column.
+
+    Raises:
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
     lines = _read_results_lines(filename)
 

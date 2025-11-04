@@ -3,15 +3,10 @@ Generate an elastic scattering input template for Fresco.
 """
 
 from fractions import Fraction
+from os import PathLike
 from pathlib import Path
 
 from ._utils import _is_fraction_integer_or_half_integer
-
-
-def load_template(file_path: Path) -> str:
-    with open(file_path, "r") as file:
-        return file.read()
-
 
 template_file_path = Path(__file__).parent / "templates/elastic.template"
 with open(template_file_path, "r") as file:
@@ -19,7 +14,7 @@ with open(template_file_path, "r") as file:
 
 
 def generate_elastic_template(
-    output_path: Path,
+    output_path: str | PathLike[str],
     mass_t: float,
     charge_t: float,
     spin_t: Fraction,
@@ -31,31 +26,42 @@ def generate_elastic_template(
     J_tot_max: Fraction,
     R_Coulomb: float,
     reaction_name: str,
-    BE_t: float = 0.0,
+    E_0: float = 0.0,
     R_match: float = 60.0,
     step_size: float = 0.1,
 ):
     """
     Generate an elastic scattering input template for Fresco.
 
-    Parameters:
-    output_path (Path): Path to save the generated template file.
-    mass_t (float): Mass of the target nucleus.
-    charge_t (float): Charge of the target nucleus.
-    spin_t (Fraction): Spin of the target nucleus (integer or half-integer).
-    mass_p (float): Mass of the projectile nucleus.
-    charge_p (float): Charge of the projectile nucleus.
-    spin_p (Fraction): Spin of the projectile nucleus (integer or half-integer).
-    E_lab (float): Laboratory energy of the projectile in MeV.
-    J_tot_min (Fraction): Minimum total angular momentum (integer or
-        half-integer).
-    J_tot_max (Fraction): Maximum total angular momentum (integer or
-        half-integer).
-    R_Coulomb (float): Coulomb radius in fm.
-    reaction_name (str): Name of the reaction for file naming.
-    BE_t (float): Binding energy of the target in MeV. Default is 0.0.
-    R_match (float): Matching radius in fm. Default is 60.0.
-    step_size (float): Step size for the radial mesh in fm. Default is 0
+    Args:
+        output_path (str | PathLike[str]): Path to save the generated
+            template file.
+        mass_t (float): Mass of the target nucleus.
+        charge_t (float): Charge of the target nucleus.
+        spin_t (Fraction): Spin of the target nucleus (integer or
+            half-integer).
+        mass_p (float): Mass of the projectile nucleus.
+        charge_p (float): Charge of the projectile nucleus.
+        spin_p (Fraction): Spin of the projectile nucleus (integer or
+            half-integer).
+        E_lab (float): Laboratory energy of the projectile in MeV.
+        J_tot_min (Fraction): Minimum total angular momentum (integer or
+            half-integer).
+        J_tot_max (Fraction): Maximum total angular momentum (integer or
+            half-integer).
+        R_Coulomb (float): Coulomb radius in fm.
+        reaction_name (str): Name of the reaction for file naming.
+        E_0 (float): Ground state energy of the target nucleus in MeV
+            (usually 0, larger for isomeric or excited final state).
+            Default is 0.0.
+        R_match (float): Matching radius in fm. Default is 60.0.
+        step_size (float): Step size for the radial mesh in fm. Default
+            is 0.1.
+
+    Raises:
+        ValueError: If J_tot_min is greater than J_tot_max, or if either
+            J_tot_min or J_tot_max is negative, or if they are not
+            integer or half-integer values.
     """
 
     if J_tot_min > J_tot_max:

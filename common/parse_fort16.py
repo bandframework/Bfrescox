@@ -1,32 +1,33 @@
 """
-Parse FrescoX fort.16 output files into structured pandas DataFrames.
+Parse |frescox| fort.16 output files into structured pandas DataFrames.
 """
 
+from os import PathLike
 from pathlib import Path
 
 import pandas as pd
 
 
-def parse_fort16(filename: Path):
+def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
     """
-    Parse a FrescoX fort.16 output into a dict of DataFrames.
-    Each '@sN ... &' block becomes one entry labeled channel_N,
-    with all numeric columns and proper names (Theta, sigma, iT11, etc.).
+    Parse a |frescox| fort.16 output into a dict of DataFrames.  Each
+    '@sN ... &' block becomes one entry labeled channel_N, with all
+    numeric columns and proper names (Theta, sigma, iT11, etc.).
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX fort.16 output file.
+    Args:
+        filename (str | PathLike[str]): Path to the |frescox| fort.16
+                                        output file.
 
     Returns:
-    dict of pd.DataFrame
-        Dictionary with keys 'channel_1', 'channel_2', etc., each containing a
-        DataFrame of the corresponding data.
+        dict[pd.DataFrame]: Dictionary with keys 'channel_1',
+                            'channel_2', etc., each containing a
+                            DataFrame of the corresponding data.
 
     Raises:
-    TypeError: If filename is not a string or Path.
-    ValueError: If the file does not exist.
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
-    if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
+    if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid filename ({filename})")
     path = Path(filename).resolve()
     if not path.is_file():

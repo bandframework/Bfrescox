@@ -1,32 +1,31 @@
 """
-Utilities for parsing FrescoX performance results into a DataFrame.
+Utilities for parsing |frescox| performance results into a DataFrame.
 """
 
-from pathlib import Path
+from os import PathLike
 
 import pandas as pd
 
 from ._parsing import _read_results_lines
 
 
-def parse_performance_results(filename: Path):
+def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
     """
-    Parse FrescoX performance results into a DataFrame.
+    Parse |frescox| performance results into a DataFrame.
 
     ..todo prototype code
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX output file.
+    Args:
+        filename (str | PathLike[str]): Path to the |frescox| output
+                                        file.
 
     Returns:
-    pd.DataFrame
-        DataFrame with index as rank and columns 'walltime_sec' and
-        'cpu_time_sec'.
+        pd.DataFrame : index as rank and columns 'walltime_sec' and
+                       'cpu_time_sec'.
 
     Raises:
-    RuntimeError
-        If an invalid performance result line is encountered.
+        RuntimeError : If an invalid performance result line is
+                       encountered.
     """
     lines = _read_results_lines(filename)
 

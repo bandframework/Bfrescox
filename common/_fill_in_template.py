@@ -3,20 +3,20 @@ Module to fill in template NML files with specified parameters.
 """
 
 import re
+from os import PathLike
 from pathlib import Path
 
 import numpy as np
 
 
-def parse_valid_keys(
-    template_path: Path,
-):
+def parse_valid_keys(template_path: str | PathLike[str]):
     """
     Read in a template nml file, identify all '@key@' placeholders, and
     return a set of the keys found.
 
-    Parameters:
-        template_path (Path): Path to the template NML file.
+    Args:
+        template_path (str | PathLike[str]): Path to the template NML
+            file.
 
     Returns:
         Set of keys found in the template file.

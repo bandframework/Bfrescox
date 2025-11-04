@@ -1,26 +1,26 @@
-from pathlib import Path
+from os import PathLike
 
 from ._parsing import _read_results_lines
 
 
-def parse_parallelization_setup(filename: Path):
+def parse_parallelization_setup(
+    filename: str | PathLike[str],
+) -> tuple[int, int] | None:
     """
-    Parse FrescoX parallelization setup from output file.
+    Parse |frescox| parallelization setup from output file.
 
-    ..TODO prototype code
-
-    Parameters:
-    filename : Path
-        Path to the FrescoX output file.
+    Args:
+        filename (str | PathLike[str]): Path to the |frescox| output
+                                        file.
 
     Returns:
-    tuple or None
-        If parallelization info is found, returns a tuple (n_mpi_procs,
-        n_threads), where n_threads is -1 for pure MPI runs. If no
-        parallelization info is found, returns None.
+        tuple or None: If parallelization info is found, returns a tuple
+                       (n_mpi_procs, n_threads), where n_threads is -1
+                       for pure MPI runs. If no parallelization info is
+                       found, returns None.
     Raises:
-    RuntimeError
-        If an invalid parallelization logging is encountered.
+        RuntimeError: If an invalid parallelization logging is
+                      encountered.
     """
     lines = _read_results_lines(filename)
 
