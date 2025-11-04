@@ -77,11 +77,11 @@ def _run_frescox_simulation(
     if not frescox_exe.is_file():
         msg = "Frescox executable does not exist or is not a file ({})"
         raise TypeError(msg.format(frescox_exe))
-    elif not isinstance(use_mpi, bool):
+    if not isinstance(use_mpi, bool):
         raise TypeError("MPI support specification is not a boolean")
-    elif not isinstance(use_omp, bool):
+    if not isinstance(use_omp, bool):
         raise TypeError("OpenMP support specification is not a boolean")
-    elif use_omp and ("OMP_NUM_THREADS" not in os.environ):
+    if use_omp and ("OMP_NUM_THREADS" not in os.environ):
         msg = (
             "OMP_NUM_THREADS environment variable is not set "
             "for use with OpenMP-enabled Frescox installation"
