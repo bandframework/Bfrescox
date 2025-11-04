@@ -63,7 +63,7 @@ PACKAGE_DATA = {
     + ["tests/TestData/TestSuite_Elastic.json"]
     + ["tests/TestData/TestSuite_Inelastic.json"]
     + ["tests/TestData/TestSuite_UserProvidedTemplate.json"]
-    + ["templates/*"]
+    + ["templates/*.template"]
 }
 
 PROJECT_URLS = {
