@@ -14,6 +14,7 @@ def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
     Parse |frescox| performance results into a DataFrame.
 
     ..todo prototype code
+    Some timing lines aren't printed on their own line. Put in NaNs.
 
     Args:
         filename (str | PathLike[str]): Path to the |frescox| output
@@ -70,7 +71,5 @@ def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
 
     df = pd.DataFrame(data=timings, index=indices, columns=COLUMNS)
     df.index.name = "rank"
-    # TODO: Some timing lines aren't printed on their own line.
-    # Put in NaNs.
 
     return df

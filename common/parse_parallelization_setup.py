@@ -9,6 +9,11 @@ def parse_parallelization_setup(
     """
     Parse |frescox| parallelization setup from output file.
 
+    .. todo::
+    If omp_n_found == 1 and mpi_n_found == 0, then should we confirm
+    that omp_n_procs has a certain value? For example, should
+    omp_n_procs == 1 always be true?
+
     Args:
         filename (str | PathLike[str]): Path to the |frescox| output
                                         file.
