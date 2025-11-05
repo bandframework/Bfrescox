@@ -1,5 +1,8 @@
 """
-Parse differential cross section results from |frescox| stdout
+Functions to parse differential cross section results from |frescox|
+stdout. This module is part of the package public interface, so they can
+be called like so `bfrescox.parse_differential_xs.<function in this
+file>(filename)`.
 """
 
 from os import PathLike

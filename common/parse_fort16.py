@@ -42,6 +42,7 @@ def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
                 # Remove "for projectile" etc. and split
                 assert line.startswith("#")
                 assert line.containts("for projectile")
+                assert header is not None
                 header = line.strip("# ").replace("for projectile", "").split()
                 break
         # Collect numeric rows
@@ -58,7 +59,7 @@ def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
         if rows:
             df = pd.DataFrame(rows)
             # Assign header if available and lengths match
-            if header and len(header) >= df.shape[1]:
+            if header is not None and len(header) >= df.shape[1]:
                 df.columns = header[: df.shape[1]]
             else:
                 df.columns = [f"col_{i + 1}" for i in range(df.shape[1])]
