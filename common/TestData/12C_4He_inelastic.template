@@ -1,19 +1,19 @@
 alpha+c12 -> alpha+c12* @ 100 MeV; nuc def
 NAMELIST
-&FRESCO hcm=0.05 rmatch=20.0
+&FRESCO hcm=0.050000000 rmatch=20.000000000
     jtmin=0.0 jtmax=40.0 absend= 0.01
   thmin=0.00 thmax=180.00 thinc=1.00
     iter=0 ips=0.0 iblock=2 chans=1 smats=2  xstabl=1
   wdisk=2
-    elab(1)=100 treneg=1 /
+    elab(1)=100.000000000 treneg=1 /
 
- &PARTITION namep='projectile' massp=4 zp=2
-            namet='target'   masst=12 zt=6 qval=0.0 nex=2  /
- &STATES jp=0.0 bandp=1 ep=0.0000 cpot=1 jt=0.0 bandt=1 et=0 /
- &STATES copyp=1         cpot=1 jt=2.0 bandt=1 et=4.43 /
+ &PARTITION namep='projectile' massp=4.000000000 zp=2.000000000
+            namet='target'   masst=12.000000000 zt=6.000000000 qval=0.0 nex=2  /
+ &STATES jp=0.0 bandp=1 ep=0.0000 cpot=1 jt=0.0 bandt=1 et=0.000000000 /
+ &STATES copyp=1 cpot=1 jt=2.0 bandt=1 et=4.430000000 /
 &partition /
 
- &POT kp=1 ap=4 at=12 rc=1.2  /
+ &POT kp=1 ap=4.000000000 at=12.000000000 rc=1.200000000  /
  &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
 &POT kp=1 type=11 p2=@delta_2@ /
  &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /
