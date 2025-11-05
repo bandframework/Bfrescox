@@ -18,7 +18,7 @@ from .information import information
 def run_simulation(
     configuration: Configuration,
     filename: str | PathLike[str],
-    overwrite: Optional[bool] = False,
+    overwrite: Optional[dict] = False,
     external: Optional[dict] = None,
     cwd: Optional[str | PathLike[str]] = None,
 ):
@@ -30,16 +30,18 @@ def run_simulation(
     written alongside the results file.
 
     Args:
-        configuration (Configuration): specifies the simulation to run.
+        configuration (Configuration): :py:class:`Configuration` object
+            that specifies the simulation to run.
         filename (str | PathLike[str]): Filename including path of file
             to write outputs to
-        overwrite (bool, optional): If False, then an error is raised if
+        overwrite (dict, optional): If False, then an error is raised if
             either of the simulation input or output files exist
-        external (bool, optional): (|bfrescox| only) **EXPERT USERS
-            ONLY**
+        external (bool, optional): (|bfrescox| only)
+            **EXPERT USERS ONLY**
         cwd (str | PathLike[str], optional): directory to run the
-            simulation in. If None, the current working directory is
+            simulation in.  If None, the current working directory is
             used.
+
     Raises:
         ValueError: If no valid internal or external |frescox|
             installation is found.
