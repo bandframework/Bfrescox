@@ -1,7 +1,3 @@
-"""
-Generate an inelastic scattering input template for Fresco.
-"""
-
 import re
 from fractions import Fraction
 from os import PathLike
