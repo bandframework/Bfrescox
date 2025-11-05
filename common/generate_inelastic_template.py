@@ -88,22 +88,21 @@ def _setup_inelastic_system_template(
 
 def generate_inelastic_template(
     output_path: str | PathLike[str],
-    mass_t: float,
-    charge_t: float,
+    target_mass_amu: float,
+    target_atomic_number: float,
     mass_p: float,
     charge_p: float,
     spin_p: Fraction,
-    E_lab: float,
+    E_lab_MeV: float,
     J_tot_min: Fraction,
     J_tot_max: Fraction,
-    R_Coulomb: float,
     reaction_name: str,
     I_states: List[Fraction],
     Pi_states: List[bool],
     E_states: List[float],
     multipoles: np.ndarray,
-    R_match: float = 60.0,
-    step_size: float = 0.1,
+    R_match_fm: float = 60.0,
+    step_size_fm: float = 0.1,
 ):
     """
     Generate an inelastic scattering input template for Fresco.
@@ -111,18 +110,17 @@ def generate_inelastic_template(
     Args:
         output_path (str | PathLike[str]): Path to save the generated
             template file.
-        mass_t (float): Mass of the target nucleus.
-        charge_t (float): Charge of the target nucleus.
+        target_mass_amu (float): Mass of the target nucleus.
+        target_atomic_number (float): Charge of the target nucleus.
         mass_p (float): Mass of the projectile nucleus.
         charge_p (float): Charge of the projectile nucleus.
         spin_p (Fraction): Spin of the projectile nucleus (integer or
             half-integer).
-        E_lab (float): Laboratory energy of the projectile in MeV.
+        E_lab_MeV (float): Laboratory energy of the projectile in MeV.
         J_tot_min (Fraction): Minimum total angular momentum (integer or
             half-integer).
         J_tot_max (Fraction): Maximum total angular momentum (integer or
             half-integer).
-        R_Coulomb (float): Coulomb radius in fm.
         reaction_name (str): Name of the reaction for file naming.
         I_states (List[Fraction]): List of spin states of the target
             nucleus (integers or half-integers).
@@ -132,8 +130,8 @@ def generate_inelastic_template(
             states in MeV.
         multipoles (np.ndarray): Array of multipole transition orders (e.g.,
             [2, 3] for quadrupole and octupole).
-        R_match (float): Matching radius in fm. Default is 60.0.
-        step_size (float): Step size for the radial mesh in fm. Default
+        R_match_fm (float): Matching radius in fm. Default is 60.0.
+        step_size_fm (float): Step size for the radial mesh in fm. Default
             is 0.1.
 
     Raises:
@@ -183,22 +181,21 @@ def generate_inelastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "STEP_SIZE": f"{step_size:.9f}",
-        "RMATCH": f"{R_match:.9f}",
+        "step_size_fm": f"{step_size_fm:.9f}",
+        "RMATCH": f"{R_match_fm:.9f}",
         "J_TOT_MIN": f"{float(J_tot_min):.1f}",
         "J_TOT_MAX": f"{float(J_tot_max):.1f}",
-        "E_LAB": f"{E_lab:.9f}",
+        "E_LAB": f"{E_lab_MeV:.9f}",
         "CLOSED_COUPLINGS": f"{int(num_states):d}",
         "MASS_P": f"{mass_p:.9f}",
         "CHARGE_P": f"{charge_p:.9f}",
         "NUM_STATES": f"{int(num_states):d}",
-        "MASS_T": f"{mass_t:.9f}",
-        "CHARGE_T": f"{charge_t:.9f}",
+        "target_mass_amu": f"{target_mass_amu:.9f}",
+        "CHARGE_T": f"{target_atomic_number:.9f}",
         "S_PROJECTILE": f"{float(spin_p):.1f}",
         "I_GROUND": f"{float(I_states[0]):.1f}",
         "GS_PAR": f"{int((-1) ** int(Pi_states[0] + 1))}",
         "E_GROUND": f"{E_states[0]:.9f}",
-        "COULOMB_R": f"{R_Coulomb:.9f}",
     }
 
     # Replace placeholders directly in the modified template

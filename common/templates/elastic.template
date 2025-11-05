@@ -12,7 +12,7 @@ NAMELIST
  &STATES jp=S_PROJECTILE bandp=1 ep=0.0000 cpot=1 jt=I_GROUND bandt=1 et=E_GROUND /
  &partition /
 
- &POT kp=1 ap=MASS_P at=MASS_T rc=COULOMB_R  /
+ &POT kp=1 ap=MASS_P at=MASS_T rc=@rC@  /
  &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
  &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /
  &POT kp=1 type=3  p1=@Vso@ p2=@rso@ p3=@aso@ p4=@Wso@ p5=@rwso@ p6=@awso@ /

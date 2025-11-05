@@ -1,6 +1,7 @@
 from fractions import Fraction
 from os import PathLike
 from pathlib import Path
+from typing import Optional
 
 from ._utils import _is_fraction_integer_or_half_integer
 
@@ -11,53 +12,51 @@ with open(template_file_path, "r") as file:
 
 def generate_elastic_template(
     output_path: str | PathLike[str],
-    mass_t: float,
-    charge_t: float,
-    spin_t: Fraction,
-    mass_p: float,
-    charge_p: float,
-    spin_p: Fraction,
-    E_lab: float,
+    reaction_name: str,
+    target_mass_amu: float,
+    target_atomic_number: int,
+    target_spin: Fraction,
+    projectile_mass_amu: float,
+    projectile_atomic_number: int,
+    projectile_spin: Fraction,
+    E_lab_MeV: float,
     J_tot_min: Fraction,
     J_tot_max: Fraction,
-    R_Coulomb: float,
-    reaction_name: str,
-    E_0: float = 0.0,
-    R_match: float = 60.0,
-    step_size: float = 0.1,
+    E_0_MeV: Optional[float] = 0.0,
+    R_match_fm: Optional[float] = 60.0,
+    step_size_fm: Optional[float] = 0.1,
 ):
     """
-    Generate an elastic scattering input template for Fresco.
+    Generate an elastic scattering input template for Fresco
 
     Args:
         output_path (str | PathLike[str]): Path to save the generated
-            template file.
-        mass_t (float): Mass of the target nucleus.
-        charge_t (float): Charge of the target nucleus.
-        spin_t (Fraction): Spin of the target nucleus (integer or
-            half-integer).
-        mass_p (float): Mass of the projectile nucleus.
-        charge_p (float): Charge of the projectile nucleus.
-        spin_p (Fraction): Spin of the projectile nucleus (integer or
-            half-integer).
-        E_lab (float): Laboratory energy of the projectile in MeV.
+            template file
+        reaction_name (str): Name of the reaction for file naming
+        target_mass_amu (float): Mass of the target nucleus
+        target_atomic_number (int): Charge of the target nucleus
+        target_spin (Fraction): Spin of the target nucleus (integer or
+            half-integer)
+        projectile_mass_amu (float): Mass of the projectile nucleus
+        projectile_atomic_number (int): Charge of the projectile nucleus
+        projectile_spin (Fraction): Spin of the projectile nucleus (integer or
+            half-integer)
+        E_lab_MeV (float): Laboratory energy of the projectile in MeV
         J_tot_min (Fraction): Minimum total angular momentum (integer or
-            half-integer).
+            half-integer)
         J_tot_max (Fraction): Maximum total angular momentum (integer or
-            half-integer).
-        R_Coulomb (float): Coulomb radius in fm.
-        reaction_name (str): Name of the reaction for file naming.
-        E_0 (float): Ground state energy of the target nucleus in MeV
-            (usually 0, larger for isomeric or excited final state).
-            Default is 0.0.
-        R_match (float): Matching radius in fm. Default is 60.0.
-        step_size (float): Step size for the radial mesh in fm. Default
-            is 0.1.
+            half-integer)
+        E_0_MeV (float): Ground state energy of the target nucleus in MeV
+            (usually 0, larger for isomeric or excited final state)
+            Default is 0.0
+        R_match_fm (float): Matching radius in fm. Default is 60.0
+        step_size_fm (float): Step size for the radial mesh in fm. Default
+            is 0.1
 
     Raises:
         ValueError: If J_tot_min is greater than J_tot_max, or if either
             J_tot_min or J_tot_max is negative, or if they are not
-            integer or half-integer values.
+            integer or half-integer values
     """
 
     if J_tot_min > J_tot_max:
@@ -76,19 +75,18 @@ def generate_elastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "STEP_SIZE": f"{step_size:.9f}",
-        "RMATCH": f"{R_match:.9f}",
+        "step_size_fm": f"{step_size_fm:.9f}",
+        "RMATCH": f"{R_match_fm:.9f}",
         "J_TOT_MIN": f"{float(J_tot_min):.1f}",
         "J_TOT_MAX": f"{float(J_tot_max):.1f}",
-        "E_LAB": f"{E_lab:.9f}",
-        "MASS_P": f"{mass_p:.9f}",
-        "CHARGE_P": f"{charge_p:.9f}",
-        "MASS_T": f"{mass_t:.9f}",
-        "CHARGE_T": f"{charge_t:.9f}",
-        "S_PROJECTILE": f"{float(spin_p):.1f}",
-        "I_GROUND": f"{float(spin_t):.1f}",
-        "E_GROUND": f"{E_0:.9f}",
-        "COULOMB_R": f"{R_Coulomb:.9f}",
+        "E_LAB": f"{E_lab_MeV:.9f}",
+        "projectile_mass_amu": f"{projectile_mass_amu:.9f}",
+        "projectile_atomic_number": f"{projectile_atomic_number:.9f}",
+        "MASS_T": f"{target_mass_amu:.9f}",
+        "CHARGE_T": f"{target_atomic_number:.9f}",
+        "S_PROJECTILE": f"{float(projectile_spin):.1f}",
+        "I_GROUND": f"{float(target_spin):.1f}",
+        "E_GROUND": f"{E_0_MeV:.9f}",
     }
 
     modified_template = elastic_input_template[:]
