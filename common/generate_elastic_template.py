@@ -4,9 +4,7 @@ from pathlib import Path
 
 from ._utils import _is_fraction_integer_or_half_integer
 
-template_file_path = Path(__file__).parent / "templates/elastic.template"
-with open(template_file_path, "r") as file:
-    elastic_input_template = file.read()
+TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/elastic.template"
 
 
 def generate_elastic_template(
@@ -90,7 +88,8 @@ def generate_elastic_template(
         "E_GROUND": f"{E_0_MeV:.9f}",
     }
 
-    modified_template = elastic_input_template[:]
+    with open(template_file_path, "r") as file:
+        modified_template = file.read()
 
     # Replace placeholders directly in the modified template
     for placeholder, value in replacements.items():

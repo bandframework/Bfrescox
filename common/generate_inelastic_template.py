@@ -8,9 +8,7 @@ import numpy as np
 
 from ._utils import _is_fraction_integer_or_half_integer
 
-template_file_path = Path(__file__).parent / "templates/inelastic.template"
-with open(template_file_path, "r") as file:
-    inelastic_input_template = file.read()
+TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/inelastic.template"
 
 
 def _expand_type11_pX(text: str, L_list) -> str:
@@ -174,7 +172,9 @@ def generate_inelastic_template(
             "Length of target_state_parities must match length of target_state_energies_MeV."
         )
 
-    template = inelastic_input_template[:]
+    with open(TEMPLATE_FILE_PATH, "r") as file:
+        template = file.read()
+
     modified_template = _setup_inelastic_system_template(
         template,
         np.asarray(target_state_energies_MeV),
