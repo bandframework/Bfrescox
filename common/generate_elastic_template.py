@@ -2,7 +2,7 @@ from fractions import Fraction
 from os import PathLike
 from pathlib import Path
 
-from ._utils import _is_fraction_integer_or_half_integer
+from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
 
 TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/elastic.template"
 
@@ -12,13 +12,13 @@ def generate_elastic_template(
     reaction_name: str,
     target_mass_amu: float,
     target_atomic_number: int,
-    target_spin: Fraction,
+    target_spin: Fraction | str | int | float,
     projectile_mass_amu: float,
     projectile_atomic_number: int,
-    projectile_spin: Fraction,
+    projectile_spin: Fraction | str | int | float,
     E_lab_MeV: float,
-    J_tot_min: Fraction,
-    J_tot_max: Fraction,
+    J_tot_min: Fraction | str | int | float,
+    J_tot_max: Fraction | str | int | float,
     E_0_MeV: float,
     R_match_fm: float,
     step_size_fm: float,
@@ -32,17 +32,20 @@ def generate_elastic_template(
         reaction_name (str): Name of the reaction for file naming
         target_mass_amu (float): Mass of the target nucleus
         target_atomic_number (int): Charge of the target nucleus
-        target_spin (Fraction): Spin of the target nucleus (integer or
-            half-integer)
+        target_spin (Fraction | str | int | float): Spin of the target
+            nucleus (integer or half-integer)
         projectile_mass_amu (float): Mass of the projectile nucleus
         projectile_atomic_number (int): Charge of the projectile nucleus
-        projectile_spin (Fraction): Spin of the projectile nucleus (integer or
-            half-integer)
+        projectile_spin (Fraction | str | int | float): Spin of the
+            projectile nucleus (integer or half-integer). Must be
+            convertable to Fraction.
         E_lab_MeV (float): Laboratory energy of the projectile in MeV
-        J_tot_min (Fraction): Minimum total angular momentum (integer or
-            half-integer)
-        J_tot_max (Fraction): Maximum total angular momentum (integer or
-            half-integer)
+        J_tot_min (Fraction | str | int | float): Minimum total angular
+            momentum (integer or half-integer). Must be convertable to
+            Fraction.
+        J_tot_max (Fraction | str | int | float): Maximum total angular
+            momentum (integer or half-integer). Must be convertable to
+            Fraction.
         E_0_MeV (float): Ground state energy of the target nucleus in MeV
             (usually 0, larger for isomeric or excited final state)
         R_match_fm (float): Matching radius in fm.
@@ -53,10 +56,10 @@ def generate_elastic_template(
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values
     """
-    projectile_spin = Fraction(projectile_spin)
-    target_spin = Fraction(target_spin)
-    J_tot_max = Fraction(J_tot_max)
-    J_tot_min = Fraction(J_tot_min)
+    projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
+    target_spin = _validate_spin(target_spin, "target_spin")
+    J_tot_min = _validate_spin(J_tot_min, "J_tot_min")
+    J_tot_max = _validate_spin(J_tot_max, "J_tot_max")
 
     if J_tot_min > J_tot_max:
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
@@ -88,7 +91,7 @@ def generate_elastic_template(
         "E_GROUND": f"{E_0_MeV:.9f}",
     }
 
-    with open(template_file_path, "r") as file:
+    with open(TEMPLATE_FILE_PATH, "r") as file:
         modified_template = file.read()
 
     # Replace placeholders directly in the modified template

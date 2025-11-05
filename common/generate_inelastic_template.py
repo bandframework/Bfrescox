@@ -6,7 +6,7 @@ from typing import List
 
 import numpy as np
 
-from ._utils import _is_fraction_integer_or_half_integer
+from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
 
 TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/inelastic.template"
 
@@ -90,12 +90,12 @@ def generate_inelastic_template(
     target_atomic_number: float,
     projectile_mass_amu: float,
     projectile_atomic_number: float,
-    projectile_spin: Fraction,
+    projectile_spin: Fraction | str | int | float,
     E_lab_MeV: float,
-    J_tot_min: Fraction,
-    J_tot_max: Fraction,
+    J_tot_min: Fraction | str | int | float,
+    J_tot_max: Fraction | str | int | float,
     reaction_name: str,
-    target_state_spins: List[Fraction],
+    target_state_spins: List[Fraction | str | int | float],
     target_state_parities: List[bool],
     target_state_energies_MeV: List[float],
     multipoles: np.ndarray,
@@ -111,23 +111,29 @@ def generate_inelastic_template(
         target_mass_amu (float): Mass of the target nucleus.
         target_atomic_number (float): Charge of the target nucleus.
         projectile_mass_amu (float): Mass of the projectile nucleus.
-        projectile_atomic_number (float): Charge of the projectile nucleus.
-        projectile_spin (Fraction): Spin of the projectile nucleus (integer or
-            half-integer).
+        projectile_atomic_number (float): Charge of the projectile
+            nucleus.
+        projectile_spin (Fraction | str | int | float): Spin of the
+            projectile nucleus (integer or half-integer). Must be
+            convertable to Fraction.
         E_lab_MeV (float): Laboratory energy of the projectile in MeV.
-        J_tot_min (Fraction): Minimum total angular momentum (integer or
-            half-integer).
-        J_tot_max (Fraction): Maximum total angular momentum (integer or
-            half-integer).
+        J_tot_min (Fraction | str | int | float): Minimum total angular
+            momentum (integer or half-integer). Must be convertable to
+            Fraction.
+        J_tot_max (Fraction | str | int | float): Maximum total angular
+            momentum (integer or half-integer). Must be convertable to
+            Fraction.
         reaction_name (str): Name of the reaction for file naming.
-        target_state_spins (List[Fraction]): List of spin states of the target
-            nucleus (integers or half-integers).
-        target_state_parities (List[bool]): List of parities for the target states (True
-            for positive, False for negative).
-        target_state_energies_MeV (List[float]): List of excitation energies of the target
-            states in MeV.
-        multipoles (np.ndarray): Array of multipole transition orders (e.g.,
-            [2, 3] for quadrupole and octupole).
+        target_state_spins (List[Fraction | str | int | float]): List of
+            spin states of the target nucleus (integers or
+            half-integers).  List elements must be convertable to
+            Fraction.
+        target_state_parities (List[bool]): List of parities for the
+            target states (True for positive, False for negative).
+        target_state_energies_MeV (List[float]): List of excitation
+            energies of the target states in MeV.
+        multipoles (np.ndarray): Array of multipole transition orders
+            (e.g., [2, 3] for quadrupole and octupole).
         R_match_fm (float): Matching radius in fm.
         step_size_fm (float): Step size for the radial mesh in fm.
 
@@ -136,10 +142,9 @@ def generate_inelastic_template(
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values.
     """
-    projectile_spin = Fraction(projectile_spin)
-    target_state_spins = [Fraction(s) for s in target_state_spins]
-    J_tot_max = Fraction(J_tot_max)
-    J_tot_min = Fraction(J_tot_min)
+    projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
+    J_tot_min = _validate_spin(J_tot_min, "J_tot_min")
+    J_tot_max = _validate_spin(J_tot_max, "J_tot_max")
 
     if J_tot_min > J_tot_max:
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
@@ -149,10 +154,14 @@ def generate_inelastic_template(
         raise ValueError("J_tot_min must be an integer or half-integer.")
     if not _is_fraction_integer_or_half_integer(J_tot_max):
         raise ValueError("J_tot_max must be an integer or half-integer.")
-    for I_state in target_state_spins:
-        if I_state < 0:
+
+    target_state_spins = [
+        _validate_spin(s, "target_state_spins") for s in target_state_spins
+    ]
+    for spin in target_state_spins:
+        if Fraction(spin) < 0:
             raise ValueError("All spin states must be non-negative.")
-        if not _is_fraction_integer_or_half_integer(I_state):
+        if not _is_fraction_integer_or_half_integer(spin):
             raise ValueError(
                 "All spin states must be integers or half-integers."
             )
@@ -165,11 +174,13 @@ def generate_inelastic_template(
 
     if len(target_state_spins) != num_states:
         raise ValueError(
-            "Length of target_state_spins must match length of target_state_energies_MeV."
+            "Length of target_state_spins must match length"
+            " of target_state_energies_MeV."
         )
     if len(target_state_parities) != num_states:
         raise ValueError(
-            "Length of target_state_parities must match length of target_state_energies_MeV."
+            "Length of target_state_parities must match length "
+            "of target_state_energies_MeV."
         )
 
     with open(TEMPLATE_FILE_PATH, "r") as file:
