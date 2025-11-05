@@ -74,7 +74,7 @@ def _setup_inelastic_system_template(
     dynamic_section = "".join(
         f"&STATES copyp=1 cpot=1 "
         f"jt={float(jt):.1f} "
-        f"bandt={int((-1) ** int(parity + 1)):d}"
+        f"bandt={int((-1) ** int(parity + 1)):d} "
         f"et={et:.9f} /\n"
         for et, jt, parity in zip(
             values_et[1:], values_jt[1:], bandt_vals[1:]
