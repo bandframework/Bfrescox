@@ -11,8 +11,9 @@ def information():
     with no path and inadvertently using a different executable if, for
     example, the ``PATH`` variable is mismanaged.
 
-    :return: ``dict`` that contains information regarding the |frescox|
-        executable used by the package.
+    Returns
+        dict : contains information regarding the |frescox| executable
+            used by the package.
     """
     frescox = _load_build_information(Path(__file__).resolve().parent)
     if not frescox:

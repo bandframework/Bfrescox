@@ -23,14 +23,14 @@ def run_simulation(
 
     Args:
         configuration (Configuration): :py:class:`Configuration` object
-        that specifies the simulation to run
+            that specifies the simulation to run
         filename (str | PathLike[str]): Filename including path of file
-        to write outputs to
+            to write outputs to
         overwrite (bool): If False, then an error is raised if either of
-        the simulation input or output files exist
+            the simulation input or output files exist
         mpi_setup (dict, optional): Dictionary specifying MPI setup cwd
         (str | PathLike[str]): directory to run the simulation in.  If
-        None, the current working directory is used.
+            None, the current working directory is used.
 
     Raises:
         ValueError: If no valid internal or external |frescox|
