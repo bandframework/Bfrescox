@@ -113,7 +113,7 @@ class Configuration(object):
             raise TypeError("filename must be a str or PathLike")
         fname = Path(filename).resolve()
         if not fname.is_file():
-            msg = "Configuration file does not exist or is not a file"
+            msg = f"Configuration file {fname} does not exist or is not a file"
             raise ValueError(msg)
 
         # ----- STORE CONFIGURATION
