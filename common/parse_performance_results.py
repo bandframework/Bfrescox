@@ -1,7 +1,3 @@
-"""
-Utilities for parsing |frescox| performance results into a DataFrame.
-"""
-
 from os import PathLike
 
 import pandas as pd
@@ -28,14 +24,14 @@ def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
         RuntimeError : If an invalid performance result line is
                        encountered.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     START_STR = "Total CPU"
     COLUMNS = ["walltime_sec", "cpu_time_sec"]
 
     timings = []
     indices = []
-    for line in lines:
+    for line in lines_all:
         if line.strip().startswith(START_STR):
             result = line.strip().lstrip(START_STR).split()
 

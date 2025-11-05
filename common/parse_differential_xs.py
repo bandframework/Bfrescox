@@ -26,11 +26,11 @@ def absolute_mb_per_sr(filename: str | PathLike[str]) -> pd.DataFrame:
         ValueError: If the file does not exist.
     """
 
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     index = []
     ratio = []
-    for line in lines:
+    for line in lines_all:
         if "X-S" in line:
             result = line.split()
             # Sanity check parsing including expected units
@@ -66,14 +66,14 @@ def ratio_to_rutherford(filename: str | PathLike[str]) -> pd.DataFrame:
         TypeError: If filename is not a string or Path.
         ValueError: If the file does not exist.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     index = []
     ratio = []
-    for i, line in enumerate(lines):
+    for i, line in enumerate(lines_all):
         if "/R" in line:
-            assert "X-S" in lines[i - 1]
-            result = lines[i - 1].split()
+            assert "X-S" in lines_all[i - 1]
+            result = lines_all[i - 1].split()
             assert len(result) == 6
             index.append(float(result[0]))
             assert result[1].strip() == "deg.:"

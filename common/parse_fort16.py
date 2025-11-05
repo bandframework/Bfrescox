@@ -1,7 +1,3 @@
-"""
-Parse |frescox| fort.16 output files into structured pandas DataFrames.
-"""
-
 from os import PathLike
 from pathlib import Path
 
@@ -38,17 +34,19 @@ def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
     results = {}
     channel_idx = 1
     for block in raw_blocks:
-        lines = block.splitlines()
+        lines_all = block.splitlines()
         # Look for header line (columns after '#')
         header = None
-        for line in lines:
+        for line in lines_all:
             if line.strip().startswith("#") and "Theta" in line:
                 # Remove "for projectile" etc. and split
+                assert line.startswith("#")
+                assert line.containts("for projectile")
                 header = line.strip("# ").replace("for projectile", "").split()
                 break
         # Collect numeric rows
         rows = []
-        for line in lines:
+        for line in lines_all:
             line = line.strip()
             if not line or line.startswith(("#", "@")):
                 continue
