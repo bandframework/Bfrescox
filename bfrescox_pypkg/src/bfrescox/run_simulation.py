@@ -18,7 +18,7 @@ from .information import information
 def run_simulation(
     configuration: Configuration,
     filename: str | PathLike[str],
-    overwrite: bool = False,
+    overwrite: Optional[bool] = False,
     external: Optional[dict] = None,
     cwd: Optional[str | PathLike[str]] = None,
 ):
@@ -34,8 +34,8 @@ def run_simulation(
             that specifies the simulation to run.
         filename (str | PathLike[str]): Filename including path of file
             to write outputs to
-        overwrite (bool): If False, then an error is raised if either of
-            the simulation input or output files exist
+        overwrite (bool, optional): If False, then an error is raised if
+            either of the simulation input or output files exist
         external (bool, optional): (|bfrescox| only) **EXPERT USERS
             ONLY**
         cwd (str | PathLike[str], optional): directory to run the

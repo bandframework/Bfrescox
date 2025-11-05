@@ -10,7 +10,7 @@ from .information import information
 def run_simulation(
     configuration: Configuration,
     filename: str | PathLike[str],
-    overwrite: bool = False,
+    overwrite: Optional[bool] = False,
     mpi_setup: Optional[dict] = None,
     cwd: Optional[str | PathLike[str]] = None,
 ):
@@ -26,11 +26,11 @@ def run_simulation(
             that specifies the simulation to run
         filename (str | PathLike[str]): Filename including path of file
             to write outputs to
-        overwrite (bool): If False, then an error is raised if either of
-            the simulation input or output files exist
-        mpi_setup (dict, optional): Dictionary specifying MPI setup cwd
-        (str | PathLike[str]): directory to run the simulation in.  If
-            None, the current working directory is used.
+        overwrite (bool, optional): If False, then an error is raised if
+            either of the simulation input or output files exist
+        mpi_setup (dict, optional): Dictionary specifying MPI setup
+        cwd (str | PathLike[str], optional): directory to run the
+            simulation in.  If None, the current working directory is used.
 
     Raises:
         ValueError: If no valid internal or external |frescox|
