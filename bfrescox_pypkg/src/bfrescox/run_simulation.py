@@ -38,12 +38,13 @@ def run_simulation(
             the simulation input or output files exist
         external (bool, optional): (|bfrescox| only) **EXPERT USERS
             ONLY**
-        cwd (str | PathLike[str]): directory to run the simulation in.
-            If None, the current working directory is used.
+        cwd (str | PathLike[str], optional): directory to run the
+            simulation in.  If None, the current working directory is
+            used.
 
     Raises:
         ValueError: If no valid internal or external |frescox|
-        installation is found.
+            installation is found.
     """
     # Assume for now that external installations will not be using MPI
     NO_MPI_PLEASE = None
