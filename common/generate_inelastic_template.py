@@ -101,8 +101,8 @@ def generate_inelastic_template(
     target_state_parities: List[bool],
     target_state_energies_MeV: List[float],
     multipoles: np.ndarray,
-    R_match_fm: float = 60.0,
-    step_size_fm: float = 0.1,
+    R_match_fm: float,
+    step_size_fm: float,
 ):
     """
     Generate an inelastic scattering input template for Fresco.
@@ -130,9 +130,8 @@ def generate_inelastic_template(
             states in MeV.
         multipoles (np.ndarray): Array of multipole transition orders (e.g.,
             [2, 3] for quadrupole and octupole).
-        R_match_fm (float): Matching radius in fm. Default is 60.0.
-        step_size_fm (float): Step size for the radial mesh in fm. Default
-            is 0.1.
+        R_match_fm (float): Matching radius in fm.
+        step_size_fm (float): Step size for the radial mesh in fm.
 
     Raises:
         ValueError: If J_tot_min is greater than J_tot_max, or if either

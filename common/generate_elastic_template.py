@@ -1,7 +1,6 @@
 from fractions import Fraction
 from os import PathLike
 from pathlib import Path
-from typing import Optional
 
 from ._utils import _is_fraction_integer_or_half_integer
 
@@ -22,9 +21,9 @@ def generate_elastic_template(
     E_lab_MeV: float,
     J_tot_min: Fraction,
     J_tot_max: Fraction,
-    E_0_MeV: Optional[float] = 0.0,
-    R_match_fm: Optional[float] = 60.0,
-    step_size_fm: Optional[float] = 0.1,
+    E_0_MeV: float,
+    R_match_fm: float,
+    step_size_fm: float,
 ):
     """
     Generate an elastic scattering input template for Fresco
@@ -48,10 +47,8 @@ def generate_elastic_template(
             half-integer)
         E_0_MeV (float): Ground state energy of the target nucleus in MeV
             (usually 0, larger for isomeric or excited final state)
-            Default is 0.0
-        R_match_fm (float): Matching radius in fm. Default is 60.0
-        step_size_fm (float): Step size for the radial mesh in fm. Default
-            is 0.1
+        R_match_fm (float): Matching radius in fm.
+        step_size_fm (float): Step size for the radial mesh in fm.
 
     Raises:
         ValueError: If J_tot_min is greater than J_tot_max, or if either
