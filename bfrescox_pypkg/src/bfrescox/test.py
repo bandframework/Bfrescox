@@ -21,7 +21,7 @@ def test(verbosity: int = 1) -> bool:
         bool: True if all tests in package passed; False, otherwise.
     """
     loader = unittest.TestLoader()
-    suite = load_tests(loader, None, None)
+    suite = load_tests.load_tests(loader, None, None)
     result = unittest.TextTestRunner(verbosity=verbosity).run(suite)
 
     return result.wasSuccessful()
