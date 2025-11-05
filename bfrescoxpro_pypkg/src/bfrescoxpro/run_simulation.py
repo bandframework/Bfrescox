@@ -36,8 +36,6 @@ def run_simulation(
         ValueError: If no valid internal or external |frescox|
             installation is found
     """
-    if mpi_setup is None:
-        mpi_setup = {}
     if cwd is None:
         cwd = Path.cwd()
     # This function assumes that all error checking of arguments
