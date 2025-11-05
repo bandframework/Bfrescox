@@ -1,7 +1,3 @@
-"""
-Generate an elastic scattering input template for Fresco.
-"""
-
 from fractions import Fraction
 from os import PathLike
 from pathlib import Path
