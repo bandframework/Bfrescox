@@ -41,9 +41,9 @@ def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
             if line.strip().startswith("#") and "Theta" in line:
                 # Remove "for projectile" etc. and split
                 assert line.startswith("#")
-                assert line.containts("for projectile")
-                assert header is not None
+                assert "for projectile" in line
                 header = line.strip("# ").replace("for projectile", "").split()
+                assert header is not None
                 break
         # Collect numeric rows
         rows = []

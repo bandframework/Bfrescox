@@ -102,5 +102,5 @@ def fill_in_template_file(
                 if key in line:
                     name = key.lstrip("@").rstrip("@")
                     replaced_keys.add(name)
-                    updated = updated.replace(key, str(parameters[name]))
+                    updated = updated.replace(key, f"{parameters[name]:1.9f}")
             fptr.write(updated)

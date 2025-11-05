@@ -90,16 +90,16 @@ def generate_inelastic_template(
     output_path: str | PathLike[str],
     target_mass_amu: float,
     target_atomic_number: float,
-    mass_p: float,
-    charge_p: float,
-    spin_p: Fraction,
+    projectile_mass_amu: float,
+    projectile_atomic_number: float,
+    projectile_spin: Fraction,
     E_lab_MeV: float,
     J_tot_min: Fraction,
     J_tot_max: Fraction,
     reaction_name: str,
-    I_states: List[Fraction],
-    Pi_states: List[bool],
-    E_states: List[float],
+    target_state_spins: List[Fraction],
+    target_state_parities: List[bool],
+    target_state_energies_MeV: List[float],
     multipoles: np.ndarray,
     R_match_fm: float = 60.0,
     step_size_fm: float = 0.1,
@@ -112,9 +112,9 @@ def generate_inelastic_template(
             template file.
         target_mass_amu (float): Mass of the target nucleus.
         target_atomic_number (float): Charge of the target nucleus.
-        mass_p (float): Mass of the projectile nucleus.
-        charge_p (float): Charge of the projectile nucleus.
-        spin_p (Fraction): Spin of the projectile nucleus (integer or
+        projectile_mass_amu (float): Mass of the projectile nucleus.
+        projectile_atomic_number (float): Charge of the projectile nucleus.
+        projectile_spin (Fraction): Spin of the projectile nucleus (integer or
             half-integer).
         E_lab_MeV (float): Laboratory energy of the projectile in MeV.
         J_tot_min (Fraction): Minimum total angular momentum (integer or
@@ -122,11 +122,11 @@ def generate_inelastic_template(
         J_tot_max (Fraction): Maximum total angular momentum (integer or
             half-integer).
         reaction_name (str): Name of the reaction for file naming.
-        I_states (List[Fraction]): List of spin states of the target
+        target_state_spins (List[Fraction]): List of spin states of the target
             nucleus (integers or half-integers).
-        Pi_states (List[bool]): List of parities for the target states (True
+        target_state_parities (List[bool]): List of parities for the target states (True
             for positive, False for negative).
-        E_states (List[float]): List of excitation energies of the target
+        target_state_energies_MeV (List[float]): List of excitation energies of the target
             states in MeV.
         multipoles (np.ndarray): Array of multipole transition orders (e.g.,
             [2, 3] for quadrupole and octupole).
@@ -139,6 +139,11 @@ def generate_inelastic_template(
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values.
     """
+    projectile_spin = Fraction(projectile_spin)
+    target_state_spins = [Fraction(s) for s in target_state_spins]
+    J_tot_max = Fraction(J_tot_max)
+    J_tot_min = Fraction(J_tot_min)
+
     if J_tot_min > J_tot_max:
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
     if J_tot_min < 0 or J_tot_max < 0:
@@ -147,7 +152,7 @@ def generate_inelastic_template(
         raise ValueError("J_tot_min must be an integer or half-integer.")
     if not _is_fraction_integer_or_half_integer(J_tot_max):
         raise ValueError("J_tot_max must be an integer or half-integer.")
-    for I_state in I_states:
+    for I_state in target_state_spins:
         if I_state < 0:
             raise ValueError("All spin states must be non-negative.")
         if not _is_fraction_integer_or_half_integer(I_state):
@@ -159,19 +164,23 @@ def generate_inelastic_template(
         raise TypeError("output_path must be a string or PathLike object.")
     output_path = Path(output_path).resolve()
 
-    num_states = len(E_states)
+    num_states = len(target_state_energies_MeV)
 
-    if len(I_states) != num_states:
-        raise ValueError("Length of I_states must match length of E_states.")
-    if len(Pi_states) != num_states:
-        raise ValueError("Length of Pi_states must match length of E_states.")
+    if len(target_state_spins) != num_states:
+        raise ValueError(
+            "Length of target_state_spins must match length of target_state_energies_MeV."
+        )
+    if len(target_state_parities) != num_states:
+        raise ValueError(
+            "Length of target_state_parities must match length of target_state_energies_MeV."
+        )
 
     template = inelastic_input_template[:]
     modified_template = _setup_inelastic_system_template(
         template,
-        np.asarray(E_states),
-        np.asarray(I_states),
-        np.asarray(Pi_states),
+        np.asarray(target_state_energies_MeV),
+        np.asarray(target_state_spins),
+        np.asarray(target_state_parities),
     )
 
     # expand type=11 multipole stub(s)
@@ -181,21 +190,21 @@ def generate_inelastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "step_size_fm": f"{step_size_fm:.9f}",
+        "STEP_SIZE": f"{step_size_fm:.9f}",
         "RMATCH": f"{R_match_fm:.9f}",
         "J_TOT_MIN": f"{float(J_tot_min):.1f}",
         "J_TOT_MAX": f"{float(J_tot_max):.1f}",
         "E_LAB": f"{E_lab_MeV:.9f}",
         "CLOSED_COUPLINGS": f"{int(num_states):d}",
-        "MASS_P": f"{mass_p:.9f}",
-        "CHARGE_P": f"{charge_p:.9f}",
+        "MASS_P": f"{projectile_mass_amu:.9f}",
+        "CHARGE_P": f"{projectile_atomic_number:.9f}",
         "NUM_STATES": f"{int(num_states):d}",
-        "target_mass_amu": f"{target_mass_amu:.9f}",
+        "MASS_T": f"{target_mass_amu:.9f}",
         "CHARGE_T": f"{target_atomic_number:.9f}",
-        "S_PROJECTILE": f"{float(spin_p):.1f}",
-        "I_GROUND": f"{float(I_states[0]):.1f}",
-        "GS_PAR": f"{int((-1) ** int(Pi_states[0] + 1))}",
-        "E_GROUND": f"{E_states[0]:.9f}",
+        "S_PROJECTILE": f"{float(projectile_spin):.1f}",
+        "I_GROUND": f"{float(target_state_spins[0]):.1f}",
+        "GS_PAR": f"{int((-1) ** int(target_state_parities[0] + 1)):d}",
+        "E_GROUND": f"{target_state_energies_MeV[0]:.9f}",
     }
 
     # Replace placeholders directly in the modified template

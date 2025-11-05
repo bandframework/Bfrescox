@@ -13,7 +13,7 @@ NAMELIST
  &STATES copyp=1 cpot=1 jt=2.0 bandt=1 et=4.430000000 /
 &partition /
 
- &POT kp=1 ap=4.000000000 at=12.000000000 rc=1.200000000  /
+ &POT kp=1 ap=4.000000000 at=12.000000000 rc=@rC@  /
  &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
 &POT kp=1 type=11 p2=@delta_2@ /
  &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /

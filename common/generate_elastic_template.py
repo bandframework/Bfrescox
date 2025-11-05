@@ -58,6 +58,10 @@ def generate_elastic_template(
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values
     """
+    projectile_spin = Fraction(projectile_spin)
+    target_spin = Fraction(target_spin)
+    J_tot_max = Fraction(J_tot_max)
+    J_tot_min = Fraction(J_tot_min)
 
     if J_tot_min > J_tot_max:
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
@@ -75,13 +79,13 @@ def generate_elastic_template(
     # Define placeholder replacements
     replacements = {
         "HEADER": reaction_name,
-        "step_size_fm": f"{step_size_fm:.9f}",
+        "STEP_SIZE": f"{step_size_fm:.9f}",
         "RMATCH": f"{R_match_fm:.9f}",
         "J_TOT_MIN": f"{float(J_tot_min):.1f}",
         "J_TOT_MAX": f"{float(J_tot_max):.1f}",
         "E_LAB": f"{E_lab_MeV:.9f}",
-        "projectile_mass_amu": f"{projectile_mass_amu:.9f}",
-        "projectile_atomic_number": f"{projectile_atomic_number:.9f}",
+        "MASS_P": f"{projectile_mass_amu:.9f}",
+        "CHARGE_P": f"{projectile_atomic_number:.9f}",
         "MASS_T": f"{target_mass_amu:.9f}",
         "CHARGE_T": f"{target_atomic_number:.9f}",
         "S_PROJECTILE": f"{float(projectile_spin):.1f}",
