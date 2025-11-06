@@ -1,6 +1,7 @@
 from fractions import Fraction
 from os import PathLike
 from pathlib import Path
+from typing import Union
 
 from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
 
@@ -8,17 +9,17 @@ TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/elastic.template"
 
 
 def generate_elastic_template(
-    output_path: str | PathLike[str],
+    output_path: Union[str, PathLike],
     reaction_name: str,
     target_mass_amu: float,
     target_atomic_number: int,
-    target_spin: Fraction | str | int | float,
+    target_spin: Union[Fraction, str, int, float],
     projectile_mass_amu: float,
     projectile_atomic_number: int,
-    projectile_spin: Fraction | str | int | float,
+    projectile_spin: Union[Fraction, str, int, float],
     E_lab_MeV: float,
-    J_tot_min: Fraction | str | int | float,
-    J_tot_max: Fraction | str | int | float,
+    J_tot_min: Union[Fraction, str, int, float],
+    J_tot_max: Union[Fraction, str, int, float],
     E_0_MeV: float,
     R_match_fm: float,
     step_size_fm: float,
@@ -27,27 +28,27 @@ def generate_elastic_template(
     Generate an elastic scattering input template for Fresco
 
     Args:
-        output_path (str | PathLike[str]): Path to save the generated
+        output_path (Union[str, PathLike]): Path to save the generated
             template file
         reaction_name (str): Name of the reaction for file naming
         target_mass_amu (float): Mass of the target nucleus
         target_atomic_number (int): Charge of the target nucleus
-        target_spin (Fraction | str | int | float): Spin of the target
+        target_spin (Union[Fraction, str, int, float]): Spin of the target
             nucleus (integer or half-integer)
         projectile_mass_amu (float): Mass of the projectile nucleus
         projectile_atomic_number (int): Charge of the projectile nucleus
-        projectile_spin (Fraction | str | int | float): Spin of the
+        projectile_spin (Union[Fraction, str, int, float]): Spin of the
             projectile nucleus (integer or half-integer). Must be
             convertable to Fraction.
         E_lab_MeV (float): Laboratory energy of the projectile in MeV
-        J_tot_min (Fraction | str | int | float): Minimum total angular
-            momentum (integer or half-integer). Must be convertable to
-            Fraction.
-        J_tot_max (Fraction | str | int | float): Maximum total angular
-            momentum (integer or half-integer). Must be convertable to
-            Fraction.
-        E_0_MeV (float): Ground state energy of the target nucleus in MeV
-            (usually 0, larger for isomeric or excited final state)
+        J_tot_min (Union[Fraction, str, int, float]): Minimum total
+            angular momentum (integer or half-integer). Must be
+            convertable to Fraction.
+        J_tot_max (Union[Fraction, str, int, float]): Maximum total
+            angular momentum (integer or half-integer). Must be
+            convertable to Fraction.
+        E_0_MeV (float): Ground state energy of the target nucleus in
+            MeV (usually 0, larger for isomeric or excited final state)
         R_match_fm (float): Matching radius in fm.
         step_size_fm (float): Step size for the radial mesh in fm.
 

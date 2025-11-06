@@ -8,17 +8,18 @@ file>(filename)`.
 from os import PathLike
 
 import pandas as pd
+from typing import Union
 
 from ._parsing import _read_results_lines
 
 
-def absolute_mb_per_sr(filename: str | PathLike[str]) -> pd.DataFrame:
+def absolute_mb_per_sr(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
     Parse the absolute cross section (mb/sr) from a |frescox| results
     file.
 
     Args:
-        filename  (str | PathLike[str]): Path to the |frescox| results file.
+        filename  (Union[str, PathLike]): Path to the |frescox| results file.
 
     Returns:
         pd.DataFrame: DataFrame with degree as index and absolute cross
@@ -53,13 +54,13 @@ def absolute_mb_per_sr(filename: str | PathLike[str]) -> pd.DataFrame:
     return df
 
 
-def ratio_to_rutherford(filename: str | PathLike[str]) -> pd.DataFrame:
+def ratio_to_rutherford(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
     Parse the ratio to Rutherford cross section from a |frescox| results
     file.
 
     Args:
-        filename  (str | PathLike[str]): Path to the |frescox| results file.
+        filename  (Union[str, PathLike]): Path to the |frescox| results file.
 
     Returns:
         pd.DataFrame: DataFrame with degree as index and Rutherford

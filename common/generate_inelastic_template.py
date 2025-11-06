@@ -2,7 +2,7 @@ import re
 from fractions import Fraction
 from os import PathLike
 from pathlib import Path
-from typing import List
+from typing import List, Union
 
 import numpy as np
 
@@ -85,17 +85,17 @@ def _setup_inelastic_system_template(
 
 
 def generate_inelastic_template(
-    output_path: str | PathLike[str],
+    output_path: Union[str, PathLike],
     target_mass_amu: float,
     target_atomic_number: float,
     projectile_mass_amu: float,
     projectile_atomic_number: float,
-    projectile_spin: Fraction | str | int | float,
+    projectile_spin: Union[Fraction, str, int, float],
     E_lab_MeV: float,
-    J_tot_min: Fraction | str | int | float,
-    J_tot_max: Fraction | str | int | float,
+    J_tot_min: Union[Fraction, str, int, float],
+    J_tot_max: Union[Fraction, str, int, float],
     reaction_name: str,
-    target_state_spins: List[Fraction | str | int | float],
+    target_state_spins: List[Union[Fraction, str, int, float]],
     target_state_parities: List[bool],
     target_state_energies_MeV: List[float],
     multipoles: np.ndarray,
@@ -106,26 +106,26 @@ def generate_inelastic_template(
     Generate an inelastic scattering input template for Fresco.
 
     Args:
-        output_path (str | PathLike[str]): Path to save the generated
+        output_path (Union[str, PathLike]): Path to save the generated
             template file.
         target_mass_amu (float): Mass of the target nucleus.
         target_atomic_number (float): Charge of the target nucleus.
         projectile_mass_amu (float): Mass of the projectile nucleus.
         projectile_atomic_number (float): Charge of the projectile
             nucleus.
-        projectile_spin (Fraction | str | int | float): Spin of the
+        projectile_spin (Union[Fraction, str, int, float]): Spin of the
             projectile nucleus (integer or half-integer). Must be
             convertable to Fraction.
         E_lab_MeV (float): Laboratory energy of the projectile in MeV.
-        J_tot_min (Fraction | str | int | float): Minimum total angular
-            momentum (integer or half-integer). Must be convertable to
-            Fraction.
-        J_tot_max (Fraction | str | int | float): Maximum total angular
-            momentum (integer or half-integer). Must be convertable to
-            Fraction.
+        J_tot_min (Union[Fraction, str, int, float]): Minimum total
+            angular momentum (integer or half-integer). Must be
+            convertable to Fraction.
+        J_tot_max (Union[Fraction, str, int, float]): Maximum total
+            angular momentum (integer or half-integer). Must be
+            convertable to Fraction.
         reaction_name (str): Name of the reaction for file naming.
-        target_state_spins (List[Fraction | str | int | float]): List of
-            spin states of the target nucleus (integers or
+        target_state_spins (List[Union[Fraction, str, int, float]]):
+            List of spin states of the target nucleus (integers or
             half-integers).  List elements must be convertable to
             Fraction.
         target_state_parities (List[bool]): List of parities for the

@@ -1,17 +1,18 @@
 from os import PathLike
+from typing import Union
 from pathlib import Path
 
 import pandas as pd
 
 
-def parse_fort16(filename: str | PathLike[str]) -> dict[str, pd.DataFrame]:
+def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
     """
     Parse a |frescox| fort.16 output into a dict of DataFrames.  Each
     '@sN ... &' block becomes one entry labeled channel_N, with all
     numeric columns and proper names (Theta, sigma, iT11, etc.).
 
     Args:
-        filename (str | PathLike[str]): Path to the |frescox| fort.16
+        filename (Union[str, PathLike]): Path to the |frescox| fort.16
                                         output file.
 
     Returns:

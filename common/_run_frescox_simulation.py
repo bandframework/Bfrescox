@@ -3,6 +3,7 @@ import subprocess as sbp
 from numbers import Integral
 from os import PathLike
 from pathlib import Path
+from typing import Union
 
 from .Configuration import Configuration
 
@@ -22,10 +23,10 @@ MPI_N_PROCESSES = "n_processes"
 def _run_frescox_simulation(
     frescox: dict,
     config: Configuration,
-    filename: str | PathLike[str],
+    filename: Union[str, PathLike],
     overwrite: bool,
     mpi_setup: dict,
-    cwd: str | PathLike[str],
+    cwd: Union[str, PathLike],
 ):
     """
     Run a |frescox| simulation using the given |frescox| installation,
@@ -48,14 +49,14 @@ def _run_frescox_simulation(
             installation
         config (Configuration): |bfrescox| :py:class:`Configuration`
             object that specifies the simulation to execute
-        filename (str | PathLike[str]): Filename including path of file
+        filename (Union[str, PathLike]): Filename including path of file
             to write outputs to
         overwrite (bool): If False, then an error is raised if either
             the input or output files exist
         mpi_setup (dict): Dictionary that provides MPI setup values if
             given |frescox| installation built with MPI; ``None``,
             otherwise.
-        cwd (str | PathLike[str]): directory to run the simulation in.
+        cwd (Union[str, PathLike]): directory to run the simulation in.
 
     Raises:
         TypeError

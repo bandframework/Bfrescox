@@ -1,5 +1,6 @@
 import csv
 from os import PathLike
+from typing import Union
 from pathlib import Path
 
 from ._run_frescox_simulation import (
@@ -11,12 +12,12 @@ from ._run_frescox_simulation import (
 )
 
 
-def _load_build_information(src_path: str | PathLike[str]) -> dict:
+def _load_build_information(src_path: Union[str, PathLike]) -> dict:
     """
     Load all information related to the internal |frescox| installation.
 
     Args:
-        src_path (str | PathLike[str]): Path to folder that contains the
+        src_path (Union[str, PathLike]): Path to folder that contains the
             ``bin`` and ``build`` installation folders.
     Returns:
         dict : contains information regarding the |frescox| executable

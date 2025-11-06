@@ -4,14 +4,15 @@ Internal parsing functions for |frescox| output files
 
 from os import PathLike
 from pathlib import Path
+from typing import Union
 
 
-def _read_results_lines(filename: str | PathLike[str]) -> list[str]:
+def _read_results_lines(filename: Union[str, PathLike]) -> list[str]:
     """
     Read all lines from a |frescox| results file.
 
     Args:
-        filename (str | PathLike[str]): Path to the |frescox| results
+        filename (Union[str, PathLike]): Path to the |frescox| results
             file.
 
     Returns:

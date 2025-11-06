@@ -1,11 +1,12 @@
 from os import PathLike
+from typing import Union
 
 from ._parsing import _read_results_lines
 
 
 def parse_parallelization_setup(
-    filename: str | PathLike[str],
-) -> tuple[int, int] | None:
+    filename: Union[str, PathLike],
+) -> Union[tuple[int, int], None]:
     """
     Parse |frescox| parallelization setup from output file.
 
@@ -15,7 +16,7 @@ def parse_parallelization_setup(
     omp_n_procs == 1 always be true?
 
     Args:
-        filename (str | PathLike[str]): Path to the |frescox| output
+        filename (Union[str, PathLike]): Path to the |frescox| output
                                         file.
 
     Returns:

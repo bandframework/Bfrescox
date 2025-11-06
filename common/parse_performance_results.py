@@ -1,11 +1,12 @@
 from os import PathLike
+from typing import Union
 
 import pandas as pd
 
 from ._parsing import _read_results_lines
 
 
-def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
+def parse_performance_results(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
     Parse |frescox| performance results into a DataFrame.
 
@@ -13,7 +14,7 @@ def parse_performance_results(filename: str | PathLike[str]) -> pd.DataFrame:
     Some timing lines aren't printed on their own line. Put in NaNs.
 
     Args:
-        filename (str | PathLike[str]): Path to the |frescox| output
+        filename (Union[str, PathLike]): Path to the |frescox| output
                                         file.
 
     Returns:

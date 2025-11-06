@@ -5,17 +5,18 @@ Module to fill in template NML files with specified parameters.
 import re
 from os import PathLike
 from pathlib import Path
+from typing import Union
 
 import numpy as np
 
 
-def parse_valid_keys(template_path: str | PathLike[str]):
+def parse_valid_keys(template_path: Union[str, PathLike]):
     """
     Read in a template nml file, identify all '@key@' placeholders, and
     return a set of the keys found.
 
     Args:
-        template_path (str | PathLike[str]): Path to the template NML
+        template_path (Union[str, PathLike]): Path to the template NML
             file.
 
     Returns:
@@ -37,8 +38,8 @@ def parse_valid_keys(template_path: str | PathLike[str]):
 
 
 def fill_in_template_file(
-    template_path: str | PathLike[str],
-    output_path: str | PathLike[str],
+    template_path: Union[str, PathLike],
+    output_path: Union[str, PathLike],
     parameters: dict,
     overwrite: bool = False,
 ):
@@ -63,9 +64,9 @@ def fill_in_template_file(
     where the placeholder appears.
 
     Args:
-        template_path (str | PathLike[str]): Path to the template NML
+        template_path (Union[str, PathLike]): Path to the template NML
             file.
-        output_path (str | PathLike[str]): Path to write the modified
+        output_path (Union[str, PathLike]): Path to write the modified
             NML file.
         parameters (dict): Dictionary of parameters to replace in
             the template. Keys should match placeholders in the

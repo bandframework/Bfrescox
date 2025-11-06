@@ -1,4 +1,5 @@
 from fractions import Fraction
+from typing import Union
 
 
 def _is_fraction_integer_or_half_integer(f: Fraction) -> bool:
@@ -14,11 +15,11 @@ def _is_fraction_integer_or_half_integer(f: Fraction) -> bool:
 
 
 def _validate_spin(
-    spin: Fraction | str | int | float, var_name: str
+    spin: Union[Fraction, str, int, float], var_name: str
 ) -> Fraction:
     """
     Args:
-        spin (Fraction | str | int | float): The spin value to validate,
+        spin (Union[Fraction, str, int, float]): The spin value to validate,
             must be convertible to a Fraction.
 
     Raises:

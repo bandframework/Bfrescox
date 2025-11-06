@@ -2,16 +2,16 @@ import os
 import shutil
 from os import PathLike
 from pathlib import Path
-
+from typing import Union
 from ._fill_in_template import fill_in_template_file
 
 
 class Configuration(object):
     @classmethod
-    def from_NML(cls, filename: str | PathLike[str]) -> "Configuration":
+    def from_NML(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (str | PathLike[str]): Path to Frescox Fortran
+            filename (Union[str, PathLike]): Path to Frescox Fortran
                 namelist input file
 
         Returns:
@@ -23,8 +23,8 @@ class Configuration(object):
     @classmethod
     def from_template(
         cls,
-        template_path: str | PathLike[str],
-        output_path: str | PathLike[str],
+        template_path: Union[str, PathLike],
+        output_path: Union[str, PathLike],
         parameters: dict,
         overwrite: bool = False,
     ) -> "Configuration":
@@ -49,9 +49,9 @@ class Configuration(object):
         where the placeholder appears.
 
         Args:
-            template_path (str | PathLike[str]): Path to the template
+            template_path (Union[str, PathLike]): Path to the template
                 NML file.
-            output_path (str | PathLike[str]): Path to write the
+            output_path (Union[str, PathLike]): Path to write the
                 modified NML file.
             parameters (dict): Dictionary of parameters to replace in
                 the template. Keys should match placeholders in the
@@ -82,10 +82,10 @@ class Configuration(object):
         return cls(Path(output_path))
 
     @classmethod
-    def from_json(cls, filename: str | PathLike) -> "Configuration":
+    def from_json(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (str | PathLike): Path to Frescox |bfrescox| format
+            filename (Union[str, PathLike]): Path to Frescox |bfrescox| format
                 JSON file
 
         Returns:
@@ -94,12 +94,12 @@ class Configuration(object):
         """
         raise NotImplementedError("from_json not implemented yet")
 
-    def __init__(self, filename: str | PathLike):
+    def __init__(self, filename: Union[str, PathLike]):
         """
         Class representing a Frescox input configuration.
 
         Args:
-            filename (str | PathLike): Path to Frescox Fortran namelist
+            filename (Union[str, PathLike]): Path to Frescox Fortran namelist
                 input file
 
         Raises:
@@ -121,13 +121,13 @@ class Configuration(object):
         self.__nml = fname
 
     def write_to_nml(
-        self, filename: str | PathLike, overwrite: bool = False
+        self, filename: Union[str, PathLike], overwrite: bool = False
     ) -> None:
         """
         Write configuration to Frescox Fortran namelist input file.
 
         Args:
-            filename (str | PathLike): Path to write Frescox Fortran
+            filename (Union[str, PathLike]): Path to write Frescox Fortran
                 namelist input file
             overwrite (bool): Whether to overwrite filename if it
                 already exists.
