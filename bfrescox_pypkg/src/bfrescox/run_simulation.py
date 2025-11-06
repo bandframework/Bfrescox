@@ -1,4 +1,5 @@
 import copy
+from typing import Union
 import warnings
 from os import PathLike
 from pathlib import Path
@@ -17,10 +18,10 @@ from .information import information
 
 def run_simulation(
     configuration: Configuration,
-    filename: str | PathLike[str],
+    filename: Union[str, PathLike],
     overwrite: Optional[dict] = False,
     external: Optional[dict] = None,
-    cwd: Optional[str | PathLike[str]] = None,
+    cwd: Optional[Union[str, PathLike]] = None,
 ):
     """
     Run a |frescox| simulation based on the given simulation
@@ -32,13 +33,13 @@ def run_simulation(
     Args:
         configuration (Configuration): :py:class:`Configuration` object
             that specifies the simulation to run.
-        filename (str | PathLike[str]): Filename including path of file
+        filename (Union[str, PathLike]): Filename including path of file
             to write outputs to
         overwrite (dict, optional): If False, then an error is raised if
             either of the simulation input or output files exist
         external (bool, optional): (|bfrescox| only)
             **EXPERT USERS ONLY**
-        cwd (str | PathLike[str], optional): directory to run the
+        cwd (Union[str, PathLike], optional): directory to run the
             simulation in.  If None, the current working directory is
             used.
 
