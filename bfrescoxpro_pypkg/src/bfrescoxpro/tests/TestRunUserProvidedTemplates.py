@@ -9,10 +9,11 @@ import shutil
 import unittest
 from pathlib import Path
 
-import bfrescox
+import bfrescoxpro
 import numpy as np
+from bfrescoxpro import parse_differential_xs
 
-INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
+INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
 TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
@@ -26,6 +27,7 @@ class TestElasticProblems(unittest.TestCase):
         self.__dir = Path.cwd().joinpath("delete_me_please")
         self.__nml = self.__dir.joinpath("test.nml")
         self.__fname_out = self.__dir.joinpath("test.out")
+        self.__info = bfrescoxpro.information()
 
     def tearDown(self):
         if self.__dir.exists():
@@ -49,36 +51,41 @@ class TestElasticProblems(unittest.TestCase):
 
                 template_parameters = test_info["TemplateParameters"]
 
-                cfg = bfrescox.Configuration.from_template(
+                mpi_setup = None
+                if self.__info["supports_mpi"]:
+                    pro_setup = test_info["ProSetup"]
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
+
+                if self.__info["supports_openmp"]:
+                    pro_setup = test_info["ProSetup"]
+                    n_threads = pro_setup["nOmpThreads"]
+                    os.environ["OMP_NUM_THREADS"] = str(n_threads)
+
+                cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
                     output_fname,
                     template_parameters,
                     overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
-                bfrescox.run_simulation(cfg, self.__fname_out, cwd=self.__dir)
+                bfrescoxpro.run_simulation(
+                    cfg, self.__fname_out, mpi_setup=mpi_setup, cwd=self.__dir
+                )
                 self.assertTrue(self.__fname_out.is_file())
 
                 # Check all results against official baselines
                 # TODO this should be factored out for use in other test suites
                 for quantity, quantity_info in test_info["Results"].items():
-                    if (
-                        quantity.lower()
-                        == "differential_xs_absolute_mb_per_sr"
-                    ):
-                        results_df = (
-                            bfrescox.parse_differential_xs.absolute_mb_per_sr(
-                                self.__fname_out
-                            )
+                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
+                        results_df = parse_differential_xs.absolute_mb_per_sr(
+                            self.__fname_out
                         )
                     elif (
                         quantity.lower()
                         == "differential_xs_ratio_to_rutherford"
                     ):
-                        results_df = (
-                            bfrescox.parse_differential_xs.ratio_to_rutherford(
-                                self.__fname_out
-                            )
+                        results_df = parse_differential_xs.ratio_to_rutherford(
+                            self.__fname_out
                         )
                     else:
                         msg = f"Unknown physical quantity {quantity}"

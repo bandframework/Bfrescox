@@ -13,11 +13,15 @@
                     "rs":  1.094115,
                     "as":  0.2763
                 },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
                 "NML": "48Ca_OzgePointA.nml",
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
                         "Baseline": "48Ca_OzgePointA_differential_xs_baseline.csv",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             }

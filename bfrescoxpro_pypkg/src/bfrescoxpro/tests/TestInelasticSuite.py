@@ -10,10 +10,10 @@ import shutil
 import unittest
 from pathlib import Path
 
-import bfrescox
+import bfrescoxpro
 import numpy as np
 
-INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
+INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
 TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
@@ -48,6 +48,7 @@ class TestInelasticProblems(unittest.TestCase):
         os.mkdir(self.__dir)
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
+        self.__info = bfrescoxpro.information()
         self.maxDiff = None
 
     def tearDown(self):
@@ -70,7 +71,7 @@ class TestInelasticProblems(unittest.TestCase):
             output_fname = self.__testdir.joinpath(f"{template}.nml")
 
             # generate template file
-            bfrescox.generate_inelastic_template(
+            bfrescoxpro.generate_inelastic_template(
                 template_fname, **specification["ProblemConfig"]
             )
 
@@ -88,22 +89,35 @@ class TestInelasticProblems(unittest.TestCase):
                 self._clean_test_dir()
 
                 template_parameters = test_info["TemplateParameters"]
+                mpi_setup = None
+                if self.__info["supports_mpi"]:
+                    pro_setup = test_info["ProSetup"]
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
 
-                cfg = bfrescox.Configuration.from_template(
+                if self.__info["supports_openmp"]:
+                    pro_setup = test_info["ProSetup"]
+                    n_threads = pro_setup["nOmpThreads"]
+                    os.environ["OMP_NUM_THREADS"] = str(n_threads)
+
+                cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
                     output_fname,
                     template_parameters,
                     overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
-                bfrescox.run_simulation(
-                    cfg, self.__fname_out, cwd=self.__testdir
+                bfrescoxpro.run_simulation(
+                    cfg,
+                    self.__fname_out,
+                    mpi_setup=mpi_setup,
+                    cwd=self.__testdir,
                 )
                 self.assertTrue(self.__fname_out.is_file())
 
                 # Check all results against official baelines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
+                    print(fname)
                     with open(fname, "rb") as fptr:
                         expected = pickle.load(fptr)
 
@@ -116,7 +130,7 @@ class TestInelasticProblems(unittest.TestCase):
                         rel_diff_tolr = quantity_info["RelDiffThreshold"]
 
                     if quantity.lower() == "fort.16":
-                        results = bfrescox.parse_fort16(
+                        results = bfrescoxpro.parse_fort16(
                             self.__testdir / "fort.16"
                         )
                         assert expected.keys() == results.keys()

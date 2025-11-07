@@ -1,29 +1,40 @@
 """
-Parse differential cross section results from FrescoX output files.
+Functions to parse differential cross section results from |frescox|
+stdout. This module is part of the package public interface, so they can
+be called like so `bfrescox.parse_differential_xs.<function in this
+file>(filename)`.
 """
 
-from pathlib import Path
+from os import PathLike
 
 import pandas as pd
+from typing import Union
 
 from ._parsing import _read_results_lines
 
 
-def absolute_mb_per_sr(filename: Path):
+def absolute_mb_per_sr(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
-    Parse the absolute cross section (mb/sr) from a FrescoX results file.
+    Parse the absolute cross section (mb/sr) from a |frescox| results
+    file.
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX results file.
+    Args:
+        filename  (Union[str, PathLike]): Path to the |frescox| results file.
+
     Returns:
-        pd.DataFrame: DataFrame with degree as index and absolute cross section as column.
+        pd.DataFrame: DataFrame with degree as index and absolute cross
+        section as column.
+
+    Raises:
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
-    lines = _read_results_lines(filename)
+
+    lines_all = _read_results_lines(filename)
 
     index = []
     ratio = []
-    for line in lines:
+    for line in lines_all:
         if "X-S" in line:
             result = line.split()
             # Sanity check parsing including expected units
@@ -43,24 +54,30 @@ def absolute_mb_per_sr(filename: Path):
     return df
 
 
-def ratio_to_rutherford(filename: Path):
+def ratio_to_rutherford(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
-    Parse the ratio to Rutherford cross section from a FrescoX results file.
+    Parse the ratio to Rutherford cross section from a |frescox| results
+    file.
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX results file.
+    Args:
+        filename  (Union[str, PathLike]): Path to the |frescox| results file.
+
     Returns:
-        pd.DataFrame: DataFrame with degree as index and Rutherford ratio as column.
+        pd.DataFrame: DataFrame with degree as index and Rutherford
+        ratio as column.
+
+    Raises:
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     index = []
     ratio = []
-    for i, line in enumerate(lines):
+    for i, line in enumerate(lines_all):
         if "/R" in line:
-            assert "X-S" in lines[i - 1]
-            result = lines[i - 1].split()
+            assert "X-S" in lines_all[i - 1]
+            result = lines_all[i - 1].split()
             assert len(result) == 6
             index.append(float(result[0]))
             assert result[1].strip() == "deg.:"
@@ -77,7 +94,9 @@ def ratio_to_rutherford(filename: Path):
             ratio.append(float(result[3]))
 
     df = pd.DataFrame(
-        data=ratio, index=index, columns=["differential_xs_ratio_to_rutherford"]
+        data=ratio,
+        index=index,
+        columns=["differential_xs_ratio_to_rutherford"],
     )
     df.index.name = "angle_degrees"
 

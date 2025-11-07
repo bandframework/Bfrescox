@@ -1,107 +1,145 @@
 import os
 import shutil
+from os import PathLike
 from pathlib import Path
-
+from typing import Union
 from ._fill_in_template import fill_in_template_file
 
 
 class Configuration(object):
     @classmethod
-    def from_NML(cls, filename):
+    def from_NML(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
-        :return: Configuration object constructed from contents of given
-            |frescox| Fortran namelist input file
+        Args:
+            filename (Union[str, PathLike]): Path to Frescox Fortran
+                namelist input file
+
+        Returns:
+            Configuration: constructed from contents of given |frescox|
+                Fortran namelist input file
         """
-        return cls(None, filename)
+        return cls(filename)
 
     @classmethod
     def from_template(
         cls,
-        template_path: Path,
-        output_path: Path,
+        template_path: Union[str, PathLike],
+        output_path: Union[str, PathLike],
         parameters: dict,
         overwrite: bool = False,
-    ):
+    ) -> "Configuration":
         """
-        Read in a template nml file, replace '@key@' placeholders with corresponding
-        values from parameters, and write result to output_path.
+        Read in a template nml file, replace '@key@' placeholders with
+        corresponding values from parameters, and write result to
+        output_path. The set of possible keys in the template file must
+        exactly match the keys in `parameters`, or a ValueError will be
+        raised.
 
-        For example, if one has a Frescox template file with a line like this:
+        For example, if one has a Frescox template file with a line like
+        this defining a potential:
         ```
         &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
+        &POT kp=1 type=2  p1=@Vs@ p2=@rw@ p3=@aw@ p4=@Ws@ p5=@rw@ p6=@aw@ /
         ```
 
-        Then the `parameters` dict should have the keys `V`, `r`, `a`, `W`, `rw`, and `aw`.
+        Then the `parameters` dict should have the keys `V`, `r`, `a`,
+        `W`, `rw`, `aw`, `Vs` and `Ws`. Notice that `rw` and `aw` are
+        used in multiple places in the template file. The corresponding
+        values in `parameters` will be substituted into each location
+        where the placeholder appears.
 
-        Placeholders may be repeated in multiple places in the template file.
-
-        Parameters:
-            template_path (Path): Path to the template NML file.
-            output_path (Path): Path to write the modified NML file.
-            parameters (dict): Dictionary of parameters to replace in the template. Keys
-                should match placeholders in the template, corresponding values are
-                the desired replacements in the output file.
-        overwrite (bool): Whether to overwrite output_path if it already exists.
+        Args:
+            template_path (Union[str, PathLike]): Path to the template
+                NML file.
+            output_path (Union[str, PathLike]): Path to write the
+                modified NML file.
+            parameters (dict): Dictionary of parameters to replace in
+                the template. Keys should match placeholders in the
+                template, corresponding values are the desired replacements
+                in the output file.
+            overwrite (bool): Whether to overwrite output_path if it
+                already exists.
 
         Raises:
-            ValueError: If keys exist in the template that are not in parameters.
-            ValueError: If keys exist in parameters that are not in the template file
-
-        Returns:
-            Configuration object
+            TypeError: If template_path or output_path are not str or
+                PathLike
+            ValueError: If keys exist in the template that are not in
+                `parameters`.
+            ValueError: If keys exist in `parameters` that are not in
+                the template file
         """
+        if not isinstance(template_path, (str, PathLike)):
+            raise TypeError("template_path must be str or PathLike")
+        if not isinstance(output_path, (str, PathLike)):
+            raise TypeError("output_path must be str or PathLike")
+
         fill_in_template_file(
-            template_path,
-            output_path,
+            Path(template_path),
+            Path(output_path),
             parameters,
             overwrite=overwrite,
         )
-        return cls(None, output_path)
+        return cls(Path(output_path))
 
     @classmethod
-    def from_json(cls, filename):
+    def from_json(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
-        :return: Configuration object constructed from contents of given
-            |bfrescox| format JSON file
-        """
-        raise NotImplementedError("Is this a good idea?!")
+        Args:
+            filename (Union[str, PathLike]): Path to Frescox |bfrescox| format
+                JSON file
 
-    def __init__(self, configuration, filename):
+        Returns:
+            Configuration : constructed from contents of given
+                w|bfrescox| format JSON file
         """
-        .. todo::
-            * Figure this out once we start configuring in earnest.  It does
-              seem like a good idea for users to be able to use an NML files
-              they have hanging around.
-            * Note that this class could double as a translation tool if so
-              desired.  A user could load from JSON and write to NML.  If we
-              were to add a write_to_JSON, then a user could convert an NML file
-              to JSON.
+        raise NotImplementedError("from_json not implemented yet")
 
-        :param configuration:
-        :param filename:
+    def __init__(self, filename: Union[str, PathLike]):
+        """
+        Class representing a Frescox input configuration.
+
+        Args:
+            filename (Union[str, PathLike]): Path to Frescox Fortran namelist
+                input file
+
+        Raises:
+            TypeError: If filename is not a str or Path
+            ValueError: If filename does not exist or is not a file
         """
         super().__init__()
 
-        # ----- ERROR CHECK ARGUMENTS
-        if configuration is not None:
-            raise NotImplementedError("Should this be a dict?")
-
-        if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
-            raise TypeError("Given filename is not a str or Path")
+        # ----- ERROR CHECK ARGUMENTa
+        if not isinstance(filename, (str, PathLike)):
+            raise TypeError("filename must be a str or PathLike")
         fname = Path(filename).resolve()
         if not fname.is_file():
-            msg = "Configuration file does not exist or is not a file"
+            msg = f"Configuration file {fname} does not exist or is not a file"
             raise ValueError(msg)
 
         # ----- STORE CONFIGURATION
         # No loading or checking to be done if Frescox NML file
         self.__nml = fname
 
-    def write_to_nml(self, filename, overwrite=False):
-        """ """
+    def write_to_nml(
+        self, filename: Union[str, PathLike], overwrite: bool = False
+    ) -> None:
+        """
+        Write configuration to Frescox Fortran namelist input file.
+
+        Args:
+            filename (Union[str, PathLike]): Path to write Frescox Fortran
+                namelist input file
+            overwrite (bool): Whether to overwrite filename if it
+                already exists.
+
+        Raises:
+            TypeError: If filename is not a str or Path
+            RuntimeError: If filename already exists and overwrite is
+                False
+        """
         # ----- ERROR CHECK ARGUMENTS
-        if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
-            raise TypeError("Given filename is not a str or Path")
+        if not isinstance(filename, (str, PathLike)):
+            raise TypeError("filename must be a str or PathLike")
         fname_in = Path(filename).resolve()
         if fname_in.exists():
             if overwrite:

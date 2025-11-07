@@ -1,34 +1,51 @@
 import copy
+from typing import Union
 import warnings
+from os import PathLike
+from pathlib import Path
+from typing import Optional
 
-from .information import information
 from ._run_frescox_simulation import (
-    run_frescox_simulation,
-    FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
+    FRESCOX_COREX_SUPPORT,
     FRESCOX_LAPACK_SUPPORT,
-    FRESCOX_COREX_SUPPORT
+    FRESCOX_MPI_SUPPORT,
+    FRESCOX_OPENMP_SUPPORT,
+    _run_frescox_simulation,
 )
+from .Configuration import Configuration
+from .information import information
 
 
-def run_simulation(configuration, filename, overwrite=False, external=None, cwd=None):
+def run_simulation(
+    configuration: Configuration,
+    filename: Union[str, PathLike],
+    overwrite: Optional[dict] = False,
+    external: Optional[dict] = None,
+    cwd: Optional[Union[str, PathLike]] = None,
+):
     """
-    Run a |frescox| simulation based on the given simulation configuration
-    object.  Results are written to a file with the given output filename.  The
-    |frescox| Fortran namelist configuration file generated from the
-    configuration object for the simulation is written alongside the results
-    file.
+    Run a |frescox| simulation based on the given simulation
+    configuration object. Results are written to a file with the given
+    output filename. The |frescox| Fortran namelist configuration file
+    generated from the configuration object for the simulation is
+    written alongside the results file.
 
-    .. todo::
-        * Load and return a result object once that class exists.
+    Args:
+        configuration (Configuration): :py:class:`Configuration` object
+            that specifies the simulation to run.
+        filename (Union[str, PathLike]): Filename including path of file
+            to write outputs to
+        overwrite (dict, optional): If False, then an error is raised if
+            either of the simulation input or output files exist
+        external (bool, optional): (|bfrescox| only)
+            **EXPERT USERS ONLY**
+        cwd (Union[str, PathLike], optional): directory to run the
+            simulation in.  If None, the current working directory is
+            used.
 
-    :param configuration: :py:class:`Configuration` object that specifies the
-        simulation to run
-    :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either of the
-        simulation input or output files exist
-    :param external: (|bfrescox| only) **EXPERT USERS ONLY**
-    :params cwd: Current working directory to run the simulation in.  If None,
-        the current working directory of the calling process is used.
+    Raises:
+        ValueError: If no valid internal or external |frescox|
+            installation is found.
     """
     # Assume for now that external installations will not be using MPI
     NO_MPI_PLEASE = None
@@ -55,8 +72,17 @@ def run_simulation(configuration, filename, overwrite=False, external=None, cwd=
         assert not frescox[FRESCOX_LAPACK_SUPPORT]
         assert not frescox[FRESCOX_COREX_SUPPORT]
 
+    if cwd is None:
+        cwd = Path.cwd()
+
     # This function assumes that all error checking of arguments will be handled
     # by this internal function.  This includes the case of incorrectly
     # providing an MPI-based external installation.
-    run_frescox_simulation(frescox, configuration, NO_MPI_PLEASE,
-                           filename, overwrite, cwd=cwd)
+    _run_frescox_simulation(
+        frescox,
+        configuration,
+        filename,
+        overwrite,
+        NO_MPI_PLEASE,
+        cwd,
+    )

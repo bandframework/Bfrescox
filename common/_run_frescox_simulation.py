@@ -1,7 +1,9 @@
 import os
 import subprocess as sbp
 from numbers import Integral
+from os import PathLike
 from pathlib import Path
+from typing import Union
 
 from .Configuration import Configuration
 
@@ -18,42 +20,54 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 MPI_N_PROCESSES = "n_processes"
 
 
-def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=None):
+def _run_frescox_simulation(
+    frescox: dict,
+    config: Configuration,
+    filename: Union[str, PathLike],
+    overwrite: bool,
+    mpi_setup: dict,
+    cwd: Union[str, PathLike],
+):
     """
     Run a |frescox| simulation using the given |frescox| installation,
-    simulation configuration, and MPI setup.  Results are written to disk using
-    the given output filename.  The |frescox| Fortran namelist configuration
-    file generated from the configuration object for the simulation is written
-    alongside the results file.
-
-    While this function will likely reside in the private interface of Python
-    packages, we assume that some users might call it directly.  Therefore, this
-    function performs its own error checking of arguments.  A nice side effect
-    of this is that the wrapper functions in the packages likely don't need to
-    perform any error checking.
+    simulation configuration, and MPI setup.  stdout is written to disk
+    using the given output filename. Other outputs are written to disk
+    based on the |frescox| output settings. The |frescox| Fortran
+    namelist configuration file generated from the configuration object
+    for the simulation is written alongside the results file.
 
     .. todo::
-        * Allow for the case that a user is required to use a system's own
-          program for starting MPI programs (e.g., jsrun).
-        * System level tests will check the general functionality of this code.
-          However, we need to write a set of tests that confirm correct
-          detection and management of bad inputs.
+        * Load and return a result object once that class exists.
+        * System level tests will check the general functionality of
+        this code.  However, we need to write a set of tests that
+        confirm correct detection and management of bad inputs.
+        * Allow for the case that a user is required to use a system's
+        own program for starting MPI programs (e.g., jsrun).
 
-    :param frescox: ``dict`` that fully characterizes a |frescox| installation
-    :param config: |bfrescox| :py:class:`Configuration` object that specifies
-        the simulation to execute
-    :param mpi_setup: ``dict`` that provides MPI setup values if given |frescox|
-        installation built with MPI; ``None``, otherwise.
-    :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either the input or
-        output files exist
-    :params cwd: Current working directory to run the simulation in.  If None,
-        the current working directory of the calling process is used.
+    Args:
+        frescox (dict): Dictionary that fully characterizes a |frescox|
+            installation
+        config (Configuration): |bfrescox| :py:class:`Configuration`
+            object that specifies the simulation to execute
+        filename (Union[str, PathLike]): Filename including path of file
+            to write outputs to
+        overwrite (bool): If False, then an error is raised if either
+            the input or output files exist
+        mpi_setup (dict): Dictionary that provides MPI setup values if
+            given |frescox| installation built with MPI; ``None``,
+            otherwise.
+        cwd (Union[str, PathLike]): directory to run the simulation in.
+
+    Raises:
+        TypeError
+            If any of the arguments are of incorrect type
+        ValueError
+            If any of the argument values are invalid
+        RuntimeError
+            If output file already exists and overwrite is False, or if
+            OpenMP is to be used but OMP_NUM_THREADS environment variable
+            is not set, or if the |frescox| executable fails during execution
     """
-    # ----- HARCODED VALUES
-    cwd = Path(cwd).resolve() if cwd is not None else "/."
-    FRESCOX_INPUT_NAME = cwd / "frescox.in"
-
     # ----- ERROR CHECK ARGUMENTS
     if not isinstance(frescox, dict):
         raise TypeError(f"Invalid frescox specification ({frescox})")
@@ -64,11 +78,11 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
     if not frescox_exe.is_file():
         msg = "Frescox executable does not exist or is not a file ({})"
         raise TypeError(msg.format(frescox_exe))
-    elif not isinstance(use_mpi, bool):
+    if not isinstance(use_mpi, bool):
         raise TypeError("MPI support specification is not a boolean")
-    elif not isinstance(use_omp, bool):
+    if not isinstance(use_omp, bool):
         raise TypeError("OpenMP support specification is not a boolean")
-    elif use_omp and ("OMP_NUM_THREADS" not in os.environ):
+    if use_omp and ("OMP_NUM_THREADS" not in os.environ):
         msg = (
             "OMP_NUM_THREADS environment variable is not set "
             "for use with OpenMP-enabled Frescox installation"
@@ -83,24 +97,29 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
     if (not use_mpi) and (mpi_setup is not None):
         msg = "MPI specification provided for non-MPI Frescox installation"
         raise ValueError(msg)
-    elif use_mpi:
+    if use_mpi:
         if not isinstance(mpi_setup, dict):
             raise TypeError("MPI setup information is not a dictionary")
-        elif MPI_N_PROCESSES not in mpi_setup:
+        if MPI_N_PROCESSES not in mpi_setup:
             raise ValueError(f"{MPI_N_PROCESSES} not provided in MPI setup")
 
         n_mpi_procs = mpi_setup[MPI_N_PROCESSES]
         if not isinstance(n_mpi_procs, Integral):
             raise TypeError("Number of MPI processes must be an integer")
-        elif n_mpi_procs < 1:
+        if n_mpi_procs < 1:
             msg = "Number of MPI processes ({}) must be positive integer"
             raise ValueError(msg.format(n_mpi_procs))
 
-    if not isinstance(filename, (str, Path)):
+    if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid output filename ({filename})")
 
     if not isinstance(overwrite, bool):
         raise TypeError("Given overwrite argument is not a boolean")
+
+    if not isinstance(cwd, (str, PathLike)):
+        raise TypeError(f"Invalid working directory ({cwd})")
+    fname_in = Path(cwd).resolve().joinpath("frescox.in")
+    config.write_to_nml(fname_in, overwrite)
 
     # ----- CHECK STATE OF FILES & WRITE INPUT
     fname_out = Path(filename).resolve()
@@ -110,12 +129,15 @@ def run_frescox_simulation(frescox, config, mpi_setup, filename, overwrite, cwd=
         else:
             raise RuntimeError(f"Output file ({fname_out}) already exists")
 
-    fname_in = fname_out.parent.joinpath(FRESCOX_INPUT_NAME)
-    config.write_to_nml(fname_in, overwrite)
-
     # ----- RUN SIMULATION
     if use_mpi:
-        cmd = ["mpirun", "-np", str(n_mpi_procs), str(frescox_exe), str(fname_in)]
+        cmd = [
+            "mpirun",
+            "-np",
+            str(n_mpi_procs),
+            str(frescox_exe),
+            str(fname_in),
+        ]
 
         try:
             with open(fname_out, "w") as fptr_stdout:

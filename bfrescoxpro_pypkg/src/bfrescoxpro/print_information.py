@@ -1,17 +1,17 @@
 import os
-import shutil
-import warnings
 import platform
-
+import shutil
 import subprocess as sbp
+import warnings
 
-from .information import information
 from ._run_frescox_simulation import (
+    FRESCOX_COREX_SUPPORT,
     FRESCOX_EXE,
-    FRESCOX_MPI_SUPPORT, FRESCOX_OPENMP_SUPPORT,
     FRESCOX_LAPACK_SUPPORT,
-    FRESCOX_COREX_SUPPORT
+    FRESCOX_MPI_SUPPORT,
+    FRESCOX_OPENMP_SUPPORT,
 )
+from .information import information
 
 
 def print_information():
@@ -35,7 +35,7 @@ def print_information():
                 reply = sbp.run(
                     ["otool", "-L", str(frescox_exe)],
                     capture_output=True,
-                    check=True
+                    check=True,
                 )
                 stdout = reply.stdout.decode()
                 assert stdout != ""
@@ -54,9 +54,7 @@ def print_information():
         if shutil.which("ldd", mode=(os.F_OK | os.X_OK)):
             try:
                 reply = sbp.run(
-                    ["ldd", str(frescox_exe)],
-                    capture_output=True,
-                    check=True
+                    ["ldd", str(frescox_exe)], capture_output=True, check=True
                 )
                 stdout = reply.stdout.decode()
                 assert stdout != ""

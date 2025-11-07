@@ -1,38 +1,38 @@
-"""
-Utilities for parsing FrescoX performance results into a DataFrame.
-"""
-
-from pathlib import Path
+from os import PathLike
+from typing import Union
 
 import pandas as pd
 
 from ._parsing import _read_results_lines
 
 
-def parse_performance_results(filename: Path):
+def parse_performance_results(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
-    Parse FrescoX performance results into a DataFrame.
+    Parse |frescox| performance results into a DataFrame.
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX output file.
+    ..todo prototype code
+    Some timing lines aren't printed on their own line. Put in NaNs.
+
+    Args:
+        filename (Union[str, PathLike]): Path to the |frescox| output
+                                        file.
 
     Returns:
-    pd.DataFrame
-        DataFrame with index as rank and columns 'walltime_sec' and 'cpu_time_sec'.
+        pd.DataFrame : index as rank and columns 'walltime_sec' and
+                       'cpu_time_sec'.
 
     Raises:
-    RuntimeError
-        If an invalid performance result line is encountered.
+        RuntimeError : If an invalid performance result line is
+                       encountered.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     START_STR = "Total CPU"
     COLUMNS = ["walltime_sec", "cpu_time_sec"]
 
     timings = []
     indices = []
-    for line in lines:
+    for line in lines_all:
         if line.strip().startswith(START_STR):
             result = line.strip().lstrip(START_STR).split()
 
@@ -68,7 +68,5 @@ def parse_performance_results(filename: Path):
 
     df = pd.DataFrame(data=timings, index=indices, columns=COLUMNS)
     df.index.name = "rank"
-    # TODO: Some timing lines aren't printed on their own line.
-    # Put in NaNs.
 
     return df

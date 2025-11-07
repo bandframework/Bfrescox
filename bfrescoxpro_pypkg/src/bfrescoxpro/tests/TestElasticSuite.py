@@ -9,76 +9,104 @@ import shutil
 import unittest
 from pathlib import Path
 
-import bfrescox
+import bfrescoxpro
 import numpy as np
+from bfrescoxpro import parse_differential_xs
 
-INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
+INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
 TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
 
 class TestElasticProblems(unittest.TestCase):
     def setUp(self):
-        fname_suite = DATA_PATH.joinpath("TestSuite_UserProvidedTemplate.json")
+        fname_suite = DATA_PATH.joinpath("TestSuite_Elastic.json")
         with open(fname_suite, "r") as fptr:
             self.__suite = json.load(fptr)
 
         self.__dir = Path.cwd().joinpath("delete_me_please")
-        self.__nml = self.__dir.joinpath("test.nml")
-        self.__fname_out = self.__dir.joinpath("test.out")
+        os.mkdir(self.__dir)
+        self.__testdir = self.__dir.joinpath("test")
+        self.__fname_out = self.__testdir.joinpath("test.out")
+        self.__info = bfrescoxpro.information()
+        self.maxDiff = None
 
     def tearDown(self):
         if self.__dir.exists():
             shutil.rmtree(self.__dir)
 
-    def _clean_tmp_dir(self):
-        if self.__dir.is_file():
-            os.remove(self.__dir)
-        elif self.__dir.is_dir():
-            shutil.rmtree(self.__dir)
-        os.mkdir(self.__dir)
+    def _clean_test_dir(self):
+        if self.__testdir.is_file():
+            os.remove(self.__testdir)
+        elif self.__testdir.is_dir():
+            shutil.rmtree(self.__testdir)
+        os.mkdir(self.__testdir)
 
     def testAllProblems(self):
         for template, specification in self.__suite.items():
-            template_fname = DATA_PATH.joinpath(specification["Template"])
-            output_fname = self.__dir.joinpath("test_{template}.nml")
+            expected_template_fname = DATA_PATH.joinpath(
+                specification["Template"]
+            )
+            template_fname = self.__dir.joinpath(f"{template}.template")
+            output_fname = self.__testdir.joinpath(f"{template}.nml")
 
-            for test_name, test_info in specification["Tests"].items():
+            # generate template file
+            bfrescoxpro.generate_elastic_template(
+                template_fname, **specification["ProblemConfig"]
+            )
+
+            # Verify generated template matches expected template
+            with open(template_fname, "r") as fptr_generated:
+                generated_content = fptr_generated.read()
+            with open(expected_template_fname, "r") as fptr_expected:
+                expected_content = fptr_expected.read()
+
+            self.assertEqual(generated_content, expected_content)
+
+            # run all tests for generated template
+            for _, test_info in specification["Tests"].items():
                 # Reestablish empty directory for each test
-                self._clean_tmp_dir()
+                self._clean_test_dir()
 
                 template_parameters = test_info["TemplateParameters"]
 
-                cfg = bfrescox.Configuration.from_template(
+                mpi_setup = None
+                if self.__info["supports_mpi"]:
+                    pro_setup = test_info["ProSetup"]
+                    mpi_setup = {"n_processes": pro_setup["nMpiProcs"]}
+
+                if self.__info["supports_openmp"]:
+                    pro_setup = test_info["ProSetup"]
+                    n_threads = pro_setup["nOmpThreads"]
+                    os.environ["OMP_NUM_THREADS"] = str(n_threads)
+
+                cfg = bfrescoxpro.Configuration.from_template(
                     template_fname,
                     output_fname,
                     template_parameters,
                     overwrite=False,
                 )
                 self.assertFalse(self.__fname_out.is_file())
-                bfrescox.run_simulation(cfg, self.__fname_out, cwd=self.__dir)
+                bfrescoxpro.run_simulation(
+                    cfg,
+                    self.__fname_out,
+                    mpi_setup=mpi_setup,
+                    cwd=self.__testdir,
+                )
                 self.assertTrue(self.__fname_out.is_file())
 
                 # Check all results against official baselines
-                # TODO this should be factored out for use in other test suites
                 for quantity, quantity_info in test_info["Results"].items():
-                    if (
-                        quantity.lower()
-                        == "differential_xs_absolute_mb_per_sr"
-                    ):
-                        results_df = (
-                            bfrescox.parse_differential_xs.absolute_mb_per_sr(
-                                self.__fname_out
-                            )
+                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
+                        results_df = parse_differential_xs.absolute_mb_per_sr(
+                            self.__fname_out
                         )
                     elif (
                         quantity.lower()
                         == "differential_xs_ratio_to_rutherford"
                     ):
-                        results_df = (
-                            bfrescox.parse_differential_xs.ratio_to_rutherford(
-                                self.__fname_out
-                            )
+                        results_df = parse_differential_xs.ratio_to_rutherford(
+                            self.__fname_out
                         )
                     else:
                         msg = f"Unknown physical quantity {quantity}"

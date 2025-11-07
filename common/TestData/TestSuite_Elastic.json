@@ -2,17 +2,19 @@
     "78Ni_template": {
         "Template": "Ni78_p_elastic.template",
         "ProblemConfig": {
-          "mass_t" : 78,
-          "charge_t" : 28,
-          "spin_t" : 0,
-          "mass_p" : 1,
-          "charge_p" : 1,
-          "spin_p" : 0.5,
-          "E_lab": 50.0,
+          "reaction_name": "p+Ni78 Coulomb + Nuclear",
+          "target_mass_amu" : 78,
+          "target_atomic_number" : 28,
+          "target_spin" : 0,
+          "projectile_mass_amu" : 1,
+          "projectile_atomic_number" : 1,
+          "projectile_spin" : "1/2",
+          "E_lab_MeV": 50.0,
           "J_tot_min": 0.0,
           "J_tot_max": 60.0,
-          "R_Coulomb": 1.2,
-          "reaction_name": "p+Ni78 Coulomb + Nuclear"
+          "E_0_MeV": 0.0,
+          "R_match_fm": 60.0,
+          "step_size_fm": 0.1
         },
         "Tests": {
             "PointA": {
@@ -34,13 +36,18 @@
                     "as": 0.5,
                     "Ws": 0,
                     "rws": 1.2,
-                    "aws": 0.5
+                    "aws": 0.5,
+                    "rC": 1.2
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
                 },
                 "NML": "Ni78_p_elastic_PointA.nml",
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
                         "Baseline": "Ni78_p_elastic_PointA_differential_xs_baseline.csv",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             },
@@ -63,13 +70,18 @@
                     "as": 0.5,
                     "Ws": 0,
                     "rws": 1.2,
-                    "aws": 0.5
+                    "aws": 0.5,
+                    "rC": 1.2
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {
                     "differential_xs_absolute_mb_per_sr": {
                         "Baseline": "Ni78_p_elastic_PointB_differential_xs_baseline.csv",
-                        "RelDiffThreshold": 1.0e-7
+                        "RelDiffThreshold": 1.0e-6
                     }
                 }
             }

@@ -1,32 +1,30 @@
-"""
-Parse FrescoX fort.16 output files into structured pandas DataFrames.
-"""
-
+from os import PathLike
+from typing import Union
 from pathlib import Path
 
 import pandas as pd
 
 
-def parse_fort16(filename: Path):
+def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
     """
-    Parse a FrescoX fort.16 output into a dict of DataFrames.
-    Each '@sN ... &' block becomes one entry labeled channel_N,
-    with all numeric columns and proper names (Theta, sigma, iT11, etc.).
+    Parse a |frescox| fort.16 output into a dict of DataFrames.  Each
+    '@sN ... &' block becomes one entry labeled channel_N, with all
+    numeric columns and proper names (Theta, sigma, iT11, etc.).
 
-    Parameters:
-    filename : Path
-        Path to the FrescoX fort.16 output file.
+    Args:
+        filename (Union[str, PathLike]): Path to the |frescox| fort.16
+                                        output file.
 
     Returns:
-    dict of pd.DataFrame
-        Dictionary with keys 'channel_1', 'channel_2', etc., each containing a
-        DataFrame of the corresponding data.
+        dict[pd.DataFrame]: Dictionary with keys 'channel_1',
+                            'channel_2', etc., each containing a
+                            DataFrame of the corresponding data.
 
     Raises:
-    TypeError: If filename is not a string or Path.
-    ValueError: If the file does not exist.
+        TypeError: If filename is not a string or Path.
+        ValueError: If the file does not exist.
     """
-    if (not isinstance(filename, str)) and (not isinstance(filename, Path)):
+    if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid filename ({filename})")
     path = Path(filename).resolve()
     if not path.is_file():
@@ -37,17 +35,20 @@ def parse_fort16(filename: Path):
     results = {}
     channel_idx = 1
     for block in raw_blocks:
-        lines = block.splitlines()
+        lines_all = block.splitlines()
         # Look for header line (columns after '#')
         header = None
-        for line in lines:
+        for line in lines_all:
             if line.strip().startswith("#") and "Theta" in line:
                 # Remove "for projectile" etc. and split
+                assert line.startswith("#")
+                assert "for projectile" in line
                 header = line.strip("# ").replace("for projectile", "").split()
+                assert header is not None
                 break
         # Collect numeric rows
         rows = []
-        for line in lines:
+        for line in lines_all:
             line = line.strip()
             if not line or line.startswith(("#", "@")):
                 continue
@@ -59,7 +60,7 @@ def parse_fort16(filename: Path):
         if rows:
             df = pd.DataFrame(rows)
             # Assign header if available and lengths match
-            if header and len(header) >= df.shape[1]:
+            if header is not None and len(header) >= df.shape[1]:
                 df.columns = header[: df.shape[1]]
             else:
                 df.columns = [f"col_{i + 1}" for i in range(df.shape[1])]
