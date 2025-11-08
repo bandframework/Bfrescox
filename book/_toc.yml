@@ -6,16 +6,12 @@ root   : intro
 options:
   numbered : true
 parts:
-  - caption: Examples
+  - caption: Quick Start Examples
     numbered: 2
     chapters:
     - file: notebooks/elastic_from_template_example.ipynb
     - file: notebooks/inelastic_from_template_example.ipynb
     - file: notebooks/user_provided_template_example.ipynb
-  - caption: Advanced
-    numbered: 2
-    chapters:
-    - file: notebooks/fort16.ipynb
   - caption: Reference
     chapters:
     - file: bibliography
