@@ -19,8 +19,8 @@
                 },
                 "NML": "48Ca_OzgePointA.nml",
                 "Results": {
-                    "differential_xs_absolute_mb_per_sr": {
-                        "Baseline": "48Ca_OzgePointA_differential_xs_baseline.csv",
+                    "fort.16": {
+                        "Baseline": "48Ca_OzgePointA_fort16.pkl",
                         "RelDiffThreshold": 1.0e-6
                     }
                 }

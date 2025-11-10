@@ -7,7 +7,6 @@ to access results.
 
 from importlib.metadata import version
 
-from . import parse_differential_xs
 from ._run_frescox_simulation import (
     FRESCOX_COREX_SUPPORT,
     FRESCOX_EXE,

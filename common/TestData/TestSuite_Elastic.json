@@ -45,8 +45,8 @@
                 },
                 "NML": "Ni78_p_elastic_PointA.nml",
                 "Results": {
-                    "differential_xs_absolute_mb_per_sr": {
-                        "Baseline": "Ni78_p_elastic_PointA_differential_xs_baseline.csv",
+                    "fort.16": {
+                        "Baseline": "Ni78_p_elastic_PointA_fort16.pkl",
                         "RelDiffThreshold": 1.0e-6
                     }
                 }
@@ -79,8 +79,8 @@
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {
-                    "differential_xs_absolute_mb_per_sr": {
-                        "Baseline": "Ni78_p_elastic_PointB_differential_xs_baseline.csv",
+                    "fort.16": {
+                        "Baseline": "Ni78_p_elastic_PointB_fort16.pkl",
                         "RelDiffThreshold": 1.0e-6
                     }
                 }
