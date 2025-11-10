@@ -3,6 +3,7 @@ import shutil
 from os import PathLike
 from pathlib import Path
 from typing import Union
+
 from ._fill_in_template import fill_in_template_file
 
 
@@ -142,6 +143,8 @@ class Configuration(object):
             raise TypeError("filename must be a str or PathLike")
         fname_in = Path(filename).resolve()
         if fname_in.exists():
+            if fname_in == self.__nml:
+                return  # No action needed
             if overwrite:
                 assert fname_in.is_file()
                 os.remove(fname_in)
