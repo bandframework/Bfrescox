@@ -5,13 +5,14 @@ Automatic system-level tests of package using Elastic scattering template
 import inspect
 import json
 import os
+import pickle
 import shutil
 import unittest
 from pathlib import Path
 
 import bfrescoxpro
-import numpy as np
-from bfrescoxpro import parse_differential_xs
+
+from .utils import compare_arrays
 
 INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
 TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
@@ -95,61 +96,33 @@ class TestElasticProblems(unittest.TestCase):
                 )
                 self.assertTrue(self.__fname_out.is_file())
 
-                # Check all results against official baselines
+                # Check all results against official baelines
                 for quantity, quantity_info in test_info["Results"].items():
-                    if quantity.lower() == "differential_xs_absolute_mb_per_sr":
-                        results_df = parse_differential_xs.absolute_mb_per_sr(
-                            self.__fname_out
-                        )
-                    elif (
-                        quantity.lower()
-                        == "differential_xs_ratio_to_rutherford"
-                    ):
-                        results_df = parse_differential_xs.ratio_to_rutherford(
-                            self.__fname_out
-                        )
-                    else:
-                        msg = f"Unknown physical quantity {quantity}"
-                        raise ValueError(msg)
+                    fname = DATA_PATH.joinpath(quantity_info["Baseline"])
+                    print(fname)
+                    with open(fname, "rb") as fptr:
+                        expected = pickle.load(fptr)
 
                     rel_diff_tolr = 0.0
                     abs_diff_tolr = 0.0
 
-                    baseline = quantity_info["Baseline"]
                     if "AbsDiffThreshold" in quantity_info:
                         abs_diff_tolr = quantity_info["AbsDiffThreshold"]
                     if "RelDiffThreshold" in quantity_info:
                         rel_diff_tolr = quantity_info["RelDiffThreshold"]
 
-                    self.assertTrue(abs_diff_tolr >= 0.0)
-                    self.assertTrue(rel_diff_tolr >= 0.0)
-
-                    expected = np.loadtxt(
-                        fname=DATA_PATH.joinpath(baseline), delimiter=","
-                    )
-                    self.assertEqual(2, expected.ndim)
-                    self.assertEqual(2, expected.shape[1])
-
-                    self.assertEqual(len(expected), len(results_df))
-                    self.assertEqual(1, len(results_df.columns))
-
-                    deg = expected[:, 0]
-                    self.assertEqual(set(deg), set(results_df.index))
-                    result_data = results_df.loc[deg, quantity].values
-                    if (abs_diff_tolr == 0.0) and (rel_diff_tolr == 0.0):
-                        self.assertTrue(all(result_data == expected[:, 1]))
+                    if quantity.lower() == "fort.16":
+                        results = bfrescoxpro.parse_fort16(
+                            self.__testdir / "fort.16"
+                        )
+                        assert expected.keys() == results.keys()
+                        for key in expected.keys():
+                            compare_arrays(
+                                results[key],
+                                expected[key],
+                                abs_diff_tolr,
+                                rel_diff_tolr,
+                            )
                     else:
-                        if abs_diff_tolr > 0.0:
-                            np.testing.assert_allclose(
-                                result_data,
-                                expected[:, 1],
-                                rtol=0.0,
-                                atol=abs_diff_tolr,
-                            )
-                        if rel_diff_tolr > 0.0:
-                            np.testing.assert_allclose(
-                                result_data,
-                                expected[:, 1],
-                                rtol=rel_diff_tolr,
-                                atol=0.0,
-                            )
+                        msg = f"Unknown physical quantity {quantity}"
+                        raise ValueError(msg)
