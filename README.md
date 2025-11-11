@@ -11,9 +11,9 @@
 [![Jupyter book](https://jupyterbook.org/badge.svg)](https://bandframework.github.io/Bfrescox)
 
 
-__PROVIDE FRESCOX INFORMATION AND LINKS__
+Bfrescox is a Python package wrapping [frescox](https://github.com/LLNL/Frescox), a Fortran library for coupled-reaction-channels calculations in nuclear physics.  The intention of this package is to provide a user-friendly experience to perform parametric reaction calculations and uncertainty quantification studies with frescox.
 
-__TBD__
+To get started, please see the [user and developer guides](https://bfrescox.readthedocs.io) and the [Jupyter book of examples](https://bandframework.github.io/Bfrescox).
 
 ## Support
 
