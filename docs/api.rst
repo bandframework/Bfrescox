@@ -13,7 +13,8 @@ Infrastructure
 
 Simulation Configuration
 ------------------------
-.. autofunction:: bfrescox.Configuration
+.. autoclass:: bfrescox.Configuration
+   :members:
 
 Execution & Results
 -------------------
