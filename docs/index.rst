@@ -1,9 +1,6 @@
 |bfrescox| Python package
 =========================
 
-This content is a placeholder for real content.  Citations such as
-:cite:t:`Golub13` might be needed for this project.
-
 Let's use some macros such as |bfrescox| and |bfrescoxpro| (|ie| the packages
 that we are working with), which is developed as part of |band| |via|
 collaboration.
