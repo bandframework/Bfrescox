@@ -67,4 +67,4 @@ template, and writes the output. For example:
 
    config = Configuration.from_template(template_file, "ni78.nml",  parameters)
 
-See the examples for more details on using and generatig templates with |bfrescox|.
+See the examples for more details on using and generating templates with |bfrescox|.

@@ -1,7 +1,7 @@
 |bfrescox| Python package
 =========================
 
-|bfrescox| is a Python package wrapping |frescox|:cite:t:`thompson1988coupled`,
+|bfrescox| is a Python package wrapping |frescox| :cite:t:`thompson1988coupled`,
 a Fortran library for coupled-reaction-channels calculations in nuclear physics.
 The intention of this package is to provide a user-friendly experience to
 perform parametric reaction calculations and uncertainty quantification studies
@@ -17,7 +17,7 @@ for |frescox|, run calculations, and parse output results.
 interface, with more options available for setting up the |frescox|
 installation, including support for MPI and OpenMP builds.
 
-These packages are being developed as part of |band| |via| collaboration.
+These packages are being developed as part of |band| collaboration.
 
 .. note::
 
