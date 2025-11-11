@@ -40,7 +40,6 @@ These packages are being developed as part of |band| collaboration.
    get_started
    templates
    examples
-   contributing_templates
    api
    advanced_users
    bibliography
