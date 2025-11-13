@@ -6,8 +6,12 @@ env:
 on:
   # Only execute on PRs into main under the assumption that the publish_book
   # action builds the book and publishes it on pushes to main.
-  pull_request:
-    branches: main
+  #
+  # TODO: For the alpha release, we are publishing from the feature-templates
+  # branch.  Therefore, there is no need to run this action on that branch.
+  # Uncomment after the release and before the review of that branch.
+  #pull_request:
+  #  branches: main
 
 jobs:
   # Since notebooks contain regular and sanity checks, this action not only
