@@ -12,6 +12,9 @@ on:
   # Uncomment after the release and before the review of that branch.
   #pull_request:
   #  branches: main
+  # And remove this.
+  push:
+    branches: main
 
 jobs:
   # Since notebooks contain regular and sanity checks, this action not only
