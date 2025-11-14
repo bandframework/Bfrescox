@@ -5,7 +5,9 @@
 a Fortran library for coupled-reaction-channels calculations in nuclear physics.
 The intention of this package is to provide a user-friendly experience to
 perform parametric reaction calculations and uncertainty quantification studies
-with |frescox|.
+with a |frescox| executable that is built from the code in the |frescox|
+repository and installed automatically in |bfrescox| during |bfrescox|
+installation.
 
 |frescox| is available `on github <https://github.com/llnl/frescox>`_, and also
 has a `dedicated website <https://www.fresco.org.uk/index.htm>`_. The |bfrescox|
@@ -17,12 +19,15 @@ for |frescox|, run calculations, and parse output results.
 interface, with more options available for setting up the |frescox|
 installation, including support for MPI and OpenMP builds.
 
-These packages are being developed as part of |band| collaboration.
+These packages are being developed as part of |band| `framework
+<https://bandframework.github.io/>`_.
 
 .. note::
 
-    |bfrescox| and |bfrescoxpro| are offered under the BSD-2-Clause license. By
-    using these packages, you agree to the terms of this license.
+
+    By using the |bfrescox| and |bfrescoxpro| packages, you agree to the terms
+    specified in the Bfrescox license.
+
 
 .. note::
 

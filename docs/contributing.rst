@@ -1,6 +1,6 @@
 Contributing
 ============
-We welcome anyone to assist in developing and maintaining Bfrescox packages.
+We welcome anyone to assist in developing and maintaining |bfrescox| packages.
 Before contributing, please read the following guidelines. We especially welcome
 contributions extending functionality for parsing different |frescox| output
 files.

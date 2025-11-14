@@ -2,12 +2,12 @@ Templates
 =========
 
 |bfrescox| works by using templates to generate input files for |frescox| runs.
-For certain problems, |bfrescox| can generate templates automatically based on a
-user's problem specification (see the examples for more examples of
-generating and using templates). However, |bfrescox| also allows users to create
-their own templates, and, whether the template was generated automatically or
-created by the user, |bfrescox| fills them in and runs |frescox| with them the
-same way.
+The |bfrescox| configuration interface includes functionality for creating
+templates and final |frescox| input files for common scattering simulations such
+as elastic and inelastic scattering. Such templates can be generated
+automatically. |bfrescox| also allows users to create their own templates, and,
+whether the template was generated automatically or created by the user,
+|bfrescox| fills them in and runs |frescox| with them the same way.
 
 The way templates work is simple: take any existing |frescox| input file, and
 replace any values you want with keys of the following format: "@key_name@". The
