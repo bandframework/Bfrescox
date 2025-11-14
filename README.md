@@ -21,7 +21,7 @@ To report potential problems with Bfrescox, please check if the problem has alre
 
 * beyerk@frib.msu.edu
 * catacora@frib.msu.edu
-* joneal@anl.gov
+* jared.oneal@northwestern.edu
 
 ## Documentation
 
