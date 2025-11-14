@@ -11,9 +11,7 @@
 [![Jupyter book](https://jupyterbook.org/badge.svg)](https://bandframework.github.io/Bfrescox)
 
 
-__PROVIDE FRESCOX INFORMATION AND LINKS__
-
-__TBD__
+Bfrescox is a Python package wrapping [Frescox](https://github.com/LLNL/Frescox) (see also the [official website](https://www.fresco.org.uk/frescox.htm)), a Fortran application for coupled-reaction-channels calculations in nuclear physics.  To get started, please see the [user and developer guides](https://bfrescox.readthedocs.io) and the [Jupyter book of examples](https://bandframework.github.io/Bfrescox).
 
 ## Support
 
@@ -27,12 +25,23 @@ To report potential problems with Bfrescox, please check if the problem has alre
 
 The [user and developer guides](https://bfrescox.readthedocs.io) are available on ReadTheDocs.  Examples are available as a [Jupyter book](https://bandframework.github.io/Bfrescox).
 
-Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for all information regarding the use of Frescox.
+Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for all information regarding the use of Frescox. There is also a comprehensive website documenting the FrescoX namelist input [here](https://www.fresco.org.uk/xinput7a/frescox-namelist-manual/index.html).
 
 ## Citation
 
 Please refer to the [Frescox documentation](https://github.com/LLNL/Frescox) for any information on citing the use of their software.
 
-Please use the following to cite the use of either Bfrescox or Bfrescoxpro.
+Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
 
-__TBD__
+
+```
+@techreport{bfrescox2025,
+ author      = {Kyle Beyer and Manuel Catacora-Rios and Jared O'Neal},
+ title       = {{Bfrescox} Users Manual},
+ institution = {Michigan State University and Argonne National Laboratory},
+ number      = {Version Alpha},
+ year        = {2025},
+ url         = {https://bfrescox.readthedocs.io/}
+}
+```
+
