@@ -1,0 +1,30 @@
+{
+    "48Ca": {
+        "Template": "48Ca_Ozge.template",
+        "Tests": {
+            "Ozge": {
+                "TemplateParameters": {
+                    "hnl":  0.1,
+                    "rnl": 5.0,
+                    "V":  49.284900,
+                    "r":   0.907039,
+                    "a":   0.679841,
+                    "Ws":  3.394386,
+                    "rs":  1.094115,
+                    "as":  0.2763
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
+                "NML": "48Ca_OzgePointA.nml",
+                "Results": {
+                    "fort.16": {
+                        "Baseline": "48Ca_OzgePointA_fort16.pkl",
+                        "RelDiffThreshold": 1.0e-6
+                    }
+                }
+            }
+        }
+    }
+}

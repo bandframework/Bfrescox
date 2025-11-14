@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from ._load_build_information import load_build_information
+from ._load_build_information import _load_build_information
 
 
 def information():
@@ -15,7 +15,8 @@ def information():
         **EXPERT USERS ONLY** An empty ``dict`` indicates a hollow |bfrescox|
         installation
 
-    :return: ``dict`` that contains information regarding the |frescox|
-        executable used by the package.
+    Returns
+        dict: contains information regarding the |frescox| executable
+            used by the package.
     """
-    return load_build_information(Path(__file__).resolve().parent)
+    return _load_build_information(Path(__file__).resolve().parent)
