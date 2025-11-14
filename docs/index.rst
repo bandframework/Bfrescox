@@ -1,20 +1,33 @@
 |bfrescox| Python package
 =========================
 
-Let's use some macros such as |bfrescox| and |bfrescoxpro| (|ie| the packages
-that we are working with), which is developed as part of |band| |via|
-collaboration.
+|bfrescox| is a Python package wrapping |frescox| :cite:t:`thompson1988coupled`,
+a Fortran library for coupled-reaction-channels calculations in nuclear physics.
+The intention of this package is to provide a user-friendly experience to
+perform parametric reaction calculations and uncertainty quantification studies
+with a |frescox| executable that is built from the code in the |frescox|
+repository and installed automatically in |bfrescox| during |bfrescox|
+installation.
 
-This software could be used to provide different parameterized models of the
-general form :math:`f(\invar; \psp)`, where :math:`\invar` represents the
-independent, or input, variables; :math:`\psp`, a point in the model's parameter
-space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
-\R^{\np}`.
+|frescox| is available `on github <https://github.com/llnl/frescox>`_, and also
+has a `dedicated website <https://www.fresco.org.uk/index.htm>`_. The |bfrescox|
+build system automatically downloads and compiles |frescox| as part of its
+installation process, and provides an interface to build input configurations
+for |frescox|, run calculations, and parse output results.
+
+|bfrescoxpro| is a sister package to |bfrescox| that provides a similar
+interface, with more options available for setting up the |frescox|
+installation, including support for MPI and OpenMP builds.
+
+These packages are being developed as part of |band| `framework
+<https://bandframework.github.io/>`_.
 
 .. note::
 
-    Add information here about licensing and that users are solely responsible
-    for use of software in their research?
+
+    By using the |bfrescox| and |bfrescoxpro| packages, you agree to the terms
+    specified in the Bfrescox license.
+
 
 .. note::
 
@@ -30,6 +43,7 @@ space :math:`\PS`.  In many cases, the parameter space is :math:`\PS =
    :caption: User Guide:
 
    get_started
+   templates
    examples
    api
    advanced_users

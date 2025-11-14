@@ -1,0 +1,22 @@
+p+Ni78 Coulomb + Nuclear
+NAMELIST
+&FRESCO hcm=0.100000000 rmatch=60.000000000
+    jtmin=0.0 jtmax=60.0 absend= 0.01
+  thmin=0.00 thmax=180.00 thinc=1.00
+    iter=0 ips=0.0 iblock=0 chans=1 smats=2  xstabl=1
+  wdisk=2
+    elab(1)=50.000000000 treneg=1 /
+
+ &PARTITION namep='projectile' massp=1.000000000 zp=1.000000000
+            namet='target'   masst=78.000000000 zt=28.000000000 qval=-0.000 nex=1  /
+ &STATES jp=0.5 bandp=1 ep=0.0000 cpot=1 jt=0.0 bandt=1 et=0.000000000 /
+ &partition /
+
+ &POT kp=1 ap=1.000000000 at=78.000000000 rc=1.200000000  /
+ &POT kp=1 type=1  p1=40.000000000 p2=1.200000000 p3=0.650000000 p4=10.000000000 p5=1.200000000 p6=0.500000000 /
+ &POT kp=1 type=2  p1=0.000000000 p2=1.200000000 p3=0.500000000 p4=0.000000000 p5=1.200000000 p6=0.500000000 /
+ &POT kp=1 type=3  p1=0.000000000 p2=1.000000000 p3=0.650000000 p4=0.000000000 p5=1.000000000 p6=0.650000000 /
+
+ &pot /
+ &overlap /
+ &coupling /

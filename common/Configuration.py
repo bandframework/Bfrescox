@@ -135,8 +135,7 @@ class Configuration(object):
 
         Raises:
             TypeError: If filename is not a str or Path
-            RuntimeError: If filename already exists and overwrite is
-                False
+            RuntimeError: If filename already exists and overwrite is False
         """
         # ----- ERROR CHECK ARGUMENTS
         if not isinstance(filename, (str, PathLike)):
