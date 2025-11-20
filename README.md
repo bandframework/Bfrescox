@@ -37,9 +37,9 @@ Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
 ```
 @techreport{bfrescox2025,
  author      = {Kyle Beyer and Manuel Catacora-Rios and Jared O'Neal},
- title       = {{Bfrescox} Users Manual},
- institution = {Michigan State University and Argonne National Laboratory},
- number      = {Version Alpha},
+ title       = {{Bfrescox 0.0.1} Users Manual},
+ institution = {Michigan State University and Northwestern University},
+ number      = {Version 0.0.1},
  year        = {2025},
  url         = {https://bfrescox.readthedocs.io/}
 }
