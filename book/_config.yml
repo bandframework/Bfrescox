@@ -64,7 +64,6 @@ repository:
 
 launch_buttons:
   notebook_interface : "classic"
-  binderhub_url      : "https://mybinder.org"
 
 ################################################################################
 # Advanced and power-user settings
