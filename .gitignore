@@ -5,6 +5,13 @@ docs/build_html
 
 book/_build/
 book/notebooks/.ipynb_checkpoints
+book/notebooks/12C_4He_inelastic_example/fort.*
+book/notebooks/12C_4He_inelastic_example/frescox.out
+book/notebooks/78Ni_p_elastic_example/fort*
+book/notebooks/78Ni_p_elastic_example/frescox.out
+book/notebooks/Ozge_template/fort.*
+book/notebooks/Ozge_template/frescox.out
+
 
 bfrescox_pypkg/meson/subprojects/.wraplock
 bfrescox_pypkg/meson/subprojects/frescox

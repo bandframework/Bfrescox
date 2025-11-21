@@ -7,6 +7,12 @@ on:
   # TODO: Should this publish for every commit on main or only on release events
   # on main?  If only release events, then the test_book action should also be
   # run on pushes to main that aren't release events.
+  #
+  # TODO: For the alpha release, we are publishing from the feature-templates
+  # branch.  Therefore, we need to temporarily enable this on PRs.  Remove after
+  # the release and before the review of that branch.
+  pull_request:
+    branches: main
   push:
     branches: main 
 

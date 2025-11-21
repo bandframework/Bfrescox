@@ -19,3 +19,4 @@ Simulation Configuration
 Execution & Results
 -------------------
 .. autofunction:: bfrescox.run_simulation
+.. autofunction:: bfrescox.parse_fort16
