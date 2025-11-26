@@ -39,25 +39,6 @@ These packages are being developed as part of |band| `framework
 
 
 
-Citation
----------
-
-Please refer to the `Frescox documentation <https://github.com/LLNL/Frescox>`_ for any information on citing the use of their software.
-
-Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
-
-::
-
-  @techreport{bfrescox2025,
-   author      = {Kyle Beyer and Manuel Catacora-Rios and Jared O'Neal},
-   title       = {{Bfrescox 0.0.1} Users Manual},
-   institution = {Michigan State University and Northwestern University},
-   number      = {Version 0.0.1},
-   year        = {2025},
-   url         = {https://bfrescox.readthedocs.io/}
-  }
-
-
 .. toctree::
    :numbered:
    :maxdepth: 1
