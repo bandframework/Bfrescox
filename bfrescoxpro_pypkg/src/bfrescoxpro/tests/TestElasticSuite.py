@@ -99,7 +99,6 @@ class TestElasticProblems(unittest.TestCase):
                 # Check all results against official baelines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
-                    print(fname)
                     with open(fname, "rb") as fptr:
                         expected = pickle.load(fptr)
 
