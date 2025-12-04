@@ -6,8 +6,8 @@ Advanced Users
 
 The |bfrescoxpro| Python package is designed to be as similar to the |bfrescox|
 package as possible while still allowing users to install the |bfrescoxpro|
-package with a custom build of the package's |frescox| binary.  At present, this
-package allows users to build a binary with
+package with a custom build of the package's |frescox| binary.  At present,
+users can specify that the package build its binary with
 
 * MPI distributed parallelism,
 * OpenMP shared parallelism, or
@@ -20,10 +20,10 @@ for each particular machine.
 
 This customization, however, requires that the |bfrescoxpro| package be
 distributed as a source distribution.  Since users are required to install the
-package and its |frescox| binary from scratch, they are also responsible for
-setting up the software stack needed to build and use their custom |frescox|
-binary before installing |bfrescoxpro| and every time that they use the
-package's installation.  The extra thought and care required to use this
+package and have the package build its |frescox| binary from scratch, they are
+also responsible for setting up the software stack needed to build and use their
+custom |frescox| binary before installing |bfrescoxpro| and every time that they
+use the package's installation.  The extra thought and care required to use this
 customization is one motivation for providing build customization through a
 separate package with a different name.
 
@@ -36,6 +36,7 @@ Requirements
 .. _Meson: https://mesonbuild.com
 .. _ninja: https://ninja-build.org
 .. _Issue 17: https://github.com/bandframework/Bfrescox/issues/17
+.. _Issue 30: https://github.com/bandframework/Bfrescox/issues/30
 
 Before installing |bfrescoxpro|, users must provide a Fortran compiler that
 supports all requirements for building |frescox|.  At present, installations
@@ -52,17 +53,16 @@ its build requirements.
 
     The distribution is encoded with the version of |frescox| that will be used.
     This information is effectively hidden from the users.  Therefore, they
-    won't know what version of the |frescox| documentation to refer to.  Seems
-    like |bfrescoxpro| developers should specify compiler+OpenMP requirements
-    here and review that every time a different |frescox| version is chosen.
+    won't know what version of the |frescox| documentation to refer to.  See
+    `Issue 30`_.
 
 If MPI parallelization is desired, then the user must also provide an MPI
 installation that is compatible with the Fortran compiler.
 
-The build system uses `Meson`_ to automatically detect external dependencies,
-such as the compiler and MPI installation, and to build the binary.  Meson in
-turn uses `ninja`_ as a backend.  While users should not need to preinstall
-Meson, they might need to preinstall ninja.
+The package's build system uses `Meson`_ to automatically detect external
+dependencies, such as the compiler and MPI installation, and to build the
+binary.  Both Meson and its backend `ninja`_ are temporarily installed
+automatically during package installation.
 
 .. note::
 
@@ -73,7 +73,7 @@ Meson, they might need to preinstall ninja.
 
     .. code:: console
 
-        $ cd /path/to/Bfrescox/brescoxpro_pypkg
+        $ cd /path/to/Bfrescox/bfrescoxpro_pypkg
         $ BFRESCOX_USE_MPI=enabled python -m pip install .
 
 Installation
@@ -83,12 +83,18 @@ Installation
 
 While we intend for this package to eventually be distributed by PyPI for direct
 installation |via| |pip|, during this alpha development phase, users must
-install the package directly from a local clone of the |bfrescox| repository.
-By default, running
+install the package directly from a local clone of the |bfrescox| repository. This requires checking out the ``v0.0.1-alpha`` tag after cloning the repository:
+
+ .. code-block:: console
+
+  $ cd /path/to/Bfrescox/
+  $ git checkout v0.0.1-alpha
+
+Then, running
 
 .. code:: console
 
-    $ cd /path/to/Bfrescox/brescoxpro_pypkg
+    $ cd /path/to/Bfrescox/bfrescoxpro_pypkg
     $ python -m pip install .
 
 will build a binary with OpenMP if the compiler that is found by Meson supports

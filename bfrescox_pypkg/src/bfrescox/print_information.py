@@ -31,7 +31,7 @@ def print_information():
                     reply = sbp.run(
                         ["otool", "-L", str(frescox_exe)],
                         capture_output=True,
-                        check=True
+                        check=True,
                     )
                     stdout = reply.stdout.decode()
                     assert stdout != ""
@@ -52,7 +52,7 @@ def print_information():
                     reply = sbp.run(
                         ["ldd", str(frescox_exe)],
                         capture_output=True,
-                        check=True
+                        check=True,
                     )
                     stdout = reply.stdout.decode()
                     assert stdout != ""

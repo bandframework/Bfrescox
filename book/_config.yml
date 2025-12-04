@@ -60,11 +60,11 @@ latex:
 repository:
   url          : https://github.com/bandframework/Bfrescox
   path_to_book : book
-  branch       : main
+  # TODO: change back to main in later releases
+  branch       : feature-templates
 
 launch_buttons:
   notebook_interface : "classic"
-  binderhub_url      : "https://mybinder.org"
 
 ################################################################################
 # Advanced and power-user settings

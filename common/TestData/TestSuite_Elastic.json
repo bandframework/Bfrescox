@@ -1,0 +1,90 @@
+{
+    "78Ni_template": {
+        "Template": "Ni78_p_elastic.template",
+        "ProblemConfig": {
+          "reaction_name": "p+Ni78 Coulomb + Nuclear",
+          "target_mass_amu" : 78,
+          "target_atomic_number" : 28,
+          "target_spin" : 0,
+          "projectile_mass_amu" : 1,
+          "projectile_atomic_number" : 1,
+          "projectile_spin" : "1/2",
+          "E_lab_MeV": 50.0,
+          "J_tot_min": 0.0,
+          "J_tot_max": 60.0,
+          "E_0_MeV": 0.0,
+          "R_match_fm": 60.0,
+          "step_size_fm": 0.1
+        },
+        "Tests": {
+            "PointA": {
+                "TemplateParameters": {
+                    "V": 40.0,
+                    "r": 1.2,
+                    "a": 0.65,
+                    "W": 10.0,
+                    "rw": 1.2,
+                    "aw": 0.5,
+                    "Vso": 0,
+                    "rso": 1.0,
+                    "aso": 0.65,
+                    "Wso": 0,
+                    "rwso": 1.0,
+                    "awso": 0.65,
+                    "Vs": 0,
+                    "rs": 1.2,
+                    "as": 0.5,
+                    "Ws": 0,
+                    "rws": 1.2,
+                    "aws": 0.5,
+                    "rC": 1.2
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
+                "NML": "Ni78_p_elastic_PointA.nml",
+                "Results": {
+                    "fort.16": {
+                        "Baseline": "Ni78_p_elastic_PointA_fort16.pkl",
+                        "RelDiffThreshold": 1.0e-6
+                    }
+                }
+            },
+            "PointB": {
+                "TemplateParameters": {
+                    "V": 40.0,
+                    "r": 1.2,
+                    "a": 0.65,
+                    "W": 10.0,
+                    "rw": 1.2,
+                    "aw": 0.5,
+                    "Vso": 8,
+                    "rso": 1.0,
+                    "aso": 0.65,
+                    "Wso": 4,
+                    "rwso": 1.0,
+                    "awso": 0.65,
+                    "Vs": 0,
+                    "rs": 1.2,
+                    "as": 0.5,
+                    "Ws": 0,
+                    "rws": 1.2,
+                    "aws": 0.5,
+                    "rC": 1.2
+                },
+                "ProSetup": {
+                  "nOmpThreads": 4,
+                  "nMpiProcs": 1
+                },
+                "NML": "Ni78_p_elastic_PointB.nml",
+                "Results": {
+                    "fort.16": {
+                        "Baseline": "Ni78_p_elastic_PointB_fort16.pkl",
+                        "RelDiffThreshold": 1.0e-6
+                    }
+                }
+            }
+        }
+    }
+}
