@@ -142,10 +142,6 @@ setup(
     cmdclass=cmdclass,
     python_requires=PYTHON_REQUIRES,
     install_requires=INSTALL_REQUIRES,
-    use_scm_version={
-        "root": "..",
-        "relative_to": __file__,
-    },
     classifiers=[
         "Natural Language :: English",
         "Development Status :: 3 - Alpha",

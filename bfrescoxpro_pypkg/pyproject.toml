@@ -23,3 +23,5 @@ line-length = 80
 line-length = 80
 
 [tool.setuptools_scm]
+root = ".."
+version_file = "src/bfrescox/_version.py"
