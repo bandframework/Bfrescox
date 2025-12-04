@@ -1,5 +1,7 @@
 **/__pycache__
 
+.DS_Store
+
 docs/build_pdf
 docs/build_html
 
