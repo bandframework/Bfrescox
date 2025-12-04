@@ -83,8 +83,14 @@ Installation
 
 While we intend for this package to eventually be distributed by PyPI for direct
 installation |via| |pip|, during this alpha development phase, users must
-install the package directly from a local clone of the |bfrescox| repository.
-By default, running
+install the package directly from a local clone of the |bfrescox| repository. This requires checking out the ``v0.0.1-alpha`` tag after cloning the repository:
+
+ .. code-block:: console
+
+  $ cd /path/to/Bfrescox/
+  $ git checkout v0.0.1-alpha
+
+Then, running
 
 .. code:: console
 

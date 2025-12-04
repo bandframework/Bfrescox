@@ -8,9 +8,22 @@ similar Linux operating systems.
 
 General Installations
 ---------------------
+
+..
+   - TODO : Once we merge the alpha branch into main, change the checkout command
+    to "git checkout main".
+   - TODO : once we have a PyPI distribution, add instructions for pip install from PyPI.
+
 While we intend for this package to eventually be distributed by PyPI for direct
 installation |via| |pip|, during this alpha development phase, users must
-install the package directly from a local clone of the |bfrescox| repository.
+install the package directly from a local clone of the |bfrescox| repository. This requires checking out the ``v0.0.1-alpha`` tag after cloning the repository:
+
+ .. code-block:: console
+
+  $ cd /path/to/Bfrescox/
+  $ git checkout v0.0.1-alpha
+
+
 For developer installations, refer to the :numref:`tox_usage:Developer
 Environment`.
 
@@ -32,10 +45,17 @@ temporarily on behalf of users during package installation.
 
 Installation from local clone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. _`Bfrescox clone`: https://github.com/bandframework/Bfrescox
 
-After installing a local `Bfrescox clone`_ and setting up your target Python
-environment as desired, execute
+After installing a local `Bfrescox clone`_, you must check out the alpha branch. 
+
+   .. code-block:: console
+
+    $ cd /path/to/Bfrescox/
+    $ git checkout v0.0.1-alpha
+
+After setting up your target Python environment as desired, execute
 
 .. code-block:: console
 
