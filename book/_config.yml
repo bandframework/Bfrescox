@@ -60,8 +60,7 @@ latex:
 repository:
   url          : https://github.com/bandframework/Bfrescox
   path_to_book : book
-  # TODO: change back to main in later releases
-  branch       : feature-templates
+  branch       : main
 
 launch_buttons:
   notebook_interface : "classic"
