@@ -170,7 +170,9 @@ def generate_inelastic_template(
         if Fraction(spin) < 0:
             raise ValueError("All spin states must be non-negative.")
         if not _is_fraction_integer_or_half_integer(spin):
-            raise ValueError("All spin states must be integers or half-integers.")
+            raise ValueError(
+                "All spin states must be integers or half-integers."
+            )
 
     if not isinstance(output_path, (str, PathLike)):
         raise TypeError("output_path must be a string or PathLike object.")
