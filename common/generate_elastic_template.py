@@ -23,6 +23,7 @@ def generate_elastic_template(
     E_0_MeV: float,
     R_match_fm: float,
     step_size_fm: float,
+    overwrite: bool = False,
 ):
     """
     Generate an elastic scattering input template for Fresco
@@ -51,11 +52,15 @@ def generate_elastic_template(
             MeV (usually 0, larger for isomeric or excited final state)
         R_match_fm (float): Matching radius in fm.
         step_size_fm (float): Step size for the radial mesh in fm.
+        overwrite (bool, optional): Whether to overwrite the output file
 
     Raises:
         ValueError: If J_tot_min is greater than J_tot_max, or if either
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values
+        TypeError: If output_path is not a string or PathLike object
+        FileExistsError: If the output file already exists and overwrite is
+        False.
     """
     projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
     target_spin = _validate_spin(target_spin, "target_spin")
@@ -100,5 +105,10 @@ def generate_elastic_template(
         modified_template = modified_template.replace(placeholder, value)
 
     # Write the final content to the output file
+    if output_path.exists() and not overwrite:
+        raise FileExistsError(
+            f"The file {output_path} already exists. "
+            "Set overwrite=True to overwrite it."
+        )
     with open(output_path, "w") as file:
         file.write(modified_template)

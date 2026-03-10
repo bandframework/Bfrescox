@@ -95,13 +95,11 @@ def fill_in_template_file(
         raise RuntimeError(f"{output_path} already exists")
 
     to_replace = [f"@{p}@" for p in parameters.keys()]
-    replaced_keys = set()
     with open(output_path, "w") as fptr:
         for line in input_nml:
             updated = line
             for key in to_replace:
                 if key in line:
                     name = key.lstrip("@").rstrip("@")
-                    replaced_keys.add(name)
                     updated = updated.replace(key, f"{parameters[name]:1.9f}")
             fptr.write(updated)

@@ -1,6 +1,6 @@
 from os import PathLike
-from typing import Union
 from pathlib import Path
+from typing import Union
 
 import pandas as pd
 
@@ -18,7 +18,9 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
     Returns:
         dict[pd.DataFrame]: Dictionary with keys 'channel_1',
                             'channel_2', etc., each containing a
-                            DataFrame of the corresponding data.
+                            DataFrame of the corresponding data.  If no
+                            valid data blocks are found, returns an
+                            empty dictionary.
 
     Raises:
         TypeError: If filename is not a string or Path.
@@ -66,4 +68,5 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                 df.columns = [f"col_{i + 1}" for i in range(df.shape[1])]
             results[f"channel_{channel_idx}"] = df.reset_index(drop=True)
             channel_idx += 1
+
     return results

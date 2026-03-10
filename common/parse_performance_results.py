@@ -11,11 +11,14 @@ def parse_performance_results(filename: Union[str, PathLike]) -> pd.DataFrame:
     Parse |frescox| performance results into a DataFrame.
 
     ..todo prototype code
-    Some timing lines aren't printed on their own line. Put in NaNs.
+    Some timing lines aren't printed on their own line. Put in NaNs.  Is
+    this due to an issue in Frescox logging to file or is it correct
+    logging? If correct, is NaN the appropriate value or is this us
+    currently throwing up our hands.
 
     Args:
-        filename (Union[str, PathLike]): Path to the |frescox| output
-                                        file.
+        filename (Union[str, PathLike]): Path to the file containing the
+        |frescox| stdout
 
     Returns:
         pd.DataFrame : index as rank and columns 'walltime_sec' and

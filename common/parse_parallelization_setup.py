@@ -16,8 +16,8 @@ def parse_parallelization_setup(
     omp_n_procs == 1 always be true?
 
     Args:
-        filename (Union[str, PathLike]): Path to the |frescox| output
-                                        file.
+        filename (Union[str, PathLike]): Path to the file containing the
+                                         |frescox| std output.
 
     Returns:
         tuple or None: If parallelization info is found, returns a tuple
@@ -28,7 +28,7 @@ def parse_parallelization_setup(
         RuntimeError: If an invalid parallelization logging is
                       encountered.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     MPI_START_STR = "Calculation with"
     OMP_START_STR = "Requested number of OpenMP threads:"
@@ -39,7 +39,7 @@ def parse_parallelization_setup(
     omp_n_threads = -1
     omp_n_procs = -1
 
-    for line in lines:
+    for line in lines_all:
         if line.strip().startswith(OMP_START_STR):
             omp_n_found += 1
 

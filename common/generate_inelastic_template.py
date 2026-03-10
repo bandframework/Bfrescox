@@ -101,6 +101,7 @@ def generate_inelastic_template(
     multipoles: np.ndarray,
     R_match_fm: float,
     step_size_fm: float,
+    overwrite: bool = False,
 ):
     """
     Generate an inelastic scattering input template for Fresco.
@@ -136,11 +137,18 @@ def generate_inelastic_template(
             (e.g., [2, 3] for quadrupole and octupole).
         R_match_fm (float): Matching radius in fm.
         step_size_fm (float): Step size for the radial mesh in fm.
+        overwrite (bool): Whether to overwrite the output file if it
+            already exists. Default is False.
 
     Raises:
         ValueError: If J_tot_min is greater than J_tot_max, or if either
             J_tot_min or J_tot_max is negative, or if they are not
             integer or half-integer values.
+        ValueError: If any of the target state spins are negative or not integer
+        or half-integer values.
+        TypeError: If output_path is not a string or PathLike object.
+        FileExistsError: If the output file already exists and overwrite is
+        False.
     """
     projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
     J_tot_min = _validate_spin(J_tot_min, "J_tot_min")
@@ -162,9 +170,7 @@ def generate_inelastic_template(
         if Fraction(spin) < 0:
             raise ValueError("All spin states must be non-negative.")
         if not _is_fraction_integer_or_half_integer(spin):
-            raise ValueError(
-                "All spin states must be integers or half-integers."
-            )
+            raise ValueError("All spin states must be integers or half-integers.")
 
     if not isinstance(output_path, (str, PathLike)):
         raise TypeError("output_path must be a string or PathLike object.")
@@ -222,5 +228,10 @@ def generate_inelastic_template(
         modified_template = modified_template.replace(placeholder, value)
 
     # Write the final content to the output file
+    if output_path.exists() and not overwrite:
+        raise FileExistsError(
+            f"The file {output_path} already exists. "
+            "Set overwrite=True to overwrite it."
+        )
     with open(output_path, "w") as file:
         file.write(modified_template)
