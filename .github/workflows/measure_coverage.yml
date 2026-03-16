@@ -45,7 +45,7 @@ jobs:
 
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: bfrescox-code-coverage
         path: |
@@ -87,7 +87,7 @@ jobs:
 
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: bfrescoxpro-code-coverage
         path: |
@@ -106,13 +106,13 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Access bfrescox coverage reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: bfrescox-code-coverage
           path: ${{ env.CLONE_PATH }}
 
       - name: Access bfrescoxpro coverage reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: bfrescoxpro-code-coverage
           path: ${{ env.CLONE_PATH }}
