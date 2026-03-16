@@ -19,14 +19,14 @@ jobs:
   coverage_bfrescox:
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ubuntu-latest
     steps:
     ##-- General Setup Steps
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -56,11 +56,11 @@ jobs:
   coverage_bfrescoxpro:
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ubuntu-latest
     steps:
     ##-- General Setup Steps
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Install Open-MPI
       run: |
@@ -68,7 +68,7 @@ jobs:
         sudo apt-get -y install openmpi-bin libopenmpi-dev
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -103,7 +103,7 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Access bfrescox coverage reports
         uses: actions/download-artifact@v4
