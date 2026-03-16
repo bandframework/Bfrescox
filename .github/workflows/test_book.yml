@@ -6,7 +6,7 @@ env:
 on:
   # Only execute on PRs into main under the assumption that the publish_book
   # action builds the book and publishes it on pushes to main.
-  push:
+  pull_request:
     branches: main
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os:             [ubuntu-latest]
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
