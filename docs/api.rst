@@ -25,3 +25,5 @@ Execution & Results
 -------------------
 .. autofunction:: bfrescox.run_simulation
 .. autofunction:: bfrescox.parse_fort16
+.. autofunction:: bfrescox.parse_performance_results
+.. autofunction:: bfrescox.parse_parallelization_setup

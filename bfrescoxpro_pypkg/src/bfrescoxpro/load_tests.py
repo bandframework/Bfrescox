@@ -14,10 +14,12 @@ def load_tests(loader: TestLoader, *_) -> TestSuite:
                        python -m unittest bfrescoxpro
 
     Args:
-        loader (TestLoader): ``unittest.TestLoader`` instance doing the
-            loading
+        loader:
+            instance doing the loading
+
     Returns:
-        TestSuite: suite of all discovered tests
+        Test suite that contains all tests to be run to check correctness of the
+        overall package.
     """
     here_dir = Path(__file__).resolve().parent
     start_dir = here_dir.joinpath("tests")

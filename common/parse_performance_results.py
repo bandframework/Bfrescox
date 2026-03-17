@@ -8,13 +8,17 @@ from ._parsing import _read_results_lines
 
 def parse_performance_results(filename: Union[str, PathLike]) -> pd.DataFrame:
     """
-    Parse |frescox| performance results into a DataFrame.
+    Parse |frescox| performance results from |frescox| logging written to
+    standard output.
 
-    ..todo prototype code
-    Some timing lines aren't printed on their own line. Put in NaNs.  Is
-    this due to an issue in Frescox logging to file or is it correct
-    logging? If correct, is NaN the appropriate value or is this us
-    currently throwing up our hands.
+    .. note::
+        This code is a prototype, is not under test, and has not been reviewed.
+
+    .. todo::
+        Some timing lines aren't printed on their own line. Put in NaNs.  Is
+        this due to an issue in Frescox logging to file or is it correct
+        logging? If correct, is NaN the appropriate value or is this us
+        currently throwing up our hands.
 
     Args:
         filename (Union[str, PathLike]): Path to the file containing the

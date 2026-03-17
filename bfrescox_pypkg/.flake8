@@ -6,4 +6,6 @@ exclude =
 per-file-ignores =
     # Do not apply PEP8 to __init__.py files
     src/bfrescox/__init__.py:F401
+    # Ignore version file created for us by setuptools-scm
+    src/bfrescox/_version.py:E501
 max-line-length = 80
