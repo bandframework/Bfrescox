@@ -12,7 +12,7 @@ class Configuration(object):
     def from_NML(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (Union[str, PathLike]): Path to Frescox Fortran
+            filename (Union[str, PathLike]): Path to |frescox| Fortran
                 namelist input file
 
         Returns:
@@ -36,7 +36,7 @@ class Configuration(object):
         exactly match the keys in `parameters`, or a ValueError will be
         raised.
 
-        For example, if one has a Frescox template file with a line like
+        For example, if one has a |frescox| template file with a line like
         this defining a potential:
         ```
         &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
@@ -86,7 +86,7 @@ class Configuration(object):
     def from_json(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (Union[str, PathLike]): Path to Frescox |bfrescox| format
+            filename (Union[str, PathLike]): Path to |bfrescox| format
                 JSON file
 
         Returns:
@@ -97,10 +97,10 @@ class Configuration(object):
 
     def __init__(self, filename: Union[str, PathLike]):
         """
-        Class representing a Frescox input configuration.
+        Class representing a |frescox| input configuration.
 
         Args:
-            filename (Union[str, PathLike]): Path to Frescox Fortran namelist
+            filename (Union[str, PathLike]): Path to |frescox| Fortran namelist
                 input file
 
         Raises:
@@ -125,10 +125,10 @@ class Configuration(object):
         self, filename: Union[str, PathLike], overwrite: bool = False
     ) -> None:
         """
-        Write configuration to Frescox Fortran namelist input file.
+        Write configuration to |frescox| Fortran namelist input file.
 
         Args:
-            filename (Union[str, PathLike]): Path to write Frescox Fortran
+            filename (Union[str, PathLike]): Path to write |frescox| Fortran
                 namelist input file
             overwrite (bool): Whether to overwrite filename if it
                 already exists.
@@ -141,11 +141,14 @@ class Configuration(object):
         if not isinstance(filename, (str, PathLike)):
             raise TypeError("filename must be a str or PathLike")
         fname_in = Path(filename).resolve()
-        if fname_in.exists():
+        if fname_in.is_dir():
+            raise ValueError(
+                f"Filename ({fname_in}) corresponds to pre-existing directory"
+            )
+        elif fname_in.is_file():
             if fname_in == self.__nml:
                 return  # No action needed
             if overwrite:
-                assert fname_in.is_file()
                 os.remove(fname_in)
             else:
                 raise RuntimeError(f"Input file ({fname_in}) already exists")

@@ -29,7 +29,7 @@ def run_simulation(
         overwrite (bool, optional): If False, then an error is raised if
             either of the simulation input or output files exist
         mpi_setup (dict, optional): Dictionary specifying MPI setup
-        cwd (Union[str, PathLike], optional): directory to run the
+        cwd (Union[str, PathLike], optional): pre-existing directory to run the
             simulation in.  If None, the current working directory is used.
 
     Raises:

@@ -30,11 +30,13 @@ def _run_frescox_simulation(
 ):
     """
     Run a |frescox| simulation using the given |frescox| installation,
-    simulation configuration, and MPI setup.  stdout is written to disk
-    using the given output filename. Other outputs are written to disk
-    based on the |frescox| output settings. The |frescox| Fortran
-    namelist configuration file generated from the configuration object
-    for the simulation is written alongside the results file.
+    simulation configuration, and MPI setup.  Standard output and error are
+    written to disk using the given output filename. Other outputs are written
+    to disk based on the |frescox| output settings. The |frescox| Fortran
+    namelist configuration file generated from the configuration object for the
+    simulation is written alongside the results file.
+
+    This function performs all of its own error checking of arguments.
 
     .. todo::
         * Load and return a result object once that class exists.
@@ -50,13 +52,14 @@ def _run_frescox_simulation(
         config (Configuration): |bfrescox| :py:class:`Configuration`
             object that specifies the simulation to execute
         filename (Union[str, PathLike]): Filename including path of file
-            to write outputs to
+            to write |frescox| stdout/stderr logging to
         overwrite (bool): If False, then an error is raised if either
             the input or output files exist
         mpi_setup (dict): Dictionary that provides MPI setup values if
             given |frescox| installation built with MPI; ``None``,
             otherwise.
-        cwd (Union[str, PathLike]): directory to run the simulation in.
+        cwd (Union[str, PathLike]): pre-existing directory to run the simulation
+            in.
 
     Raises:
         TypeError
@@ -118,16 +121,26 @@ def _run_frescox_simulation(
 
     if not isinstance(cwd, (str, PathLike)):
         raise TypeError(f"Invalid working directory ({cwd})")
-    fname_in = Path(cwd).resolve().joinpath("frescox.in")
-    config.write_to_nml(fname_in, overwrite)
+    cwd_path = Path(cwd).resolve()
+    if not cwd_path.is_dir():
+        raise ValueError(
+            f"Working directory ({cwd}) does not exist or is not a directory"
+        )
 
     # ----- CHECK STATE OF FILES & WRITE INPUT
     fname_out = Path(filename).resolve()
-    if fname_out.exists():
+    if fname_out.is_dir():
+        raise ValueError(
+            f"Output file ({fname_out}) corresponds to a pre-existing directory"
+        )
+    elif fname_out.is_file():
         if overwrite:
             os.remove(fname_out)
         else:
             raise RuntimeError(f"Output file ({fname_out}) already exists")
+
+    fname_in = cwd_path.joinpath("frescox.in")
+    config.write_to_nml(fname_in, overwrite)
 
     # ----- RUN SIMULATION
     if use_mpi:
@@ -146,7 +159,7 @@ def _run_frescox_simulation(
                     stdout=fptr_stdout,
                     stderr=sbp.STDOUT,
                     check=True,
-                    cwd=cwd,
+                    cwd=cwd_path,
                 )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
@@ -167,7 +180,7 @@ def _run_frescox_simulation(
                         stdout=fptr_stdout,
                         stderr=sbp.STDOUT,
                         check=True,
-                        cwd=cwd,
+                        cwd=cwd_path,
                     )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:

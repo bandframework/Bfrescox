@@ -39,9 +39,8 @@ def run_simulation(
             either of the simulation input or output files exist
         external (bool, optional): (|bfrescox| only)
             **EXPERT USERS ONLY**
-        cwd (Union[str, PathLike], optional): directory to run the
-            simulation in.  If None, the current working directory is
-            used.
+        cwd (Union[str, PathLike], optional): pre-existing directory to run the
+            simulation in.  If None, the current working directory is used.
 
     Raises:
         ValueError: If no valid internal or external |frescox|
