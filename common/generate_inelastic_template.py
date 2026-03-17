@@ -104,51 +104,49 @@ def generate_inelastic_template(
     overwrite: bool = False,
 ):
     """
-    Generate an inelastic scattering input template for Fresco.
+    Generate an inelastic scattering input template for |frescox|.
 
     Args:
-        output_path (Union[str, PathLike]): Path to save the generated
-            template file.
-        target_mass_amu (float): Mass of the target nucleus.
-        target_atomic_number (float): Charge of the target nucleus.
-        projectile_mass_amu (float): Mass of the projectile nucleus.
-        projectile_atomic_number (float): Charge of the projectile
-            nucleus.
-        projectile_spin (Union[Fraction, str, int, float]): Spin of the
-            projectile nucleus (integer or half-integer). Must be
+        output_path:
+            Path to save the generated template file
+        target_mass_amu:
+            Mass of the target nucleus
+        target_atomic_number:
+            Charge of the target nucleus
+        projectile_mass_amu:
+            Mass of the projectile nucleus
+        projectile_atomic_number:
+            Charge of the projectile nucleus
+        projectile_spin:
+            Spin of the projectile nucleus (integer or half-integer). Must be
             convertable to Fraction.
-        E_lab_MeV (float): Laboratory energy of the projectile in MeV.
-        J_tot_min (Union[Fraction, str, int, float]): Minimum total
-            angular momentum (integer or half-integer). Must be
+        E_lab_MeV:
+            Laboratory energy of the projectile in MeV
+        J_tot_min:
+            Minimum total angular momentum (integer or half-integer).  Must be
             convertable to Fraction.
-        J_tot_max (Union[Fraction, str, int, float]): Maximum total
-            angular momentum (integer or half-integer). Must be
+        J_tot_max:
+            Maximum total angular momentum (integer or half-integer).  Must be
             convertable to Fraction.
-        reaction_name (str): Name of the reaction for file naming.
-        target_state_spins (List[Union[Fraction, str, int, float]]):
+        reaction_name:
+            Name of the reaction for file naming
+        target_state_spins:
             List of spin states of the target nucleus (integers or
-            half-integers).  List elements must be convertable to
-            Fraction.
-        target_state_parities (List[bool]): List of parities for the
-            target states (True for positive, False for negative).
-        target_state_energies_MeV (List[float]): List of excitation
-            energies of the target states in MeV.
-        multipoles (np.ndarray): Array of multipole transition orders
-            (e.g., [2, 3] for quadrupole and octupole).
-        R_match_fm (float): Matching radius in fm.
-        step_size_fm (float): Step size for the radial mesh in fm.
-        overwrite (bool): Whether to overwrite the output file if it
-            already exists. Default is False.
-
-    Raises:
-        ValueError: If J_tot_min is greater than J_tot_max, or if either
-            J_tot_min or J_tot_max is negative, or if they are not
-            integer or half-integer values.
-        ValueError: If any of the target state spins are negative or not integer
-        or half-integer values.
-        TypeError: If output_path is not a string or PathLike object.
-        FileExistsError: If the output file already exists and overwrite is
-        False.
+            half-integers).  List elements must be convertable to Fraction.
+        target_state_parities:
+            List of parities for the target states (True for positive, False for
+            negative)
+        target_state_energies_MeV:
+            List of excitation energies of the target states in MeV
+        multipoles:
+            Array of multipole transition orders (e.g., [2, 3] for quadrupole
+            and octupole).
+        R_match_fm:
+            Matching radius in fm
+        step_size_fm:
+            Step size for the radial mesh in fm
+        overwrite:
+            Whether to overwrite the output file if it already exists
     """
     projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
     J_tot_min = _validate_spin(J_tot_min, "J_tot_min")

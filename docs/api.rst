@@ -16,6 +16,11 @@ Simulation Configuration
 .. autoclass:: bfrescox.Configuration
    :members:
 
+Template Generation
+-------------------
+.. autofunction:: bfrescox.generate_elastic_template
+.. autofunction:: bfrescox.generate_inelastic_template
+
 Execution & Results
 -------------------
 .. autofunction:: bfrescox.run_simulation

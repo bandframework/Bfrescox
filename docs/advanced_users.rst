@@ -83,21 +83,22 @@ Installation
 
 While we intend for this package to eventually be distributed by PyPI for direct
 installation |via| |pip|, during this alpha development phase, users must
-install the package directly from a local clone of the |bfrescox| repository. This requires checking out the ``v0.0.1-alpha`` tag after cloning the repository:
+install the package directly from a local clone of the |bfrescox| repository. 
 
- .. code-block:: console
+After
 
-  $ cd /path/to/Bfrescox/
-  $ git checkout v0.0.1-alpha
+* installing a local clone,
+* checking out the desired commit or tag,
+* and setting up your target Python environment as desired,
 
-Then, running
+execute
 
 .. code:: console
 
     $ cd /path/to/Bfrescox/bfrescoxpro_pypkg
     $ python -m pip install .
 
-will build a binary with OpenMP if the compiler that is found by Meson supports
+This will build a binary with OpenMP if the compiler that is found by Meson supports
 OpenMP compilation.  In addition, it will build with MPI if an MPI
 implementation is found by Meson.  If both are found, then an MPI+OpenMP binary
 is built.  If neither is found, then please update your software stack or use

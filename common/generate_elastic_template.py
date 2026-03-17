@@ -26,41 +26,43 @@ def generate_elastic_template(
     overwrite: bool = False,
 ):
     """
-    Generate an elastic scattering input template for Fresco
+    Generate an elastic scattering input template for |frescox|.
 
     Args:
-        output_path (Union[str, PathLike]): Path to save the generated
-            template file
-        reaction_name (str): Name of the reaction for file naming
-        target_mass_amu (float): Mass of the target nucleus
-        target_atomic_number (int): Charge of the target nucleus
-        target_spin (Union[Fraction, str, int, float]): Spin of the target
-            nucleus (integer or half-integer)
-        projectile_mass_amu (float): Mass of the projectile nucleus
-        projectile_atomic_number (int): Charge of the projectile nucleus
-        projectile_spin (Union[Fraction, str, int, float]): Spin of the
-            projectile nucleus (integer or half-integer). Must be
+        output_path:
+            Path to save the generated template file
+        reaction_name:
+            Name of the reaction for file naming
+        target_mass_amu:
+            Mass of the target nucleus
+        target_atomic_number:
+            Charge of the target nucleus
+        target_spin:
+            Spin of the target nucleus (integer or half-integer)
+        projectile_mass_amu:
+            Mass of the projectile nucleus
+        projectile_atomic_number:
+            Charge of the projectile nucleus
+        projectile_spin:
+            Spin of the projectile nucleus (integer or half-integer). Must be
             convertable to Fraction.
-        E_lab_MeV (float): Laboratory energy of the projectile in MeV
-        J_tot_min (Union[Fraction, str, int, float]): Minimum total
-            angular momentum (integer or half-integer). Must be
+        E_lab_MeV:
+            Laboratory energy of the projectile in MeV
+        J_tot_min:
+            Minimum total angular momentum (integer or half-integer).  Must be
             convertable to Fraction.
-        J_tot_max (Union[Fraction, str, int, float]): Maximum total
-            angular momentum (integer or half-integer). Must be
+        J_tot_max:
+            Maximum total angular momentum (integer or half-integer).  Must be
             convertable to Fraction.
-        E_0_MeV (float): Ground state energy of the target nucleus in
-            MeV (usually 0, larger for isomeric or excited final state)
-        R_match_fm (float): Matching radius in fm.
-        step_size_fm (float): Step size for the radial mesh in fm.
-        overwrite (bool, optional): Whether to overwrite the output file
-
-    Raises:
-        ValueError: If J_tot_min is greater than J_tot_max, or if either
-            J_tot_min or J_tot_max is negative, or if they are not
-            integer or half-integer values
-        TypeError: If output_path is not a string or PathLike object
-        FileExistsError: If the output file already exists and overwrite is
-        False.
+        E_0_MeV:
+            Ground state energy of the target nucleus in MeV (usually 0, larger
+            for isomeric or excited final state)
+        R_match_fm:
+            Matching radius in fm
+        step_size_fm:
+            Step size for the radial mesh in fm
+        overwrite:
+            Whether to overwrite the output file if it already exists
     """
     projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
     target_spin = _validate_spin(target_spin, "target_spin")
