@@ -46,7 +46,7 @@ def fill_in_template_file(
     """
     Read in a template nml file, replace '@key@' placeholders with
     corresponding values from `parameters`, and write result to
-    output_path. The set of possible keys in the template file must
+    `output_path`. The set of possible keys in the template file must
     exactly match the keys in `parameters`, or a ValueError will be
     raised.
 
@@ -95,6 +95,9 @@ def fill_in_template_file(
             f"Keys in template file {template_path} do not "
             "match keys in `parameters`"
         )
+
+    if not isinstance(output_path, (str, PathLike)):
+        raise TypeError("output_path must be str or PathLike")
 
     fname_out = Path(output_path).resolve()
     if fname_out.is_dir():

@@ -31,8 +31,8 @@ class Configuration(object):
     ) -> "Configuration":
         """
         Read in a template nml file, replace '@key@' placeholders with
-        corresponding values from parameters, and write result to
-        output_path. The set of possible keys in the template file must
+        corresponding values from `parameters`, and write result to
+        `output_path`. The set of possible keys in the template file must
         exactly match the keys in `parameters`, or a ValueError will be
         raised.
 
@@ -56,31 +56,19 @@ class Configuration(object):
                 modified NML file.
             parameters (dict): Dictionary of parameters to replace in
                 the template. Keys should match placeholders in the
-                template, corresponding values are the desired replacements
+                template, but should not include the `@` characters.
+                Corresponding values are the desired replacements
                 in the output file.
             overwrite (bool): Whether to overwrite output_path if it
                 already exists.
-
-        Raises:
-            TypeError: If template_path or output_path are not str or
-                PathLike
-            ValueError: If keys exist in the template that are not in
-                `parameters`.
-            ValueError: If keys exist in `parameters` that are not in
-                the template file
         """
-        if not isinstance(template_path, (str, PathLike)):
-            raise TypeError("template_path must be str or PathLike")
-        if not isinstance(output_path, (str, PathLike)):
-            raise TypeError("output_path must be str or PathLike")
-
         fill_in_template_file(
-            Path(template_path),
-            Path(output_path),
+            template_path,
+            output_path,
             parameters,
             overwrite=overwrite,
         )
-        return cls(Path(output_path))
+        return cls(output_path)
 
     @classmethod
     def from_json(cls, filename: Union[str, PathLike]) -> "Configuration":
@@ -91,7 +79,7 @@ class Configuration(object):
 
         Returns:
             Configuration : constructed from contents of given
-                w|bfrescox| format JSON file
+                |bfrescox| format JSON file
         """
         raise NotImplementedError("from_json not implemented yet")
 
