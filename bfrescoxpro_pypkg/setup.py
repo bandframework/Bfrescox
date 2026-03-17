@@ -48,7 +48,7 @@ for flag, default in FRESCOX_FLAG_DEFAULTS:
     FRESCOX_FLAGS += ["-D{}={}".format(flag.lower(), value)]
 
 # Package metadata
-PYTHON_REQUIRES = ">=3.9"
+PYTHON_REQUIRES = ">=3.10"
 CODE_REQUIRES = ["numpy", "pandas"]
 TEST_REQUIRES = ["f90nml>=1.3"]
 INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
