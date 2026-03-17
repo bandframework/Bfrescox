@@ -45,15 +45,15 @@ def generate_elastic_template(
             Charge of the projectile nucleus
         projectile_spin:
             Spin of the projectile nucleus (integer or half-integer). Must be
-            convertable to Fraction.
+            convertible to Fraction.
         E_lab_MeV:
             Laboratory energy of the projectile in MeV
         J_tot_min:
             Minimum total angular momentum (integer or half-integer).  Must be
-            convertable to Fraction.
+            convertible to Fraction.
         J_tot_max:
             Maximum total angular momentum (integer or half-integer).  Must be
-            convertable to Fraction.
+            convertible to Fraction.
         E_0_MeV:
             Ground state energy of the target nucleus in MeV (usually 0, larger
             for isomeric or excited final state)

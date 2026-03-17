@@ -83,4 +83,4 @@ def print_information():
     if built_with[FRESCOX_COREX_SUPPORT]:
         print("\tBuilt with corex capabilities")
     else:
-        print("\tNo corex capablilities")
+        print("\tNo corex capabilities")

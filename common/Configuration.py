@@ -109,7 +109,7 @@ class Configuration(object):
         """
         super().__init__()
 
-        # ----- ERROR CHECK ARGUMENTa
+        # ----- ERROR CHECK ARGUMENT
         if not isinstance(filename, (str, PathLike)):
             raise TypeError("filename must be a str or PathLike")
         fname = Path(filename).resolve()

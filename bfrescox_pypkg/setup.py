@@ -91,7 +91,7 @@ class build_frescox(Command):
             "0",
         ]
         # Since this is Fortran code from older standards and I suspect that it
-        # uses implict variables, I don't want to assume that the Meson build
+        # uses implicit variables, I don't want to assume that the Meson build
         # system's tools for determining interfile dependencies can figure out
         # how to compile files in parallel.  Force serial builds.
         COMPILE_CMD = ["meson", "compile", "-v", "-j", "1", "-C", "builddir"]

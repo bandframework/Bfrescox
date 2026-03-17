@@ -119,20 +119,20 @@ def generate_inelastic_template(
             Charge of the projectile nucleus
         projectile_spin:
             Spin of the projectile nucleus (integer or half-integer). Must be
-            convertable to Fraction.
+            convertible to Fraction.
         E_lab_MeV:
             Laboratory energy of the projectile in MeV
         J_tot_min:
             Minimum total angular momentum (integer or half-integer).  Must be
-            convertable to Fraction.
+            convertible to Fraction.
         J_tot_max:
             Maximum total angular momentum (integer or half-integer).  Must be
-            convertable to Fraction.
+            convertible to Fraction.
         reaction_name:
             Name of the reaction for file naming
         target_state_spins:
             List of spin states of the target nucleus (integers or
-            half-integers).  List elements must be convertable to Fraction.
+            half-integers).  List elements must be convertible to Fraction.
         target_state_parities:
             List of parities for the target states (True for positive, False for
             negative)
