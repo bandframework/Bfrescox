@@ -25,10 +25,10 @@ from .print_information import print_information
 from .run_simulation import run_simulation
 
 # ----- Python unittest-based test framework
-# Allow users to run full test suite as bfrescox.test()
-from .test import test
-
 # Used for automatic test discovery
 from .load_tests import load_tests  # isort:skip
+
+# Allow users to run full test suite as bfrescoxpro.test()
+from .test import test
 
 __version__ = version("bfrescoxpro")
