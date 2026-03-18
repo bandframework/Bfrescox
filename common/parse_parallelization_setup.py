@@ -20,17 +20,12 @@ def parse_parallelization_setup(
         always be true?
 
     Args:
-        filename (Union[str, PathLike]): Path to the file containing the
-                                         |frescox| std output.
-
+        filename:
+            Path to the file containing the |frescox| standard output log data
     Returns:
-        tuple or None: If parallelization info is found, returns a tuple
-                       (n_mpi_procs, n_threads), where n_threads is -1
-                       for pure MPI runs. If no parallelization info is
-                       found, returns None.
-    Raises:
-        RuntimeError: If an invalid parallelization logging is
-                      encountered.
+        If parallelization info is found, returns a tuple ``(n_mpi_procs,
+        n_threads)``, where ``n_threads`` is -1 for pure MPI runs. If no
+        parallelization info is found, returns None.
     """
     lines_all = _read_results_lines(filename)
 

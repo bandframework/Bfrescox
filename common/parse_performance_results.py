@@ -15,22 +15,16 @@ def parse_performance_results(filename: Union[str, PathLike]) -> pd.DataFrame:
         This code is a prototype, is not under test, and has not been reviewed.
 
     .. todo::
-        Some timing lines aren't printed on their own line. Put in NaNs.  Is
+        Some timing lines aren't printed on their own line. Put in NaNs?  Is
         this due to an issue in Frescox logging to file or is it correct
         logging? If correct, is NaN the appropriate value or is this us
-        currently throwing up our hands.
+        currently throwing up our hands?
 
     Args:
-        filename (Union[str, PathLike]): Path to the file containing the
-        |frescox| stdout
-
+        filename:
+            Path to the file containing the |frescox| standard output log data
     Returns:
-        pd.DataFrame : index as rank and columns 'walltime_sec' and
-                       'cpu_time_sec'.
-
-    Raises:
-        RuntimeError : If an invalid performance result line is
-                       encountered.
+        ``DataFrame`` whose rows are indexed by MPI rank.
     """
     lines_all = _read_results_lines(filename)
 
