@@ -6,7 +6,7 @@ from typing import List, Union
 
 import numpy as np
 
-from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
+from ._utils import _validate_spin
 
 TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/inelastic.template"
 
@@ -106,6 +106,21 @@ def generate_inelastic_template(
     """
     Generate an inelastic scattering input template for |frescox|.
 
+    .. todo::
+        * This has hardcoded formatting for writing values to file.  This
+          package should not pretend to know what precision is needed by all
+          applications.  Rather, it should write all values in full precision.
+        * Seems like we should be doing explicit type checking of actual
+          arguments.  Better yet if writing to full precision and type checking
+          can be done by one single routine in the package's private interface
+          that this just calls.
+        * Ideally the text placeholders in the template would include units in
+          the name so that when mapping arguments to placeholders below we have
+          something like ``"RMATCH_FM": R_match_fm``.
+        * Code checks if multipoles is None.  However, neither the documentation
+          nor the type hints indicate that None is an acceptable argument.  The
+          meaning of a None argument is not explained.
+
     Args:
         output_path:
             Path to save the generated template file
@@ -139,8 +154,8 @@ def generate_inelastic_template(
         target_state_energies_MeV:
             List of excitation energies of the target states in MeV
         multipoles:
-            Array of multipole transition orders (e.g., [2, 3] for quadrupole
-            and octupole).
+            numpy array of multipole transition orders (e.g., [2, 3] for
+            quadrupole and octupole).
         R_match_fm:
             Matching radius in fm
         step_size_fm:
@@ -156,25 +171,26 @@ def generate_inelastic_template(
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
     if J_tot_min < 0 or J_tot_max < 0:
         raise ValueError("J_tot_min and J_tot_max must be non-negative.")
-    if not _is_fraction_integer_or_half_integer(J_tot_min):
-        raise ValueError("J_tot_min must be an integer or half-integer.")
-    if not _is_fraction_integer_or_half_integer(J_tot_max):
-        raise ValueError("J_tot_max must be an integer or half-integer.")
 
     target_state_spins = [
         _validate_spin(s, "target_state_spins") for s in target_state_spins
     ]
     for spin in target_state_spins:
-        if Fraction(spin) < 0:
+        if spin < 0:
             raise ValueError("All spin states must be non-negative.")
-        if not _is_fraction_integer_or_half_integer(spin):
-            raise ValueError(
-                "All spin states must be integers or half-integers."
-            )
 
     if not isinstance(output_path, (str, PathLike)):
         raise TypeError("output_path must be a string or PathLike object.")
     output_path = Path(output_path).resolve()
+    if output_path.is_dir():
+        raise IsADirectoryError(
+            f"Filename ({output_path}) corresponds to pre-existing directory"
+        )
+    elif output_path.exists() and not overwrite:
+        raise FileExistsError(
+            f"The file {output_path} already exists. "
+            "Set overwrite=True to overwrite it."
+        )
 
     num_states = len(target_state_energies_MeV)
 
@@ -228,10 +244,5 @@ def generate_inelastic_template(
         modified_template = modified_template.replace(placeholder, value)
 
     # Write the final content to the output file
-    if output_path.exists() and not overwrite:
-        raise FileExistsError(
-            f"The file {output_path} already exists. "
-            "Set overwrite=True to overwrite it."
-        )
     with open(output_path, "w") as file:
         file.write(modified_template)

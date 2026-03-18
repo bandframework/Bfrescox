@@ -3,7 +3,7 @@ from os import PathLike
 from pathlib import Path
 from typing import Union
 
-from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
+from ._utils import _validate_spin
 
 TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/elastic.template"
 
@@ -27,6 +27,18 @@ def generate_elastic_template(
 ):
     """
     Generate an elastic scattering input template for |frescox|.
+
+    .. todo::
+        * This has hardcoded formatting for writing values to file.  This
+          package should not pretend to know what precision is needed by all
+          applications.  Rather, it should write all values in full precision.
+        * Seems like we should be doing explicit type checking of actual
+          arguments.  Better yet if writing to full precision and type checking
+          can be done by one single routine in the package's private interface
+          that this just calls.
+        * Ideally the text placeholders in the template would include units in
+          the name so that when mapping arguments to placeholders below we have
+          something like ``"RMATCH_FM": R_match_fm``.
 
     Args:
         output_path:
@@ -73,14 +85,19 @@ def generate_elastic_template(
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
     if J_tot_min < 0 or J_tot_max < 0:
         raise ValueError("J_tot_min and J_tot_max must be non-negative.")
-    if not _is_fraction_integer_or_half_integer(J_tot_min):
-        raise ValueError("J_tot_min must be an integer or half-integer.")
-    if not _is_fraction_integer_or_half_integer(J_tot_max):
-        raise ValueError("J_tot_max must be an integer or half-integer.")
 
     if not isinstance(output_path, (str, PathLike)):
         raise TypeError("output_path must be a string or PathLike object.")
     output_path = Path(output_path).resolve()
+    if output_path.is_dir():
+        raise IsADirectoryError(
+            f"Filename ({output_path}) corresponds to pre-existing directory"
+        )
+    elif output_path.exists() and not overwrite:
+        raise FileExistsError(
+            f"The file {output_path} already exists. "
+            "Set overwrite=True to overwrite it."
+        )
 
     # Define placeholder replacements
     replacements = {
@@ -107,10 +124,5 @@ def generate_elastic_template(
         modified_template = modified_template.replace(placeholder, value)
 
     # Write the final content to the output file
-    if output_path.exists() and not overwrite:
-        raise FileExistsError(
-            f"The file {output_path} already exists. "
-            "Set overwrite=True to overwrite it."
-        )
     with open(output_path, "w") as file:
         file.write(modified_template)
