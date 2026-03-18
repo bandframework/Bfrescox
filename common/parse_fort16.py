@@ -27,7 +27,7 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
         raise TypeError(f"Invalid filename ({filename})")
     path = Path(filename).resolve()
     if not path.is_file():
-        raise ValueError(f"{path} does not exist or is not a file")
+        raise FileNotFoundError(f"{path} does not exist or is not a file")
     with open(path, "r") as f:
         content = f.read()
     raw_blocks = content.split("&")  # Split into blocks at "&"

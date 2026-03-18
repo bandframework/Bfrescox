@@ -103,7 +103,7 @@ class Configuration(object):
         fname = Path(filename).resolve()
         if not fname.is_file():
             msg = f"Configuration file {fname} does not exist or is not a file"
-            raise ValueError(msg)
+            raise FileNotFoundError(msg)
 
         # ----- STORE CONFIGURATION
         # No loading or checking to be done if Frescox NML file
@@ -130,7 +130,7 @@ class Configuration(object):
             raise TypeError("filename must be a str or PathLike")
         fname_in = Path(filename).resolve()
         if fname_in.is_dir():
-            raise ValueError(
+            raise IsADirectoryError(
                 f"Filename ({fname_in}) corresponds to pre-existing directory"
             )
         elif fname_in.is_file():
@@ -139,7 +139,7 @@ class Configuration(object):
             if overwrite:
                 os.remove(fname_in)
             else:
-                raise RuntimeError(f"Input file ({fname_in}) already exists")
+                raise FileExistsError(f"Input file ({fname_in}) already exists")
 
         # ----- WRITE CONFIGURATION TO FILE
         # Trivial for NML

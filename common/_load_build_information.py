@@ -46,9 +46,9 @@ def _load_build_information(src_path: Union[str, PathLike]) -> dict:
     if (not BUILD_INFO.exists()) or (not EXE_PATH.exists()):
         return {}
     if not BUILD_INFO.is_file():
-        raise RuntimeError(f"{BUILD_INFO} is not a file")
+        raise FileNotFoundError(f"{BUILD_INFO} is not a file")
     if not EXE_PATH.is_file():
-        raise RuntimeError(f"{EXE_PATH} is not a file")
+        raise FileNotFoundError(f"{EXE_PATH} is not a file")
 
     built_with = {}
     with open(BUILD_INFO, "r") as fptr:

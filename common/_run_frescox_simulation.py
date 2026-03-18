@@ -80,7 +80,7 @@ def _run_frescox_simulation(
     use_omp = frescox[FRESCOX_OPENMP_SUPPORT]
     if not frescox_exe.is_file():
         msg = "Frescox executable does not exist or is not a file ({})"
-        raise TypeError(msg.format(frescox_exe))
+        raise FileNotFoundError(msg.format(frescox_exe))
     if not isinstance(use_mpi, bool):
         raise TypeError("MPI support specification is not a boolean")
     if not isinstance(use_omp, bool):
@@ -115,6 +115,16 @@ def _run_frescox_simulation(
 
     if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid output filename ({filename})")
+    fname_out = Path(filename).resolve()
+    if fname_out.is_dir():
+        raise IsADirectoryError(
+            f"Output file ({fname_out}) corresponds to a pre-existing directory"
+        )
+    elif fname_out.is_file():
+        if overwrite:
+            os.remove(fname_out)
+        else:
+            raise FileExistsError(f"Output file ({fname_out}) already exists")
 
     if not isinstance(overwrite, bool):
         raise TypeError("Given overwrite argument is not a boolean")
@@ -123,22 +133,11 @@ def _run_frescox_simulation(
         raise TypeError(f"Invalid working directory ({cwd})")
     cwd_path = Path(cwd).resolve()
     if not cwd_path.is_dir():
-        raise ValueError(
+        raise NotADirectoryError(
             f"Working directory ({cwd}) does not exist or is not a directory"
         )
 
-    # ----- CHECK STATE OF FILES & WRITE INPUT
-    fname_out = Path(filename).resolve()
-    if fname_out.is_dir():
-        raise ValueError(
-            f"Output file ({fname_out}) corresponds to a pre-existing directory"
-        )
-    elif fname_out.is_file():
-        if overwrite:
-            os.remove(fname_out)
-        else:
-            raise RuntimeError(f"Output file ({fname_out}) already exists")
-
+    # ----- WRITE INPUT
     fname_in = cwd_path.joinpath("frescox.in")
     config.write_to_nml(fname_in, overwrite)
 

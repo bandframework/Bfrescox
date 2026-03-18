@@ -41,7 +41,7 @@ def fill_in_template_file(
     template_path: Union[str, PathLike],
     output_path: Union[str, PathLike],
     parameters: dict,
-    overwrite: bool = False,
+    overwrite: bool,
 ):
     """
     Read in a template nml file, replace '@key@' placeholders with
@@ -101,11 +101,11 @@ def fill_in_template_file(
 
     fname_out = Path(output_path).resolve()
     if fname_out.is_dir():
-        raise ValueError(
+        raise IsADirectoryError(
             f"Filename ({fname_out}) corresponds to pre-existing directory"
         )
     elif fname_out.exists() and (not overwrite):
-        raise RuntimeError(f"{fname_out} already exists")
+        raise FileExistsError(f"{fname_out} already exists")
 
     input_nml = _read_results_lines(template_path)
 
