@@ -78,7 +78,7 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                 # reached the end of the header.
                 break
 
-        # Ensure that the headers we parsed make sense before 
+        # Ensure that the headers we parsed make sense before
         # iterating over lines containing the data.
         if not header:
             # We only expect angular distribution data in the file
