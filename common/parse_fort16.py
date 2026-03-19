@@ -7,10 +7,9 @@ import pandas as pd
 
 def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
     """
-    Parse out scattering cross sections results from the given |frescox|
-    ``fort.16`` output file.  Each '@sN ... &' block becomes one entry labeled
-    'channel_N', with all numeric columns and proper names ('Theta', 'sigma',
-    'iT11', etc.).
+    Parse out angular distributions from the given |frescox| ``fort.16`` output
+    file.  Each '@sN ... &' block becomes one entry labeled 'channel_N', with
+    all numeric columns and proper names ('Theta', 'sigma', 'iT11', etc.).
 
     .. todo::
         * Convert asserts to error messages where we might be surprised by
@@ -51,8 +50,8 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
         assert lines_all[-1].strip() == ""
         lines_all = lines_all[:-1]
 
-        # Look for header information that indicates that block contains cross
-        # section data
+        # First, iterate through lines to look for header information that
+        # indicates that block contains angular distributions
         header = []
         has_correct_xaxis = False
         has_correct_yaxis = False
@@ -75,12 +74,14 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                 assert header[0] == "Theta"
                 assert header[1] == "sigma"
                 # We expect the xaxis and yaxis lines to appear, if at all,
-                # before the header line.  So we are OK to break out of this
-                # loop.
+                # before this header line.  Therefore, we've ensured we've
+                # reached the end of the header.
                 break
 
-        # We are only expecting cross section data for now.
+        # Ensure that the headers we parsed make sense before 
+        # iterating over lines containing the data.
         if not header:
+            # We only expect angular distribution data in the file
             assert block.strip() == ""
             continue
 
@@ -95,7 +96,8 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
             assert not has_correct_yaxis
             assert hdr_index == 4
 
-        # We expect numeric data only after the header line and on each line
+        # Now that we've validated the header, iterate back through the lines
+        # to parse numeric data, starting after the header line.
         rows = []
         n_elements = -1
         for i, line in enumerate(lines_all):
@@ -114,7 +116,7 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                 rows.append(nums)
             except ValueError as exc:
                 raise ValueError(
-                    f"Error parsing cross section data in {filename}"
+                    f"Error parsing angular data in {filename}"
                 ) from exc
         assert rows
 
