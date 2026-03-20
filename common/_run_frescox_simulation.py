@@ -120,7 +120,8 @@ def _run_frescox_simulation(
         raise IsADirectoryError(
             f"Output file ({fname_out}) corresponds to a pre-existing directory"
         )
-    elif fname_out.is_file():
+    elif fname_out.exists():
+        assert fname_out.is_file()
         if overwrite:
             os.remove(fname_out)
         else:
