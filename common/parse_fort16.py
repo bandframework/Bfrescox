@@ -18,9 +18,6 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
           block for testing.  Consider using that so that we can return a single
           DataFrame with a MultiIndex.  If not, should the index of the
           DataFrames be the angle Theta?
-        * It looks like we should always expect to get Theta and sigma data.
-          Should the column names for those include the units, which we are
-          sanity checking here?
 
     Args:
         filename:
@@ -41,14 +38,15 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
         # Split into blocks at "&"
         raw_blocks = f.read().split("&")
 
+    # File ends with line containing only &.  Splitting returns an "empty block"
+    # after it.
+    assert raw_blocks[-1] == "\n"
+    raw_blocks = raw_blocks[:-1]
+
     results = {}
     channel_idx = 1
     for block in raw_blocks:
-        lines_all = block.splitlines()
-
-        # Strip off blank line at end associated with &
-        assert lines_all[-1].strip() == ""
-        lines_all = lines_all[:-1]
+        lines_all = block.strip().splitlines()
 
         # First, iterate through lines to look for header information that
         # indicates that block contains angular distributions
@@ -73,28 +71,26 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                 header = line_stripped.strip().split()
                 assert header[0] == "Theta"
                 assert header[1] == "sigma"
+                header[0] = "Theta_deg"
+                header[1] = "sigma_mb_sr"
                 # We expect the xaxis and yaxis lines to appear, if at all,
                 # before this header line.  Therefore, we've ensured we've
                 # reached the end of the header.
                 break
 
-        # Ensure that the headers we parsed make sense before
-        # iterating over lines containing the data.
-        if not header:
-            # We only expect angular distribution data in the file
-            assert block.strip() == ""
-            continue
-
-        # x and y axis information is only printed with the first block holding
-        # cross section data.
+        # Ensure that the headers we parsed make sense before iterating over
+        # lines containing the data.
+        assert header
         if not results:
+            # x and y axis information is only printed with the first block
+            # holding data.
             assert has_correct_xaxis
             assert has_correct_yaxis
             assert hdr_index == 11
         else:
             assert not has_correct_xaxis
             assert not has_correct_yaxis
-            assert hdr_index == 4
+            assert hdr_index == 3
 
         # Now that we've validated the header, iterate back through the lines
         # to parse numeric data, starting after the header line.
@@ -104,7 +100,7 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
             line_clean = line.strip()
 
             if i <= hdr_index:
-                assert not line_clean or line_clean.startswith(("#", "@"))
+                assert line_clean.startswith(("#", "@"))
                 continue
 
             try:
@@ -119,6 +115,7 @@ def parse_fort16(filename: Union[str, PathLike]) -> dict[str, pd.DataFrame]:
                     f"Error parsing angular data in {filename}"
                 ) from exc
         assert rows
+        assert n_elements >= 2
 
         df = pd.DataFrame(rows)
 
