@@ -11,7 +11,6 @@ import bfrescox
 from .utils import compare_arrays
 
 INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
-TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
 
@@ -25,7 +24,6 @@ class TestUserProvidedProblems(unittest.TestCase):
         os.mkdir(self.__dir)
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
-        self.maxDiff = None
 
     def tearDown(self):
         if self.__dir.exists():
@@ -41,7 +39,7 @@ class TestUserProvidedProblems(unittest.TestCase):
     def testAllProblems(self):
         for template, specification in self.__suite.items():
             template_fname = DATA_PATH.joinpath(specification["Template"])
-            output_fname = self.__dir.joinpath("{template}.nml")
+            output_fname = self.__testdir.joinpath("{template}.nml")
 
             for test_name, test_info in specification["Tests"].items():
                 # Reestablish empty directory for each test
@@ -61,6 +59,7 @@ class TestUserProvidedProblems(unittest.TestCase):
                 )
                 self.assertTrue(self.__fname_out.is_file())
 
+                # Check all results against official baselines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
                     with open(fname, "rb") as fptr:
@@ -78,7 +77,7 @@ class TestUserProvidedProblems(unittest.TestCase):
                         results = bfrescox.parse_fort16(
                             self.__testdir / "fort.16"
                         )
-                        assert expected.keys() == results.keys()
+                        self.assertEqual(expected.keys(), results.keys())
                         for key in expected.keys():
                             compare_arrays(
                                 results[key],
@@ -87,5 +86,5 @@ class TestUserProvidedProblems(unittest.TestCase):
                                 rel_diff_tolr,
                             )
                     else:
-                        msg = f"Unknown physical quantity {quantity}"
+                        msg = f"Unknown results file type {quantity}"
                         raise ValueError(msg)
