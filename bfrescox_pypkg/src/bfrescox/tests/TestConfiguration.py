@@ -13,13 +13,12 @@ import bfrescox
 import f90nml
 
 INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
-TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
 
 class TestConfiguration(unittest.TestCase):
     def setUp(self):
-        fname_suite = DATA_PATH.joinpath("TestSuite_UserProvidedTemplate.json")
+        fname_suite = DATA_PATH.joinpath("TestSuite_Inelastic.json")
         with open(fname_suite, "r") as fptr:
             self.__suite = json.load(fptr)
 
