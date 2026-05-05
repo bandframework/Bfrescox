@@ -2,6 +2,7 @@ import numpy as np
 
 
 def compare_arrays(result, expected, abs_diff_tolr, rel_diff_tolr):
+    assert (abs_diff_tolr >= 0.0) and (rel_diff_tolr >= 0.0)
     if (abs_diff_tolr == 0.0) and (rel_diff_tolr == 0.0):
         np.testing.assert_equal(result, expected)
     else:
