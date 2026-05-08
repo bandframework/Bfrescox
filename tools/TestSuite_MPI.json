@@ -1,0 +1,22 @@
+{
+    "User": {
+        "48Ca": {
+            "Template": "/path/to/BFrescox-Internal/tests/6+208-100.in",
+            "Tests": {
+                "Ozge": {
+                    "TemplateParameters": {},
+                    "ProSetup": {
+                      "nOmpThreads": 2,
+                      "nMpiProcs": 5
+                    },
+                    "NML": "48Ca_OzgePointA.nml",
+                    "Results": {
+                        "fort.16": {
+                            "RelDiffThreshold": 0.0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
