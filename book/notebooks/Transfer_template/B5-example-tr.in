@@ -4,15 +4,14 @@ NAMELIST
 	 jtmin=0.0  jtmax=120 absend=-1.0
 	 thmin=0.00 thmax=40.00 thinc=0.10
 	 iter=1 nnu=36
-	 chans=1 xstabl=1 
+	 chans=3 xstabl=1 
 	 elab=170.0  /
 
  &PARTITION namep='f17'  massp=17. zp=9 namet='n14'  masst=14. zt=7 nex=1  /
  &STATES jp=2.5 bandp=1 ep=0.0 cpot=1 jt=1.0 bandt=1 et=0.0000  /
 
  &PARTITION namep='ne18' massp=18. zp=10 namet='c13'  masst=13. zt=6 qval=3.6286 nex=2  /
- &STATES jp=0. bandp=1 ep=0.0  cpot=2 jt=0.5 bandt=1 et=0.0000  /
- &STATES jp=4. bandp=1 ep=3.376  cpot=2 copyt  /
+ &STATES jp=0. bandp=1 ep=0.0  cpot=2 jt=0.5 bandt=-1 et=0.0000  /
 
 
  &partition /
@@ -41,6 +40,6 @@ NAMELIST
 
  &Coupling icto=-2 icfrom=1 kind=7 ip1=0 ip2=-1 ip3=5 /
  &CFP in=1 ib=1 ia=1 kn=1 a=1.00  /
- &CFP in=2 ib=1 ia=1 kn=2 a=1.00  /
+ &CFP in=1 ib=2 ia=1 kn=1 a=1.00  /
  &CFP /
  &coupling /

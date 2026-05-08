@@ -12,6 +12,7 @@ parts:
     - file: notebooks/Elastic_from_template_example.ipynb
     - file: notebooks/Inelastic_from_template_example.ipynb
     - file: notebooks/User_provided_template_example.ipynb
+    - file: notebooks/Transfer.ipynb
   - caption: Reference
     chapters:
     - file: bibliography
