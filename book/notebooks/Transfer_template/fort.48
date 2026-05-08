@@ -1,0 +1,3046 @@
+ kp,loop =  1  0 is type,so,p(:) =   0 F   0.000       14.00       17.00       1.300       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  1 -1 is type,so,p(:) =   1 F   0.000       37.20       1.200      0.6000       21.60       1.200      0.6900       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  2  0 is type,so,p(:) =   0 F   0.000       13.00       18.00       1.300       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  2 -1 is type,so,p(:) =   1 F   0.000       37.20       1.200      0.6000       21.60       1.200      0.6900       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  3  0 is type,so,p(:) =   0 F   0.000       17.00       0.000       1.200       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  3 -1 is type,so,p(:) =   1 F   0.000       50.00       1.200      0.6500       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  3 -1 is type,so,p(:) =   3 T   0.000       6.000       1.200      0.6500       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  4  0 is type,so,p(:) =   0 F   0.000       13.00       0.000       1.200       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  4 -1 is type,so,p(:) =   1 F   0.000       50.00       1.200      0.6500       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  4 -1 is type,so,p(:) =   3 T   0.000       6.000       1.200      0.6500       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  5  0 is type,so,p(:) =   0 F   0.000       14.00       17.00       1.300       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000       0.000    
+ kp,loop =  5 -1 is type,so,p(:) =   1 F   0.000       37.20       1.200      0.6000       21.60       1.200      0.6900       0.000       0.000       0.000       0.000       0.000       0.000    
+  mnpair increased by            0  to            0
+ mclist =           5  from            0           3           0 ,           1
+ FRXX0: MINL,MAXL =           0         130
+  MAXLAM0,J14T16,J40P =           0 F F
+  ipmax =           2
+ MINL,MAXL,MDONE =           0         130          54
+ JBORD:  0.50000000000000000        120.50000000000000     
+ JUMP:           1
+ 740 M,N =         1333        1334
+ Try JTOTAL =  0.50000000000000000     
+Allocate CLIST(      6      6      5) in   0.000 GB
+  Allocate NCLIST in    8.63999958E-07  GB
+  Allocate SRC/PSI etc in    1.92095991E-04  GB
+  Allocate FIM(D) in    3.83999975E-07  GB    48.000000000000000     
+ Allocate           12  spaces in coupling list           6
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -1
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -2
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -3
+ DONE incremented c by           -3  to           -3  0.157004997    
+ DONE now c           -3
+ Allocate           12  spaces in coupling list           6
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -4
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -5
+  XS    0.124     >  -1.0000 & JT    0.5 > 0.0 so DONES now =  -6
+ DONE incremented c by           -6  to           -9  0.165546000    
+ DONE now c           -9
+ Try JTOTAL =   1.5000000000000000     
+Allocate CLIST(     11     11      5) in   0.000 GB
+  Allocate NCLIST in    2.90399998E-06  GB
+  Allocate SRC/PSI etc in    3.62847990E-04  GB
+  Allocate FIM(D) in    7.04000001E-07  GB    88.000000000000000     
+ Allocate           22  spaces in coupling list          11
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -1
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -2
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -3
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -4
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -5
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -6
+ DONE incremented c by           -6  to          -15  0.179991007    
+ DONE now c          -15
+ Allocate           22  spaces in coupling list          11
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -7
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -8
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now =  -9
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now = -10
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now = -11
+  XS    0.248     >  -1.0000 & JT    1.5 > 0.0 so DONES now = -12
+ DONE incremented c by          -12  to          -27  0.188767999    
+ DONE now c          -27
+ Try JTOTAL =   2.5000000000000000     
+Allocate CLIST(     15     15      5) in   0.000 GB
+  Allocate NCLIST in    5.39999974E-06  GB
+  Allocate SRC/PSI etc in    4.90912003E-04  GB
+  Allocate FIM(D) in    9.59999966E-07  GB    120.00000000000000     
+ Allocate           30  spaces in coupling list          15
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -1
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -2
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -3
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -4
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -5
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -6
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -7
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -8
+ DONE incremented c by           -8  to          -35  0.203993008    
+ DONE now c          -35
+ Allocate           30  spaces in coupling list          15
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now =  -9
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -10
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -11
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -12
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -13
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -14
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -15
+  XS    0.371     >  -1.0000 & JT    2.5 > 0.0 so DONES now = -16
+ DONE incremented c by          -16  to          -51  0.220496997    
+ DONE now c          -51
+ Try JTOTAL =   3.5000000000000000     
+Allocate CLIST(     18     18      5) in   0.000 GB
+  Allocate NCLIST in    7.77599962E-06  GB
+  Allocate SRC/PSI etc in    5.76287974E-04  GB
+  Allocate FIM(D) in    1.15199998E-06  GB    144.00000000000000     
+ Allocate           36  spaces in coupling list          18
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -1
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -2
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -3
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -4
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -5
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -6
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -7
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -8
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to          -60  0.237006009    
+ DONE now c          -60
+ Allocate           36  spaces in coupling list          18
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -10
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -11
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -12
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -13
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -14
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -15
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -16
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -17
+  XS    0.495     >  -1.0000 & JT    3.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to          -78  0.253939003    
+ DONE now c          -78
+ Try JTOTAL =   4.5000000000000000     
+Allocate CLIST(     19     19      5) in   0.000 GB
+  Allocate NCLIST in    8.66399932E-06  GB
+  Allocate SRC/PSI etc in    5.97632024E-04  GB
+  Allocate FIM(D) in    1.21599999E-06  GB    152.00000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -1
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -2
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -3
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -4
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -5
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -6
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -7
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -8
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to          -87  0.271463990    
+ DONE now c          -87
+ Allocate           38  spaces in coupling list          19
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -10
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -11
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -12
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -13
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -14
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -15
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -16
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -17
+  XS    0.619     >  -1.0000 & JT    4.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -105  0.288421988    
+ DONE now c         -105
+ Try JTOTAL =   5.5000000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -1
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -2
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -3
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -4
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -5
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -6
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -7
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -8
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -114  0.306445986    
+ DONE now c         -114
+ Allocate           38  spaces in coupling list          19
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -10
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -11
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -12
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -13
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -14
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -15
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -16
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -17
+  XS    0.743     >  -1.0000 & JT    5.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -132  0.326427996    
+ DONE now c         -132
+ Try JTOTAL =   6.5000000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -1
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -2
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -3
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -4
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -5
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -6
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -7
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -8
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -141  0.343539983    
+ DONE now c         -141
+ Allocate           38  spaces in coupling list          19
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -10
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -11
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -12
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -13
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -14
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -15
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -16
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -17
+  XS    0.866     >  -1.0000 & JT    6.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -159  0.361419976    
+ DONE now c         -159
+ Try JTOTAL =   7.5000000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -1
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -2
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -3
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -4
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -5
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -6
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -7
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -8
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -168  0.378007978    
+ DONE now c         -168
+ Allocate           38  spaces in coupling list          19
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -10
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -11
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -12
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -13
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -14
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -15
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -16
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -17
+  XS    0.990     >  -1.0000 & JT    7.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -186  0.395273000    
+ DONE now c         -186
+ Try JTOTAL =   8.5000000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -1
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -2
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -3
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -4
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -5
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -6
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -7
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -8
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -195  0.413942993    
+ DONE now c         -195
+ Allocate           38  spaces in coupling list          19
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -10
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -11
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -12
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -13
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -14
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -15
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -16
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -17
+  XS     1.11     >  -1.0000 & JT    8.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -213  0.431522995    
+ DONE now c         -213
+ Try JTOTAL =   9.5000000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -1
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -2
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -3
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -4
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -5
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -6
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -7
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -8
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -222  0.448094994    
+ DONE now c         -222
+ Allocate           38  spaces in coupling list          19
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -10
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -11
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -12
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -13
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -14
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -15
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -16
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -17
+  XS     1.24     >  -1.0000 & JT    9.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -240  0.465817988    
+ DONE now c         -240
+ Try JTOTAL =   10.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -1
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -2
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -3
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -4
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -5
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -6
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -7
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -8
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -249  0.483444989    
+ DONE now c         -249
+ Allocate           38  spaces in coupling list          19
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -10
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -11
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -12
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -13
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -14
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -15
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -16
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -17
+  XS     1.36     >  -1.0000 & JT   10.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -267  0.501227975    
+ DONE now c         -267
+ Try JTOTAL =   11.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -1
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -2
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -3
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -4
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -5
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -6
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -7
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -8
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -276  0.519330978    
+ DONE now c         -276
+ Allocate           38  spaces in coupling list          19
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -10
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -11
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -12
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -13
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -14
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -15
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -16
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -17
+  XS     1.49     >  -1.0000 & JT   11.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -294  0.537755013    
+ DONE now c         -294
+ Try JTOTAL =   12.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -1
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -2
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -3
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -4
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -5
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -6
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -7
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -8
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -303  0.555871010    
+ DONE now c         -303
+ Allocate           38  spaces in coupling list          19
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -10
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -11
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -12
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -13
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -14
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -15
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -16
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -17
+  XS     1.61     >  -1.0000 & JT   12.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -321  0.573882997    
+ DONE now c         -321
+ Try JTOTAL =   13.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -1
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -2
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -3
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -4
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -5
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -6
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -7
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -8
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -330  0.591790974    
+ DONE now c         -330
+ Allocate           38  spaces in coupling list          19
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -10
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -11
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -12
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -13
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -14
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -15
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -16
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -17
+  XS     1.73     >  -1.0000 & JT   13.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -348  0.609620988    
+ DONE now c         -348
+ Try JTOTAL =   14.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -1
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -2
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -3
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -4
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -5
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -6
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -7
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -8
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -357  0.627115965    
+ DONE now c         -357
+ Allocate           38  spaces in coupling list          19
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -10
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -11
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -12
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -13
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -14
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -15
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -16
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -17
+  XS     1.86     >  -1.0000 & JT   14.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -375  0.644883990    
+ DONE now c         -375
+ Try JTOTAL =   15.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -1
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -2
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -3
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -4
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -5
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -6
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -7
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -8
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -384  0.662989974    
+ DONE now c         -384
+ Allocate           38  spaces in coupling list          19
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -10
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -11
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -12
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -13
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -14
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -15
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -16
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -17
+  XS     1.98     >  -1.0000 & JT   15.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -402  0.680739999    
+ DONE now c         -402
+ Try JTOTAL =   16.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -1
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -2
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -3
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -4
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -5
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -6
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -7
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -8
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -411  0.698785961    
+ DONE now c         -411
+ Allocate           38  spaces in coupling list          19
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -10
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -11
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -12
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -13
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -14
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -15
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -16
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -17
+  XS     2.10     >  -1.0000 & JT   16.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -429  0.716197968    
+ DONE now c         -429
+ Try JTOTAL =   17.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -1
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -2
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -3
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -4
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -5
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -6
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -7
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -8
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -438  0.734008014    
+ DONE now c         -438
+ Allocate           38  spaces in coupling list          19
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -10
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -11
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -12
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -13
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -14
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -15
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -16
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -17
+  XS     2.23     >  -1.0000 & JT   17.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -456  0.751689970    
+ DONE now c         -456
+ Try JTOTAL =   18.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -1
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -2
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -3
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -4
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -5
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -6
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -7
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -8
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -465  0.769773006    
+ DONE now c         -465
+ Allocate           38  spaces in coupling list          19
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -10
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -11
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -12
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -13
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -14
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -15
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -16
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -17
+  XS     2.35     >  -1.0000 & JT   18.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -483  0.787189007    
+ DONE now c         -483
+ Try JTOTAL =   19.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -1
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -2
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -3
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -4
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -5
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -6
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -7
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -8
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -492  0.804587960    
+ DONE now c         -492
+ Allocate           38  spaces in coupling list          19
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -10
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -11
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -12
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -13
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -14
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -15
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -16
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -17
+  XS     2.48     >  -1.0000 & JT   19.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -510  0.822567999    
+ DONE now c         -510
+ Try JTOTAL =   20.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -1
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -2
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -3
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -4
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -5
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -6
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -7
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -8
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -519  0.840171993    
+ DONE now c         -519
+ Allocate           38  spaces in coupling list          19
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -10
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -11
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -12
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -13
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -14
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -15
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -16
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -17
+  XS     2.60     >  -1.0000 & JT   20.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -537  0.857761979    
+ DONE now c         -537
+ Try JTOTAL =   21.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -1
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -2
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -3
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -4
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -5
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -6
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -7
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -8
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -546  0.875167012    
+ DONE now c         -546
+ Allocate           38  spaces in coupling list          19
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -10
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -11
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -12
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -13
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -14
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -15
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -16
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -17
+  XS     2.72     >  -1.0000 & JT   21.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -564  0.892459989    
+ DONE now c         -564
+ Try JTOTAL =   22.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -1
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -2
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -3
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -4
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -5
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -6
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -7
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -8
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -573  0.910026968    
+ DONE now c         -573
+ Allocate           38  spaces in coupling list          19
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -10
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -11
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -12
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -13
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -14
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -15
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -16
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -17
+  XS     2.85     >  -1.0000 & JT   22.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -591  0.927650988    
+ DONE now c         -591
+ Try JTOTAL =   23.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -1
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -2
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -3
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -4
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -5
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -6
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -7
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -8
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -600  0.945043981    
+ DONE now c         -600
+ Allocate           38  spaces in coupling list          19
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -10
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -11
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -12
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -13
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -14
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -15
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -16
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -17
+  XS     2.97     >  -1.0000 & JT   23.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -618  0.962583005    
+ DONE now c         -618
+ Try JTOTAL =   24.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -1
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -2
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -3
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -4
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -5
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -6
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -7
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -8
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -627  0.980051994    
+ DONE now c         -627
+ Allocate           38  spaces in coupling list          19
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -10
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -11
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -12
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -13
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -14
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -15
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -16
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -17
+  XS     3.09     >  -1.0000 & JT   24.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -645  0.997898936    
+ DONE now c         -645
+ Try JTOTAL =   25.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -1
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -2
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -3
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -4
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -5
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -6
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -7
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -8
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -654   1.01554704    
+ DONE now c         -654
+ Allocate           38  spaces in coupling list          19
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -10
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -11
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -12
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -13
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -14
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -15
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -16
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -17
+  XS     3.22     >  -1.0000 & JT   25.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -672   1.03328001    
+ DONE now c         -672
+ Try JTOTAL =   26.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -1
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -2
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -3
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -4
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -5
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -6
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -7
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -8
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -681   1.05058396    
+ DONE now c         -681
+ Allocate           38  spaces in coupling list          19
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -10
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -11
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -12
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -13
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -14
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -15
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -16
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -17
+  XS     3.34     >  -1.0000 & JT   26.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -699   1.06805301    
+ DONE now c         -699
+ Try JTOTAL =   27.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -1
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -2
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -3
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -4
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -5
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -6
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -7
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -8
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -708   1.08550799    
+ DONE now c         -708
+ Allocate           38  spaces in coupling list          19
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -10
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -11
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -12
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -13
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -14
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -15
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -16
+  XS     3.47     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -17
+  XS     3.46     >  -1.0000 & JT   27.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -726   1.10348403    
+ DONE now c         -726
+ Try JTOTAL =   28.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -1
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -2
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -3
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -4
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -5
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -6
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -7
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -8
+  XS     3.57     >  -1.0000 & JT   28.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -735   1.12246799    
+ DONE now c         -735
+ Allocate           38  spaces in coupling list          19
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -10
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -11
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -12
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -13
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -14
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -15
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -16
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -17
+  XS     3.59     >  -1.0000 & JT   28.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -753   1.14026201    
+ DONE now c         -753
+ Try JTOTAL =   29.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -1
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -2
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -3
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -4
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -5
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -6
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -7
+  XS     3.69     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -8
+  XS     3.69     >  -1.0000 & JT   29.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -762   1.15736401    
+ DONE now c         -762
+ Allocate           38  spaces in coupling list          19
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -10
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -11
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -12
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -13
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -14
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -15
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -16
+  XS     3.71     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -17
+  XS     3.62     >  -1.0000 & JT   29.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -780   1.17444599    
+ DONE now c         -780
+ Try JTOTAL =   30.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -1
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -2
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -3
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -4
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -5
+  XS     3.82     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -6
+  XS     3.82     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -7
+  XS     3.82     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -8
+  XS     3.54     >  -1.0000 & JT   30.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -789   1.19149697    
+ DONE now c         -789
+ Allocate           38  spaces in coupling list          19
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -10
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -11
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -12
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -13
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -14
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -15
+  XS     3.84     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -16
+  XS     3.74     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -17
+  XS     3.74     >  -1.0000 & JT   30.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -807   1.20832801    
+ DONE now c         -807
+ Try JTOTAL =   31.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -1
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -2
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -3
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -4
+  XS     3.94     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -5
+  XS     3.94     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -6
+  XS     3.94     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -7
+  XS     3.66     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -8
+  XS     3.66     >  -1.0000 & JT   31.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -816   1.22464597    
+ DONE now c         -816
+ Allocate           38  spaces in coupling list          19
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -10
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -11
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -12
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -13
+  XS     3.96     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -14
+  XS     3.86     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -15
+  XS     3.86     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -16
+  XS     3.86     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -17
+  XS     3.33     >  -1.0000 & JT   31.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -834   1.24205196    
+ DONE now c         -834
+ Try JTOTAL =   32.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -1
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -2
+  XS     4.06     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -3
+  XS     4.06     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -4
+  XS     4.06     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -5
+  XS     3.77     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -6
+  XS     3.77     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -7
+  XS     3.77     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -8
+  XS     2.99     >  -1.0000 & JT   32.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -843   1.25828505    
+ DONE now c         -843
+ Allocate           38  spaces in coupling list          19
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -10
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -11
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -12
+  XS     4.08     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -13
+  XS     3.98     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -14
+  XS     3.98     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -15
+  XS     3.98     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -16
+  XS     3.43     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -17
+  XS     3.43     >  -1.0000 & JT   32.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -861   1.27527905    
+ DONE now c         -861
+ Try JTOTAL =   33.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.21     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -1
+  XS     4.19     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -2
+  XS     4.19     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -3
+  XS     4.19     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -4
+  XS     3.89     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -5
+  XS     3.89     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -6
+  XS     3.89     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -7
+  XS     3.08     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -8
+  XS     3.08     >  -1.0000 & JT   33.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -870   1.29287505    
+ DONE now c         -870
+ Allocate           38  spaces in coupling list          19
+  XS     4.21     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -10
+  XS     4.21     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -11
+  XS     4.10     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -12
+  XS     4.10     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -13
+  XS     4.10     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -14
+  XS     3.53     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -15
+  XS     3.53     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -16
+  XS     3.53     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -17
+  XS     2.60     >  -1.0000 & JT   33.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -888   1.31055701    
+ DONE now c         -888
+ Try JTOTAL =   34.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.31     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -1
+  XS     4.31     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -2
+  XS     4.00     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -3
+  XS     4.00     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -4
+  XS     4.00     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -5
+  XS     3.17     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -6
+  XS     3.17     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -7
+  XS     3.17     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -8
+  XS     2.20     >  -1.0000 & JT   34.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -897   1.32783604    
+ DONE now c         -897
+ Allocate           38  spaces in coupling list          19
+  XS     4.33     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -10
+  XS     4.22     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -11
+  XS     4.22     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -12
+  XS     4.22     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -13
+  XS     3.64     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -14
+  XS     3.64     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -15
+  XS     3.64     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -16
+  XS     2.68     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -17
+  XS     2.68     >  -1.0000 & JT   34.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -915   1.34563398    
+ DONE now c         -915
+ Try JTOTAL =   35.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.43     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -1
+  XS     4.11     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -2
+  XS     4.11     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -3
+  XS     4.11     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -4
+  XS     3.27     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -5
+  XS     3.27     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -6
+  XS     3.27     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -7
+  XS     2.27     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -8
+  XS     2.27     >  -1.0000 & JT   35.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -924   1.36347699    
+ DONE now c         -924
+ Allocate           38  spaces in coupling list          19
+  XS     4.34     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -10
+  XS     4.34     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -11
+  XS     3.74     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -12
+  XS     3.74     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -13
+  XS     3.74     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -14
+  XS     2.75     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -15
+  XS     2.75     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -16
+  XS     2.75     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -17
+  XS     1.83     >  -1.0000 & JT   35.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -942   1.38071096    
+ DONE now c         -942
+ Try JTOTAL =   36.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.23     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -1
+  XS     4.23     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -2
+  XS     3.36     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -3
+  XS     3.36     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -4
+  XS     3.36     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -5
+  XS     2.33     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -6
+  XS     2.33     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -7
+  XS     2.33     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -8
+  XS     1.50     >  -1.0000 & JT   36.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -951   1.39867198    
+ DONE now c         -951
+ Allocate           38  spaces in coupling list          19
+  XS     4.46     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -10
+  XS     3.85     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -11
+  XS     3.85     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -12
+  XS     3.85     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -13
+  XS     2.83     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -14
+  XS     2.83     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -15
+  XS     2.83     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -16
+  XS     1.88     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -17
+  XS     1.88     >  -1.0000 & JT   36.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -969   1.41588902    
+ DONE now c         -969
+ Try JTOTAL =   37.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     4.34     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -1
+  XS     3.45     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -2
+  XS     3.45     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -3
+  XS     3.45     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -4
+  XS     2.39     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -5
+  XS     2.39     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -6
+  XS     2.39     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -7
+  XS     1.54     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -8
+  XS     1.54     >  -1.0000 & JT   37.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to         -978   1.43311596    
+ DONE now c         -978
+ Allocate           38  spaces in coupling list          19
+  XS     3.95     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -10
+  XS     3.95     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -11
+  XS     2.91     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -12
+  XS     2.91     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -13
+  XS     2.91     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -14
+  XS     1.93     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -15
+  XS     1.93     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -16
+  XS     1.93     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -17
+  XS     1.22     >  -1.0000 & JT   37.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to         -996   1.45026994    
+ DONE now c         -996
+ Try JTOTAL =   38.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.54     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -1
+  XS     3.54     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -2
+  XS     2.45     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -3
+  XS     2.45     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -4
+  XS     2.45     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -5
+  XS     1.58     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -6
+  XS     1.58     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -7
+  XS     1.58     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -8
+  XS    0.984     >  -1.0000 & JT   38.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1005   1.46736097    
+ DONE now c        -1005
+ Allocate           38  spaces in coupling list          19
+  XS     4.05     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -10
+  XS     2.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -11
+  XS     2.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -12
+  XS     2.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -13
+  XS     1.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -14
+  XS     1.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -15
+  XS     1.98     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -16
+  XS     1.25     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -17
+  XS     1.25     >  -1.0000 & JT   38.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1023   1.48463595    
+ DONE now c        -1023
+ Try JTOTAL =   39.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     3.63     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -1
+  XS     2.52     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -2
+  XS     2.52     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -3
+  XS     2.52     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -4
+  XS     1.62     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -5
+  XS     1.62     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -6
+  XS     1.62     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -7
+  XS     1.01     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -8
+  XS     1.01     >  -1.0000 & JT   39.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1032   1.50226200    
+ DONE now c        -1032
+ Allocate           38  spaces in coupling list          19
+  XS     3.06     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -10
+  XS     3.06     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -11
+  XS     2.03     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -12
+  XS     2.03     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -13
+  XS     2.03     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -14
+  XS     1.28     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -15
+  XS     1.28     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -16
+  XS     1.28     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -17
+  XS    0.789     >  -1.0000 & JT   39.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1050   1.52027500    
+ DONE now c        -1050
+ Try JTOTAL =   40.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.58     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -1
+  XS     2.58     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -2
+  XS     1.66     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -3
+  XS     1.66     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -4
+  XS     1.66     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -5
+  XS     1.03     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -6
+  XS     1.03     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -7
+  XS     1.03     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -8
+  XS    0.630     >  -1.0000 & JT   40.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1059   1.53806901    
+ DONE now c        -1059
+ Allocate           38  spaces in coupling list          19
+  XS     3.14     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -10
+  XS     2.09     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -11
+  XS     2.09     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -12
+  XS     2.09     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -13
+  XS     1.32     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -14
+  XS     1.32     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -15
+  XS     1.32     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -16
+  XS    0.808     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -17
+  XS    0.808     >  -1.0000 & JT   40.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1077   1.55526590    
+ DONE now c        -1077
+ Try JTOTAL =   41.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     2.64     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -1
+  XS     1.70     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -2
+  XS     1.70     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -3
+  XS     1.70     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -4
+  XS     1.06     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -5
+  XS     1.06     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -6
+  XS     1.06     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -7
+  XS    0.645     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -8
+  XS    0.645     >  -1.0000 & JT   41.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1086   1.57276392    
+ DONE now c        -1086
+ Allocate           38  spaces in coupling list          19
+  XS     2.14     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -10
+  XS     2.14     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -11
+  XS     1.35     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -12
+  XS     1.35     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -13
+  XS     1.35     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -14
+  XS    0.828     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -15
+  XS    0.828     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -16
+  XS    0.828     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -17
+  XS    0.501     >  -1.0000 & JT   41.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1104   1.59070206    
+ DONE now c        -1104
+ Try JTOTAL =   42.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.75     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -1
+  XS     1.75     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -2
+  XS     1.08     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -3
+  XS     1.08     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -4
+  XS     1.08     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -5
+  XS    0.660     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -6
+  XS    0.660     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -7
+  XS    0.660     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -8
+  XS    0.397     >  -1.0000 & JT   42.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1113   1.60836899    
+ DONE now c        -1113
+ Allocate           38  spaces in coupling list          19
+  XS     2.19     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -10
+  XS     1.38     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -11
+  XS     1.38     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -12
+  XS     1.38     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -13
+  XS    0.848     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -14
+  XS    0.848     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -15
+  XS    0.848     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -16
+  XS    0.513     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -17
+  XS    0.513     >  -1.0000 & JT   42.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1131   1.62549090    
+ DONE now c        -1131
+ Try JTOTAL =   43.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.79     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -1
+  XS     1.11     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -2
+  XS     1.11     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -3
+  XS     1.11     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -4
+  XS    0.676     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -5
+  XS    0.676     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -6
+  XS    0.676     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -7
+  XS    0.406     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -8
+  XS    0.406     >  -1.0000 & JT   43.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1140   1.64270401    
+ DONE now c        -1140
+ Allocate           38  spaces in coupling list          19
+  XS     1.41     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -10
+  XS     1.41     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -11
+  XS    0.867     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -12
+  XS    0.867     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -13
+  XS    0.867     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -14
+  XS    0.525     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -15
+  XS    0.525     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -16
+  XS    0.525     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -17
+  XS    0.314     >  -1.0000 & JT   43.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1158   1.65969706    
+ DONE now c        -1158
+ Try JTOTAL =   44.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.13     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -1
+  XS     1.13     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -2
+  XS    0.691     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -3
+  XS    0.691     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -4
+  XS    0.691     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -5
+  XS    0.416     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -6
+  XS    0.416     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -7
+  XS    0.416     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -8
+  XS    0.248     >  -1.0000 & JT   44.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1167   1.67681003    
+ DONE now c        -1167
+ Allocate           38  spaces in coupling list          19
+  XS     1.44     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -10
+  XS    0.887     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -11
+  XS    0.887     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -12
+  XS    0.887     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -13
+  XS    0.537     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -14
+  XS    0.537     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -15
+  XS    0.537     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -16
+  XS    0.322     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -17
+  XS    0.322     >  -1.0000 & JT   44.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1185   1.69455194    
+ DONE now c        -1185
+ Try JTOTAL =   45.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS     1.16     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -1
+  XS    0.706     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -2
+  XS    0.706     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -3
+  XS    0.706     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -4
+  XS    0.425     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -5
+  XS    0.425     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -6
+  XS    0.425     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -7
+  XS    0.254     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -8
+  XS    0.254     >  -1.0000 & JT   45.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1194   1.71168602    
+ DONE now c        -1194
+ Allocate           38  spaces in coupling list          19
+  XS    0.907     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -10
+  XS    0.907     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -11
+  XS    0.548     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -12
+  XS    0.548     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -13
+  XS    0.548     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -14
+  XS    0.329     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -15
+  XS    0.329     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -16
+  XS    0.329     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -17
+  XS    0.196     >  -1.0000 & JT   45.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1212   1.72870994    
+ DONE now c        -1212
+ Try JTOTAL =   46.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.722     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -1
+  XS    0.722     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -2
+  XS    0.434     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -3
+  XS    0.434     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -4
+  XS    0.434     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -5
+  XS    0.259     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -6
+  XS    0.259     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -7
+  XS    0.259     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -8
+  XS    0.154     >  -1.0000 & JT   46.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1221   1.74569798    
+ DONE now c        -1221
+ Allocate           38  spaces in coupling list          19
+  XS    0.927     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -10
+  XS    0.560     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -11
+  XS    0.560     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -12
+  XS    0.560     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -13
+  XS    0.336     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -14
+  XS    0.336     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -15
+  XS    0.336     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -16
+  XS    0.200     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -17
+  XS    0.200     >  -1.0000 & JT   46.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1239   1.76277995    
+ DONE now c        -1239
+ Try JTOTAL =   47.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.737     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -1
+  XS    0.443     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -2
+  XS    0.443     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -3
+  XS    0.443     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -4
+  XS    0.265     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -5
+  XS    0.265     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -6
+  XS    0.265     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -7
+  XS    0.157     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -8
+  XS    0.157     >  -1.0000 & JT   47.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1248   1.77981591    
+ DONE now c        -1248
+ Allocate           38  spaces in coupling list          19
+  XS    0.572     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -10
+  XS    0.572     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -11
+  XS    0.343     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -12
+  XS    0.343     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -13
+  XS    0.343     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -14
+  XS    0.204     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -15
+  XS    0.204     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -16
+  XS    0.204     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -17
+  XS    0.121     >  -1.0000 & JT   47.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1266   1.79657900    
+ DONE now c        -1266
+ Try JTOTAL =   48.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.453     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -1
+  XS    0.453     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -2
+  XS    0.270     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -3
+  XS    0.270     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -4
+  XS    0.270     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -5
+  XS    0.161     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -6
+  XS    0.161     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -7
+  XS    0.161     >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -8
+  XS    0.953E-01 >  -1.0000 & JT   48.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1275   1.81361890    
+ DONE now c        -1275
+ Allocate           38  spaces in coupling list          19
+  XS    0.584     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -10
+  XS    0.350     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -11
+  XS    0.350     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -12
+  XS    0.350     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -13
+  XS    0.209     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -14
+  XS    0.209     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -15
+  XS    0.209     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -16
+  XS    0.124     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -17
+  XS    0.124     >  -1.0000 & JT   48.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1293   1.83069205    
+ DONE now c        -1293
+ Try JTOTAL =   49.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.462     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -1
+  XS    0.276     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -2
+  XS    0.276     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -3
+  XS    0.276     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -4
+  XS    0.164     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -5
+  XS    0.164     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -6
+  XS    0.164     >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -7
+  XS    0.972E-01 >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -8
+  XS    0.972E-01 >  -1.0000 & JT   49.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1302   1.84722996    
+ DONE now c        -1302
+ Allocate           38  spaces in coupling list          19
+  XS    0.357     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -10
+  XS    0.357     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -11
+  XS    0.213     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -12
+  XS    0.213     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -13
+  XS    0.213     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -14
+  XS    0.126     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -15
+  XS    0.126     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -16
+  XS    0.126     >  -1.0000 & JT   49.5 > 0.0 so DONES now = -17
+  XS    0.748E-01 >  -1.0000 & JT   49.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1320   1.86434400    
+ DONE now c        -1320
+ Try JTOTAL =   50.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.281     >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -1
+  XS    0.281     >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -2
+  XS    0.167     >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -3
+  XS    0.167     >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -4
+  XS    0.167     >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -5
+  XS    0.992E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -6
+  XS    0.992E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -7
+  XS    0.992E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -8
+  XS    0.587E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1329   1.88104796    
+ DONE now c        -1329
+ Allocate           38  spaces in coupling list          19
+  XS    0.364     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -10
+  XS    0.217     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -11
+  XS    0.217     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -12
+  XS    0.217     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -13
+  XS    0.129     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -14
+  XS    0.129     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -15
+  XS    0.129     >  -1.0000 & JT   50.5 > 0.0 so DONES now = -16
+  XS    0.763E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now = -17
+  XS    0.763E-01 >  -1.0000 & JT   50.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1347   1.89799404    
+ DONE now c        -1347
+ Try JTOTAL =   51.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.287     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -1
+  XS    0.171     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -2
+  XS    0.171     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -3
+  XS    0.171     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -4
+  XS    0.101     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -5
+  XS    0.101     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -6
+  XS    0.101     >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -7
+  XS    0.598E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -8
+  XS    0.598E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1356   1.91500807    
+ DONE now c        -1356
+ Allocate           38  spaces in coupling list          19
+  XS    0.221     >  -1.0000 & JT   51.5 > 0.0 so DONES now = -10
+  XS    0.221     >  -1.0000 & JT   51.5 > 0.0 so DONES now = -11
+  XS    0.131     >  -1.0000 & JT   51.5 > 0.0 so DONES now = -12
+  XS    0.131     >  -1.0000 & JT   51.5 > 0.0 so DONES now = -13
+  XS    0.131     >  -1.0000 & JT   51.5 > 0.0 so DONES now = -14
+  XS    0.778E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now = -15
+  XS    0.778E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now = -16
+  XS    0.778E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now = -17
+  XS    0.460E-01 >  -1.0000 & JT   51.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1374   1.93199599    
+ DONE now c        -1374
+ Try JTOTAL =   52.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.174     >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -1
+  XS    0.174     >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -2
+  XS    0.103     >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -3
+  XS    0.103     >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -4
+  XS    0.103     >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -5
+  XS    0.610E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -6
+  XS    0.610E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -7
+  XS    0.610E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -8
+  XS    0.360E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1383   1.94902098    
+ DONE now c        -1383
+ Allocate           38  spaces in coupling list          19
+  XS    0.226     >  -1.0000 & JT   52.5 > 0.0 so DONES now = -10
+  XS    0.134     >  -1.0000 & JT   52.5 > 0.0 so DONES now = -11
+  XS    0.134     >  -1.0000 & JT   52.5 > 0.0 so DONES now = -12
+  XS    0.134     >  -1.0000 & JT   52.5 > 0.0 so DONES now = -13
+  XS    0.793E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now = -14
+  XS    0.793E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now = -15
+  XS    0.793E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now = -16
+  XS    0.469E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now = -17
+  XS    0.469E-01 >  -1.0000 & JT   52.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1401   1.96652007    
+ DONE now c        -1401
+ Try JTOTAL =   53.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.177     >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -1
+  XS    0.105     >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -2
+  XS    0.105     >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -3
+  XS    0.105     >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -4
+  XS    0.621E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -5
+  XS    0.621E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -6
+  XS    0.621E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -7
+  XS    0.367E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -8
+  XS    0.367E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1410   1.98339891    
+ DONE now c        -1410
+ Allocate           38  spaces in coupling list          19
+  XS    0.136     >  -1.0000 & JT   53.5 > 0.0 so DONES now = -10
+  XS    0.136     >  -1.0000 & JT   53.5 > 0.0 so DONES now = -11
+  XS    0.808E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -12
+  XS    0.808E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -13
+  XS    0.808E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -14
+  XS    0.477E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -15
+  XS    0.477E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -16
+  XS    0.477E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -17
+  XS    0.282E-01 >  -1.0000 & JT   53.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1428   2.00151181    
+ DONE now c        -1428
+ Try JTOTAL =   54.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.107     >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -1
+  XS    0.107     >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -2
+  XS    0.633E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -3
+  XS    0.633E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -4
+  XS    0.633E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -5
+  XS    0.374E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -6
+  XS    0.374E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -7
+  XS    0.374E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -8
+  XS    0.220E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1437   2.01906800    
+ DONE now c        -1437
+ Allocate           38  spaces in coupling list          19
+  XS    0.139     >  -1.0000 & JT   54.5 > 0.0 so DONES now = -10
+  XS    0.823E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -11
+  XS    0.823E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -12
+  XS    0.823E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -13
+  XS    0.486E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -14
+  XS    0.486E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -15
+  XS    0.486E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -16
+  XS    0.287E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -17
+  XS    0.287E-01 >  -1.0000 & JT   54.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1455   2.03606701    
+ DONE now c        -1455
+ Try JTOTAL =   55.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.109     >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -1
+  XS    0.644E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -2
+  XS    0.644E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -3
+  XS    0.644E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -4
+  XS    0.380E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -5
+  XS    0.380E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -6
+  XS    0.380E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -7
+  XS    0.224E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -8
+  XS    0.224E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1464   2.05322003    
+ DONE now c        -1464
+ Allocate           38  spaces in coupling list          19
+  XS    0.838E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -10
+  XS    0.838E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -11
+  XS    0.495E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -12
+  XS    0.495E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -13
+  XS    0.495E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -14
+  XS    0.292E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -15
+  XS    0.292E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -16
+  XS    0.292E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -17
+  XS    0.172E-01 >  -1.0000 & JT   55.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1482   2.07037997    
+ DONE now c        -1482
+ Try JTOTAL =   56.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.656E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -1
+  XS    0.656E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -2
+  XS    0.387E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -3
+  XS    0.387E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -4
+  XS    0.387E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -5
+  XS    0.228E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -6
+  XS    0.228E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -7
+  XS    0.228E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -8
+  XS    0.135E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1491   2.08754611    
+ DONE now c        -1491
+ Allocate           38  spaces in coupling list          19
+  XS    0.853E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -10
+  XS    0.504E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -11
+  XS    0.504E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -12
+  XS    0.504E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -13
+  XS    0.297E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -14
+  XS    0.297E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -15
+  XS    0.297E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -16
+  XS    0.175E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -17
+  XS    0.175E-01 >  -1.0000 & JT   56.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1509   2.10460901    
+ DONE now c        -1509
+ Try JTOTAL =   57.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.667E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -1
+  XS    0.394E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -2
+  XS    0.394E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -3
+  XS    0.394E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -4
+  XS    0.232E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -5
+  XS    0.232E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -6
+  XS    0.232E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -7
+  XS    0.137E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -8
+  XS    0.137E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1518   2.12192082    
+ DONE now c        -1518
+ Allocate           38  spaces in coupling list          19
+  XS    0.513E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -10
+  XS    0.513E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -11
+  XS    0.303E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -12
+  XS    0.303E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -13
+  XS    0.303E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -14
+  XS    0.179E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -15
+  XS    0.179E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -16
+  XS    0.179E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -17
+  XS    0.105E-01 >  -1.0000 & JT   57.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1536   2.14045095    
+ DONE now c        -1536
+ Try JTOTAL =   58.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.401E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -1
+  XS    0.401E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -2
+  XS    0.236E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -3
+  XS    0.236E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -4
+  XS    0.236E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -5
+  XS    0.139E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -6
+  XS    0.139E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -7
+  XS    0.139E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -8
+  XS    0.821E-02 >  -1.0000 & JT   58.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1545   2.15812993    
+ DONE now c        -1545
+ Allocate           38  spaces in coupling list          19
+  XS    0.522E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -10
+  XS    0.308E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -11
+  XS    0.308E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -12
+  XS    0.308E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -13
+  XS    0.182E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -14
+  XS    0.182E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -15
+  XS    0.182E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -16
+  XS    0.107E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -17
+  XS    0.107E-01 >  -1.0000 & JT   58.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1563   2.17493296    
+ DONE now c        -1563
+ Try JTOTAL =   59.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.408E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -1
+  XS    0.240E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -2
+  XS    0.240E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -3
+  XS    0.240E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -4
+  XS    0.142E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -5
+  XS    0.142E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -6
+  XS    0.142E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -7
+  XS    0.835E-02 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -8
+  XS    0.835E-02 >  -1.0000 & JT   59.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1572   2.19169116    
+ DONE now c        -1572
+ Allocate           38  spaces in coupling list          19
+  XS    0.313E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -10
+  XS    0.313E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -11
+  XS    0.185E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -12
+  XS    0.185E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -13
+  XS    0.185E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -14
+  XS    0.109E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -15
+  XS    0.109E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -16
+  XS    0.109E-01 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -17
+  XS    0.641E-02 >  -1.0000 & JT   59.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1590   2.20863986    
+ DONE now c        -1590
+ Try JTOTAL =   60.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.245E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -1
+  XS    0.245E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -2
+  XS    0.144E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -3
+  XS    0.144E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -4
+  XS    0.144E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -5
+  XS    0.849E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -6
+  XS    0.849E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -7
+  XS    0.849E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -8
+  XS    0.500E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1599   2.22598600    
+ DONE now c        -1599
+ Allocate           38  spaces in coupling list          19
+  XS    0.318E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -10
+  XS    0.188E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -11
+  XS    0.188E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -12
+  XS    0.188E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -13
+  XS    0.111E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -14
+  XS    0.111E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -15
+  XS    0.111E-01 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -16
+  XS    0.652E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -17
+  XS    0.652E-02 >  -1.0000 & JT   60.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1617   2.24298096    
+ DONE now c        -1617
+ Try JTOTAL =   61.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.249E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -1
+  XS    0.147E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -2
+  XS    0.147E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -3
+  XS    0.147E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -4
+  XS    0.863E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -5
+  XS    0.863E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -6
+  XS    0.863E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -7
+  XS    0.508E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -8
+  XS    0.508E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1626   2.25979304    
+ DONE now c        -1626
+ Allocate           38  spaces in coupling list          19
+  XS    0.191E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -10
+  XS    0.191E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -11
+  XS    0.112E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -12
+  XS    0.112E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -13
+  XS    0.112E-01 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -14
+  XS    0.662E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -15
+  XS    0.662E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -16
+  XS    0.662E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -17
+  XS    0.390E-02 >  -1.0000 & JT   61.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1644   2.27643299    
+ DONE now c        -1644
+ Try JTOTAL =   62.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.149E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -1
+  XS    0.149E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -2
+  XS    0.877E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -3
+  XS    0.877E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -4
+  XS    0.877E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -5
+  XS    0.516E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -6
+  XS    0.516E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -7
+  XS    0.516E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -8
+  XS    0.304E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1653   2.29310393    
+ DONE now c        -1653
+ Allocate           38  spaces in coupling list          19
+  XS    0.194E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -10
+  XS    0.114E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -11
+  XS    0.114E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -12
+  XS    0.114E-01 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -13
+  XS    0.673E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -14
+  XS    0.673E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -15
+  XS    0.673E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -16
+  XS    0.396E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -17
+  XS    0.396E-02 >  -1.0000 & JT   62.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1671   2.31052899    
+ DONE now c        -1671
+ Try JTOTAL =   63.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.151E-01 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -1
+  XS    0.891E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -2
+  XS    0.891E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -3
+  XS    0.891E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -4
+  XS    0.525E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -5
+  XS    0.525E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -6
+  XS    0.525E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -7
+  XS    0.309E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -8
+  XS    0.309E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1680   2.32722497    
+ DONE now c        -1680
+ Allocate           38  spaces in coupling list          19
+  XS    0.116E-01 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -10
+  XS    0.116E-01 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -11
+  XS    0.684E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -12
+  XS    0.684E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -13
+  XS    0.684E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -14
+  XS    0.403E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -15
+  XS    0.403E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -16
+  XS    0.403E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -17
+  XS    0.237E-02 >  -1.0000 & JT   63.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1698   2.34474993    
+ DONE now c        -1698
+ Try JTOTAL =   64.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.905E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -1
+  XS    0.905E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -2
+  XS    0.533E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -3
+  XS    0.533E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -4
+  XS    0.533E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -5
+  XS    0.314E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -6
+  XS    0.314E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -7
+  XS    0.314E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -8
+  XS    0.184E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1707   2.36247802    
+ DONE now c        -1707
+ Allocate           38  spaces in coupling list          19
+  XS    0.118E-01 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -10
+  XS    0.694E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -11
+  XS    0.694E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -12
+  XS    0.694E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -13
+  XS    0.409E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -14
+  XS    0.409E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -15
+  XS    0.409E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -16
+  XS    0.241E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -17
+  XS    0.241E-02 >  -1.0000 & JT   64.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1725   2.37914991    
+ DONE now c        -1725
+ Try JTOTAL =   65.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.919E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -1
+  XS    0.541E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -2
+  XS    0.541E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -3
+  XS    0.541E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -4
+  XS    0.318E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -5
+  XS    0.318E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -6
+  XS    0.318E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -7
+  XS    0.187E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -8
+  XS    0.187E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1734   2.39618802    
+ DONE now c        -1734
+ Allocate           38  spaces in coupling list          19
+  XS    0.705E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -10
+  XS    0.705E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -11
+  XS    0.415E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -12
+  XS    0.415E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -13
+  XS    0.415E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -14
+  XS    0.244E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -15
+  XS    0.244E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -16
+  XS    0.244E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -17
+  XS    0.144E-02 >  -1.0000 & JT   65.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1752   2.41458893    
+ DONE now c        -1752
+ Try JTOTAL =   66.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.549E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -1
+  XS    0.549E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -2
+  XS    0.323E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -3
+  XS    0.323E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -4
+  XS    0.323E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -5
+  XS    0.190E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -6
+  XS    0.190E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -7
+  XS    0.190E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -8
+  XS    0.112E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1761   2.43262601    
+ DONE now c        -1761
+ Allocate           38  spaces in coupling list          19
+  XS    0.716E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -10
+  XS    0.421E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -11
+  XS    0.421E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -12
+  XS    0.421E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -13
+  XS    0.248E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -14
+  XS    0.248E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -15
+  XS    0.248E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -16
+  XS    0.146E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -17
+  XS    0.146E-02 >  -1.0000 & JT   66.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1779   2.44936109    
+ DONE now c        -1779
+ Try JTOTAL =   67.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.557E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -1
+  XS    0.328E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -2
+  XS    0.328E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -3
+  XS    0.328E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -4
+  XS    0.193E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -5
+  XS    0.193E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -6
+  XS    0.193E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -7
+  XS    0.114E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -8
+  XS    0.114E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1788   2.46554804    
+ DONE now c        -1788
+ Allocate           38  spaces in coupling list          19
+  XS    0.428E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -10
+  XS    0.428E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -11
+  XS    0.252E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -12
+  XS    0.252E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -13
+  XS    0.252E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -14
+  XS    0.148E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -15
+  XS    0.148E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -16
+  XS    0.148E-02 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -17
+  XS    0.870E-03 >  -1.0000 & JT   67.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1806   2.48162007    
+ DONE now c        -1806
+ Try JTOTAL =   68.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.333E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -1
+  XS    0.333E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -2
+  XS    0.196E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -3
+  XS    0.196E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -4
+  XS    0.196E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -5
+  XS    0.115E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -6
+  XS    0.115E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -7
+  XS    0.115E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -8
+  XS    0.677E-03 >  -1.0000 & JT   68.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1815   2.49846101    
+ DONE now c        -1815
+ Allocate           38  spaces in coupling list          19
+  XS    0.434E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -10
+  XS    0.255E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -11
+  XS    0.255E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -12
+  XS    0.255E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -13
+  XS    0.150E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -14
+  XS    0.150E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -15
+  XS    0.150E-02 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -16
+  XS    0.883E-03 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -17
+  XS    0.883E-03 >  -1.0000 & JT   68.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1833   2.51491094    
+ DONE now c        -1833
+ Try JTOTAL =   69.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.338E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -1
+  XS    0.199E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -2
+  XS    0.199E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -3
+  XS    0.199E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -4
+  XS    0.117E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -5
+  XS    0.117E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -6
+  XS    0.117E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -7
+  XS    0.687E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -8
+  XS    0.687E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1842   2.53127694    
+ DONE now c        -1842
+ Allocate           38  spaces in coupling list          19
+  XS    0.259E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -10
+  XS    0.259E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -11
+  XS    0.152E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -12
+  XS    0.152E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -13
+  XS    0.152E-02 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -14
+  XS    0.896E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -15
+  XS    0.896E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -16
+  XS    0.896E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -17
+  XS    0.527E-03 >  -1.0000 & JT   69.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1860   2.54810405    
+ DONE now c        -1860
+ Try JTOTAL =   70.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.202E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -1
+  XS    0.202E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -2
+  XS    0.119E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -3
+  XS    0.119E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -4
+  XS    0.119E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -5
+  XS    0.697E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -6
+  XS    0.697E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -7
+  XS    0.697E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -8
+  XS    0.409E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1869   2.56430411    
+ DONE now c        -1869
+ Allocate           38  spaces in coupling list          19
+  XS    0.263E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -10
+  XS    0.155E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -11
+  XS    0.155E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -12
+  XS    0.155E-02 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -13
+  XS    0.909E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -14
+  XS    0.909E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -15
+  XS    0.909E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -16
+  XS    0.534E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -17
+  XS    0.534E-03 >  -1.0000 & JT   70.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1887   2.58184004    
+ DONE now c        -1887
+ Try JTOTAL =   71.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.204E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -1
+  XS    0.120E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -2
+  XS    0.120E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -3
+  XS    0.120E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -4
+  XS    0.706E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -5
+  XS    0.706E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -6
+  XS    0.706E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -7
+  XS    0.415E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -8
+  XS    0.415E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1896   2.59904003    
+ DONE now c        -1896
+ Allocate           38  spaces in coupling list          19
+  XS    0.157E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -10
+  XS    0.157E-02 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -11
+  XS    0.921E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -12
+  XS    0.921E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -13
+  XS    0.921E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -14
+  XS    0.542E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -15
+  XS    0.542E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -16
+  XS    0.542E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -17
+  XS    0.318E-03 >  -1.0000 & JT   71.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1914   2.61483002    
+ DONE now c        -1914
+ Try JTOTAL =   72.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.122E-02 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -1
+  XS    0.122E-02 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -2
+  XS    0.716E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -3
+  XS    0.716E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -4
+  XS    0.716E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -5
+  XS    0.421E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -6
+  XS    0.421E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -7
+  XS    0.421E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -8
+  XS    0.247E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1923   2.63018489    
+ DONE now c        -1923
+ Allocate           38  spaces in coupling list          19
+  XS    0.159E-02 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -10
+  XS    0.934E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -11
+  XS    0.934E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -12
+  XS    0.934E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -13
+  XS    0.549E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -14
+  XS    0.549E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -15
+  XS    0.549E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -16
+  XS    0.323E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -17
+  XS    0.323E-03 >  -1.0000 & JT   72.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1941   2.64546609    
+ DONE now c        -1941
+ Try JTOTAL =   73.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.124E-02 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -1
+  XS    0.726E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -2
+  XS    0.726E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -3
+  XS    0.726E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -4
+  XS    0.427E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -5
+  XS    0.427E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -6
+  XS    0.427E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -7
+  XS    0.251E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -8
+  XS    0.251E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1950   2.66094613    
+ DONE now c        -1950
+ Allocate           38  spaces in coupling list          19
+  XS    0.947E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -10
+  XS    0.947E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -11
+  XS    0.557E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -12
+  XS    0.557E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -13
+  XS    0.557E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -14
+  XS    0.327E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -15
+  XS    0.327E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -16
+  XS    0.327E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -17
+  XS    0.192E-03 >  -1.0000 & JT   73.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1968   2.67613912    
+ DONE now c        -1968
+ Try JTOTAL =   74.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.736E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -1
+  XS    0.736E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -2
+  XS    0.432E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -3
+  XS    0.432E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -4
+  XS    0.432E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -5
+  XS    0.254E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -6
+  XS    0.254E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -7
+  XS    0.254E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -8
+  XS    0.149E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -1977   2.69139886    
+ DONE now c        -1977
+ Allocate           38  spaces in coupling list          19
+  XS    0.960E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -10
+  XS    0.564E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -11
+  XS    0.564E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -12
+  XS    0.564E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -13
+  XS    0.331E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -14
+  XS    0.331E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -15
+  XS    0.331E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -16
+  XS    0.195E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -17
+  XS    0.195E-03 >  -1.0000 & JT   74.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -1995   2.70695090    
+ DONE now c        -1995
+ Try JTOTAL =   75.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.746E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -1
+  XS    0.438E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -2
+  XS    0.438E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -3
+  XS    0.438E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -4
+  XS    0.257E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -5
+  XS    0.257E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -6
+  XS    0.257E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -7
+  XS    0.151E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -8
+  XS    0.151E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2004   2.72231793    
+ DONE now c        -2004
+ Allocate           38  spaces in coupling list          19
+  XS    0.572E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -10
+  XS    0.572E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -11
+  XS    0.336E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -12
+  XS    0.336E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -13
+  XS    0.336E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -14
+  XS    0.197E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -15
+  XS    0.197E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -16
+  XS    0.197E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -17
+  XS    0.116E-03 >  -1.0000 & JT   75.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2022   2.73754907    
+ DONE now c        -2022
+ Try JTOTAL =   76.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.444E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -1
+  XS    0.444E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -2
+  XS    0.261E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -3
+  XS    0.261E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -4
+  XS    0.261E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -5
+  XS    0.153E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -6
+  XS    0.153E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -7
+  XS    0.153E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -8
+  XS    0.899E-04 >  -1.0000 & JT   76.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2031   2.75273013    
+ DONE now c        -2031
+ Allocate           38  spaces in coupling list          19
+  XS    0.579E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -10
+  XS    0.340E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -11
+  XS    0.340E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -12
+  XS    0.340E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -13
+  XS    0.200E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -14
+  XS    0.200E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -15
+  XS    0.200E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -16
+  XS    0.117E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -17
+  XS    0.117E-03 >  -1.0000 & JT   76.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2049   2.76800609    
+ DONE now c        -2049
+ Try JTOTAL =   77.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.450E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -1
+  XS    0.264E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -2
+  XS    0.264E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -3
+  XS    0.264E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -4
+  XS    0.155E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -5
+  XS    0.155E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -6
+  XS    0.155E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -7
+  XS    0.911E-04 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -8
+  XS    0.911E-04 >  -1.0000 & JT   77.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2058   2.78316402    
+ DONE now c        -2058
+ Allocate           38  spaces in coupling list          19
+  XS    0.345E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -10
+  XS    0.345E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -11
+  XS    0.203E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -12
+  XS    0.203E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -13
+  XS    0.203E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -14
+  XS    0.119E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -15
+  XS    0.119E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -16
+  XS    0.119E-03 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -17
+  XS    0.698E-04 >  -1.0000 & JT   77.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2076   2.79825997    
+ DONE now c        -2076
+ Try JTOTAL =   78.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.268E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -1
+  XS    0.268E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -2
+  XS    0.157E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -3
+  XS    0.157E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -4
+  XS    0.157E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -5
+  XS    0.923E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -6
+  XS    0.923E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -7
+  XS    0.923E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -8
+  XS    0.542E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2085   2.81349492    
+ DONE now c        -2085
+ Allocate           38  spaces in coupling list          19
+  XS    0.349E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -10
+  XS    0.205E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -11
+  XS    0.205E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -12
+  XS    0.205E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -13
+  XS    0.120E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -14
+  XS    0.120E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -15
+  XS    0.120E-03 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -16
+  XS    0.707E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -17
+  XS    0.707E-04 >  -1.0000 & JT   78.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2103   2.82871103    
+ DONE now c        -2103
+ Try JTOTAL =   79.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.271E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -1
+  XS    0.159E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -2
+  XS    0.159E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -3
+  XS    0.159E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -4
+  XS    0.935E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -5
+  XS    0.935E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -6
+  XS    0.935E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -7
+  XS    0.549E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -8
+  XS    0.549E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2112   2.84378290    
+ DONE now c        -2112
+ Allocate           38  spaces in coupling list          19
+  XS    0.208E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -10
+  XS    0.208E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -11
+  XS    0.122E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -12
+  XS    0.122E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -13
+  XS    0.122E-03 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -14
+  XS    0.716E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -15
+  XS    0.716E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -16
+  XS    0.716E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -17
+  XS    0.420E-04 >  -1.0000 & JT   79.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2130   2.85903001    
+ DONE now c        -2130
+ Try JTOTAL =   80.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.161E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -1
+  XS    0.161E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -2
+  XS    0.946E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -3
+  XS    0.946E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -4
+  XS    0.946E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -5
+  XS    0.555E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -6
+  XS    0.555E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -7
+  XS    0.555E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -8
+  XS    0.326E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2139   2.87413287    
+ DONE now c        -2139
+ Allocate           38  spaces in coupling list          19
+  XS    0.210E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -10
+  XS    0.123E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -11
+  XS    0.123E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -12
+  XS    0.123E-03 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -13
+  XS    0.725E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -14
+  XS    0.725E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -15
+  XS    0.725E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -16
+  XS    0.425E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -17
+  XS    0.425E-04 >  -1.0000 & JT   80.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2157   2.88918400    
+ DONE now c        -2157
+ Try JTOTAL =   81.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.163E-03 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -1
+  XS    0.958E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -2
+  XS    0.958E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -3
+  XS    0.958E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -4
+  XS    0.562E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -5
+  XS    0.562E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -6
+  XS    0.562E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -7
+  XS    0.330E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -8
+  XS    0.330E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2166   2.90421605    
+ DONE now c        -2166
+ Allocate           38  spaces in coupling list          19
+  XS    0.125E-03 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -10
+  XS    0.125E-03 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -11
+  XS    0.734E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -12
+  XS    0.734E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -13
+  XS    0.734E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -14
+  XS    0.431E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -15
+  XS    0.431E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -16
+  XS    0.431E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -17
+  XS    0.253E-04 >  -1.0000 & JT   81.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2184   2.91937709    
+ DONE now c        -2184
+ Try JTOTAL =   82.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.970E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -1
+  XS    0.970E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -2
+  XS    0.569E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -3
+  XS    0.569E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -4
+  XS    0.569E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -5
+  XS    0.334E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -6
+  XS    0.334E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -7
+  XS    0.334E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -8
+  XS    0.196E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2193   2.93439293    
+ DONE now c        -2193
+ Allocate           38  spaces in coupling list          19
+  XS    0.127E-03 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -10
+  XS    0.743E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -11
+  XS    0.743E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -12
+  XS    0.743E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -13
+  XS    0.436E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -14
+  XS    0.436E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -15
+  XS    0.436E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -16
+  XS    0.256E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -17
+  XS    0.256E-04 >  -1.0000 & JT   82.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2211   2.94937396    
+ DONE now c        -2211
+ Try JTOTAL =   83.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.981E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -1
+  XS    0.576E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -2
+  XS    0.576E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -3
+  XS    0.576E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -4
+  XS    0.338E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -5
+  XS    0.338E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -6
+  XS    0.338E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -7
+  XS    0.198E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -8
+  XS    0.198E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2220   2.96442103    
+ DONE now c        -2220
+ Allocate           38  spaces in coupling list          19
+  XS    0.752E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -10
+  XS    0.752E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -11
+  XS    0.441E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -12
+  XS    0.441E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -13
+  XS    0.441E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -14
+  XS    0.259E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -15
+  XS    0.259E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -16
+  XS    0.259E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -17
+  XS    0.152E-04 >  -1.0000 & JT   83.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2238   2.98023295    
+ DONE now c        -2238
+ Try JTOTAL =   84.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.583E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -1
+  XS    0.583E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -2
+  XS    0.342E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -3
+  XS    0.342E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -4
+  XS    0.342E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -5
+  XS    0.201E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -6
+  XS    0.201E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -7
+  XS    0.201E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -8
+  XS    0.118E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2247   2.99694800    
+ DONE now c        -2247
+ Allocate           38  spaces in coupling list          19
+  XS    0.761E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -10
+  XS    0.447E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -11
+  XS    0.447E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -12
+  XS    0.447E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -13
+  XS    0.262E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -14
+  XS    0.262E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -15
+  XS    0.262E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -16
+  XS    0.154E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -17
+  XS    0.154E-04 >  -1.0000 & JT   84.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2265   3.01399803    
+ DONE now c        -2265
+ Try JTOTAL =   85.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.590E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -1
+  XS    0.346E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -2
+  XS    0.346E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -3
+  XS    0.346E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -4
+  XS    0.203E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -5
+  XS    0.203E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -6
+  XS    0.203E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -7
+  XS    0.119E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -8
+  XS    0.119E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2274   3.03121996    
+ DONE now c        -2274
+ Allocate           38  spaces in coupling list          19
+  XS    0.452E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -10
+  XS    0.452E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -11
+  XS    0.265E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -12
+  XS    0.265E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -13
+  XS    0.265E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -14
+  XS    0.156E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -15
+  XS    0.156E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -16
+  XS    0.156E-04 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -17
+  XS    0.912E-05 >  -1.0000 & JT   85.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2292   3.04884315    
+ DONE now c        -2292
+ Try JTOTAL =   86.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.350E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -1
+  XS    0.350E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -2
+  XS    0.205E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -3
+  XS    0.205E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -4
+  XS    0.205E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -5
+  XS    0.120E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -6
+  XS    0.120E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -7
+  XS    0.120E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -8
+  XS    0.707E-05 >  -1.0000 & JT   86.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2301   3.06791806    
+ DONE now c        -2301
+ Allocate           38  spaces in coupling list          19
+  XS    0.457E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -10
+  XS    0.268E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -11
+  XS    0.268E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -12
+  XS    0.268E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -13
+  XS    0.157E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -14
+  XS    0.157E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -15
+  XS    0.157E-04 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -16
+  XS    0.923E-05 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -17
+  XS    0.923E-05 >  -1.0000 & JT   86.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2319   3.08753204    
+ DONE now c        -2319
+ Try JTOTAL =   87.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.354E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -1
+  XS    0.208E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -2
+  XS    0.208E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -3
+  XS    0.208E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -4
+  XS    0.122E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -5
+  XS    0.122E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -6
+  XS    0.122E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -7
+  XS    0.715E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -8
+  XS    0.715E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2328   3.10498405    
+ DONE now c        -2328
+ Allocate           38  spaces in coupling list          19
+  XS    0.271E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -10
+  XS    0.271E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -11
+  XS    0.159E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -12
+  XS    0.159E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -13
+  XS    0.159E-04 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -14
+  XS    0.933E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -15
+  XS    0.933E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -16
+  XS    0.933E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -17
+  XS    0.547E-05 >  -1.0000 & JT   87.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2346   3.12191296    
+ DONE now c        -2346
+ Try JTOTAL =   88.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.210E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -1
+  XS    0.210E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -2
+  XS    0.123E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -3
+  XS    0.123E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -4
+  XS    0.123E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -5
+  XS    0.723E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -6
+  XS    0.723E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -7
+  XS    0.723E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -8
+  XS    0.424E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2355   3.14091182    
+ DONE now c        -2355
+ Allocate           38  spaces in coupling list          19
+  XS    0.274E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -10
+  XS    0.161E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -11
+  XS    0.161E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -12
+  XS    0.161E-04 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -13
+  XS    0.944E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -14
+  XS    0.944E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -15
+  XS    0.944E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -16
+  XS    0.553E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -17
+  XS    0.553E-05 >  -1.0000 & JT   88.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2373   3.16135502    
+ DONE now c        -2373
+ Try JTOTAL =   89.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.212E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -1
+  XS    0.125E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -2
+  XS    0.125E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -3
+  XS    0.125E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -4
+  XS    0.731E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -5
+  XS    0.731E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -6
+  XS    0.731E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -7
+  XS    0.429E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -8
+  XS    0.429E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2382   3.17812610    
+ DONE now c        -2382
+ Allocate           38  spaces in coupling list          19
+  XS    0.163E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -10
+  XS    0.163E-04 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -11
+  XS    0.954E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -12
+  XS    0.954E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -13
+  XS    0.954E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -14
+  XS    0.560E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -15
+  XS    0.560E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -16
+  XS    0.560E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -17
+  XS    0.328E-05 >  -1.0000 & JT   89.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2400   3.19348788    
+ DONE now c        -2400
+ Try JTOTAL =   90.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.126E-04 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -1
+  XS    0.126E-04 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -2
+  XS    0.739E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -3
+  XS    0.739E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -4
+  XS    0.739E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -5
+  XS    0.433E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -6
+  XS    0.433E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -7
+  XS    0.433E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -8
+  XS    0.254E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2409   3.20937610    
+ DONE now c        -2409
+ Allocate           38  spaces in coupling list          19
+  XS    0.165E-04 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -10
+  XS    0.965E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -11
+  XS    0.965E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -12
+  XS    0.965E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -13
+  XS    0.566E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -14
+  XS    0.566E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -15
+  XS    0.566E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -16
+  XS    0.332E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -17
+  XS    0.332E-05 >  -1.0000 & JT   90.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2427   3.22444701    
+ DONE now c        -2427
+ Try JTOTAL =   91.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.127E-04 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -1
+  XS    0.747E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -2
+  XS    0.747E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -3
+  XS    0.747E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -4
+  XS    0.438E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -5
+  XS    0.438E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -6
+  XS    0.438E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -7
+  XS    0.257E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -8
+  XS    0.257E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2436   3.23933911    
+ DONE now c        -2436
+ Allocate           38  spaces in coupling list          19
+  XS    0.976E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -10
+  XS    0.976E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -11
+  XS    0.572E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -12
+  XS    0.572E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -13
+  XS    0.572E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -14
+  XS    0.335E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -15
+  XS    0.335E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -16
+  XS    0.335E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -17
+  XS    0.197E-05 >  -1.0000 & JT   91.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2454   3.25509191    
+ DONE now c        -2454
+ Try JTOTAL =   92.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.755E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -1
+  XS    0.755E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -2
+  XS    0.443E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -3
+  XS    0.443E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -4
+  XS    0.443E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -5
+  XS    0.260E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -6
+  XS    0.260E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -7
+  XS    0.260E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -8
+  XS    0.152E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2463   3.27168393    
+ DONE now c        -2463
+ Allocate           38  spaces in coupling list          19
+  XS    0.986E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -10
+  XS    0.578E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -11
+  XS    0.578E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -12
+  XS    0.578E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -13
+  XS    0.339E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -14
+  XS    0.339E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -15
+  XS    0.339E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -16
+  XS    0.199E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -17
+  XS    0.199E-05 >  -1.0000 & JT   92.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2481   3.28776503    
+ DONE now c        -2481
+ Try JTOTAL =   93.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.763E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -1
+  XS    0.448E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -2
+  XS    0.448E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -3
+  XS    0.448E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -4
+  XS    0.262E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -5
+  XS    0.262E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -6
+  XS    0.262E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -7
+  XS    0.154E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -8
+  XS    0.154E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2490   3.30399394    
+ DONE now c        -2490
+ Allocate           38  spaces in coupling list          19
+  XS    0.585E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -10
+  XS    0.585E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -11
+  XS    0.343E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -12
+  XS    0.343E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -13
+  XS    0.343E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -14
+  XS    0.201E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -15
+  XS    0.201E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -16
+  XS    0.201E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -17
+  XS    0.118E-05 >  -1.0000 & JT   93.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2508   3.32012701    
+ DONE now c        -2508
+ Try JTOTAL =   94.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.452E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -1
+  XS    0.452E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -2
+  XS    0.265E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -3
+  XS    0.265E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -4
+  XS    0.265E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -5
+  XS    0.155E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -6
+  XS    0.155E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -7
+  XS    0.155E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -8
+  XS    0.911E-06 >  -1.0000 & JT   94.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2517   3.33644199    
+ DONE now c        -2517
+ Allocate           38  spaces in coupling list          19
+  XS    0.591E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -10
+  XS    0.346E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -11
+  XS    0.346E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -12
+  XS    0.346E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -13
+  XS    0.203E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -14
+  XS    0.203E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -15
+  XS    0.203E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -16
+  XS    0.119E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -17
+  XS    0.119E-05 >  -1.0000 & JT   94.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2535   3.35398889    
+ DONE now c        -2535
+ Try JTOTAL =   95.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.457E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -1
+  XS    0.268E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -2
+  XS    0.268E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -3
+  XS    0.268E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -4
+  XS    0.157E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -5
+  XS    0.157E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -6
+  XS    0.157E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -7
+  XS    0.920E-06 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -8
+  XS    0.920E-06 >  -1.0000 & JT   95.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2544   3.37092495    
+ DONE now c        -2544
+ Allocate           38  spaces in coupling list          19
+  XS    0.350E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -10
+  XS    0.350E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -11
+  XS    0.205E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -12
+  XS    0.205E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -13
+  XS    0.205E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -14
+  XS    0.120E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -15
+  XS    0.120E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -16
+  XS    0.120E-05 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -17
+  XS    0.704E-06 >  -1.0000 & JT   95.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2562   3.38735700    
+ DONE now c        -2562
+ Try JTOTAL =   96.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.271E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -1
+  XS    0.271E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -2
+  XS    0.159E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -3
+  XS    0.159E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -4
+  XS    0.159E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -5
+  XS    0.930E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -6
+  XS    0.930E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -7
+  XS    0.930E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -8
+  XS    0.545E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2571   3.40363407    
+ DONE now c        -2571
+ Allocate           38  spaces in coupling list          19
+  XS    0.354E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -10
+  XS    0.207E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -11
+  XS    0.207E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -12
+  XS    0.207E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -13
+  XS    0.121E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -14
+  XS    0.121E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -15
+  XS    0.121E-05 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -16
+  XS    0.712E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -17
+  XS    0.712E-06 >  -1.0000 & JT   96.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2589   3.41980386    
+ DONE now c        -2589
+ Try JTOTAL =   97.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.274E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -1
+  XS    0.160E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -2
+  XS    0.160E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -3
+  XS    0.160E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -4
+  XS    0.939E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -5
+  XS    0.939E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -6
+  XS    0.939E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -7
+  XS    0.550E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -8
+  XS    0.550E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2598   3.43626404    
+ DONE now c        -2598
+ Allocate           38  spaces in coupling list          19
+  XS    0.209E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -10
+  XS    0.209E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -11
+  XS    0.123E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -12
+  XS    0.123E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -13
+  XS    0.123E-05 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -14
+  XS    0.719E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -15
+  XS    0.719E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -16
+  XS    0.719E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -17
+  XS    0.421E-06 >  -1.0000 & JT   97.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2616   3.45237994    
+ DONE now c        -2616
+ Try JTOTAL =   98.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.162E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -1
+  XS    0.162E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -2
+  XS    0.949E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -3
+  XS    0.949E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -4
+  XS    0.949E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -5
+  XS    0.556E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -6
+  XS    0.556E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -7
+  XS    0.556E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -8
+  XS    0.326E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2625   3.46868587    
+ DONE now c        -2625
+ Allocate           38  spaces in coupling list          19
+  XS    0.212E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -10
+  XS    0.124E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -11
+  XS    0.124E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -12
+  XS    0.124E-05 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -13
+  XS    0.726E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -14
+  XS    0.726E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -15
+  XS    0.726E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -16
+  XS    0.425E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -17
+  XS    0.425E-06 >  -1.0000 & JT   98.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2643   3.48524904    
+ DONE now c        -2643
+ Try JTOTAL =   99.500000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.164E-05 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -1
+  XS    0.958E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -2
+  XS    0.958E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -3
+  XS    0.958E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -4
+  XS    0.562E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -5
+  XS    0.562E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -6
+  XS    0.562E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -7
+  XS    0.329E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -8
+  XS    0.329E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2652   3.50168586    
+ DONE now c        -2652
+ Allocate           38  spaces in coupling list          19
+  XS    0.125E-05 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -10
+  XS    0.125E-05 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -11
+  XS    0.734E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -12
+  XS    0.734E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -13
+  XS    0.734E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -14
+  XS    0.430E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -15
+  XS    0.430E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -16
+  XS    0.430E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -17
+  XS    0.252E-06 >  -1.0000 & JT   99.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2670   3.51833105    
+ DONE now c        -2670
+ Try JTOTAL =   100.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.968E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -1
+  XS    0.968E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -2
+  XS    0.567E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -3
+  XS    0.567E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -4
+  XS    0.567E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -5
+  XS    0.332E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -6
+  XS    0.332E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -7
+  XS    0.332E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -8
+  XS    0.195E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2679   3.53480887    
+ DONE now c        -2679
+ Allocate           38  spaces in coupling list          19
+  XS    0.126E-05 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -10
+  XS    0.741E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -11
+  XS    0.741E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -12
+  XS    0.741E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -13
+  XS    0.434E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -14
+  XS    0.434E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -15
+  XS    0.434E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -16
+  XS    0.254E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -17
+  XS    0.254E-06 >  -1.0000 & JT  100.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2697   3.55087304    
+ DONE now c        -2697
+ Try JTOTAL =   101.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.978E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -1
+  XS    0.573E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -2
+  XS    0.573E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -3
+  XS    0.573E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -4
+  XS    0.335E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -5
+  XS    0.335E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -6
+  XS    0.335E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -7
+  XS    0.196E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -8
+  XS    0.196E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2706   3.56677508    
+ DONE now c        -2706
+ Allocate           38  spaces in coupling list          19
+  XS    0.748E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -10
+  XS    0.748E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -11
+  XS    0.438E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -12
+  XS    0.438E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -13
+  XS    0.438E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -14
+  XS    0.257E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -15
+  XS    0.257E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -16
+  XS    0.257E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -17
+  XS    0.150E-06 >  -1.0000 & JT  101.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2724   3.58220005    
+ DONE now c        -2724
+ Try JTOTAL =   102.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.578E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -1
+  XS    0.578E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -2
+  XS    0.339E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -3
+  XS    0.339E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -4
+  XS    0.339E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -5
+  XS    0.198E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -6
+  XS    0.198E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -7
+  XS    0.198E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -8
+  XS    0.116E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2733   3.59758902    
+ DONE now c        -2733
+ Allocate           38  spaces in coupling list          19
+  XS    0.756E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -10
+  XS    0.443E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -11
+  XS    0.443E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -12
+  XS    0.443E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -13
+  XS    0.259E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -14
+  XS    0.259E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -15
+  XS    0.259E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -16
+  XS    0.152E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -17
+  XS    0.152E-06 >  -1.0000 & JT  102.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2751   3.61303806    
+ DONE now c        -2751
+ Try JTOTAL =   103.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.584E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -1
+  XS    0.342E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -2
+  XS    0.342E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -3
+  XS    0.342E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -4
+  XS    0.200E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -5
+  XS    0.200E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -6
+  XS    0.200E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -7
+  XS    0.117E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -8
+  XS    0.117E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2760   3.62773800    
+ DONE now c        -2760
+ Allocate           38  spaces in coupling list          19
+  XS    0.447E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -10
+  XS    0.447E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -11
+  XS    0.262E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -12
+  XS    0.262E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -13
+  XS    0.262E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -14
+  XS    0.153E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -15
+  XS    0.153E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -16
+  XS    0.153E-06 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -17
+  XS    0.898E-07 >  -1.0000 & JT  103.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2778   3.64243507    
+ DONE now c        -2778
+ Try JTOTAL =   104.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.345E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -1
+  XS    0.345E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -2
+  XS    0.202E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -3
+  XS    0.202E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -4
+  XS    0.202E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -5
+  XS    0.118E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -6
+  XS    0.118E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -7
+  XS    0.118E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -8
+  XS    0.693E-07 >  -1.0000 & JT  104.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2787   3.65715194    
+ DONE now c        -2787
+ Allocate           38  spaces in coupling list          19
+  XS    0.451E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -10
+  XS    0.264E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -11
+  XS    0.264E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -12
+  XS    0.264E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -13
+  XS    0.155E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -14
+  XS    0.155E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -15
+  XS    0.155E-06 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -16
+  XS    0.906E-07 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -17
+  XS    0.906E-07 >  -1.0000 & JT  104.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2805   3.67178893    
+ DONE now c        -2805
+ Try JTOTAL =   105.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.349E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -1
+  XS    0.204E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -2
+  XS    0.204E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -3
+  XS    0.204E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -4
+  XS    0.120E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -5
+  XS    0.120E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -6
+  XS    0.120E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -7
+  XS    0.700E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -8
+  XS    0.700E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2814   3.68646312    
+ DONE now c        -2814
+ Allocate           38  spaces in coupling list          19
+  XS    0.267E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -10
+  XS    0.267E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -11
+  XS    0.156E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -12
+  XS    0.156E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -13
+  XS    0.156E-06 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -14
+  XS    0.915E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -15
+  XS    0.915E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -16
+  XS    0.915E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -17
+  XS    0.536E-07 >  -1.0000 & JT  105.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2832   3.70125198    
+ DONE now c        -2832
+ Try JTOTAL =   106.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.206E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -1
+  XS    0.206E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -2
+  XS    0.121E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -3
+  XS    0.121E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -4
+  XS    0.121E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -5
+  XS    0.707E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -6
+  XS    0.707E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -7
+  XS    0.707E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -8
+  XS    0.414E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2841   3.71663594    
+ DONE now c        -2841
+ Allocate           38  spaces in coupling list          19
+  XS    0.269E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -10
+  XS    0.158E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -11
+  XS    0.158E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -12
+  XS    0.158E-06 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -13
+  XS    0.923E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -14
+  XS    0.923E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -15
+  XS    0.923E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -16
+  XS    0.541E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -17
+  XS    0.541E-07 >  -1.0000 & JT  106.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2859   3.73173213    
+ DONE now c        -2859
+ Try JTOTAL =   107.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.208E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -1
+  XS    0.122E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -2
+  XS    0.122E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -3
+  XS    0.122E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -4
+  XS    0.713E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -5
+  XS    0.713E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -6
+  XS    0.713E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -7
+  XS    0.417E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -8
+  XS    0.417E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2868   3.74660993    
+ DONE now c        -2868
+ Allocate           38  spaces in coupling list          19
+  XS    0.159E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -10
+  XS    0.159E-06 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -11
+  XS    0.932E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -12
+  XS    0.932E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -13
+  XS    0.932E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -14
+  XS    0.546E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -15
+  XS    0.546E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -16
+  XS    0.546E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -17
+  XS    0.319E-07 >  -1.0000 & JT  107.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2886   3.76245999    
+ DONE now c        -2886
+ Try JTOTAL =   108.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.123E-06 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -1
+  XS    0.123E-06 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -2
+  XS    0.720E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -3
+  XS    0.720E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -4
+  XS    0.720E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -5
+  XS    0.421E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -6
+  XS    0.421E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -7
+  XS    0.421E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -8
+  XS    0.247E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2895   3.77726603    
+ DONE now c        -2895
+ Allocate           38  spaces in coupling list          19
+  XS    0.161E-06 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -10
+  XS    0.941E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -11
+  XS    0.941E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -12
+  XS    0.941E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -13
+  XS    0.551E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -14
+  XS    0.551E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -15
+  XS    0.551E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -16
+  XS    0.322E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -17
+  XS    0.322E-07 >  -1.0000 & JT  108.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2913   3.79361200    
+ DONE now c        -2913
+ Try JTOTAL =   109.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.124E-06 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -1
+  XS    0.726E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -2
+  XS    0.726E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -3
+  XS    0.726E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -4
+  XS    0.425E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -5
+  XS    0.425E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -6
+  XS    0.425E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -7
+  XS    0.249E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -8
+  XS    0.249E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2922   3.80976987    
+ DONE now c        -2922
+ Allocate           38  spaces in coupling list          19
+  XS    0.949E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -10
+  XS    0.949E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -11
+  XS    0.556E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -12
+  XS    0.556E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -13
+  XS    0.556E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -14
+  XS    0.325E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -15
+  XS    0.325E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -16
+  XS    0.325E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -17
+  XS    0.190E-07 >  -1.0000 & JT  109.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2940   3.82535386    
+ DONE now c        -2940
+ Try JTOTAL =   110.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.733E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -1
+  XS    0.733E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -2
+  XS    0.429E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -3
+  XS    0.429E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -4
+  XS    0.429E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -5
+  XS    0.251E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -6
+  XS    0.251E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -7
+  XS    0.251E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -8
+  XS    0.147E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2949   3.84111094    
+ DONE now c        -2949
+ Allocate           38  spaces in coupling list          19
+  XS    0.958E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -10
+  XS    0.561E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -11
+  XS    0.561E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -12
+  XS    0.561E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -13
+  XS    0.328E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -14
+  XS    0.328E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -15
+  XS    0.328E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -16
+  XS    0.192E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -17
+  XS    0.192E-07 >  -1.0000 & JT  110.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2967   3.85669804    
+ DONE now c        -2967
+ Try JTOTAL =   111.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.740E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -1
+  XS    0.433E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -2
+  XS    0.433E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -3
+  XS    0.433E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -4
+  XS    0.253E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -5
+  XS    0.253E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -6
+  XS    0.253E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -7
+  XS    0.148E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -8
+  XS    0.148E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -2976   3.87234092    
+ DONE now c        -2976
+ Allocate           38  spaces in coupling list          19
+  XS    0.566E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -10
+  XS    0.566E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -11
+  XS    0.331E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -12
+  XS    0.331E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -13
+  XS    0.331E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -14
+  XS    0.194E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -15
+  XS    0.194E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -16
+  XS    0.194E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -17
+  XS    0.113E-07 >  -1.0000 & JT  111.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -2994   3.88805985    
+ DONE now c        -2994
+ Try JTOTAL =   112.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.437E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -1
+  XS    0.437E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -2
+  XS    0.256E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -3
+  XS    0.256E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -4
+  XS    0.256E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -5
+  XS    0.150E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -6
+  XS    0.150E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -7
+  XS    0.150E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -8
+  XS    0.875E-08 >  -1.0000 & JT  112.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3003   3.90285397    
+ DONE now c        -3003
+ Allocate           38  spaces in coupling list          19
+  XS    0.571E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -10
+  XS    0.334E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -11
+  XS    0.334E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -12
+  XS    0.334E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -13
+  XS    0.196E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -14
+  XS    0.196E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -15
+  XS    0.196E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -16
+  XS    0.114E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -17
+  XS    0.114E-07 >  -1.0000 & JT  112.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3021   3.91842389    
+ DONE now c        -3021
+ Try JTOTAL =   113.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.441E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -1
+  XS    0.258E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -2
+  XS    0.258E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -3
+  XS    0.258E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -4
+  XS    0.151E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -5
+  XS    0.151E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -6
+  XS    0.151E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -7
+  XS    0.883E-08 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -8
+  XS    0.883E-08 >  -1.0000 & JT  113.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3030   3.93405700    
+ DONE now c        -3030
+ Allocate           38  spaces in coupling list          19
+  XS    0.337E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -10
+  XS    0.337E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -11
+  XS    0.197E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -12
+  XS    0.197E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -13
+  XS    0.197E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -14
+  XS    0.115E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -15
+  XS    0.115E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -16
+  XS    0.115E-07 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -17
+  XS    0.676E-08 >  -1.0000 & JT  113.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3048   3.94923711    
+ DONE now c        -3048
+ Try JTOTAL =   114.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.260E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -1
+  XS    0.260E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -2
+  XS    0.152E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -3
+  XS    0.152E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -4
+  XS    0.152E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -5
+  XS    0.891E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -6
+  XS    0.891E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -7
+  XS    0.891E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -8
+  XS    0.521E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3057   3.96404696    
+ DONE now c        -3057
+ Allocate           38  spaces in coupling list          19
+  XS    0.340E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -10
+  XS    0.199E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -11
+  XS    0.199E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -12
+  XS    0.199E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -13
+  XS    0.116E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -14
+  XS    0.116E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -15
+  XS    0.116E-07 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -16
+  XS    0.681E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -17
+  XS    0.681E-08 >  -1.0000 & JT  114.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3075   3.97855091    
+ DONE now c        -3075
+ Try JTOTAL =   115.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.262E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -1
+  XS    0.154E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -2
+  XS    0.154E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -3
+  XS    0.154E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -4
+  XS    0.899E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -5
+  XS    0.899E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -6
+  XS    0.899E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -7
+  XS    0.526E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -8
+  XS    0.526E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3084   3.99356008    
+ DONE now c        -3084
+ Allocate           38  spaces in coupling list          19
+  XS    0.201E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -10
+  XS    0.201E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -11
+  XS    0.117E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -12
+  XS    0.117E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -13
+  XS    0.117E-07 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -14
+  XS    0.687E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -15
+  XS    0.687E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -16
+  XS    0.687E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -17
+  XS    0.402E-08 >  -1.0000 & JT  115.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3102   4.00859213    
+ DONE now c        -3102
+ Try JTOTAL =   116.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.155E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -1
+  XS    0.155E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -2
+  XS    0.906E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -3
+  XS    0.906E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -4
+  XS    0.906E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -5
+  XS    0.530E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -6
+  XS    0.530E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -7
+  XS    0.530E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -8
+  XS    0.310E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3111   4.02322006    
+ DONE now c        -3111
+ Allocate           38  spaces in coupling list          19
+  XS    0.202E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -10
+  XS    0.118E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -11
+  XS    0.118E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -12
+  XS    0.118E-07 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -13
+  XS    0.693E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -14
+  XS    0.693E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -15
+  XS    0.693E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -16
+  XS    0.406E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -17
+  XS    0.406E-08 >  -1.0000 & JT  116.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3129   4.03844023    
+ DONE now c        -3129
+ Try JTOTAL =   117.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.156E-07 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -1
+  XS    0.914E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -2
+  XS    0.914E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -3
+  XS    0.914E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -4
+  XS    0.535E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -5
+  XS    0.535E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -6
+  XS    0.535E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -7
+  XS    0.313E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -8
+  XS    0.313E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3138   4.05478621    
+ DONE now c        -3138
+ Allocate           38  spaces in coupling list          19
+  XS    0.120E-07 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -10
+  XS    0.120E-07 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -11
+  XS    0.699E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -12
+  XS    0.699E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -13
+  XS    0.699E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -14
+  XS    0.409E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -15
+  XS    0.409E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -16
+  XS    0.409E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -17
+  XS    0.239E-08 >  -1.0000 & JT  117.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3156   4.07090712    
+ DONE now c        -3156
+ Try JTOTAL =   118.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.922E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -1
+  XS    0.922E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -2
+  XS    0.539E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -3
+  XS    0.539E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -4
+  XS    0.539E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -5
+  XS    0.316E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -6
+  XS    0.316E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -7
+  XS    0.316E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -8
+  XS    0.185E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3165   4.08657026    
+ DONE now c        -3165
+ Allocate           38  spaces in coupling list          19
+  XS    0.121E-07 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -10
+  XS    0.705E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -11
+  XS    0.705E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -12
+  XS    0.705E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -13
+  XS    0.413E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -14
+  XS    0.413E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -15
+  XS    0.413E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -16
+  XS    0.241E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -17
+  XS    0.241E-08 >  -1.0000 & JT  118.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3183   4.10243130    
+ DONE now c        -3183
+ Try JTOTAL =   119.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.930E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -1
+  XS    0.544E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -2
+  XS    0.544E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -3
+  XS    0.544E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -4
+  XS    0.318E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -5
+  XS    0.318E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -6
+  XS    0.318E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -7
+  XS    0.186E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -8
+  XS    0.186E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3192   4.11774731    
+ DONE now c        -3192
+ Allocate           38  spaces in coupling list          19
+  XS    0.711E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -10
+  XS    0.711E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -11
+  XS    0.416E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -12
+  XS    0.416E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -13
+  XS    0.416E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -14
+  XS    0.243E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -15
+  XS    0.243E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -16
+  XS    0.243E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -17
+  XS    0.142E-08 >  -1.0000 & JT  119.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3210   4.13360929    
+ DONE now c        -3210
+ Try JTOTAL =   120.50000000000000     
+ Allocate           38  spaces in coupling list          19
+  XS    0.548E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -1
+  XS    0.548E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -2
+  XS    0.321E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -3
+  XS    0.321E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -4
+  XS    0.321E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -5
+  XS    0.188E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -6
+  XS    0.188E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -7
+  XS    0.188E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -8
+  XS    0.110E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now =  -9
+ DONE incremented c by           -9  to        -3219   4.14869595    
+ DONE now c        -3219
+ Allocate           38  spaces in coupling list          19
+  XS    0.717E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -10
+  XS    0.419E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -11
+  XS    0.419E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -12
+  XS    0.419E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -13
+  XS    0.245E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -14
+  XS    0.245E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -15
+  XS    0.245E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -16
+  XS    0.144E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -17
+  XS    0.144E-08 >  -1.0000 & JT  120.5 > 0.0 so DONES now = -18
+ DONE incremented c by          -18  to        -3237   4.16427135    
+ DONE now c        -3237
