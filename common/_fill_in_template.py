@@ -30,9 +30,7 @@ def parse_valid_keys(template_path: Union[str, PathLike]):
     for line in input_nml:
         matches = np.array(re.findall(r"@(\w+)@", line))
         if matches is not None and len(matches) > 0:
-            to_replace.update(
-                [match.lstrip("@").rstrip("@") for match in matches]
-            )
+            to_replace.update([match.lstrip("@").rstrip("@") for match in matches])
 
     return to_replace
 
@@ -93,7 +91,9 @@ def fill_in_template_file(
     if valid_keys != set(parameters.keys()):
         raise ValueError(
             f"Keys in template file {template_path} do not "
-            "match keys in `parameters`"
+            "match keys in `parameters`:\n"
+            f"  Keys that are in template but not in parameters: {valid_keys - set(parameters.keys())}\n"
+            f"  Keys that are in parameters but not in template: {set(parameters.keys()) - valid_keys}"
         )
 
     if not isinstance(output_path, (str, PathLike)):
