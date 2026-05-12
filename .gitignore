@@ -22,6 +22,9 @@ book/notebooks/Ozge_template/frescox.in
 book/notebooks/Transfer_template/fort.*
 book/notebooks/Transfer_template/frescox.out
 book/notebooks/Transfer_template/frescox.in
+book/notebooks/Breakup_template/fort.*
+book/notebooks/Breakup_template/frescox.out
+book/notebooks/Breakup_template/frescox.in
 
 
 bfrescox_pypkg/meson/subprojects/.wraplock
