@@ -120,18 +120,52 @@ jobs:
 
     - name: Build, install, & test bfrescoxpro
       run: |
-        echo ""
+        set -euxo pipefail
+
         python -m pip install --upgrade pip
         python -m pip install build
-        # Build source distribution & install
-        pushd $BFRESCOXPRO_PATH
+
+        pushd "$BFRESCOXPRO_PATH"
         python -m build --sdist
         BFRESCOX_USE_MPI=enabled python -m pip install -v dist/bfrescoxpro-*.tar.gz
         popd
-        # Log info
-        echo ""
+
         which python
         python -m pip list
-        # Run tests through package
-        echo ""
+
+        echo "MPI diagnostics"
+        which mpirun || true
+        which mpiexec || true
+        mpirun --version || true
+        mpiexec --version || true
+        which mpifort || true
+        mpifort -show || true
+
+        echo "Smoke-test MPI"
+        mpirun -np 2 hostname
+
+        echo "bfrescoxpro info"
+        python - <<'PY'
+        import bfrescoxpro
+        bfrescoxpro.print_information()
+        PY
+
+        echo "Linked libraries"
+        python - <<'PY'
+        import bfrescoxpro, subprocess, sys
+        exe = bfrescoxpro.information()["frescox_exe"]
+        print("frescox exe:", exe)
+        subprocess.run(["otool", "-L", exe] if sys.platform == "darwin" else ["ldd", exe], check=False)
+        PY
+
+        set +e
         python -c "import bfrescoxpro ; exit(not bfrescoxpro.test())"
+        status=$?
+
+        if [ "$status" -ne 0 ]; then
+          echo "Dumping generated Frescox inputs/outputs"
+          find "$GITHUB_WORKSPACE" -type f \( -name 'frescox.in' -o -name '*.out' -o -name 'frescox.out' \) \
+            -print -exec sh -c 'echo "===== $1 ====="; sed -n "1,240p" "$1"' sh {} \;
+        fi
+
+        exit "$status"
