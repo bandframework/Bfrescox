@@ -21,7 +21,8 @@
                 "Results": {
                     "fort.16": {
                         "Baseline": "48Ca_OzgePointA_fort16.pkl",
-                        "RelDiffThreshold": 1.0e-6
+                        "RelDiffThreshold": 1.0e-12,
+                        "AbsDiffThreshold": 1.0e-12
                     }
                 }
             }
