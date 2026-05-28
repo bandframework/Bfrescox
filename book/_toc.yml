@@ -9,9 +9,9 @@ parts:
   - caption: Quick Start Examples
     numbered: 2
     chapters:
-    - file: notebooks/elastic_from_template_example.ipynb
-    - file: notebooks/inelastic_from_template_example.ipynb
-    - file: notebooks/user_provided_template_example.ipynb
+    - file: notebooks/Elastic_from_template_example.ipynb
+    - file: notebooks/Inelastic_from_template_example.ipynb
+    - file: notebooks/User_provided_template_example.ipynb
   - caption: Reference
     chapters:
     - file: bibliography

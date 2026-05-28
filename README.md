@@ -8,7 +8,6 @@
 
 [![Build documentation](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/build_docs.yml)
 [![Build & publish Jupyter book](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml/badge.svg?branch=main)](https://github.com/bandframework/Bfrescox/actions/workflows/publish_book.yml)
-[![Jupyter book](https://jupyterbook.org/badge.svg)](https://bandframework.github.io/Bfrescox)
 
 
 Bfrescox is a Python package wrapping [Frescox](https://github.com/LLNL/Frescox) (see also the [official website](https://www.fresco.org.uk/frescox.htm)), a Fortran application for coupled-reaction-channels calculations in nuclear physics.  To get started, please see the [user and developer guides](https://bfrescox.readthedocs.io) and the [Jupyter book of examples](https://bandframework.github.io/Bfrescox).
@@ -37,11 +36,10 @@ Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
 ```
 @techreport{bfrescox2025,
  author      = {Kyle Beyer and Manuel Catacora-Rios and Jared O'Neal},
- title       = {{Bfrescox 0.0.1} Users Manual},
+ title       = {{Bfrescox 0.0.1-alpha} Users Manual},
  institution = {Michigan State University and Northwestern University},
- number      = {Version 0.0.1},
+ number      = {Version 0.0.1-alpha},
  year        = {2025},
  url         = {https://bfrescox.readthedocs.io/}
 }
 ```
-

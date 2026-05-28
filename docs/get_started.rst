@@ -8,11 +8,9 @@ similar Linux operating systems.
 
 General Installations
 ---------------------
-While we intend for this package to eventually be distributed by PyPI for direct
-installation |via| |pip|, during this alpha development phase, users must
-install the package directly from a local clone of the |bfrescox| repository.
-For developer installations, refer to the :numref:`tox_usage:Developer
-Environment`.
+
+..
+   - TODO : once we have a PyPI distribution, add instructions for pip install from PyPI.
 
 Dependencies
 ^^^^^^^^^^^^
@@ -32,15 +30,28 @@ temporarily on behalf of users during package installation.
 
 Installation from local clone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. _`Bfrescox clone`: https://github.com/bandframework/Bfrescox
 
-After installing a local `Bfrescox clone`_ and setting up your target Python
-environment as desired, execute
+While we intend for this package to eventually be distributed by PyPI for direct
+installation |via| |pip|, during this alpha development phase, users must
+install the package directly from a local clone of the |bfrescox| repository. 
+
+After
+
+* installing a local clone,
+* checking out the desired commit or tag,
+* and setting up your target Python environment as desired,
+
+execute
 
 .. code-block:: console
 
     $ cd /path/to/Bfrescox/bfrescox_pypkg
     $ python -m pip install .
+
+For developer installations, refer to the :numref:`tox_usage:Developer
+Environment`.
 
 Testing
 -------
@@ -54,5 +65,9 @@ the installation can be tested by executing
     >>> import bfrescox
     >>> bfrescox.__version__
     <version>
+    >>> bfrescox.print_information()
+        ...
     >>> bfrescox.test()
         ...
+
+Users are encouraged to perform extra testing of all |bfrescox| installations.

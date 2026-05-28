@@ -15,13 +15,13 @@ def test(verbosity: int = 1) -> bool:
                               bfrescox.test()
 
     Args:
-        verbosity (int): verbosity level to pass to the
-            ``unittest`` ``TestRunner``
+        verbosity:
+            verbosity level to pass to ``unittest.TextTestRunner``
     Returns:
-        bool: True if all tests in package passed; False, otherwise.
+        True if all tests in package passed; False, otherwise.
     """
     loader = unittest.TestLoader()
-    suite = load_tests.load_tests(loader, None, None)
+    suite = load_tests(loader, None, None)
     result = unittest.TextTestRunner(verbosity=verbosity).run(suite)
 
     return result.wasSuccessful()

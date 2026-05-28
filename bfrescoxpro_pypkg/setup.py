@@ -48,9 +48,9 @@ for flag, default in FRESCOX_FLAG_DEFAULTS:
     FRESCOX_FLAGS += ["-D{}={}".format(flag.lower(), value)]
 
 # Package metadata
-PYTHON_REQUIRES = ">=3.9"
+PYTHON_REQUIRES = ">=3.10"
 CODE_REQUIRES = ["numpy", "pandas"]
-TEST_REQUIRES = ["f90nml>=1.3"]
+TEST_REQUIRES = ["f90nml"]
 INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
 
 PACKAGE_DATA = {
@@ -112,7 +112,7 @@ class build_frescox(Command):
             "0",
         ] + FRESCOX_FLAGS
         # Since this is Fortran code from older standards and I suspect that it
-        # uses implict variables, I don't want to assume that the Meson build
+        # uses implicit variables, I don't want to assume that the Meson build
         # system's tools for determining interfile dependencies can figure out
         # how to compile files in parallel.  Force serial builds.
         COMPILE_CMD = ["meson", "compile", "-v", "-j", "1", "-C", "builddir"]
@@ -167,11 +167,11 @@ setup(
         "Natural Language :: English",
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: POSIX :: Linux",
         "Intended Audience :: Science/Research",

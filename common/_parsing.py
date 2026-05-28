@@ -24,8 +24,8 @@ def _read_results_lines(filename: Union[str, PathLike]) -> list[str]:
     """
     if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid filename ({filename})")
-    path = Path(filename).resolve()
-    if not path.is_file():
-        raise ValueError(f"{path} does not exist or is not a file")
-    with open(path, "r") as f:
+    fname = Path(filename).resolve()
+    if not fname.is_file():
+        raise FileNotFoundError(f"{fname} does not exist or is not a file")
+    with open(fname, "r") as f:
         return f.readlines()

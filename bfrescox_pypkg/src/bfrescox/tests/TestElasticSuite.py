@@ -11,7 +11,6 @@ import bfrescox
 from .utils import compare_arrays
 
 INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
-TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
 
@@ -25,7 +24,6 @@ class TestElasticProblems(unittest.TestCase):
         os.mkdir(self.__dir)
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
-        self.maxDiff = None
 
     def tearDown(self):
         if self.__dir.exists():
@@ -96,7 +94,7 @@ class TestElasticProblems(unittest.TestCase):
                         results = bfrescox.parse_fort16(
                             self.__testdir / "fort.16"
                         )
-                        assert expected.keys() == results.keys()
+                        self.assertEqual(expected.keys(), results.keys())
                         for key in expected.keys():
                             compare_arrays(
                                 results[key],
@@ -105,5 +103,5 @@ class TestElasticProblems(unittest.TestCase):
                                 rel_diff_tolr,
                             )
                     else:
-                        msg = f"Unknown physical quantity {quantity}"
+                        msg = f"Unknown results file type {quantity}"
                         raise ValueError(msg)

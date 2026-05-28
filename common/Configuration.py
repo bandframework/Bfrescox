@@ -12,7 +12,7 @@ class Configuration(object):
     def from_NML(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (Union[str, PathLike]): Path to Frescox Fortran
+            filename (Union[str, PathLike]): Path to |frescox| Fortran
                 namelist input file
 
         Returns:
@@ -31,12 +31,12 @@ class Configuration(object):
     ) -> "Configuration":
         """
         Read in a template nml file, replace '@key@' placeholders with
-        corresponding values from parameters, and write result to
-        output_path. The set of possible keys in the template file must
+        corresponding values from `parameters`, and write result to
+        `output_path`. The set of possible keys in the template file must
         exactly match the keys in `parameters`, or a ValueError will be
         raised.
 
-        For example, if one has a Frescox template file with a line like
+        For example, if one has a |frescox| template file with a line like
         this defining a potential:
         ```
         &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
@@ -56,51 +56,39 @@ class Configuration(object):
                 modified NML file.
             parameters (dict): Dictionary of parameters to replace in
                 the template. Keys should match placeholders in the
-                template, corresponding values are the desired replacements
+                template, but should not include the `@` characters.
+                Corresponding values are the desired replacements
                 in the output file.
             overwrite (bool): Whether to overwrite output_path if it
                 already exists.
-
-        Raises:
-            TypeError: If template_path or output_path are not str or
-                PathLike
-            ValueError: If keys exist in the template that are not in
-                `parameters`.
-            ValueError: If keys exist in `parameters` that are not in
-                the template file
         """
-        if not isinstance(template_path, (str, PathLike)):
-            raise TypeError("template_path must be str or PathLike")
-        if not isinstance(output_path, (str, PathLike)):
-            raise TypeError("output_path must be str or PathLike")
-
         fill_in_template_file(
-            Path(template_path),
-            Path(output_path),
+            template_path,
+            output_path,
             parameters,
             overwrite=overwrite,
         )
-        return cls(Path(output_path))
+        return cls(output_path)
 
     @classmethod
     def from_json(cls, filename: Union[str, PathLike]) -> "Configuration":
         """
         Args:
-            filename (Union[str, PathLike]): Path to Frescox |bfrescox| format
+            filename (Union[str, PathLike]): Path to |bfrescox| format
                 JSON file
 
         Returns:
             Configuration : constructed from contents of given
-                w|bfrescox| format JSON file
+                |bfrescox| format JSON file
         """
         raise NotImplementedError("from_json not implemented yet")
 
     def __init__(self, filename: Union[str, PathLike]):
         """
-        Class representing a Frescox input configuration.
+        Class representing a |frescox| input configuration.
 
         Args:
-            filename (Union[str, PathLike]): Path to Frescox Fortran namelist
+            filename (Union[str, PathLike]): Path to |frescox| Fortran namelist
                 input file
 
         Raises:
@@ -109,13 +97,13 @@ class Configuration(object):
         """
         super().__init__()
 
-        # ----- ERROR CHECK ARGUMENTa
+        # ----- ERROR CHECK ARGUMENT
         if not isinstance(filename, (str, PathLike)):
             raise TypeError("filename must be a str or PathLike")
         fname = Path(filename).resolve()
         if not fname.is_file():
             msg = f"Configuration file {fname} does not exist or is not a file"
-            raise ValueError(msg)
+            raise FileNotFoundError(msg)
 
         # ----- STORE CONFIGURATION
         # No loading or checking to be done if Frescox NML file
@@ -125,10 +113,10 @@ class Configuration(object):
         self, filename: Union[str, PathLike], overwrite: bool = False
     ) -> None:
         """
-        Write configuration to Frescox Fortran namelist input file.
+        Write configuration to |frescox| Fortran namelist input file.
 
         Args:
-            filename (Union[str, PathLike]): Path to write Frescox Fortran
+            filename (Union[str, PathLike]): Path to write |frescox| Fortran
                 namelist input file
             overwrite (bool): Whether to overwrite filename if it
                 already exists.
@@ -141,14 +129,17 @@ class Configuration(object):
         if not isinstance(filename, (str, PathLike)):
             raise TypeError("filename must be a str or PathLike")
         fname_in = Path(filename).resolve()
-        if fname_in.exists():
+        if fname_in.is_dir():
+            raise IsADirectoryError(
+                f"Filename ({fname_in}) corresponds to pre-existing directory"
+            )
+        elif fname_in.is_file():
             if fname_in == self.__nml:
                 return  # No action needed
             if overwrite:
-                assert fname_in.is_file()
                 os.remove(fname_in)
             else:
-                raise RuntimeError(f"Input file ({fname_in}) already exists")
+                raise FileExistsError(f"Input file ({fname_in}) already exists")
 
         # ----- WRITE CONFIGURATION TO FILE
         # Trivial for NML

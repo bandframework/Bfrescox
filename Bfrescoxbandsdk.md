@@ -20,7 +20,7 @@ Details on citing the current version of the BAND Framework can be found in the 
 **BAND SDK**
 | #  | Policy                |Support| Notes                   |
 |----|-----------------------|-------|-------------------------|
-| 1. | Support BAND community GNU Autoconf, CMake, or other build options. |Full| The Meson build system is integrated into the `setup.py` files of the two packages for automatic building of the underlying Frescox binaries |
+| 1. | Support BAND community GNU Autoconf, CMake, or other build options. |Full| The Meson build system is integrated into the `setup.py` files of the two packages for automatic building of the underlying Frescox binaries | 
 | 2. | Have a README file in the top directory that states a specific set of testing procedures for a user to verify the software was installed and run correctly. |Full| README points users to [RTD documentation](https://bfrescox.readthedocs.io) that contains installation and test procedures |
 | 3. | Provide a documented, reliable way to contact the development team. |Full| Provided in main README file |
 | 4. | Come with an open-source license. |Full| [BSD-2-Clause](https://github.com/bandframework/Bfrescox/blob/main/LICENSE) |
@@ -42,8 +42,8 @@ Details on citing the current version of the BAND Framework can be found in the 
 |**R7.**| Be buildable using 64-bit pointers; 32-bit is optional. |Partial| The use of Fortran pointers (if any) is decided by the Frescox code, which is outside our control. However, test actions run successfully on 64-bit test systems. |
 |**R8.**| Do not assume a full MPI communicator; allow for user-provided MPI communicator. |None|  MPI communicator use is decided by the Frescox code, which is outside our control. |
 |**R9.**| Use a limited and well-defined name space (e.g., symbol, macro, library, include). |Full| All functions, classes, and package-wide variables are contained within the package'    s namespace. |
-|**R10.**| Give best effort at portability to key architectures. |Full| As demonstrated by our test action, we support Linux-based setups as well as macOS setups (Motorola and ARM64 processors) across a wide set of Python versions. |
+|**R10.**| Give best effort at portability to key architectures. |Full| As demonstrated by our test actions, we support Linux-based setups as well as macOS setups (Motorola and ARM64 processors) across a wide set of Python versions. |
 |**R11.**| Install headers and libraries under `<prefix>/include` and `<prefix>/lib`, respectively. |N/a| None. |
 |**R12.**| All BAND compatibility changes should be sustainable. |Full| None. |
 |**R13.**| Respect system resources and settings made by other previously called packages. |Full| None. |
-|**R14.**| Provide a comprehensive test suite for correctness of installation verification. |Full| __PENDING__ |
+|**R14.**| Provide a comprehensive test suite for correctness of installation verification. |Full| Demonstrated by our test actions. |

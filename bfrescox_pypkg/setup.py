@@ -10,13 +10,12 @@
 # file and how to maintain it.
 
 import os
-import sys
 import shutil
-
 import subprocess as sbp
-
+import sys
 from pathlib import Path
-from setuptools import setup, Command
+
+from setuptools import Command, setup
 from setuptools.command.build import build as _build
 
 # ----- HARDCODED VALUES
@@ -28,9 +27,9 @@ MESON_BUILD_PATH = PKG_ROOT.joinpath("meson")
 EXE_NAMES = ["frescox"]
 
 # Package metadata
-PYTHON_REQUIRES = ">=3.9"
+PYTHON_REQUIRES = ">=3.10"
 CODE_REQUIRES = ["numpy", "pandas"]
-TEST_REQUIRES = ["f90nml>=1.3"]
+TEST_REQUIRES = ["f90nml"]
 INSTALL_REQUIRES = CODE_REQUIRES + TEST_REQUIRES
 
 PACKAGE_DATA = {
@@ -92,7 +91,7 @@ class build_frescox(Command):
             "0",
         ]
         # Since this is Fortran code from older standards and I suspect that it
-        # uses implict variables, I don't want to assume that the Meson build
+        # uses implicit variables, I don't want to assume that the Meson build
         # system's tools for determining interfile dependencies can figure out
         # how to compile files in parallel.  Force serial builds.
         COMPILE_CMD = ["meson", "compile", "-v", "-j", "1", "-C", "builddir"]
@@ -147,11 +146,11 @@ setup(
         "Natural Language :: English",
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: POSIX :: Linux",
         "Intended Audience :: Science/Research",

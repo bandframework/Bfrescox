@@ -15,26 +15,28 @@ def run_simulation(
     cwd: Optional[Union[str, PathLike]] = None,
 ):
     """
-    Run a |frescox| simulation based on the given simulation
-    configuration object.  Results are written to a file with the given
-    output filename.  The |frescox| Fortran namelist configuration file
-    generated from the configuration object for the simulation is
-    written alongside the results file.
+    Run a |frescox| simulation based on the given simulation configuration
+    object. Standard output and error are written to a file with the given
+    output filename.  Other outputs are written to disk based on the |frescox|
+    output settings.  The |frescox| Fortran namelist configuration file
+    generated from the configuration object for the simulation is written
+    alongside the output file.
 
     Args:
-        configuration (Configuration): :py:class:`Configuration` object
-            that specifies the simulation to run
-        filename (Union[str, PathLike]): Filename including path of file
-            to write outputs to
-        overwrite (bool, optional): If False, then an error is raised if
-            either of the simulation input or output files exist
-        mpi_setup (dict, optional): Dictionary specifying MPI setup
-        cwd (Union[str, PathLike], optional): directory to run the
-            simulation in.  If None, the current working directory is used.
-
-    Raises:
-        ValueError: If no valid internal or external |frescox|
-            installation is found
+        configuration:
+            :py:class:`Configuration` object that specifies the simulation to
+            run.
+        filename:
+            Filename including path of file to write |frescox| stdout/stderr
+            logging to
+        overwrite:
+            If False, then an error is raised if either of the simulation input
+            or output files exist
+        mpi_setup:
+            Dictionary specifying MPI setup
+        cwd:
+            Pre-existing directory to run the simulation in.  If None, the
+            current working directory is used.
     """
     if cwd is None:
         cwd = Path.cwd()

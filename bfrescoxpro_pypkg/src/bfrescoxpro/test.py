@@ -3,7 +3,7 @@ import unittest
 from bfrescoxpro import load_tests
 
 
-def test(verbosity: int = 1):
+def test(verbosity: int = 1) -> bool:
     """
     Run the full set of tests in the package with results presented to
     caller using a simple text interface.
@@ -15,13 +15,13 @@ def test(verbosity: int = 1):
                             bfrescoxpro.test()
 
     Args:
-        verbosity (int):  verbosity level to pass to the ``unittest``
-            ``TestRunner``
+        verbosity:
+            verbosity level to pass to ``unittest.TextTestRunner``
     Returns:
-        bool: True if all tests in package passed; False, otherwise.
+        True if all tests in package passed; False, otherwise.
     """
     loader = unittest.TestLoader()
-    suite = load_tests.load_tests(loader, None, None)
+    suite = load_tests(loader, None, None)
     result = unittest.TextTestRunner(verbosity=verbosity).run(suite)
 
     return result.wasSuccessful()

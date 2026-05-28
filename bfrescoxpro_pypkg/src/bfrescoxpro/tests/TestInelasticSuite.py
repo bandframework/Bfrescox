@@ -1,7 +1,3 @@
-"""
-Automatic system-level tests of package using Inelastic scattering template
-"""
-
 import inspect
 import json
 import os
@@ -15,7 +11,6 @@ import bfrescoxpro
 from .utils import compare_arrays
 
 INSTALL_PATH = Path(inspect.getfile(bfrescoxpro)).resolve().parent
-TEMPLATES_PATH = INSTALL_PATH.joinpath("PkgData").resolve()
 DATA_PATH = INSTALL_PATH.joinpath("tests", "TestData").resolve()
 
 
@@ -30,7 +25,6 @@ class TestInelasticProblems(unittest.TestCase):
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
         self.__info = bfrescoxpro.information()
-        self.maxDiff = None
 
     def tearDown(self):
         if self.__dir.exists():
@@ -70,6 +64,7 @@ class TestInelasticProblems(unittest.TestCase):
                 self._clean_test_dir()
 
                 template_parameters = test_info["TemplateParameters"]
+
                 mpi_setup = None
                 if self.__info["supports_mpi"]:
                     pro_setup = test_info["ProSetup"]
@@ -95,10 +90,9 @@ class TestInelasticProblems(unittest.TestCase):
                 )
                 self.assertTrue(self.__fname_out.is_file())
 
-                # Check all results against official baelines
+                # Check all results against official baselines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
-                    print(fname)
                     with open(fname, "rb") as fptr:
                         expected = pickle.load(fptr)
 
@@ -114,7 +108,7 @@ class TestInelasticProblems(unittest.TestCase):
                         results = bfrescoxpro.parse_fort16(
                             self.__testdir / "fort.16"
                         )
-                        assert expected.keys() == results.keys()
+                        self.assertEqual(expected.keys(), results.keys())
                         for key in expected.keys():
                             compare_arrays(
                                 results[key],
@@ -123,5 +117,5 @@ class TestInelasticProblems(unittest.TestCase):
                                 rel_diff_tolr,
                             )
                     else:
-                        msg = f"Unknown physical quantity {quantity}"
+                        msg = f"Unknown results file type {quantity}"
                         raise ValueError(msg)

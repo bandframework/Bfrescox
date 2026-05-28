@@ -8,27 +8,26 @@ def parse_parallelization_setup(
     filename: Union[str, PathLike],
 ) -> Union[tuple[int, int], None]:
     """
-    Parse |frescox| parallelization setup from output file.
+    Parse |frescox| parallelization setup from |frescox| logging written to
+    standard output.
+
+    .. note::
+        This code is a prototype, is not under test, and has not been reviewed.
 
     .. todo::
-    If omp_n_found == 1 and mpi_n_found == 0, then should we confirm
-    that omp_n_procs has a certain value? For example, should
-    omp_n_procs == 1 always be true?
+        If omp_n_found == 1 and mpi_n_found == 0, then should we confirm that
+        omp_n_procs has a certain value? For example, should omp_n_procs == 1
+        always be true?
 
     Args:
-        filename (Union[str, PathLike]): Path to the |frescox| output
-                                        file.
-
+        filename:
+            Path to the file containing the |frescox| standard output log data
     Returns:
-        tuple or None: If parallelization info is found, returns a tuple
-                       (n_mpi_procs, n_threads), where n_threads is -1
-                       for pure MPI runs. If no parallelization info is
-                       found, returns None.
-    Raises:
-        RuntimeError: If an invalid parallelization logging is
-                      encountered.
+        If parallelization info is found, returns a tuple ``(n_mpi_procs,
+        n_threads)``, where ``n_threads`` is -1 for pure MPI runs. If no
+        parallelization info is found, returns None.
     """
-    lines = _read_results_lines(filename)
+    lines_all = _read_results_lines(filename)
 
     MPI_START_STR = "Calculation with"
     OMP_START_STR = "Requested number of OpenMP threads:"
@@ -39,7 +38,7 @@ def parse_parallelization_setup(
     omp_n_threads = -1
     omp_n_procs = -1
 
-    for line in lines:
+    for line in lines_all:
         if line.strip().startswith(OMP_START_STR):
             omp_n_found += 1
 

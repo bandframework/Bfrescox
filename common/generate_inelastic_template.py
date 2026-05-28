@@ -6,7 +6,7 @@ from typing import List, Union
 
 import numpy as np
 
-from ._utils import _is_fraction_integer_or_half_integer, _validate_spin
+from ._utils import _validate_spin
 
 TEMPLATE_FILE_PATH = Path(__file__).parent / "templates/inelastic.template"
 
@@ -101,46 +101,67 @@ def generate_inelastic_template(
     multipoles: np.ndarray,
     R_match_fm: float,
     step_size_fm: float,
+    overwrite: bool = False,
 ):
     """
-    Generate an inelastic scattering input template for Fresco.
+    Generate an inelastic scattering input template for |frescox|.
+
+    .. todo::
+        * This has hardcoded formatting for writing values to file.  This
+          package should not pretend to know what precision is needed by all
+          applications.  Rather, it should write all values in full precision.
+        * Seems like we should be doing explicit type checking of actual
+          arguments.  Better yet if writing to full precision and type checking
+          can be done by one single routine in the package's private interface
+          that this just calls.
+        * Ideally the text placeholders in the template would include units in
+          the name so that when mapping arguments to placeholders below we have
+          something like ``"RMATCH_FM": R_match_fm``.
+        * Code checks if multipoles is None.  However, neither the documentation
+          nor the type hints indicate that None is an acceptable argument.  The
+          meaning of a None argument is not explained.
 
     Args:
-        output_path (Union[str, PathLike]): Path to save the generated
-            template file.
-        target_mass_amu (float): Mass of the target nucleus.
-        target_atomic_number (float): Charge of the target nucleus.
-        projectile_mass_amu (float): Mass of the projectile nucleus.
-        projectile_atomic_number (float): Charge of the projectile
-            nucleus.
-        projectile_spin (Union[Fraction, str, int, float]): Spin of the
-            projectile nucleus (integer or half-integer). Must be
-            convertable to Fraction.
-        E_lab_MeV (float): Laboratory energy of the projectile in MeV.
-        J_tot_min (Union[Fraction, str, int, float]): Minimum total
-            angular momentum (integer or half-integer). Must be
-            convertable to Fraction.
-        J_tot_max (Union[Fraction, str, int, float]): Maximum total
-            angular momentum (integer or half-integer). Must be
-            convertable to Fraction.
-        reaction_name (str): Name of the reaction for file naming.
-        target_state_spins (List[Union[Fraction, str, int, float]]):
+        output_path:
+            Path to save the generated template file
+        target_mass_amu:
+            Mass of the target nucleus
+        target_atomic_number:
+            Charge of the target nucleus
+        projectile_mass_amu:
+            Mass of the projectile nucleus
+        projectile_atomic_number:
+            Charge of the projectile nucleus
+        projectile_spin:
+            Spin of the projectile nucleus (integer or half-integer). Must be
+            convertible to Fraction.
+        E_lab_MeV:
+            Laboratory energy of the projectile in MeV
+        J_tot_min:
+            Minimum total angular momentum (integer or half-integer).  Must be
+            convertible to Fraction.
+        J_tot_max:
+            Maximum total angular momentum (integer or half-integer).  Must be
+            convertible to Fraction.
+        reaction_name:
+            Name of the reaction for file naming
+        target_state_spins:
             List of spin states of the target nucleus (integers or
-            half-integers).  List elements must be convertable to
-            Fraction.
-        target_state_parities (List[bool]): List of parities for the
-            target states (True for positive, False for negative).
-        target_state_energies_MeV (List[float]): List of excitation
-            energies of the target states in MeV.
-        multipoles (np.ndarray): Array of multipole transition orders
-            (e.g., [2, 3] for quadrupole and octupole).
-        R_match_fm (float): Matching radius in fm.
-        step_size_fm (float): Step size for the radial mesh in fm.
-
-    Raises:
-        ValueError: If J_tot_min is greater than J_tot_max, or if either
-            J_tot_min or J_tot_max is negative, or if they are not
-            integer or half-integer values.
+            half-integers).  List elements must be convertible to Fraction.
+        target_state_parities:
+            List of parities for the target states (True for positive, False for
+            negative)
+        target_state_energies_MeV:
+            List of excitation energies of the target states in MeV
+        multipoles:
+            numpy array of multipole transition orders (e.g., [2, 3] for
+            quadrupole and octupole).
+        R_match_fm:
+            Matching radius in fm
+        step_size_fm:
+            Step size for the radial mesh in fm
+        overwrite:
+            Whether to overwrite the output file if it already exists
     """
     projectile_spin = _validate_spin(projectile_spin, "projectile_spin")
     J_tot_min = _validate_spin(J_tot_min, "J_tot_min")
@@ -150,25 +171,26 @@ def generate_inelastic_template(
         raise ValueError("J_tot_min cannot be greater than J_tot_max.")
     if J_tot_min < 0 or J_tot_max < 0:
         raise ValueError("J_tot_min and J_tot_max must be non-negative.")
-    if not _is_fraction_integer_or_half_integer(J_tot_min):
-        raise ValueError("J_tot_min must be an integer or half-integer.")
-    if not _is_fraction_integer_or_half_integer(J_tot_max):
-        raise ValueError("J_tot_max must be an integer or half-integer.")
 
     target_state_spins = [
         _validate_spin(s, "target_state_spins") for s in target_state_spins
     ]
     for spin in target_state_spins:
-        if Fraction(spin) < 0:
+        if spin < 0:
             raise ValueError("All spin states must be non-negative.")
-        if not _is_fraction_integer_or_half_integer(spin):
-            raise ValueError(
-                "All spin states must be integers or half-integers."
-            )
 
     if not isinstance(output_path, (str, PathLike)):
         raise TypeError("output_path must be a string or PathLike object.")
     output_path = Path(output_path).resolve()
+    if output_path.is_dir():
+        raise IsADirectoryError(
+            f"Filename ({output_path}) corresponds to pre-existing directory"
+        )
+    elif output_path.exists() and not overwrite:
+        raise FileExistsError(
+            f"The file {output_path} already exists. "
+            "Set overwrite=True to overwrite it."
+        )
 
     num_states = len(target_state_energies_MeV)
 

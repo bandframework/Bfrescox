@@ -3,7 +3,6 @@ Automatic unittest of information() function
 """
 
 import unittest
-
 from pathlib import Path
 
 import bfrescoxpro
@@ -19,7 +18,7 @@ class TestInformation(unittest.TestCase):
             bfrescoxpro.FRESCOX_MPI_SUPPORT,
             bfrescoxpro.FRESCOX_OPENMP_SUPPORT,
             bfrescoxpro.FRESCOX_LAPACK_SUPPORT,
-            bfrescoxpro.FRESCOX_COREX_SUPPORT
+            bfrescoxpro.FRESCOX_COREX_SUPPORT,
         }
         self.assertEqual(expected, set(info))
 
@@ -31,7 +30,7 @@ class TestInformation(unittest.TestCase):
             bfrescoxpro.FRESCOX_MPI_SUPPORT,
             bfrescoxpro.FRESCOX_OPENMP_SUPPORT,
             bfrescoxpro.FRESCOX_LAPACK_SUPPORT,
-            bfrescoxpro.FRESCOX_COREX_SUPPORT
+            bfrescoxpro.FRESCOX_COREX_SUPPORT,
         ]
         for key in support:
             self.assertTrue(isinstance(info[key], bool))
