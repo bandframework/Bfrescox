@@ -113,6 +113,8 @@ def _run_frescox_simulation(
             msg = "Number of MPI processes ({}) must be positive integer"
             raise ValueError(msg.format(n_mpi_procs))
 
+        mpi_launcher = os.environ.get("BFRESCOX_MPIEXEC", "mpiexec")
+
     if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid output filename ({filename})")
     fname_out = Path(filename).resolve()
@@ -145,7 +147,7 @@ def _run_frescox_simulation(
     # ----- RUN SIMULATION
     if use_mpi:
         cmd = [
-            "mpirun",
+            mpi_launcher,
             "-np",
             str(n_mpi_procs),
             str(frescox_exe),
