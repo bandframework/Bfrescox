@@ -208,6 +208,11 @@ configuration file with 5 OpenMP threads for each of 2 MPI processes.
         mpi_setup={bfrescoxpro.N_MPI_PROCESSES: 2}
     )
 
+
+Using MPI and OpenMP with |bfrescoxpro|
+---------------------------------------
+The |frescox| parallelization manual for MPI and OpenMP usage is at `github.com/llnl/Frescox/blob/master/man/parallel/openmp-f5a.pdf <https://github.com/llnl/Frescox/blob/master/man/parallel/openmp-f5a.pdf>`_
+
 Custom |frescox| binary
 -----------------------
 
