@@ -134,7 +134,9 @@ def _run_frescox_simulation(
     mpi_env = {}
 
     if (not supports_mpi) and (mpi_setup is not None):
-        raise ValueError("MPI specification provided for non-MPI Frescox installation")
+        raise ValueError(
+            "MPI specification provided for non-MPI Frescox installation"
+        )
 
     run_with_mpi = supports_mpi and mpi_setup is not None
 
@@ -168,7 +170,8 @@ def _run_frescox_simulation(
 
         mpi_env = mpi_setup.get(MPI_ENV, {})
         if not isinstance(mpi_env, dict) or not all(
-            isinstance(k, str) and isinstance(v, str) for k, v in mpi_env.items()
+            isinstance(k, str) and isinstance(v, str)
+            for k, v in mpi_env.items()
         ):
             raise TypeError(f"{MPI_ENV} must be a dict[str, str]")
 
