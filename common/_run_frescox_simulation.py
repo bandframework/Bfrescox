@@ -18,6 +18,38 @@ FRESCOX_COREX_SUPPORT = "supports_corex"
 
 # MPI setup keys
 MPI_N_PROCESSES = "n_processes"
+MPI_LAUNCHER = "launcher"
+MPI_LAUNCHER_ARGS = "launcher_args"
+MPI_ENV = "env"
+
+
+def _run_command(cmd, fname_out, cwd_path=None, env=None):
+    try:
+        with open(fname_out, "w") as fptr_stdout:
+            results = sbp.run(
+                cmd,
+                stdin=sbp.DEVNULL,
+                stdout=fptr_stdout,
+                stderr=sbp.STDOUT,
+                check=True,
+                cwd=cwd_path,
+                env=env,
+            )
+        assert results.returncode == 0
+    except sbp.CalledProcessError as err:
+        print()
+        print(f"Unable to run command (Return code {err.returncode})")
+        print(" ".join(err.cmd))
+        print(f"Working directory: {cwd_path}")
+        print(f"Output file: {fname_out}")
+
+        if fname_out.exists():
+            print()
+            print("===== Captured frescox output =====")
+            print(fname_out.read_text(errors="replace"))
+            print("===== End captured frescox output =====")
+
+        raise
 
 
 def _run_frescox_simulation(
@@ -76,12 +108,12 @@ def _run_frescox_simulation(
         raise TypeError(f"Invalid frescox specification ({frescox})")
 
     frescox_exe = Path(frescox[FRESCOX_EXE]).resolve()
-    use_mpi = frescox[FRESCOX_MPI_SUPPORT]
+    supports_mpi = frescox[FRESCOX_MPI_SUPPORT]
     use_omp = frescox[FRESCOX_OPENMP_SUPPORT]
     if not frescox_exe.is_file():
         msg = "Frescox executable does not exist or is not a file ({})"
         raise FileNotFoundError(msg.format(frescox_exe))
-    if not isinstance(use_mpi, bool):
+    if not isinstance(supports_mpi, bool):
         raise TypeError("MPI support specification is not a boolean")
     if not isinstance(use_omp, bool):
         raise TypeError("OpenMP support specification is not a boolean")
@@ -97,12 +129,19 @@ def _run_frescox_simulation(
         raise TypeError(msg)
 
     n_mpi_procs = None
-    if (not use_mpi) and (mpi_setup is not None):
-        msg = "MPI specification provided for non-MPI Frescox installation"
-        raise ValueError(msg)
-    if use_mpi:
+    mpi_launcher = None
+    mpi_launcher_args = []
+    mpi_env = {}
+
+    if (not supports_mpi) and (mpi_setup is not None):
+        raise ValueError("MPI specification provided for non-MPI Frescox installation")
+
+    run_with_mpi = supports_mpi and mpi_setup is not None
+
+    if run_with_mpi:
         if not isinstance(mpi_setup, dict):
             raise TypeError("MPI setup information is not a dictionary")
+
         if MPI_N_PROCESSES not in mpi_setup:
             raise ValueError(f"{MPI_N_PROCESSES} not provided in MPI setup")
 
@@ -110,10 +149,28 @@ def _run_frescox_simulation(
         if not isinstance(n_mpi_procs, Integral):
             raise TypeError("Number of MPI processes must be an integer")
         if n_mpi_procs < 1:
-            msg = "Number of MPI processes ({}) must be positive integer"
-            raise ValueError(msg.format(n_mpi_procs))
+            raise ValueError(
+                f"Number of MPI processes ({n_mpi_procs}) must be positive"
+            )
 
-        mpi_launcher = os.environ.get("BFRESCOX_MPIEXEC", "mpiexec")
+        mpi_launcher = mpi_setup.get(
+            MPI_LAUNCHER,
+            os.environ.get("BFRESCOX_MPIEXEC", "mpiexec"),
+        )
+        if not isinstance(mpi_launcher, str) or not mpi_launcher:
+            raise TypeError(f"{MPI_LAUNCHER} must be a non-empty string")
+
+        mpi_launcher_args = mpi_setup.get(MPI_LAUNCHER_ARGS, [])
+        if not isinstance(mpi_launcher_args, list) or not all(
+            isinstance(arg, str) for arg in mpi_launcher_args
+        ):
+            raise TypeError(f"{MPI_LAUNCHER_ARGS} must be a list of strings")
+
+        mpi_env = mpi_setup.get(MPI_ENV, {})
+        if not isinstance(mpi_env, dict) or not all(
+            isinstance(k, str) and isinstance(v, str) for k, v in mpi_env.items()
+        ):
+            raise TypeError(f"{MPI_ENV} must be a dict[str, str]")
 
     if not isinstance(filename, (str, PathLike)):
         raise TypeError(f"Invalid output filename ({filename})")
@@ -145,61 +202,29 @@ def _run_frescox_simulation(
     config.write_to_nml(fname_in, overwrite)
 
     # ----- RUN SIMULATION
-    if use_mpi:
-        mpi_launcher = os.environ.get("BFRESCOX_MPIEXEC", "mpiexec")
+    env = os.environ.copy()
 
+    if run_with_mpi:
+        env.update(mpi_env)
+    else:
+        env = os.environ.copy()
+
+    if mpi_setup is not None and not supports_mpi:
+        raise ValueError("MPI setup provided for non-MPI Frescox installation")
+
+    if run_with_mpi:
         cmd = [
             mpi_launcher,
-            "-np", str(n_mpi_procs),
+            "-np",
+            str(n_mpi_procs),
+            *mpi_launcher_args,
+            str(frescox_exe),
+            str(fname_in),
+        ]
+    else:
+        cmd = [
             str(frescox_exe),
             str(fname_in),
         ]
 
-        try:
-            with open(fname_out, "w") as fptr_stdout:
-                results = sbp.run(
-                    cmd,
-                    stdin=sbp.DEVNULL,
-                    stdout=fptr_stdout,
-                    stderr=sbp.STDOUT,
-                    check=True,
-                    cwd=cwd_path,
-                )
-            assert results.returncode == 0
-        except sbp.CalledProcessError as err:
-            print()
-            print(f"Unable to run command (Return code {err.returncode})")
-            print(" ".join(err.cmd))
-            print()
-            print(f"Working directory: {cwd_path}")
-            print(f"Input file: {fname_in}")
-            print(f"Output file: {fname_out}")
-
-            if fname_out.exists():
-                print()
-                print("===== Captured frescox/mpirun output =====")
-                print(fname_out.read_text(errors="replace"))
-                print("===== End captured output =====")
-
-            raise
-    else:
-        cmd = [str(frescox_exe)]
-
-        try:
-            with open(fname_out, "w") as fptr_stdout:
-                with open(fname_in, "r") as fptr_stdin:
-                    results = sbp.run(
-                        cmd,
-                        stdin=fptr_stdin,
-                        stdout=fptr_stdout,
-                        stderr=sbp.STDOUT,
-                        check=True,
-                        cwd=cwd_path,
-                    )
-            assert results.returncode == 0
-        except sbp.CalledProcessError as err:
-            print()
-            msg = "Unable to run command (Return code {})"
-            print(msg.format(err.returncode))
-            print(" ".join(err.cmd))
-            raise
+    _run_command(cmd, fname_out, cwd_path=cwd_path, env=env)
