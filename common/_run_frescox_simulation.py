@@ -146,31 +146,30 @@ def _run_frescox_simulation(
 
     # ----- RUN SIMULATION
     if use_mpi:
+        mpi_launcher = os.environ.get("BFRESCOX_MPIEXEC", "mpiexec")
+
         cmd = [
             mpi_launcher,
-            "-np",
-            str(n_mpi_procs),
+            "-np", str(n_mpi_procs),
             str(frescox_exe),
-            # str(fname_in),
+            str(fname_in),
         ]
 
         try:
             with open(fname_out, "w") as fptr_stdout:
-                with open(fname_in, "r") as fptr_stdin:
-                    results = sbp.run(
-                        cmd,
-                        stdin=fptr_stdin,
-                        stdout=fptr_stdout,
-                        stderr=sbp.STDOUT,
-                        check=True,
-                        cwd=cwd_path,
-                    )
+                results = sbp.run(
+                    cmd,
+                    stdin=sbp.DEVNULL,
+                    stdout=fptr_stdout,
+                    stderr=sbp.STDOUT,
+                    check=True,
+                    cwd=cwd_path,
+                )
             assert results.returncode == 0
         except sbp.CalledProcessError as err:
             print()
             print(f"Unable to run command (Return code {err.returncode})")
             print(" ".join(err.cmd))
-
             print()
             print(f"Working directory: {cwd_path}")
             print(f"Input file: {fname_in}")
@@ -181,8 +180,6 @@ def _run_frescox_simulation(
                 print("===== Captured frescox/mpirun output =====")
                 print(fname_out.read_text(errors="replace"))
                 print("===== End captured output =====")
-            else:
-                print("Output file does not exist.")
 
             raise
     else:
