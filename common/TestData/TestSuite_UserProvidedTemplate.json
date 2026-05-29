@@ -4,8 +4,6 @@
         "Tests": {
             "Ozge": {
                 "TemplateParameters": {
-                    "hnl":  0.1,
-                    "rnl": 5.0,
                     "V":  49.284900,
                     "r":   0.907039,
                     "a":   0.679841,
