@@ -7,7 +7,7 @@ from bfrescox import __version__
 
 project   = 'Bfrescox'
 copyright = "2025, BAND"
-author    = "Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal"
+author    = "Kyle Beyer and Manuel Catacora-Rios"
 version   = __version__
 release   = version
 
