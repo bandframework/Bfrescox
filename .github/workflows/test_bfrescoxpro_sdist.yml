@@ -119,15 +119,19 @@ jobs:
         python-version: ${{ matrix.python-version }}
             
     - name: Build, install, & test bfrescoxpro
-      env:
-        GFORTRAN_FPE_SUMMARY: "none"
       run: |
+        echo ""
         python -m pip install --upgrade pip
         python -m pip install build
-
-        pushd "$BFRESCOXPRO_PATH"
+        # Build source distribution & install
+        pushd $BFRESCOXPRO_PATH
         python -m build --sdist
-        BFRESCOX_USE_MPI=enabled python -m pip install -v dist/bfrescoxpro-*.tar.gz
+        python -m pip install -v dist/bfrescoxpro-*.tar.gz
         popd
-
+        # Log info
+        echo ""
+        which python
+        python -m pip list
+        # Run tests through package
+        echo ""
         python -c "import bfrescoxpro ; exit(not bfrescoxpro.test())"

@@ -76,7 +76,7 @@
                 },
                 "ProSetup": {
                   "nOmpThreads": 4,
-                  "nMpiProcs": 2
+                  "nMpiProcs": 1
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {

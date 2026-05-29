@@ -80,7 +80,7 @@
                 },
                 "ProSetup": {
                   "nOmpThreads": 4,
-                  "nMpiProcs": 2
+                  "nMpiProcs": 1
                 },
                 "NML": "12C_4He_inelastic_PointB.nml",
                 "Results": {
