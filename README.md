@@ -18,7 +18,6 @@ To report potential problems with Bfrescox, please check if the problem has alre
 
 * beyerk@frib.msu.edu
 * catacora@frib.msu.edu
-* jared.oneal@northwestern.edu
 
 ## Documentation
 
@@ -35,9 +34,9 @@ Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
 
 ```
 @techreport{bfrescox2025,
- author      = {Kyle Beyer and Manuel Catacora-Rios and Jared O'Neal},
+ author      = {Kyle Beyer and Manuel Catacora-Rios},
  title       = {{Bfrescox 0.0.1-alpha} Users Manual},
- institution = {Michigan State University and Northwestern University},
+ institution = {Michigan State University},
  number      = {Version 0.0.1-alpha},
  year        = {2025},
  url         = {https://bfrescox.readthedocs.io/}

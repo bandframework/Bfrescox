@@ -1,10 +1,10 @@
 48Ca scattering
 NAMELIST
- &FRESCO hcm=0.01 rmatch=40 rintp=0.20 hnl=@hnl@ rnl=@rnl@ centre=-0.25
+ &FRESCO hcm=0.01 rmatch=40 
 	 jtmin=0.0  jtmax=35 absend=-1.0
 	 thmin=0.00 thmax=180.00 thinc=1.0
-	 iter=0 iblock=2 nnu=36
-	 chans=1 treneg=1 xstabl=1
+     iter=0 ips=0.0 iblock=0 chans=1 smats=2  xstabl=1
+	 wdisk=2
          elab(1)= 7.97 /
 
  &PARTITION namep='n'  massp=1.0 zp=0

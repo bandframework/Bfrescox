@@ -127,7 +127,7 @@ def readme_md():
 
 setup(
     name="bfrescox",
-    author="Kyle Beyer, Manuel Catacora-Rios, and Jared O'Neal",
+    author="Kyle Beyer, Manuel Catacora-Rios",
     author_email="beyerk@frib.msu.edu",
     maintainer="Kyle Beyer",
     maintainer_email="beyerk@frib.msu.edu",

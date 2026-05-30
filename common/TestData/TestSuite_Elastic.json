@@ -47,7 +47,7 @@
                 "Results": {
                     "fort.16": {
                         "Baseline": "Ni78_p_elastic_PointA_fort16.pkl",
-                        "RelDiffThreshold": 1.0e-6
+                        "AbsDiffThreshold": 0
                     }
                 }
             },
@@ -75,13 +75,13 @@
                 },
                 "ProSetup": {
                   "nOmpThreads": 4,
-                  "nMpiProcs": 1
+                  "nMpiProcs": 2
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {
                     "fort.16": {
                         "Baseline": "Ni78_p_elastic_PointB_fort16.pkl",
-                        "RelDiffThreshold": 1.0e-6
+                        "AbsDiffThreshold": 0
                     }
                 }
             }
