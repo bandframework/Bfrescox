@@ -11,7 +11,7 @@ that problem, and verifying that the results match expected baselines.
     - `PointA` uses a Woods-Saxon potential with parameters V=40 MeV, r0=1.2 fm, a=0.65 fm, W=10 MeV, rw=1.2 fm, aw=0.5 fm. The expected input file is `Ni78_p_elastic_PointA.nml`, and the expected data is contained in `Ni78_p_elastic_PointA_fort16.pkl` as a pandas DataFrame.
     - `PointB` includes the same volume terms as `pointA` but adds a spin-orbit term with Vso=8 MeV, rso=1.0 fm, aso=0.65 fm, Wso = 4 MeV, rwso=1.0 fm, awso=0.65 fm. The expected input file is `Ni78_p_elastic_PointB.nml`, and the expected data is contained in `Ni78_p_elastic_PointB_fort16.pkl` as a pandas DataFrame.
 
-Both of these tests are for both the functionality in `generate_elastic_template` (comparing the generated template file to an expected template file), and for the full end-to-end functionality of filling in the template, running Bfrescox, and comparing the results to expected baselines.
+Both of these tests are for both the functionality in `generate_elastic_template` (comparing the generated template file to an expected template file), and for the full end-to-end functionality of filling in the template, running Bfrescox, and comparing the results to expected baselines. The elastic suite also compares the parsed absolute cross section from generated stdout to a reference stdout baseline from the same fixture.
 
 Inelastic Template Tests
 ------------------------

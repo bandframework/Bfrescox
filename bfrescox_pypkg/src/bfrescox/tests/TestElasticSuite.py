@@ -8,6 +8,7 @@ from pathlib import Path
 
 import bfrescox
 
+from . import _parse_differential_xs as parse_differential_xs
 from .utils import compare_arrays
 
 INSTALL_PATH = Path(inspect.getfile(bfrescox)).resolve().parent
@@ -102,6 +103,17 @@ class TestElasticProblems(unittest.TestCase):
                                 abs_diff_tolr,
                                 rel_diff_tolr,
                             )
+                    elif quantity.lower() == "stdout":
+                        results = parse_differential_xs.absolute_mb_per_sr(
+                            self.__fname_out
+                        ).reset_index()
+                        compare_arrays(
+                            results,
+                            expected,
+                            abs_diff_tolr,
+                            rel_diff_tolr,
+                        )
+
                     else:
                         msg = f"Unknown results file type {quantity}"
                         raise ValueError(msg)
