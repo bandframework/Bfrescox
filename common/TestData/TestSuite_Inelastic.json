@@ -49,7 +49,7 @@
                 "NML": "12C_4He_inelastic_PointA.nml",
                 "Results": {
                     "fort.16": {
-                        "Baseline": "12C_4He_inelastic_PointA_fort16.pkl",
+                        "Baseline": "12C_4He_inelastic_PointA_fort16.csv",
                         "AbsDiffThreshold": 0
                     }
                 }
@@ -84,7 +84,7 @@
                 "NML": "12C_4He_inelastic_PointB.nml",
                 "Results": {
                     "fort.16": {
-                        "Baseline": "12C_4He_inelastic_PointB_fort16.pkl",
+                        "Baseline": "12C_4He_inelastic_PointB_fort16.csv",
                         "AbsDiffThreshold": 0
                     }
                 }

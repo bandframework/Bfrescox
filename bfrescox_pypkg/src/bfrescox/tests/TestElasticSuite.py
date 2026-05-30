@@ -1,12 +1,12 @@
 import inspect
 import json
 import os
-import pickle
 import shutil
 import unittest
 from pathlib import Path
 
 import bfrescox
+import pandas as pd
 
 from . import _parse_differential_xs as parse_differential_xs
 from .utils import compare_arrays
@@ -80,8 +80,6 @@ class TestElasticProblems(unittest.TestCase):
                 # Check all results against official baselines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
-                    with open(fname, "rb") as fptr:
-                        expected = pickle.load(fptr)
 
                     rel_diff_tolr = 0.0
                     abs_diff_tolr = 0.0
@@ -92,6 +90,15 @@ class TestElasticProblems(unittest.TestCase):
                         rel_diff_tolr = quantity_info["RelDiffThreshold"]
 
                     if quantity.lower() == "fort.16":
+                        df_baseline = pd.read_csv(fname)
+                        expected = {
+                            ch: grp.drop(
+                                columns="channel"
+                            ).reset_index(drop=True)
+                            for ch, grp in df_baseline.groupby(
+                                "channel", sort=False
+                            )
+                        }
                         results = bfrescox.parse_fort16(
                             self.__testdir / "fort.16"
                         )
@@ -104,6 +111,7 @@ class TestElasticProblems(unittest.TestCase):
                                 rel_diff_tolr,
                             )
                     elif quantity.lower() == "stdout":
+                        expected = pd.read_csv(fname)
                         results = parse_differential_xs.absolute_mb_per_sr(
                             self.__fname_out
                         ).reset_index()
@@ -113,7 +121,6 @@ class TestElasticProblems(unittest.TestCase):
                             abs_diff_tolr,
                             rel_diff_tolr,
                         )
-
                     else:
                         msg = f"Unknown results file type {quantity}"
                         raise ValueError(msg)
