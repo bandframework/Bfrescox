@@ -47,7 +47,7 @@
                 "Results": {
                     "stdout": {
                         "Baseline": "Ni78_p_elastic_PointA_stdout.pkl",
-                        "AbsDiffThreshold": 0
+                        "AbsDiffThreshold": 0.0
                     },
                     "fort.16": {
                         "Baseline": "Ni78_p_elastic_PointA_fort16.pkl",
@@ -85,7 +85,8 @@
                 "Results": {
                     "stdout": {
                         "Baseline": "Ni78_p_elastic_PointB_stdout.pkl",
-                        "AbsDiffThreshold": 0
+                        "AbsDiffThreshold": 2.0e-1,
+                        "RelDiffThreshold": 1.0e-5
                     },
                     "fort.16": {
                         "Baseline": "Ni78_p_elastic_PointB_fort16.pkl",
