@@ -7,6 +7,8 @@ on:
   # TODO: Should this publish for every commit on main or only on release events
   # on main?  If only release events, then the test_book action should also be
   # run on pushes to main that aren't release events.
+  # TODO: Can we combine this into a single action with test_book so that
+  # publishing only occurs for certain triggering repo event?
   push:
     branches: main 
 
@@ -27,12 +29,12 @@ jobs:
     strategy:
       matrix:
         os:             [ubuntu-latest]
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
     - name: Setup Python with tox

@@ -1,0 +1,26 @@
+HEADER
+NAMELIST
+&FRESCO hcm=STEP_SIZE rmatch=RMATCH
+    jtmin=J_TOT_MIN jtmax=J_TOT_MAX absend= 0.01
+  thmin=0.00 thmax=180.00 thinc=1.00
+    iter=0 ips=0.0 iblock=CLOSED_COUPLINGS chans=1 smats=2  xstabl=1
+  wdisk=2
+    elab(1)=E_LAB treneg=1 /
+
+ &PARTITION namep='projectile' massp=MASS_P zp=CHARGE_P
+            namet='target'   masst=MASS_T zt=CHARGE_T qval=0.0 nex=NUM_STATES  /
+ &STATES jp=S_PROJECTILE bandp=1 ep=0.0000 cpot=1 jt=I_GROUND bandt=GS_PAR et=E_GROUND /
+ &STATES copyp=1      cpot=1 jt=I_EXCITED bandt=1 et=E_EXCITED /
+ &partition /
+
+ &POT kp=1 ap=MASS_P at=MASS_T rc=@rC@  /
+ &POT kp=1 type=1  p1=@V@ p2=@r@ p3=@a@ p4=@W@ p5=@rw@ p6=@aw@ /
+ &POT kp=1 type=11          pX=DELTA_LAMBDA_X /
+ &POT kp=1 type=2  p1=@Vs@ p2=@rs@ p3=@as@ p4=@Ws@ p5=@rws@ p6=@aws@ /
+ &POT kp=1 type=11          pX=DELTA_LAMBDA_X /
+ &POT kp=1 type=3  p1=@Vso@ p2=@rso@ p3=@aso@ p4=@Wso@ p5=@rwso@ p6=@awso@ /
+
+ &pot /
+ &overlap /
+ &coupling /
+

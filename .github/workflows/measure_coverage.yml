@@ -19,14 +19,14 @@ jobs:
   coverage_bfrescox:
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ubuntu-latest
     steps:
     ##-- General Setup Steps
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -45,7 +45,7 @@ jobs:
 
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: bfrescox-code-coverage
         path: |
@@ -56,11 +56,11 @@ jobs:
   coverage_bfrescoxpro:
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.14"]
     runs-on: ubuntu-latest
     steps:
     ##-- General Setup Steps
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Install Open-MPI
       run: |
@@ -68,7 +68,7 @@ jobs:
         sudo apt-get -y install openmpi-bin libopenmpi-dev
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -87,7 +87,7 @@ jobs:
 
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: bfrescoxpro-code-coverage
         path: |
@@ -103,22 +103,22 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Access bfrescox coverage reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: bfrescox-code-coverage
           path: ${{ env.CLONE_PATH }}
 
       - name: Access bfrescoxpro coverage reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: bfrescoxpro-code-coverage
           path: ${{ env.CLONE_PATH }}
 
       - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: |

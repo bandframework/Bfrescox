@@ -1,0 +1,1 @@
+../../../common/generate_inelastic_template.py

@@ -1,27 +1,52 @@
+from os import PathLike
+from pathlib import Path
+from typing import Optional, Union
+
+from ._run_frescox_simulation import _run_frescox_simulation
+from .Configuration import Configuration
 from .information import information
-from ._run_frescox_simulation import run_frescox_simulation
 
 
-def run_simulation(configuration, filename, overwrite=False, mpi_setup=None):
+def run_simulation(
+    configuration: Configuration,
+    filename: Union[str, PathLike],
+    overwrite: Optional[bool] = False,
+    mpi_setup: Optional[dict] = None,
+    cwd: Optional[Union[str, PathLike]] = None,
+):
     """
     Run a |frescox| simulation based on the given simulation configuration
-    object.  Results are written to a file with the given output filename.  The
-    |frescox| Fortran namelist configuration file generated from the
-    configuration object for the simulation is written alongside the results
-    file.
+    object. Standard output and error are written to a file with the given
+    output filename.  Other outputs are written to disk based on the |frescox|
+    output settings.  The |frescox| Fortran namelist configuration file
+    generated from the configuration object for the simulation is written
+    alongside the output file.
 
-    .. todo::
-        * Load and return a result object once that class exists.
-
-    :param configuration: :py:class:`Configuration` object that specifies the
-        simulation to run
-    :param filename: Filename including path of file to write outputs to
-    :param overwrite: If False, then an error is raised if either of the
-        simulation input or output files exist
-    :param mpi_setup: `dict` that provides MPI setup values if executable built
-        with MPI; `None`, otherwise.
+    Args:
+        configuration:
+            :py:class:`Configuration` object that specifies the simulation to
+            run.
+        filename:
+            Filename including path of file to write |frescox| stdout/stderr
+            logging to
+        overwrite:
+            If False, then an error is raised if either of the simulation input
+            or output files exist
+        mpi_setup:
+            Dictionary specifying MPI setup
+        cwd:
+            Pre-existing directory to run the simulation in.  If None, the
+            current working directory is used.
     """
-    # This function assumes that all error checking of arguments will be handled
-    # by this internal function.
-    run_frescox_simulation(information(), configuration, mpi_setup, filename,
-                           overwrite=overwrite)
+    if cwd is None:
+        cwd = Path.cwd()
+    # This function assumes that all error checking of arguments
+    # will be handled by this internal function.
+    _run_frescox_simulation(
+        information(),
+        configuration,
+        filename,
+        overwrite,
+        mpi_setup,
+        cwd,
+    )
