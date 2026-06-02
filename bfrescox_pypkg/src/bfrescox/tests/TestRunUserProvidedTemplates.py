@@ -25,7 +25,24 @@ class TestUserProvidedProblems(unittest.TestCase):
         self.__testdir = self.__dir.joinpath("test")
         self.__fname_out = self.__testdir.joinpath("test.out")
 
+    def _test_failed(self):
+        result = getattr(self._outcome, "result", None)
+        if result is None:
+            return False
+
+        failed_tests = result.failures + result.errors
+        return any(test is self for test, _ in failed_tests)
+
     def tearDown(self):
+        if self._test_failed():
+            print()
+            print("Begin failing output:")
+            print("=====================")
+            with open(self.__fname_out, "r", encoding="utf-8") as f:
+                print(f.read(), end="")
+            print("End failing output:")
+            print("=====================")
+            print()
         if self.__dir.exists():
             shutil.rmtree(self.__dir)
 
