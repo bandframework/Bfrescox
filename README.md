@@ -45,3 +45,34 @@ Please use the following to cite the use of either Bfrescox or Bfrescoxpro:
 }
 ```
 
+Bfrescox is part of the [BAND Framework](https://bandframework.github.io/). Please consider also citing the following:
+
+    @techreport{bandframework,
+        title       = {{BANDFramework: An} Open-Source Framework for {Bayesian} Analysis of Nuclear Dynamics},
+        author      = {Kyle Beyer and Landon Buskirk and Manuel Catacora Rios and Moses Y-H. Chan and Tyler H. Chang and Troy Dasher 
+        and Richard James DeBoer and Christian Drischler and Richard J. Furnstahl and Pablo Giuliani and
+        Kyle Godbey and Kevin Ingles and Sunil Jaiswal and An Le and Dananjaya Liyanage and Filomena M. Nunes
+        and Daniel Odell and David O'Gara and Jared O'Neal and Daniel R. Phillips and Matthew Plumlee
+        and Matthew T. Pratola and Scott Pratt and Oleh Savchuk and Alexandra C. Semposki and \"Ozge S\"urer and 
+        Stefan M. Wild and John C. Yannotty},
+        institution = {},
+        number      = {Version 0.5.0},
+        year        = {2025},
+        url         = {https://github.com/bandframework/bandframework}
+    }
+    
+    @article{Phillips:2020dmw,
+        author = "Phillips, D. R. and others",
+        title = "{Get on the BAND Wagon: A Bayesian Framework for Quantifying Model Uncertainties in Nuclear Dynamics}",
+        eprint = "2012.07704",
+        archivePrefix = "arXiv",
+        primaryClass = "nucl-th",
+        doi = "10.1088/1361-6471/abf1df",
+        journal = "J. Phys. G",
+        volume = "48",
+        number = "7",
+        pages = "072001",
+        year = "2021"
+    }
+
+
