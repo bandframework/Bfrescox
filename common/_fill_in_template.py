@@ -94,10 +94,10 @@ def fill_in_template_file(
         raise ValueError(
             f"Keys in template file {template_path} do not "
             "match keys in `parameters`:\n"
-            "  Keys that are in template but not in parameters:"
+            f"  Keys that are in template but not in parameters:"
             f" {valid_keys - set(parameters.keys())}\n"
-            "  Keys that are in parameters but not in template:"
-            f" {set(parameters.keys()) - valid_keys}"
+            f"  Keys that are in parameters but not in template: "
+            f"{set(parameters.keys()) - valid_keys}"
         )
 
     if not isinstance(output_path, (str, PathLike)):
