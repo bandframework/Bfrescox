@@ -45,8 +45,12 @@
                 },
                 "NML": "Ni78_p_elastic_PointA.nml",
                 "Results": {
+                    "stdout": {
+                        "Baseline": "Ni78_p_elastic_PointA_stdout.csv",
+                        "AbsDiffThreshold": 0.0
+                    },
                     "fort.16": {
-                        "Baseline": "Ni78_p_elastic_PointA_fort16.pkl",
+                        "Baseline": "Ni78_p_elastic_PointA_fort16.csv",
                         "AbsDiffThreshold": 0
                     }
                 }
@@ -79,8 +83,13 @@
                 },
                 "NML": "Ni78_p_elastic_PointB.nml",
                 "Results": {
+                    "stdout": {
+                        "Baseline": "Ni78_p_elastic_PointB_stdout.csv",
+                        "AbsDiffThreshold": 2.0e-1,
+                        "RelDiffThreshold": 1.0e-5
+                    },
                     "fort.16": {
-                        "Baseline": "Ni78_p_elastic_PointB_fort16.pkl",
+                        "Baseline": "Ni78_p_elastic_PointB_fort16.csv",
                         "AbsDiffThreshold": 0
                     }
                 }

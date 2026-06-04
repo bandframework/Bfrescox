@@ -18,7 +18,7 @@
                 "NML": "48Ca_OzgePointA.nml",
                 "Results": {
                     "fort.16": {
-                        "Baseline": "48Ca_OzgePointA_fort16.pkl",
+                        "Baseline": "48Ca_OzgePointA_fort16.csv",
                         "AbsDiffThreshold": 0
                     }
                 }

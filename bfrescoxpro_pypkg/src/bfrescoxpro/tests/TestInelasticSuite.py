@@ -1,12 +1,12 @@
 import inspect
 import json
 import os
-import pickle
 import shutil
 import unittest
 from pathlib import Path
 
 import bfrescoxpro
+import pandas as pd
 
 from .utils import compare_arrays
 
@@ -26,7 +26,24 @@ class TestInelasticProblems(unittest.TestCase):
         self.__fname_out = self.__testdir.joinpath("test.out")
         self.__info = bfrescoxpro.information()
 
+    def _test_failed(self):
+        result = getattr(self._outcome, "result", None)
+        if result is None:
+            return False
+
+        failed_tests = result.failures + result.errors
+        return any(test is self for test, _ in failed_tests)
+
     def tearDown(self):
+        if self._test_failed():
+            print()
+            print("Begin failing output:")
+            print("=====================")
+            with open(self.__fname_out, "r", encoding="utf-8") as f:
+                print(f.read(), end="")
+            print("End failing output:")
+            print("=====================")
+            print()
         if self.__dir.exists():
             shutil.rmtree(self.__dir)
 
@@ -93,8 +110,6 @@ class TestInelasticProblems(unittest.TestCase):
                 # Check all results against official baselines
                 for quantity, quantity_info in test_info["Results"].items():
                     fname = DATA_PATH.joinpath(quantity_info["Baseline"])
-                    with open(fname, "rb") as fptr:
-                        expected = pickle.load(fptr)
 
                     rel_diff_tolr = 0.0
                     abs_diff_tolr = 0.0
@@ -105,6 +120,15 @@ class TestInelasticProblems(unittest.TestCase):
                         rel_diff_tolr = quantity_info["RelDiffThreshold"]
 
                     if quantity.lower() == "fort.16":
+                        df_baseline = pd.read_csv(fname)
+                        expected = {
+                            ch: grp.drop(
+                                columns="channel"
+                            ).reset_index(drop=True)
+                            for ch, grp in df_baseline.groupby(
+                                "channel", sort=False
+                            )
+                        }
                         results = bfrescoxpro.parse_fort16(
                             self.__testdir / "fort.16"
                         )
